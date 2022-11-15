@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MultiGame.rntm;
 
 namespace MultiGame.Games
 {
@@ -15,6 +16,16 @@ namespace MultiGame.Games
         public Clicker()
         {
             InitializeComponent();
+        }
+
+        private void Clicker_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Clicker_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            clshown = false;
         }
     }
 }

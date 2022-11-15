@@ -9,8 +9,13 @@ namespace MultiGame
 {
     public static class rntm
     {
+        public static bool clshown = false;
+        public static bool fnfshown = false;
         public static BigInteger money = 0;
         public static BigInteger generation = 0;
+        public static BigInteger level = 1;
+        public static BigInteger xp = 0;
+        public static BigInteger xpn = 2;
         public static BigInteger add1 = 1;
         public static BigInteger add2 = 0;
         public static BigInteger add3 = 0;
@@ -33,7 +38,7 @@ namespace MultiGame
         public static BigInteger mult10 = 1;
         public static BigInteger getmoney()
         {
-            return generation*((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10));
+            return level*generation*((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10));
         }
     }
 }

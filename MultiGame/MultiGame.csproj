@@ -53,6 +53,12 @@
     <Compile Include="Games\Clicker.Designer.cs">
       <DependentUpon>Clicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Games\FNF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Games\FNF.Designer.cs">
+      <DependentUpon>FNF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rntm.cs" />
+    <EmbeddedResource Include="Games\Clicker.resx">
+      <DependentUpon>Clicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Games\FNF.resx">
+      <DependentUpon>FNF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +86,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\MultiGame.exe.config" />
+    <None Include="bin\Release\MultiGame.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\MultiGame.exe" />
+    <Content Include="bin\Debug\MultiGame.pdb" />
+    <Content Include="bin\Release\MultiGame.exe" />
+    <Content Include="bin\Release\MultiGame.pdb" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
