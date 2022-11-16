@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Deployment.Internal;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -9,8 +10,14 @@ namespace MultiGame
 {
     public static class rntm
     {
+        public static List<string> log = new List<string>();
+        public static List<string> passcodes = new List<string> {"$sct"};
         public static bool clshown = false;
         public static bool fnfshown = false;
+        public static bool logshown = false;
+        public static bool addlogshown = false;
+        public static bool devmode = false;
+        public static int logupdateinterval = 10000;
         public static BigInteger money = 0;
         public static BigInteger generation = 0;
         public static BigInteger level = 1;

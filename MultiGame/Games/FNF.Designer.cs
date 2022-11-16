@@ -36,8 +36,6 @@ namespace MultiGame.Games
             this.rightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.soundsONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,7 +52,6 @@ namespace MultiGame.Games
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,8 +59,7 @@ namespace MultiGame.Games
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.controlsToolStripMenuItem,
-            this.settingsToolStripMenuItem});
+            this.controlsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(460, 28);
@@ -85,7 +81,7 @@ namespace MultiGame.Games
             // 
             this.leftToolStripMenuItem.Name = "leftToolStripMenuItem";
             this.leftToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.leftToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.leftToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.leftToolStripMenuItem.Text = "Left";
             this.leftToolStripMenuItem.Click += new System.EventHandler(this.leftToolStripMenuItem_Click);
             // 
@@ -93,7 +89,7 @@ namespace MultiGame.Games
             // 
             this.rightToolStripMenuItem.Name = "rightToolStripMenuItem";
             this.rightToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.rightToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rightToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.rightToolStripMenuItem.Text = "Right";
             this.rightToolStripMenuItem.Click += new System.EventHandler(this.rightToolStripMenuItem_Click);
             // 
@@ -101,7 +97,7 @@ namespace MultiGame.Games
             // 
             this.upToolStripMenuItem.Name = "upToolStripMenuItem";
             this.upToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.upToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.upToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.upToolStripMenuItem.Text = "Up";
             this.upToolStripMenuItem.Click += new System.EventHandler(this.upToolStripMenuItem_Click);
             // 
@@ -109,25 +105,9 @@ namespace MultiGame.Games
             // 
             this.downToolStripMenuItem.Name = "downToolStripMenuItem";
             this.downToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.downToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.downToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.downToolStripMenuItem.Text = "Down";
             this.downToolStripMenuItem.Click += new System.EventHandler(this.downToolStripMenuItem_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.soundsONToolStripMenuItem,
-            this.restartToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // soundsONToolStripMenuItem
-            // 
-            this.soundsONToolStripMenuItem.Name = "soundsONToolStripMenuItem";
-            this.soundsONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.soundsONToolStripMenuItem.Text = "Sounds OFF";
-            this.soundsONToolStripMenuItem.Click += new System.EventHandler(this.soundsONToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -220,7 +200,7 @@ namespace MultiGame.Games
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(389, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Rights:";
             // 
@@ -230,7 +210,7 @@ namespace MultiGame.Games
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(389, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 17);
+            this.label2.Size = new System.Drawing.Size(53, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Misses:";
             // 
@@ -312,13 +292,6 @@ namespace MultiGame.Games
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // restartToolStripMenuItem
-            // 
-            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.restartToolStripMenuItem.Text = "Restart";
-            this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
-            // 
             // FNF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,9 +350,6 @@ namespace MultiGame.Games
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem soundsONToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
     }
 }
 

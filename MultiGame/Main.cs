@@ -31,9 +31,11 @@ namespace MultiGame
 
         private void tick_Tick(object sender, EventArgs e)
         {
-            if(xp >= xpn)
+            devToolStripMenuItem.Enabled = devmode;
+            if (xp >= xpn)
             {
                 level++;
+                log.Add("[" + DateTime.Now + "][From:Internal/Main/LVL]{(Log)}Level Up Level Now:" + level);
                 xp -= xpn;
                 xpn *= 2;
             }
@@ -50,6 +52,37 @@ namespace MultiGame
                 fm.MdiParent = this;
                 fm.Show();
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            log.Add("[" + DateTime.Now + "][From:Internal/Main/Form]{(Log)}Opening Form");
+        }
+
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!logshown)
+            {
+                logshown = true;
+                Form fm = new Tools.Log();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
+
+        private void addLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!addlogshown)
+            {
+                Form fm = new Tools.AddLog();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
+
+        private void toggleDevModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,9 +35,13 @@ namespace MultiGame
             this.clickerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fNFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tick = new System.Windows.Forms.Timer(this.components);
             this.levelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xP00ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tick = new System.Windows.Forms.Timer(this.components);
+            this.devToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toggleDevModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,10 +50,11 @@ namespace MultiGame
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openGameToolStripMenuItem,
-            this.levelToolStripMenuItem});
+            this.levelToolStripMenuItem,
+            this.devToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,14 +70,14 @@ namespace MultiGame
             // clickerToolStripMenuItem
             // 
             this.clickerToolStripMenuItem.Name = "clickerToolStripMenuItem";
-            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.clickerToolStripMenuItem.Text = "Clicker Level 1";
             this.clickerToolStripMenuItem.Click += new System.EventHandler(this.clickerToolStripMenuItem_Click);
             // 
             // fNFToolStripMenuItem
             // 
             this.fNFToolStripMenuItem.Name = "fNFToolStripMenuItem";
-            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.fNFToolStripMenuItem.Text = "FNF Level 25";
             this.fNFToolStripMenuItem.Click += new System.EventHandler(this.fNFToolStripMenuItem_Click);
             // 
@@ -85,23 +90,54 @@ namespace MultiGame
             this.levelToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.levelToolStripMenuItem.Text = "Level";
             // 
+            // levelToolStripMenuItem1
+            // 
+            this.levelToolStripMenuItem1.Name = "levelToolStripMenuItem1";
+            this.levelToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
+            this.levelToolStripMenuItem1.Text = "Level:";
+            // 
+            // xP00ToolStripMenuItem
+            // 
+            this.xP00ToolStripMenuItem.Name = "xP00ToolStripMenuItem";
+            this.xP00ToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.xP00ToolStripMenuItem.Text = "XP:0/0";
+            // 
             // tick
             // 
             this.tick.Enabled = true;
             this.tick.Interval = 1;
             this.tick.Tick += new System.EventHandler(this.tick_Tick);
             // 
-            // levelToolStripMenuItem1
+            // devToolStripMenuItem
             // 
-            this.levelToolStripMenuItem1.Name = "levelToolStripMenuItem1";
-            this.levelToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.levelToolStripMenuItem1.Text = "Level:";
+            this.devToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toggleDevModeToolStripMenuItem,
+            this.logToolStripMenuItem,
+            this.addLogToolStripMenuItem});
+            this.devToolStripMenuItem.Name = "devToolStripMenuItem";
+            this.devToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.devToolStripMenuItem.Text = "Dev";
             // 
-            // xP00ToolStripMenuItem
+            // logToolStripMenuItem
             // 
-            this.xP00ToolStripMenuItem.Name = "xP00ToolStripMenuItem";
-            this.xP00ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.xP00ToolStripMenuItem.Text = "XP:0/0";
+            this.logToolStripMenuItem.Name = "logToolStripMenuItem";
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logToolStripMenuItem.Text = "Log";
+            this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
+            // 
+            // addLogToolStripMenuItem
+            // 
+            this.addLogToolStripMenuItem.Name = "addLogToolStripMenuItem";
+            this.addLogToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addLogToolStripMenuItem.Text = "AddLog";
+            this.addLogToolStripMenuItem.Click += new System.EventHandler(this.addLogToolStripMenuItem_Click);
+            // 
+            // toggleDevModeToolStripMenuItem
+            // 
+            this.toggleDevModeToolStripMenuItem.Name = "toggleDevModeToolStripMenuItem";
+            this.toggleDevModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.toggleDevModeToolStripMenuItem.Text = "ToggleDevMode";
+            this.toggleDevModeToolStripMenuItem.Click += new System.EventHandler(this.toggleDevModeToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -114,6 +150,7 @@ namespace MultiGame
             this.Name = "Main";
             this.ShowIcon = false;
             this.Text = "Game";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -131,6 +168,10 @@ namespace MultiGame
         private System.Windows.Forms.Timer tick;
         private System.Windows.Forms.ToolStripMenuItem levelToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem xP00ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem devToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addLogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toggleDevModeToolStripMenuItem;
     }
 }
 
