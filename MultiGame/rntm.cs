@@ -19,7 +19,7 @@ namespace MultiGame
         public static bool devmode = false;
         public static int logupdateinterval = 10000;
         public static BigInteger money = 0;
-        public static BigInteger generation = 0;
+        public static BigInteger generation = 1;
         public static BigInteger level = 1;
         public static BigInteger xp = 0;
         public static BigInteger xpn = 2;
