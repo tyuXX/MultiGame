@@ -16,5 +16,10 @@ namespace MultiGame.Tools
         {
             InitializeComponent();
         }
+
+        private void SaveGame_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
