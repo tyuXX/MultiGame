@@ -86,6 +86,12 @@
     <Compile Include="Tools\Log.Designer.cs">
       <DependentUpon>Log.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\SaveGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SaveGame.Designer.cs">
+      <DependentUpon>SaveGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\ToggleDevMode.cs">
       <SubType>Form</SubType>
     </Compile>
