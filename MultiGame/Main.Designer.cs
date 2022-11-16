@@ -42,6 +42,10 @@ namespace MultiGame
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleDevModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generation1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.automaticGeneration0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.money0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +55,7 @@ namespace MultiGame
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openGameToolStripMenuItem,
             this.levelToolStripMenuItem,
+            this.moneyToolStripMenuItem,
             this.devToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -142,6 +147,34 @@ namespace MultiGame
             this.toggleDevModeToolStripMenuItem.Text = "ToggleDevMode";
             this.toggleDevModeToolStripMenuItem.Click += new System.EventHandler(this.toggleDevModeToolStripMenuItem_Click);
             // 
+            // moneyToolStripMenuItem
+            // 
+            this.moneyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generation1ToolStripMenuItem,
+            this.automaticGeneration0ToolStripMenuItem,
+            this.money0ToolStripMenuItem});
+            this.moneyToolStripMenuItem.Name = "moneyToolStripMenuItem";
+            this.moneyToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.moneyToolStripMenuItem.Text = "Money";
+            // 
+            // generation1ToolStripMenuItem
+            // 
+            this.generation1ToolStripMenuItem.Name = "generation1ToolStripMenuItem";
+            this.generation1ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.generation1ToolStripMenuItem.Text = "Generation:1";
+            // 
+            // automaticGeneration0ToolStripMenuItem
+            // 
+            this.automaticGeneration0ToolStripMenuItem.Name = "automaticGeneration0ToolStripMenuItem";
+            this.automaticGeneration0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:0";
+            // 
+            // money0ToolStripMenuItem
+            // 
+            this.money0ToolStripMenuItem.Name = "money0ToolStripMenuItem";
+            this.money0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.money0ToolStripMenuItem.Text = "Money:0";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,6 +208,10 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toggleDevModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moneyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generation1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem automaticGeneration0ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem money0ToolStripMenuItem;
     }
 }
 

@@ -59,6 +59,12 @@
     <Compile Include="Games\FNF.Designer.cs">
       <DependentUpon>FNF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Games\Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Games\Shop.Designer.cs">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Games\FNF.resx">
       <DependentUpon>FNF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Games\Shop.resx">
+      <DependentUpon>Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

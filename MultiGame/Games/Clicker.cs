@@ -27,5 +27,16 @@ namespace MultiGame.Games
         {
             clshown = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            money += getmoney();
+            xp += getmoney();
+        }
+
+        private void tick_Tick(object sender, EventArgs e)
+        {
+            label1.Text = "Money:" + money;
+        }
     }
 }
