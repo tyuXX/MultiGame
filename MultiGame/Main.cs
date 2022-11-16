@@ -74,6 +74,7 @@ namespace MultiGame
         {
             if (!addlogshown)
             {
+                addlogshown = true;
                 Form fm = new Tools.AddLog();
                 fm.MdiParent = this;
                 fm.Show();
@@ -82,7 +83,13 @@ namespace MultiGame
 
         private void toggleDevModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!toggledevmodeshown)
+            {
+                toggledevmodeshown = true;
+                Form fm = new Tools.ToggleDevMode();
+                fm.MdiParent = this;
+                fm.Show();
+            }
         }
     }
 }

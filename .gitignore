@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/MultiGame/Games/Clicker.resx
+/MultiGame/Games/Clicker.Designer.cs
+/MultiGame/Games/Clicker.cs

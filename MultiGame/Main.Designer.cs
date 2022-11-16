@@ -135,7 +135,10 @@ namespace MultiGame
             // toggleDevModeToolStripMenuItem
             // 
             this.toggleDevModeToolStripMenuItem.Name = "toggleDevModeToolStripMenuItem";
-            this.toggleDevModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.toggleDevModeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.toggleDevModeToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
             this.toggleDevModeToolStripMenuItem.Text = "ToggleDevMode";
             this.toggleDevModeToolStripMenuItem.Click += new System.EventHandler(this.toggleDevModeToolStripMenuItem_Click);
             // 

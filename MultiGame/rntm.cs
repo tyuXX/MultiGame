@@ -16,6 +16,7 @@ namespace MultiGame
         public static bool fnfshown = false;
         public static bool logshown = false;
         public static bool addlogshown = false;
+        public static bool toggledevmodeshown = false;
         public static bool devmode = false;
         public static int logupdateinterval = 10000;
         public static BigInteger money = 0;

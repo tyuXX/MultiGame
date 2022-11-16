@@ -24,8 +24,15 @@ namespace MultiGame.Tools
             {
                 if(str == textBox1.Text)
                 {
-                    devmode = true;
-                    log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/ToggleDevMode/PassCode]{(Log)}Logged In with PassCode" + str);
+                    if (devmode)
+                    {
+                        devmode = false;
+                    }
+                    else
+                    {
+                        devmode = true;
+                    }
+                    log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/ToggleDevMode/PassCode]{(Log)}Logged In with PassCode:" + str);
                     this.Close();
                 }
                 else
@@ -37,6 +44,7 @@ namespace MultiGame.Tools
 
         private void ToggleDevMode_FormClosing(object sender, FormClosingEventArgs e)
         {
+            toggledevmodeshown = false;
             log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/ToggleDevMode/Form]{(Log)}Closing Form");
         }
 
