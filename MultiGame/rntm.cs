@@ -17,6 +17,7 @@ namespace MultiGame
         public static bool logshown = false;
         public static bool addlogshown = false;
         public static bool toggledevmodeshown = false;
+        public static bool shopshown = false;
         public static bool devmode = false;
         public static int logupdateinterval = 10000;
         public static BigInteger money = 0;
@@ -48,6 +49,15 @@ namespace MultiGame
         public static BigInteger getmoney()
         {
             return level*generation*((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10));
+        }
+        public static BigInteger exponent(BigInteger n,BigInteger e)
+        {
+            BigInteger nn = n;
+            for (BigInteger i = 0; i < e; i++)
+            {
+                nn *= n;
+            }
+            return nn;
         }
     }
 }

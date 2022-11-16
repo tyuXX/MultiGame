@@ -94,5 +94,16 @@ namespace MultiGame
                 fm.Show();
             }
         }
+
+        private void shopLevel5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!shopshown)
+            {
+                shopshown = true;
+                Form fm = new Games.Shop();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
     }
 }

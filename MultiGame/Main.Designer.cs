@@ -46,6 +46,7 @@ namespace MultiGame
             this.generation1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automaticGeneration0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.money0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shopLevel5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@ namespace MultiGame
             // 
             this.openGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clickerToolStripMenuItem,
+            this.shopLevel5ToolStripMenuItem,
             this.fNFToolStripMenuItem});
             this.openGameToolStripMenuItem.Name = "openGameToolStripMenuItem";
             this.openGameToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
@@ -175,6 +177,13 @@ namespace MultiGame
             this.money0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.money0ToolStripMenuItem.Text = "Money:0";
             // 
+            // shopLevel5ToolStripMenuItem
+            // 
+            this.shopLevel5ToolStripMenuItem.Name = "shopLevel5ToolStripMenuItem";
+            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
+            this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,6 +221,7 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem generation1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem automaticGeneration0ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem money0ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shopLevel5ToolStripMenuItem;
     }
 }
 

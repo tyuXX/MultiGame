@@ -64,7 +64,7 @@ namespace MultiGame.Games
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 275);
+            this.ClientSize = new System.Drawing.Size(211, 111);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Clicker";
