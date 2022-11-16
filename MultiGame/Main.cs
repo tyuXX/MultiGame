@@ -105,5 +105,11 @@ namespace MultiGame
                 fm.Show();
             }
         }
+
+        private void autoclicker_Tick(object sender, EventArgs e)
+        {
+            money += getmoney();
+            xp += getmoney();
+        }
     }
 }

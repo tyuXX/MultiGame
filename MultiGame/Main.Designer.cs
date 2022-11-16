@@ -47,6 +47,7 @@ namespace MultiGame
             this.automaticGeneration0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.money0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shopLevel5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoclicker = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,14 +78,14 @@ namespace MultiGame
             // clickerToolStripMenuItem
             // 
             this.clickerToolStripMenuItem.Name = "clickerToolStripMenuItem";
-            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.clickerToolStripMenuItem.Text = "Clicker Level 1";
             this.clickerToolStripMenuItem.Click += new System.EventHandler(this.clickerToolStripMenuItem_Click);
             // 
             // fNFToolStripMenuItem
             // 
             this.fNFToolStripMenuItem.Name = "fNFToolStripMenuItem";
-            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.fNFToolStripMenuItem.Text = "FNF Level 25";
             this.fNFToolStripMenuItem.Click += new System.EventHandler(this.fNFToolStripMenuItem_Click);
             // 
@@ -100,13 +101,13 @@ namespace MultiGame
             // levelToolStripMenuItem1
             // 
             this.levelToolStripMenuItem1.Name = "levelToolStripMenuItem1";
-            this.levelToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
+            this.levelToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.levelToolStripMenuItem1.Text = "Level:";
             // 
             // xP00ToolStripMenuItem
             // 
             this.xP00ToolStripMenuItem.Name = "xP00ToolStripMenuItem";
-            this.xP00ToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.xP00ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.xP00ToolStripMenuItem.Text = "XP:0/0";
             // 
             // tick
@@ -128,14 +129,14 @@ namespace MultiGame
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
             this.logToolStripMenuItem.Text = "Log";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
             // addLogToolStripMenuItem
             // 
             this.addLogToolStripMenuItem.Name = "addLogToolStripMenuItem";
-            this.addLogToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addLogToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
             this.addLogToolStripMenuItem.Text = "AddLog";
             this.addLogToolStripMenuItem.Click += new System.EventHandler(this.addLogToolStripMenuItem_Click);
             // 
@@ -184,6 +185,12 @@ namespace MultiGame
             this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
             this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
             // 
+            // autoclicker
+            // 
+            this.autoclicker.Enabled = true;
+            this.autoclicker.Interval = 1000;
+            this.autoclicker.Tick += new System.EventHandler(this.autoclicker_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -222,6 +229,7 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem automaticGeneration0ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem money0ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shopLevel5ToolStripMenuItem;
+        private System.Windows.Forms.Timer autoclicker;
     }
 }
 

@@ -48,6 +48,7 @@ namespace MultiGame.Tools
             merge2 = merge2.Replace("$shopshown", shopshown.ToString());
             merge2 = merge2.Replace("$devmode",devmode.ToString());
             merge2 = merge2.Replace("$logupdateinterval", logupdateinterval.ToString());
+            merge2 = merge2.Replace("$autoclickerinterval", autoclickerinterval.ToString());
             merge2 = merge2.Replace("$money", money.ToString());
             merge2 = merge2.Replace("$generation", generation.ToString());
             merge2 = merge2.Replace("$autogenmult", autogenmult.ToString());
