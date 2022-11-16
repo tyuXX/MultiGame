@@ -22,10 +22,13 @@ namespace MultiGame
         {
             if (!clshown)
             {
-                clshown = true;
-                Form fm = new Games.Clicker();
-                fm.MdiParent = this;
-                fm.Show();
+                if(level >= 1)
+                {
+                    clshown = true;
+                    Form fm = new Games.Clicker();
+                    fm.MdiParent = this;
+                    fm.Show();
+                }
             }
         }
 
@@ -48,12 +51,15 @@ namespace MultiGame
 
         private void fNFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(level >= 25)
+            if (!fnfshown)
             {
-                fnfshown = true;
-                Games.FNF fm = new Games.FNF();
-                fm.MdiParent = this;
-                fm.Show();
+                if (level >= 25)
+                {
+                    fnfshown = true;
+                    Games.FNF fm = new Games.FNF();
+                    fm.MdiParent = this;
+                    fm.Show();
+                }
             }
         }
 
@@ -99,10 +105,13 @@ namespace MultiGame
         {
             if (!shopshown)
             {
-                shopshown = true;
-                Form fm = new Games.Shop();
-                fm.MdiParent = this;
-                fm.Show();
+                if(level >= 5)
+                {
+                    shopshown = true;
+                    Form fm = new Games.Shop();
+                    fm.MdiParent = this;
+                    fm.Show();
+                }
             }
         }
 
