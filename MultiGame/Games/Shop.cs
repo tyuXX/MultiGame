@@ -31,7 +31,27 @@ namespace MultiGame.Games
 
         private void tick_Tick(object sender, EventArgs e)
         {
-
+            button1.Text = "Adder " + add1 + "\r\n$" + (250 * (exponent(2, add1) + 1));
+            button2.Text = "Adder " + add2 + "\r\n$" + (250 * (exponent(2, add2) + 1));
+            button3.Text = "Adder " + add3 + "\r\n$" + (250 * (exponent(2, add3) + 1));
+            button4.Text = "Adder " + add4 + "\r\n$" + (250 * (exponent(2, add4) + 1));
+            button5.Text = "Adder " + add5 + "\r\n$" + (250 * (exponent(2, add5) + 1));
+            button6.Text = "Adder " + add6 + "\r\n$" + (250 * (exponent(2, add6) + 1));
+            button7.Text = "Adder " + add7 + "\r\n$" + (250 * (exponent(2, add7) + 1));
+            button8.Text = "Adder " + add8 + "\r\n$" + (250 * (exponent(2, add8) + 1));
+            button9.Text = "Adder " + add9 + "\r\n$" + (250 * (exponent(2, add9) + 1));
+            button10.Text = "Adder " + add10 + "\r\n$" + (250 * (exponent(2, add10) + 1));
+            button11.Text = "Multipilier " + mult1 + "\r\n$" + (500 * (exponent(3, mult1) + 1));
+            button12.Text = "Multipilier " + mult2 + "\r\n$" + (500 * (exponent(3, mult2) + 1));
+            button13.Text = "Multipilier " + mult3 + "\r\n$" + (500 * (exponent(3, mult3) + 1));
+            button14.Text = "Multipilier " + mult4 + "\r\n$" + (500 * (exponent(3, mult4) + 1));
+            button15.Text = "Multipilier " + mult5 + "\r\n$" + (500 * (exponent(3, mult5) + 1));
+            button16.Text = "Multipilier " + mult6 + "\r\n$" + (500 * (exponent(3, mult6) + 1));
+            button17.Text = "Multipilier " + mult7 + "\r\n$" + (500 * (exponent(3, mult7) + 1));
+            button18.Text = "Multipilier " + mult8 + "\r\n$" + (500 * (exponent(3, mult8) + 1));
+            button19.Text = "Multipilier " + mult9 + "\r\n$" + (500 * (exponent(3, mult9) + 1));
+            button20.Text = "Multipilier " + mult10 + "\r\n$" + (500 * (exponent(3, mult10) + 1));
+            button21.Text = "Autoclickers " + autogenmult + "\r\n$" + (1000 * (exponent(5, autogenmult) + 1));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -236,10 +256,10 @@ namespace MultiGame.Games
 
         private void button21_Click(object sender, EventArgs e)
         {
-            if (money >= 100 * (exponent(5, autogenmult) + 1))
+            if (money >= 1000 * (exponent(5, autogenmult) + 1))
             {
                 log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult10 now:" + autogenmult);
-                money -= 100 * (exponent(5, autogenmult) + 1);
+                money -= 1000 * (exponent(5, autogenmult) + 1);
                 autogenmult++;
             }
         }

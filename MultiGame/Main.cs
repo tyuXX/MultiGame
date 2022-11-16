@@ -42,7 +42,7 @@ namespace MultiGame
             xP00ToolStripMenuItem.Text = "XP:" + xp + "/" + xpn;
             levelToolStripMenuItem1.Text = "Level:" + level;
             money0ToolStripMenuItem.Text = "Money:" + money;
-            generation1ToolStripMenuItem.Text = "Generation" + generation;
+            generation1ToolStripMenuItem.Text = "Generation:" + generation;
             automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmult * getmoney());
         }
 
