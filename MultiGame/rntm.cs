@@ -53,7 +53,7 @@ namespace MultiGame
         public static BigInteger exponent(BigInteger n,BigInteger e)
         {
             BigInteger nn = n;
-            for (BigInteger i = 0; i < e; i++)
+            for (BigInteger i = 0; i < (e-1); i++)
             {
                 nn *= n;
             }

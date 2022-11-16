@@ -201,6 +201,7 @@
             this.button15.TabIndex = 14;
             this.button15.Text = "Multipilier 1\r\n$500";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -210,6 +211,7 @@
             this.button16.TabIndex = 15;
             this.button16.Text = "Multipilier 1\r\n$500";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
@@ -219,6 +221,7 @@
             this.button17.TabIndex = 16;
             this.button17.Text = "Multipilier 1\r\n$500";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button18
             // 
@@ -228,6 +231,7 @@
             this.button18.TabIndex = 17;
             this.button18.Text = "Multipilier 1\r\n$500";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button19
             // 
@@ -237,6 +241,7 @@
             this.button19.TabIndex = 18;
             this.button19.Text = "Multipilier 1\r\n$500";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button20
             // 
@@ -246,6 +251,7 @@
             this.button20.TabIndex = 19;
             this.button20.Text = "Multipilier 1\r\n$500";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // tick
             // 
@@ -261,6 +267,7 @@
             this.button21.TabIndex = 20;
             this.button21.Text = "Autoclickers 1\r\n$1000";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // Shop
             // 

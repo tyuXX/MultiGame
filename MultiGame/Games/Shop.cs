@@ -166,7 +166,82 @@ namespace MultiGame.Games
 
         private void button14_Click(object sender, EventArgs e)
         {
+            if (money >= 500 * (exponent(3, mult4) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult4 now:" + mult4);
+                money -= 500 * (exponent(3, mult4) + 1);
+                mult4++;
+            }
+        }
 
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (money >= 500 * (exponent(3, mult5) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult5 now:" + mult5);
+                money -= 500 * (exponent(3, mult5) + 1);
+                mult5++;
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (money >= 500 * (exponent(3, mult6) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult6 now:" + mult6);
+                money -= 500 * (exponent(3, mult6) + 1);
+                mult6++;
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (money >= 500 * (exponent(3, mult7) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult7 now:" + mult7);
+                money -= 500 * (exponent(3, mult7) + 1);
+                mult7++;
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            if (money >= 500 * (exponent(3, mult8) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult8 now:" + mult8);
+                money -= 500 * (exponent(3, mult8) + 1);
+                mult8++;
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (money >= 500 * (exponent(3, mult9) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult9 now:" + mult9);
+                money -= 500 * (exponent(3, mult9) + 1);
+                mult9++;
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (money >= 500 * (exponent(3, mult10) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult10 now:" + mult10);
+                money -= 500 * (exponent(3, mult10) + 1);
+                mult10++;
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (money >= 100 * (exponent(5, autogenmult) + 1))
+            {
+                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult10 now:" + autogenmult);
+                money -= 100 * (exponent(5, autogenmult) + 1);
+                autogenmult++;
+            }
         }
     }
 }
