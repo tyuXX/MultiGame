@@ -61,6 +61,7 @@ namespace MultiGame.Tools
                 try { mult8 = BigInteger.Parse(decode(masterfile[27])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
                 try { mult9 = BigInteger.Parse(decode(masterfile[28])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
                 try { mult10 = BigInteger.Parse(decode(masterfile[29])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
+                try { timespent = BigInteger.Parse(decode(masterfile[30])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
             }
             else
             {

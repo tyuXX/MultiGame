@@ -27,6 +27,7 @@ namespace MultiGame
         public static bool cheat = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
+        public static BigInteger timespent = 0;
         public static BigInteger money = 0;
         public static BigInteger generation = 1;
         public static BigInteger autogenmult = 0;

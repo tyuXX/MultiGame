@@ -75,7 +75,8 @@ namespace MultiGame.Tools
                     encode(mult7.ToString()),
                     encode(mult8.ToString()),
                     encode(mult9.ToString()),
-                    encode(mult10.ToString())
+                    encode(mult10.ToString()),
+                    encode(timespent.ToString())
                 };
                 File.WriteAllLines(textBox1.Text,masterfile);
             }

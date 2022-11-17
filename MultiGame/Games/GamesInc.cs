@@ -28,5 +28,10 @@ namespace MultiGame.Games
         {
             log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Form]{(Log)}Opening Form");
         }
+
+        private void tick_Tick(object sender, EventArgs e)
+        {
+            label1.Text = "Company Name:" + username + "'s Company";
+        }
     }
 }

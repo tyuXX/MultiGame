@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using static MultiGame.rntm;
 
@@ -9,6 +10,11 @@ namespace MultiGame
         public Main()
         {
             InitializeComponent();
+        }
+        public void timerth()
+        {
+            Thread.Sleep(999);
+            timespent++;
         }
 
         private void clickerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,6 +55,7 @@ namespace MultiGame
             passCodeToolStripMenuItem.Text = "PassCode:" + endecode;
             generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
             autoclicker.Interval = autoclickerinterval;
+            timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:" + timespent + " seconds";
         }
 
         private void fNFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,6 +75,10 @@ namespace MultiGame
         private void Main_Load(object sender, EventArgs e)
         {
             log.Add("[" + DateTime.Now + "][From:Internal/Main/Form]{(Log)}Opening Form");
+            Thread.CurrentThread.Name = "Multigame Main Thread";
+            Thread th = new Thread(timerth);
+            th.Name = "MultiGame Timer Thread";
+            th.Start();
         }
 
         private void logToolStripMenuItem_Click(object sender, EventArgs e)

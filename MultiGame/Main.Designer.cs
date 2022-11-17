@@ -60,6 +60,7 @@ namespace MultiGame
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.moreMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.timeSpent0SecondsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +125,7 @@ namespace MultiGame
             this.toolStripSeparator4,
             this.nameToolStripMenuItem,
             this.passCodeToolStripMenuItem,
+            this.timeSpent0SecondsToolStripMenuItem,
             this.toolStripSeparator1,
             this.saveGameToolStripMenuItem,
             this.openGameToolStripMenuItem1});
@@ -288,6 +290,12 @@ namespace MultiGame
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(322, 6);
             // 
+            // timeSpent0SecondsToolStripMenuItem
+            // 
+            this.timeSpent0SecondsToolStripMenuItem.Name = "timeSpent0SecondsToolStripMenuItem";
+            this.timeSpent0SecondsToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:0 seconds";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -339,6 +347,7 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem moreMoneyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timeSpent0SecondsToolStripMenuItem;
     }
 }
 
