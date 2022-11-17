@@ -13,8 +13,11 @@ namespace MultiGame
         }
         public void timerth()
         {
-            Thread.Sleep(999);
-            timespent++;
+            while (true)
+            {
+                Thread.Sleep(999);
+                timespent++;
+            }
         }
 
         private void clickerToolStripMenuItem_Click(object sender, EventArgs e)
