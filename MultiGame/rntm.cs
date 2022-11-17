@@ -30,6 +30,7 @@ namespace MultiGame
         public static BigInteger timespent = 0;
         public static BigInteger money = 0;
         public static BigInteger generation = 1;
+        public static BigInteger outcome = 0;
         public static BigInteger autogenmult = 0;
         public static BigInteger level = 1;
         public static BigInteger xp = 0;
@@ -54,9 +55,22 @@ namespace MultiGame
         public static BigInteger mult8 = 1;
         public static BigInteger mult9 = 1;
         public static BigInteger mult10 = 1;
+        public static BigInteger workers = 0;
+        public static BigInteger inventions = 0;
+        public static BigInteger minicompanies = 1;
+        public static BigInteger companynetworth = 0;
+        public static BigInteger invested = 1;
         public static BigInteger getmoney()
         {
-            return level*generation*((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10));
+            BigInteger rt = (level * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10))) - (outcome/minicompanies);
+            if(rt < 1) 
+            {
+                return 1;
+            }
+            else
+            {
+                return rt;
+            }
         }
         public static BigInteger exponent(BigInteger n,BigInteger e)
         {

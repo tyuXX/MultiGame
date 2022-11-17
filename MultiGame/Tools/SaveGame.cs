@@ -52,6 +52,7 @@ namespace MultiGame.Tools
                     encode(autoclickerinterval.ToString()),
                     encode(money.ToString()),
                     encode(generation.ToString()),
+                    encode(outcome.ToString()),
                     encode(autogenmult.ToString()),
                     encode(level.ToString()),
                     encode(xp.ToString()),
