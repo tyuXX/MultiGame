@@ -218,12 +218,14 @@ namespace MultiGame
             this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
             this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveGameToolStripMenuItem.Text = "SaveGame";
+            this.saveGameToolStripMenuItem.Click += new System.EventHandler(this.saveGameToolStripMenuItem_Click);
             // 
             // openGameToolStripMenuItem1
             // 
             this.openGameToolStripMenuItem1.Name = "openGameToolStripMenuItem1";
             this.openGameToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.openGameToolStripMenuItem1.Text = "OpenGame";
+            this.openGameToolStripMenuItem1.Click += new System.EventHandler(this.openGameToolStripMenuItem1_Click);
             // 
             // Main
             // 

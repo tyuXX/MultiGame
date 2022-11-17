@@ -20,6 +20,8 @@ namespace MultiGame
         public static bool shopshown = false;
         public static bool changeusernameshown = false;
         public static bool changepasscodeshown = false;
+        public static bool savegameshown = false;
+        public static bool opengameshown = false;
         public static bool devmode = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;

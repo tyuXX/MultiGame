@@ -27,6 +27,7 @@ namespace MultiGame.Tools
         private void SaveGame_FormClosing(object sender, FormClosingEventArgs e)
         {
             log.Add("[" + DateTime.Now + "][From:Internal/Tool/SaveGame/Form]{(Log)}Closing Form");
+            savegameshown = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

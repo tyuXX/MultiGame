@@ -21,6 +21,7 @@ namespace MultiGame.Tools
         private void OpenGame_FormClosing(object sender, FormClosingEventArgs e)
         {
             log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Form]{(Log)}Closing Form");
+            opengameshown = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -137,5 +137,27 @@ namespace MultiGame
                 fm.Show();
             }
         }
+
+        private void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!savegameshown)
+            {
+                savegameshown = true;
+                Form fm = new Tools.SaveGame();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
+
+        private void openGameToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (!opengameshown)
+            {
+                opengameshown = true;
+                Form fm = new Tools.OpenGame();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
     }
 }
