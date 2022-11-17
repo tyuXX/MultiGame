@@ -40,6 +40,8 @@ namespace MultiGame
             money0ToolStripMenuItem.Text = "Money:" + money;
             generation1ToolStripMenuItem.Text = "Generation:" + generation;
             automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmult * getmoney());
+            nameToolStripMenuItem.Text = "Name:" + username;
+            passCodeToolStripMenuItem.Text = "PassCode:" + endecode;
         }
 
         private void fNFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,6 +114,28 @@ namespace MultiGame
         {
             money += getmoney()*autogenmult;
             xp += getmoney()*autogenmult;
+        }
+
+        private void passCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!changepasscodeshown)
+            {
+                changepasscodeshown = true;
+                Form fm = new Tools.ChangePassCode();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
+
+        private void nameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!changeusernameshown)
+            {
+                changeusernameshown = true;
+                Form fm = new Tools.ChangeUserName();
+                fm.MdiParent = this;
+                fm.Show();
+            }
         }
     }
 }

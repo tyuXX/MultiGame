@@ -70,6 +70,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "SaveGame";
+            this.ShowIcon = false;
             this.Text = "SaveGame";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SaveGame_FormClosing);
             this.Load += new System.EventHandler(this.SaveGame_Load);

@@ -33,21 +33,23 @@ namespace MultiGame
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clickerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shopLevel5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fNFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xP00ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tick = new System.Windows.Forms.Timer(this.components);
-            this.devToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toggleDevModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generation1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automaticGeneration0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.money0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shopLevel5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toggleDevModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tick = new System.Windows.Forms.Timer(this.components);
             this.autoclicker = new System.Windows.Forms.Timer(this.components);
+            this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.passCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,14 +80,21 @@ namespace MultiGame
             // clickerToolStripMenuItem
             // 
             this.clickerToolStripMenuItem.Name = "clickerToolStripMenuItem";
-            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.clickerToolStripMenuItem.Text = "Clicker Level 1";
             this.clickerToolStripMenuItem.Click += new System.EventHandler(this.clickerToolStripMenuItem_Click);
+            // 
+            // shopLevel5ToolStripMenuItem
+            // 
+            this.shopLevel5ToolStripMenuItem.Name = "shopLevel5ToolStripMenuItem";
+            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
+            this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
             // 
             // fNFToolStripMenuItem
             // 
             this.fNFToolStripMenuItem.Name = "fNFToolStripMenuItem";
-            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.fNFToolStripMenuItem.Text = "FNF Level 25";
             this.fNFToolStripMenuItem.Click += new System.EventHandler(this.fNFToolStripMenuItem_Click);
             // 
@@ -93,10 +102,12 @@ namespace MultiGame
             // 
             this.levelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.levelToolStripMenuItem1,
-            this.xP00ToolStripMenuItem});
+            this.xP00ToolStripMenuItem,
+            this.nameToolStripMenuItem,
+            this.passCodeToolStripMenuItem});
             this.levelToolStripMenuItem.Name = "levelToolStripMenuItem";
-            this.levelToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
-            this.levelToolStripMenuItem.Text = "Level";
+            this.levelToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.levelToolStripMenuItem.Text = "Profile";
             // 
             // levelToolStripMenuItem1
             // 
@@ -109,46 +120,6 @@ namespace MultiGame
             this.xP00ToolStripMenuItem.Name = "xP00ToolStripMenuItem";
             this.xP00ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.xP00ToolStripMenuItem.Text = "XP:0/0";
-            // 
-            // tick
-            // 
-            this.tick.Enabled = true;
-            this.tick.Interval = 1;
-            this.tick.Tick += new System.EventHandler(this.tick_Tick);
-            // 
-            // devToolStripMenuItem
-            // 
-            this.devToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toggleDevModeToolStripMenuItem,
-            this.logToolStripMenuItem,
-            this.addLogToolStripMenuItem});
-            this.devToolStripMenuItem.Name = "devToolStripMenuItem";
-            this.devToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.devToolStripMenuItem.Text = "Dev";
-            // 
-            // logToolStripMenuItem
-            // 
-            this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.logToolStripMenuItem.Text = "Log";
-            this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
-            // 
-            // addLogToolStripMenuItem
-            // 
-            this.addLogToolStripMenuItem.Name = "addLogToolStripMenuItem";
-            this.addLogToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.addLogToolStripMenuItem.Text = "AddLog";
-            this.addLogToolStripMenuItem.Click += new System.EventHandler(this.addLogToolStripMenuItem_Click);
-            // 
-            // toggleDevModeToolStripMenuItem
-            // 
-            this.toggleDevModeToolStripMenuItem.Name = "toggleDevModeToolStripMenuItem";
-            this.toggleDevModeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-            this.toggleDevModeToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.toggleDevModeToolStripMenuItem.Text = "ToggleDevMode";
-            this.toggleDevModeToolStripMenuItem.Click += new System.EventHandler(this.toggleDevModeToolStripMenuItem_Click);
             // 
             // moneyToolStripMenuItem
             // 
@@ -178,18 +149,65 @@ namespace MultiGame
             this.money0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.money0ToolStripMenuItem.Text = "Money:0";
             // 
-            // shopLevel5ToolStripMenuItem
+            // devToolStripMenuItem
             // 
-            this.shopLevel5ToolStripMenuItem.Name = "shopLevel5ToolStripMenuItem";
-            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
-            this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
+            this.devToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toggleDevModeToolStripMenuItem,
+            this.logToolStripMenuItem,
+            this.addLogToolStripMenuItem});
+            this.devToolStripMenuItem.Name = "devToolStripMenuItem";
+            this.devToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.devToolStripMenuItem.Text = "Dev";
+            // 
+            // toggleDevModeToolStripMenuItem
+            // 
+            this.toggleDevModeToolStripMenuItem.Name = "toggleDevModeToolStripMenuItem";
+            this.toggleDevModeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.toggleDevModeToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.toggleDevModeToolStripMenuItem.Text = "ToggleDevMode";
+            this.toggleDevModeToolStripMenuItem.Click += new System.EventHandler(this.toggleDevModeToolStripMenuItem_Click);
+            // 
+            // logToolStripMenuItem
+            // 
+            this.logToolStripMenuItem.Name = "logToolStripMenuItem";
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.logToolStripMenuItem.Text = "Log";
+            this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
+            // 
+            // addLogToolStripMenuItem
+            // 
+            this.addLogToolStripMenuItem.Name = "addLogToolStripMenuItem";
+            this.addLogToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.addLogToolStripMenuItem.Text = "AddLog";
+            this.addLogToolStripMenuItem.Click += new System.EventHandler(this.addLogToolStripMenuItem_Click);
+            // 
+            // tick
+            // 
+            this.tick.Enabled = true;
+            this.tick.Interval = 1;
+            this.tick.Tick += new System.EventHandler(this.tick_Tick);
             // 
             // autoclicker
             // 
             this.autoclicker.Enabled = true;
             this.autoclicker.Interval = 1000;
             this.autoclicker.Tick += new System.EventHandler(this.autoclicker_Tick);
+            // 
+            // nameToolStripMenuItem
+            // 
+            this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nameToolStripMenuItem.Text = "Name:";
+            this.nameToolStripMenuItem.Click += new System.EventHandler(this.nameToolStripMenuItem_Click);
+            // 
+            // passCodeToolStripMenuItem
+            // 
+            this.passCodeToolStripMenuItem.Name = "passCodeToolStripMenuItem";
+            this.passCodeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.passCodeToolStripMenuItem.Text = "PassCode";
+            this.passCodeToolStripMenuItem.Click += new System.EventHandler(this.passCodeToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -230,6 +248,8 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem money0ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shopLevel5ToolStripMenuItem;
         private System.Windows.Forms.Timer autoclicker;
+        private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem passCodeToolStripMenuItem;
     }
 }
 

@@ -80,6 +80,18 @@
     <Compile Include="Tools\AddLog.Designer.cs">
       <DependentUpon>AddLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\ChangePassCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ChangePassCode.Designer.cs">
+      <DependentUpon>ChangePassCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ChangeUserName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ChangeUserName.Designer.cs">
+      <DependentUpon>ChangeUserName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Log.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     </Compile>
     <EmbeddedResource Include="Tools\AddLog.resx">
       <DependentUpon>AddLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ChangePassCode.resx">
+      <DependentUpon>ChangePassCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ChangeUserName.resx">
+      <DependentUpon>ChangeUserName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Log.resx">
       <DependentUpon>Log.cs</DependentUpon>

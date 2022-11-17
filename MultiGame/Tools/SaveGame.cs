@@ -45,6 +45,8 @@ namespace MultiGame.Tools
             {
                 string[] masterfile =
                 {
+                    encode(endecode),
+                    encode(username),
                     encode(logupdateinterval.ToString()),
                     encode(autoclickerinterval.ToString()),
                     encode(money.ToString()),

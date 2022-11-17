@@ -10,13 +10,16 @@ namespace MultiGame
     {
         public static List<string> log = new List<string>();
         public static List<string> passcodes = new List<string> {"$sct"};
-        public static string endecode = "c6{45@/2k&e8";
+        public static string endecode = "";
+        public static string username = "";
         public static bool clshown = false;
         public static bool fnfshown = false;
         public static bool logshown = false;
         public static bool addlogshown = false;
         public static bool toggledevmodeshown = false;
         public static bool shopshown = false;
+        public static bool changeusernameshown = false;
+        public static bool changepasscodeshown = false;
         public static bool devmode = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
