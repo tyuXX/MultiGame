@@ -77,7 +77,12 @@ namespace MultiGame.Tools
                     encode(mult8.ToString()),
                     encode(mult9.ToString()),
                     encode(mult10.ToString()),
-                    encode(timespent.ToString())
+                    encode(timespent.ToString()),
+                    encode(workers.ToString()),
+                    encode(inventions.ToString()),
+                    encode(minicompanies.ToString()),
+                    encode(companynetworth.ToString()),
+                    encode(invested.ToString())
                 };
                 File.WriteAllLines(textBox1.Text,masterfile);
             }

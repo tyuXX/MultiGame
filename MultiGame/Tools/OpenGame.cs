@@ -63,6 +63,11 @@ namespace MultiGame.Tools
                 try { mult9 = BigInteger.Parse(decode(masterfile[29])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
                 try { mult10 = BigInteger.Parse(decode(masterfile[30])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
                 try { timespent = BigInteger.Parse(decode(masterfile[31])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
+                try { workers = BigInteger.Parse(decode(masterfile[32])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
+                try { inventions = BigInteger.Parse(decode(masterfile[33])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
+                try { minicompanies = BigInteger.Parse(decode(masterfile[34])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
+                try { companynetworth = BigInteger.Parse(decode(masterfile[35])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
+                try { invested = BigInteger.Parse(decode(masterfile[36])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
             }
             else
             {
