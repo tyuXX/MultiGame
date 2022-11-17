@@ -50,6 +50,8 @@ namespace MultiGame
             this.autoclicker = new System.Windows.Forms.Timer(this.components);
             this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openGameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +106,9 @@ namespace MultiGame
             this.levelToolStripMenuItem1,
             this.xP00ToolStripMenuItem,
             this.nameToolStripMenuItem,
-            this.passCodeToolStripMenuItem});
+            this.passCodeToolStripMenuItem,
+            this.saveGameToolStripMenuItem,
+            this.openGameToolStripMenuItem1});
             this.levelToolStripMenuItem.Name = "levelToolStripMenuItem";
             this.levelToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.levelToolStripMenuItem.Text = "Profile";
@@ -209,6 +213,18 @@ namespace MultiGame
             this.passCodeToolStripMenuItem.Text = "PassCode";
             this.passCodeToolStripMenuItem.Click += new System.EventHandler(this.passCodeToolStripMenuItem_Click);
             // 
+            // saveGameToolStripMenuItem
+            // 
+            this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveGameToolStripMenuItem.Text = "SaveGame";
+            // 
+            // openGameToolStripMenuItem1
+            // 
+            this.openGameToolStripMenuItem1.Name = "openGameToolStripMenuItem1";
+            this.openGameToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.openGameToolStripMenuItem1.Text = "OpenGame";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,6 +266,8 @@ namespace MultiGame
         private System.Windows.Forms.Timer autoclicker;
         private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem passCodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openGameToolStripMenuItem1;
     }
 }
 
