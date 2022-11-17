@@ -10,8 +10,8 @@ namespace MultiGame
     {
         public static List<string> log = new List<string>();
         public static List<string> passcodes = new List<string> {"$sct"};
-        public static string endecode = "";
-        public static string username = "";
+        public static string endecode = "1234";
+        public static string username = "Player";
         public static bool clshown = false;
         public static bool fnfshown = false;
         public static bool logshown = false;
