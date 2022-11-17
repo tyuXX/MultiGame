@@ -22,7 +22,9 @@ namespace MultiGame
         public static bool changepasscodeshown = false;
         public static bool savegameshown = false;
         public static bool opengameshown = false;
+        public static bool gamesincshown = false;
         public static bool devmode = false;
+        public static bool cheat = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
         public static BigInteger money = 0;

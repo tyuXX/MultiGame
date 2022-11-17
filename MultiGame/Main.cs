@@ -28,6 +28,11 @@ namespace MultiGame
         private void tick_Tick(object sender, EventArgs e)
         {
             devToolStripMenuItem.Enabled = devmode;
+            if (cheat)
+            {
+                money += exponent(int.MaxValue * getmoney(), 100);
+                xp += exponent(int.MaxValue * getmoney(), 100);
+            }
             if (xp >= xpn)
             {
                 level++;
@@ -42,6 +47,8 @@ namespace MultiGame
             automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmult * getmoney());
             nameToolStripMenuItem.Text = "Name:" + username;
             passCodeToolStripMenuItem.Text = "PassCode:" + endecode;
+            generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
+            autoclicker.Interval = autoclickerinterval;
         }
 
         private void fNFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +164,33 @@ namespace MultiGame
                 Form fm = new Tools.OpenGame();
                 fm.MdiParent = this;
                 fm.Show();
+            }
+        }
+
+        private void gamesIncLevel50ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!gamesincshown)
+            {
+                if(level >= 50)
+                {
+                    gamesincshown = true;
+                    Form fm = new Games.GamesInc();
+                    fm.MdiParent = this;
+                    fm.Show();
+                }
+            }
+        }
+
+        private void moreMoneyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (cheat)
+            {
+                cheat = false;
+                moreMoneyToolStripMenuItem.Text = "More Money OFF";
+            }else
+            {
+                cheat = true;
+                moreMoneyToolStripMenuItem.Text = "More Money ON";
             }
         }
     }
