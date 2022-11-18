@@ -79,6 +79,7 @@ namespace MultiGame
             Thread th = new Thread(timerth);
             th.Name = "MultiGame Timer Thread";
             th.Start();
+            recalculatevars();
         }
 
         private void logToolStripMenuItem_Click(object sender, EventArgs e)

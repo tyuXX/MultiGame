@@ -43,22 +43,23 @@ namespace MultiGame.Games
             label4.Text = "Company Work Power:" + exponent(2, workers);
             label5.Text = "Company Work Power Neded:" + exponent(5, inventions);
             label6.Text = "Gain Per Second:" + (getmoney() * inventions * invested * 100);
-            button1.Text = "Hire Worker $" + (250 * (exponent(2, workers) + 1)) + " Outcome:" + 250 * (exponent(2, workers) + 1);
-            button2.Text = "Buy A Mini Company $" + (250 * (exponent(9, workers) + 1));
-            button3.Text = "Invest $" + (250 * (exponent(2, invested) + 1));
+            button1.Text = "Hire Worker $" + workersn + " Outcome:" + workersn;
+            button2.Text = "Buy A Mini Company $" + minicompaniesn;
+            button3.Text = "Invest $" + investedn;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (money >= 250 * (exponent(2, workers) + 1))
+            if (money >= workersn)
             {
                 log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Purchased worker now:" + workers);
-                outcome += 250 * (exponent(2, workers) + 1);
-                money -= 250 * (exponent(2, workers) + 1);
+                outcome += workersn;
+                money -= workersn;
+                workersn *= 2;
                 workers++;
                 label4.Text = "Company Work Power:" + exponent(2, workers);
                 label3.Text = "Company Workers:" + workers;
-                button1.Text = "Hire Worker $" + (250 * (exponent(2, workers) + 1)) + " Outcome:" + 250 * (exponent(2, workers) + 1);
+                button1.Text = "Hire Worker $" + workersn + " Outcome:" + workersn;
             }
         }
 
@@ -75,35 +76,38 @@ namespace MultiGame.Games
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (money >= 250 * (exponent(2, invested) + 1))
+            if (money >= investedn)
             {
                 log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Invested now:" + invested);
-                money -= 250 * (exponent(2, invested) + 1);
+                money -= investedn;
+                investedn *= 2;
                 invested++;
-                button3.Text = "Invest $" + (250 * (exponent(2, invested) + 1));
+                button3.Text = "Invest $" + investedn;
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (money >= 100 * (exponent(3, inventions) + 1))
+            if (money >= inventionsn)
             {
                 log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Invented a invention now:" + inventions);
-                money -= 100 * (exponent(3, inventions) + 1);
+                money -= inventionsn;
+                inventionsn *= 2;
                 inventions++;
-                button4.Text = "Invent Inventions $" + (250 * (exponent(3, inventions) + 1));
+                button4.Text = "Invent Inventions $" + inventionsn;
                 label5.Text = "Company Work Power Neded:" + exponent(5, inventions);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (money >= 250 * (exponent(9, minicompanies) + 1))
+            if (money >= minicompaniesn)
             {
                 log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Purchased a Mini Company now:" + minicompanies);
-                money -= 250 * (exponent(9, minicompanies) + 1);
+                money -= minicompaniesn;
+                minicompaniesn *= 9;
                 minicompanies++;
-                button2.Text = "Buy A Mini Company $" + (250 * (exponent(9, workers) + 1));
+                button2.Text = "Buy A Mini Company $" + minicompaniesn;
             }
         }
     }

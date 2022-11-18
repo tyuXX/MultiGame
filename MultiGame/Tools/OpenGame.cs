@@ -68,6 +68,7 @@ namespace MultiGame.Tools
                 try { minicompanies = BigInteger.Parse(decode(masterfile[34])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
                 try { companynetworth = BigInteger.Parse(decode(masterfile[35])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
                 try { invested = BigInteger.Parse(decode(masterfile[36])); } catch(Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file"); }
+                try { recalculatevars(); } catch (Exception) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at recalculating varirables"); }
             }
             else
             {
