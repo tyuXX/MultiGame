@@ -26,6 +26,7 @@ namespace MultiGame
 
         private void tick_Tick(object sender, EventArgs e)
         {
+            this.TopMost = alwaysontop;
             devToolStripMenuItem.Enabled = devmode;
             if (cheat)
             {
@@ -340,6 +341,20 @@ namespace MultiGame
             Form fm = new Boosts.GenerationBoost();
             fm.MdiParent = this;
             fm.Show();
+        }
+
+        private void alwaysOnTopONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (alwaysontop)
+            {
+                alwaysontop = false;
+                alwaysOnTopONToolStripMenuItem.Text = "Always On Top (OFF)";
+            }
+            else
+            {
+                alwaysontop = true;
+                alwaysOnTopONToolStripMenuItem.Text = "Always On Top (ON)";
+            }
         }
     }
 }

@@ -36,6 +36,8 @@ namespace MultiGame
             this.shopLevel5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fNFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gamesIncLevel50ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alwaysOnTopONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xP00ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,14 +63,14 @@ namespace MultiGame
             this.moreMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.forceMoneyBagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forceGenerationBoostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tick = new System.Windows.Forms.Timer(this.components);
             this.autoclicker = new System.Windows.Forms.Timer(this.components);
             this.companytick = new System.Windows.Forms.Timer(this.components);
             this.rngtick = new System.Windows.Forms.Timer(this.components);
             this.boosttimer = new System.Windows.Forms.Timer(this.components);
-            this.forceMoneyBagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.forceGenerationBoostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +79,7 @@ namespace MultiGame
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openGameToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.levelToolStripMenuItem,
             this.moneyToolStripMenuItem,
             this.devToolStripMenuItem});
@@ -124,6 +127,21 @@ namespace MultiGame
             this.gamesIncLevel50ToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.gamesIncLevel50ToolStripMenuItem.Text = "Games Inc. Level 50";
             this.gamesIncLevel50ToolStripMenuItem.Click += new System.EventHandler(this.gamesIncLevel50ToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alwaysOnTopONToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // alwaysOnTopONToolStripMenuItem
+            // 
+            this.alwaysOnTopONToolStripMenuItem.Name = "alwaysOnTopONToolStripMenuItem";
+            this.alwaysOnTopONToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.alwaysOnTopONToolStripMenuItem.Text = "Always On Top (OFF)";
+            this.alwaysOnTopONToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopONToolStripMenuItem_Click);
             // 
             // levelToolStripMenuItem
             // 
@@ -311,6 +329,25 @@ namespace MultiGame
             this.resetLevelToolStripMenuItem.Text = "Reset Level";
             this.resetLevelToolStripMenuItem.Click += new System.EventHandler(this.resetLevelToolStripMenuItem_Click);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(322, 6);
+            // 
+            // forceMoneyBagToolStripMenuItem
+            // 
+            this.forceMoneyBagToolStripMenuItem.Name = "forceMoneyBagToolStripMenuItem";
+            this.forceMoneyBagToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.forceMoneyBagToolStripMenuItem.Text = "Force Money Bag";
+            this.forceMoneyBagToolStripMenuItem.Click += new System.EventHandler(this.forceMoneyBagToolStripMenuItem_Click);
+            // 
+            // forceGenerationBoostToolStripMenuItem
+            // 
+            this.forceGenerationBoostToolStripMenuItem.Name = "forceGenerationBoostToolStripMenuItem";
+            this.forceGenerationBoostToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.forceGenerationBoostToolStripMenuItem.Text = "Force Generation Boost";
+            this.forceGenerationBoostToolStripMenuItem.Click += new System.EventHandler(this.forceGenerationBoostToolStripMenuItem_Click);
+            // 
             // tick
             // 
             this.tick.Enabled = true;
@@ -340,25 +377,6 @@ namespace MultiGame
             this.boosttimer.Enabled = true;
             this.boosttimer.Interval = 1000;
             this.boosttimer.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // forceMoneyBagToolStripMenuItem
-            // 
-            this.forceMoneyBagToolStripMenuItem.Name = "forceMoneyBagToolStripMenuItem";
-            this.forceMoneyBagToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.forceMoneyBagToolStripMenuItem.Text = "Force Money Bag";
-            this.forceMoneyBagToolStripMenuItem.Click += new System.EventHandler(this.forceMoneyBagToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(322, 6);
-            // 
-            // forceGenerationBoostToolStripMenuItem
-            // 
-            this.forceGenerationBoostToolStripMenuItem.Name = "forceGenerationBoostToolStripMenuItem";
-            this.forceGenerationBoostToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.forceGenerationBoostToolStripMenuItem.Text = "Force Generation Boost";
-            this.forceGenerationBoostToolStripMenuItem.Click += new System.EventHandler(this.forceGenerationBoostToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -421,6 +439,8 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem forceMoneyBagToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forceGenerationBoostToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alwaysOnTopONToolStripMenuItem;
     }
 }
 

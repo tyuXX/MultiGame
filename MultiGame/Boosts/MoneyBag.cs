@@ -7,7 +7,7 @@ namespace MultiGame.Boosts
 {
     public partial class MoneyBag : Form
     {
-        BigInteger time = rng.Next(1,60);
+        BigInteger time = rng.Next(1,30);
         BigInteger gift = rng.Next(1,30000) * getmoney();
         public MoneyBag()
         {
@@ -26,6 +26,7 @@ namespace MultiGame.Boosts
         private void button1_Click(object sender, EventArgs e)
         {
             money += gift;
+            xp += gift;
             this.Close();
         }
 

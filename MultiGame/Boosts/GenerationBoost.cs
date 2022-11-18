@@ -14,7 +14,7 @@ namespace MultiGame.Boosts
 {
     public partial class GenerationBoost : Form
     {
-        BigInteger time = rng.Next(1, 60);
+        BigInteger time = rng.Next(1, 30);
         BigInteger boosttime = rng.Next(1, 60);
         BigInteger boost = rng.Next(1, 777);
         public GenerationBoost()
@@ -24,8 +24,9 @@ namespace MultiGame.Boosts
 
         private void button1_Click(object sender, EventArgs e)
         {
-            boost1t = boosttime;
+            boost1t += boosttime;
             boost1 *= boost;
+            this.Close();
         }
 
         private void tick_Tick(object sender, EventArgs e)

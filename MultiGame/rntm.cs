@@ -29,6 +29,7 @@ namespace MultiGame
         public static bool devmode = false;
         public static bool cheat = false;
         public static bool companywork = false;
+        public static bool alwaysontop = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
         public static BigInteger autoclickerintervaln = 5000 * exponent(7, 1001 - autoclickerinterval);
