@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boosts\GenerationBoost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boosts\GenerationBoost.Designer.cs">
+      <DependentUpon>GenerationBoost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boosts\MoneyBag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boosts\MoneyBag.Designer.cs">
+      <DependentUpon>MoneyBag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Games\Clicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     <Compile Include="Tools\ToggleDevMode.Designer.cs">
       <DependentUpon>ToggleDevMode.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Boosts\GenerationBoost.resx">
+      <DependentUpon>GenerationBoost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boosts\MoneyBag.resx">
+      <DependentUpon>MoneyBag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Games\Clicker.resx">
       <DependentUpon>Clicker.cs</DependentUpon>
     </EmbeddedResource>

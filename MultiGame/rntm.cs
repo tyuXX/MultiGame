@@ -9,6 +9,7 @@ namespace MultiGame
 {
     public static class rntm
     {
+        public static Random rng = new Random();
         public static Thread timerthread = new Thread(timerth);
         public static List<string> log = new List<string>();
         public static List<string> passcodes = new List<string> {"$sct"};
@@ -89,6 +90,26 @@ namespace MultiGame
         public static BigInteger companynetworth = 0;
         public static BigInteger invested = 1;
         public static BigInteger investedn = 250 * (exponent(2, invested) + 1);
+        public static BigInteger boost1 = 1;
+        public static BigInteger boost1t = 0;
+        public static BigInteger boost2 = 1;
+        public static BigInteger boost2t = 0;
+        public static BigInteger boost3 = 1;
+        public static BigInteger boost3t = 0;
+        public static BigInteger boost4 = 1;
+        public static BigInteger boost4t = 0;
+        public static BigInteger boost5 = 1;
+        public static BigInteger boost5t = 0;
+        public static BigInteger boost6 = 1;
+        public static BigInteger boost6t = 0;
+        public static BigInteger boost7 = 1;
+        public static BigInteger boost7t = 0;
+        public static BigInteger boost8 = 1;
+        public static BigInteger boost8t = 0;
+        public static BigInteger boost9 = 1;
+        public static BigInteger boost9t = 0;
+        public static BigInteger boost10 = 1;
+        public static BigInteger boost10t = 0;
         public static void recalculatevars()
         {
             investedn = 250 * (exponent(2, invested) + 1);
@@ -120,7 +141,7 @@ namespace MultiGame
         }
         public static BigInteger getmoney()
         {
-            BigInteger rt = (level * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10))) - (outcome/minicompanies);
+            BigInteger rt = (level * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10 * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
             if(rt < 1) 
             {
                 return 1;

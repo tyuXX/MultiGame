@@ -64,6 +64,11 @@ namespace MultiGame
             this.tick = new System.Windows.Forms.Timer(this.components);
             this.autoclicker = new System.Windows.Forms.Timer(this.components);
             this.companytick = new System.Windows.Forms.Timer(this.components);
+            this.rngtick = new System.Windows.Forms.Timer(this.components);
+            this.boosttimer = new System.Windows.Forms.Timer(this.components);
+            this.forceMoneyBagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.forceGenerationBoostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,7 +248,10 @@ namespace MultiGame
             this.toolStripSeparator5,
             this.moreMoneyToolStripMenuItem,
             this.resetMoneyToolStripMenuItem,
-            this.resetLevelToolStripMenuItem});
+            this.resetLevelToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.forceMoneyBagToolStripMenuItem,
+            this.forceGenerationBoostToolStripMenuItem});
             this.devToolStripMenuItem.Name = "devToolStripMenuItem";
             this.devToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.devToolStripMenuItem.Text = "Dev";
@@ -321,6 +329,37 @@ namespace MultiGame
             this.companytick.Interval = 5000;
             this.companytick.Tick += new System.EventHandler(this.companytick_Tick);
             // 
+            // rngtick
+            // 
+            this.rngtick.Enabled = true;
+            this.rngtick.Interval = 3000;
+            this.rngtick.Tick += new System.EventHandler(this.rngtick_Tick);
+            // 
+            // boosttimer
+            // 
+            this.boosttimer.Enabled = true;
+            this.boosttimer.Interval = 1000;
+            this.boosttimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // forceMoneyBagToolStripMenuItem
+            // 
+            this.forceMoneyBagToolStripMenuItem.Name = "forceMoneyBagToolStripMenuItem";
+            this.forceMoneyBagToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.forceMoneyBagToolStripMenuItem.Text = "Force Money Bag";
+            this.forceMoneyBagToolStripMenuItem.Click += new System.EventHandler(this.forceMoneyBagToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(322, 6);
+            // 
+            // forceGenerationBoostToolStripMenuItem
+            // 
+            this.forceGenerationBoostToolStripMenuItem.Name = "forceGenerationBoostToolStripMenuItem";
+            this.forceGenerationBoostToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.forceGenerationBoostToolStripMenuItem.Text = "Force Generation Boost";
+            this.forceGenerationBoostToolStripMenuItem.Click += new System.EventHandler(this.forceGenerationBoostToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,6 +416,11 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem resetMoneyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetLevelToolStripMenuItem;
         private System.Windows.Forms.Timer companytick;
+        private System.Windows.Forms.Timer rngtick;
+        private System.Windows.Forms.Timer boosttimer;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem forceMoneyBagToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forceGenerationBoostToolStripMenuItem;
     }
 }
 

@@ -229,5 +229,117 @@ namespace MultiGame
         {
             timerthread.Abort();
         }
+
+        private void rngtick_Tick(object sender, EventArgs e)
+        {
+            if(rng.Next(0,300) == 299)
+            {
+                Form fm = new Boosts.MoneyBag();
+                fm.MdiParent = this;
+                fm.Show();
+            }if(rng.Next(0,600) == 599)
+            {
+                Form fm = new Boosts.GenerationBoost();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(boost1t > 0)
+            {
+                boost1t--;
+            }
+            else
+            {
+                boost1 = 1;
+            }
+            if(boost2t > 0)
+            {
+                boost2t--;
+            }
+            else
+            {
+                boost2 = 1;
+            }if(boost3t > 0)
+            {
+                boost3t--;
+            }
+            else
+            {
+                boost3 = 1;
+            }
+            if(boost4t > 0)
+            {
+                boost4t--;
+            }
+            else
+            {
+                boost4 = 1;
+            }
+            if(boost5t > 0)
+            {
+                boost5t--;
+            }
+            else
+            {
+                boost5 = 1;
+            }
+            if(boost6t > 0)
+            {
+                boost6t--;
+            }
+            else
+            {
+                boost6 = 1;
+            }
+            if(boost7t > 0)
+            {
+                boost7t--;
+            }
+            else
+            {
+                boost7 = 1;
+            }
+            if(boost8t > 0)
+            {
+                boost8t--;
+            }
+            else
+            {
+                boost8 = 1;
+            }
+            if(boost9t > 0)
+            {
+                boost9t--;
+            }
+            else
+            {
+                boost9 = 1;
+            }
+            if(boost10t > 0)
+            {
+                boost10t--;
+            }
+            else
+            {
+                boost10 = 1;
+            }
+        }
+
+        private void forceMoneyBagToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form fm = new Boosts.MoneyBag();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void forceGenerationBoostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form fm = new Boosts.GenerationBoost();
+            fm.MdiParent = this;
+            fm.Show();
+        }
     }
 }
