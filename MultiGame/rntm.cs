@@ -32,7 +32,7 @@ namespace MultiGame
         public static BigInteger generation = 1;
         public static BigInteger outcome = 0;
         public static BigInteger autogenmult = 0;
-        public static BigInteger level = 1;
+        public static BigInteger level = 0;
         public static BigInteger xp = 0;
         public static BigInteger xpn = 2;
         public static BigInteger add1 = 1;

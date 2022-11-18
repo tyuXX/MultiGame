@@ -207,5 +207,17 @@ namespace MultiGame
                 moreMoneyToolStripMenuItem.Text = "More Money ON";
             }
         }
+
+        private void resetMoneyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            money = 0;
+        }
+
+        private void resetLevelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            level = 0;
+            xp = 0;
+            xpn = 2;
+        }
     }
 }

@@ -91,7 +91,7 @@ namespace MultiGame.Games
                 log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Invented a invention now:" + inventions);
                 money -= 100 * (exponent(3, inventions) + 1);
                 inventions++;
-                button2.Text = "Invent Inventions $" + (250 * (exponent(3, inventions) + 1));
+                button4.Text = "Invent Inventions $" + (250 * (exponent(3, inventions) + 1));
                 label5.Text = "Company Work Power Neded:" + exponent(5, inventions);
             }
         }

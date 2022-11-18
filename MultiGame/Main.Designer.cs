@@ -39,28 +39,30 @@ namespace MultiGame
             this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xP00ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeSpent0SecondsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openGameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.moneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generation1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automaticGeneration0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.money0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generationPerClick1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.money0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleDevModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.moreMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tick = new System.Windows.Forms.Timer(this.components);
             this.autoclicker = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.moreMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.timeSpent0SecondsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,40 +138,56 @@ namespace MultiGame
             // levelToolStripMenuItem1
             // 
             this.levelToolStripMenuItem1.Name = "levelToolStripMenuItem1";
-            this.levelToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.levelToolStripMenuItem1.Size = new System.Drawing.Size(235, 26);
             this.levelToolStripMenuItem1.Text = "Level:";
             // 
             // xP00ToolStripMenuItem
             // 
             this.xP00ToolStripMenuItem.Name = "xP00ToolStripMenuItem";
-            this.xP00ToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.xP00ToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.xP00ToolStripMenuItem.Text = "XP:0/0";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(232, 6);
             // 
             // nameToolStripMenuItem
             // 
             this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
-            this.nameToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.nameToolStripMenuItem.Text = "Name:";
             this.nameToolStripMenuItem.Click += new System.EventHandler(this.nameToolStripMenuItem_Click);
             // 
             // passCodeToolStripMenuItem
             // 
             this.passCodeToolStripMenuItem.Name = "passCodeToolStripMenuItem";
-            this.passCodeToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.passCodeToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.passCodeToolStripMenuItem.Text = "PassCode";
             this.passCodeToolStripMenuItem.Click += new System.EventHandler(this.passCodeToolStripMenuItem_Click);
+            // 
+            // timeSpent0SecondsToolStripMenuItem
+            // 
+            this.timeSpent0SecondsToolStripMenuItem.Name = "timeSpent0SecondsToolStripMenuItem";
+            this.timeSpent0SecondsToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:0 seconds";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(232, 6);
             // 
             // saveGameToolStripMenuItem
             // 
             this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
-            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.saveGameToolStripMenuItem.Text = "SaveGame";
             this.saveGameToolStripMenuItem.Click += new System.EventHandler(this.saveGameToolStripMenuItem_Click);
             // 
             // openGameToolStripMenuItem1
             // 
             this.openGameToolStripMenuItem1.Name = "openGameToolStripMenuItem1";
-            this.openGameToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.openGameToolStripMenuItem1.Size = new System.Drawing.Size(235, 26);
             this.openGameToolStripMenuItem1.Text = "OpenGame";
             this.openGameToolStripMenuItem1.Click += new System.EventHandler(this.openGameToolStripMenuItem1_Click);
             // 
@@ -197,17 +215,22 @@ namespace MultiGame
             this.automaticGeneration0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:0";
             // 
-            // money0ToolStripMenuItem
-            // 
-            this.money0ToolStripMenuItem.Name = "money0ToolStripMenuItem";
-            this.money0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.money0ToolStripMenuItem.Text = "Money:0";
-            // 
             // generationPerClick1ToolStripMenuItem
             // 
             this.generationPerClick1ToolStripMenuItem.Name = "generationPerClick1ToolStripMenuItem";
             this.generationPerClick1ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:1";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(246, 6);
+            // 
+            // money0ToolStripMenuItem
+            // 
+            this.money0ToolStripMenuItem.Name = "money0ToolStripMenuItem";
+            this.money0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.money0ToolStripMenuItem.Text = "Money:0";
             // 
             // devToolStripMenuItem
             // 
@@ -217,7 +240,9 @@ namespace MultiGame
             this.logToolStripMenuItem,
             this.addLogToolStripMenuItem,
             this.toolStripSeparator5,
-            this.moreMoneyToolStripMenuItem});
+            this.moreMoneyToolStripMenuItem,
+            this.resetMoneyToolStripMenuItem,
+            this.resetLevelToolStripMenuItem});
             this.devToolStripMenuItem.Name = "devToolStripMenuItem";
             this.devToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.devToolStripMenuItem.Text = "Dev";
@@ -231,6 +256,11 @@ namespace MultiGame
             this.toggleDevModeToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
             this.toggleDevModeToolStripMenuItem.Text = "ToggleDevMode";
             this.toggleDevModeToolStripMenuItem.Click += new System.EventHandler(this.toggleDevModeToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(322, 6);
             // 
             // logToolStripMenuItem
             // 
@@ -246,6 +276,18 @@ namespace MultiGame
             this.addLogToolStripMenuItem.Text = "AddLog";
             this.addLogToolStripMenuItem.Click += new System.EventHandler(this.addLogToolStripMenuItem_Click);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(322, 6);
+            // 
+            // moreMoneyToolStripMenuItem
+            // 
+            this.moreMoneyToolStripMenuItem.Name = "moreMoneyToolStripMenuItem";
+            this.moreMoneyToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.moreMoneyToolStripMenuItem.Text = "More Money OFF";
+            this.moreMoneyToolStripMenuItem.Click += new System.EventHandler(this.moreMoneyToolStripMenuItem_Click);
+            // 
             // tick
             // 
             this.tick.Enabled = true;
@@ -258,43 +300,19 @@ namespace MultiGame
             this.autoclicker.Interval = 1000;
             this.autoclicker.Tick += new System.EventHandler(this.autoclicker_Tick);
             // 
-            // toolStripSeparator1
+            // resetMoneyToolStripMenuItem
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.resetMoneyToolStripMenuItem.Name = "resetMoneyToolStripMenuItem";
+            this.resetMoneyToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.resetMoneyToolStripMenuItem.Text = "Reset Money";
+            this.resetMoneyToolStripMenuItem.Click += new System.EventHandler(this.resetMoneyToolStripMenuItem_Click);
             // 
-            // toolStripSeparator2
+            // resetLevelToolStripMenuItem
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(246, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(322, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
-            // 
-            // moreMoneyToolStripMenuItem
-            // 
-            this.moreMoneyToolStripMenuItem.Name = "moreMoneyToolStripMenuItem";
-            this.moreMoneyToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.moreMoneyToolStripMenuItem.Text = "More Money OFF";
-            this.moreMoneyToolStripMenuItem.Click += new System.EventHandler(this.moreMoneyToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(322, 6);
-            // 
-            // timeSpent0SecondsToolStripMenuItem
-            // 
-            this.timeSpent0SecondsToolStripMenuItem.Name = "timeSpent0SecondsToolStripMenuItem";
-            this.timeSpent0SecondsToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:0 seconds";
+            this.resetLevelToolStripMenuItem.Name = "resetLevelToolStripMenuItem";
+            this.resetLevelToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.resetLevelToolStripMenuItem.Text = "Reset Level";
+            this.resetLevelToolStripMenuItem.Click += new System.EventHandler(this.resetLevelToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -348,6 +366,8 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem moreMoneyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timeSpent0SecondsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetMoneyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetLevelToolStripMenuItem;
     }
 }
 
