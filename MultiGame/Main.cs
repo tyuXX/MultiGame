@@ -28,6 +28,7 @@ namespace MultiGame
         {
             this.TopMost = alwaysontop;
             devToolStripMenuItem.Enabled = devmode;
+            autoupgrade.Enabled = automaticupgrade;
             if (cheat)
             {
                 money += exponent(int.MaxValue * getmoney(), 100);
@@ -354,6 +355,57 @@ namespace MultiGame
             {
                 alwaysontop = true;
                 alwaysOnTopONToolStripMenuItem.Text = "Always On Top (ON)";
+            }
+        }
+
+        private void autoupgrade_Tick(object sender, EventArgs e)
+        {
+            upadd1();
+            upadd2();
+            upadd3();
+            upadd4();
+            upadd5();
+            upadd6();
+            upadd7();
+            upadd8();
+            upadd9();
+            upadd10();
+            upmult1();
+            upmult2();
+            upmult3();
+            upmult4();
+            upmult5();
+            upmult6();
+            upmult7();
+            upmult8();
+            upmult9();
+            upmult10();
+            upautogenmult();
+            upautoclickerspeed();
+        }
+
+        private void shop2Level100ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!shop2shown)
+            {
+                if(level >= 100)
+                {
+                    shop2shown = true;
+                    Form fm = new Games.Shop2();
+                    fm.MdiParent = this;
+                    fm.Show();
+                }
+            }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!aboutshown)
+            {
+                aboutshown = true;
+                Form fm = new Tools.About();
+                fm.MdiParent = this;
+                fm.Show();
             }
         }
     }

@@ -21,16 +21,24 @@ namespace MultiGame.Boosts
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void collect()
         {
             boost1t += boosttime;
             boost1 *= boost;
             this.Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            collect();
+        }
+
         private void tick_Tick(object sender, EventArgs e)
         {
+            if (autocollectboosts)
+            {
+                collect();
+            }
             time--;
             if (time < 1)
             {

@@ -42,50 +42,7 @@ namespace MultiGame.Tools
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text))
-            {
-                string[] masterfile =
-                {
-                    encode(endecode),
-                    encode(username),
-                    encode(logupdateinterval.ToString()),
-                    encode(autoclickerinterval.ToString()),
-                    encode(money.ToString()),
-                    encode(generation.ToString()),
-                    encode(outcome.ToString()),
-                    encode(autogenmult.ToString()),
-                    encode(level.ToString()),
-                    encode(xp.ToString()),
-                    encode(xpn.ToString()),
-                    encode(add1.ToString()),
-                    encode(add2.ToString()),
-                    encode(add3.ToString()),
-                    encode(add4.ToString()),
-                    encode(add5.ToString()),
-                    encode(add6.ToString()),
-                    encode(add7.ToString()),
-                    encode(add8.ToString()),
-                    encode(add9.ToString()),
-                    encode(add10.ToString()),
-                    encode(mult1.ToString()),
-                    encode(mult2.ToString()),
-                    encode(mult3.ToString()),
-                    encode(mult4.ToString()),
-                    encode(mult5.ToString()),
-                    encode(mult6.ToString()),
-                    encode(mult7.ToString()),
-                    encode(mult8.ToString()),
-                    encode(mult9.ToString()),
-                    encode(mult10.ToString()),
-                    encode(timespent.ToString()),
-                    encode(workers.ToString()),
-                    encode(inventions.ToString()),
-                    encode(minicompanies.ToString()),
-                    encode(companynetworth.ToString()),
-                    encode(invested.ToString())
-                };
-                File.WriteAllLines(textBox1.Text,masterfile);
-            }
+            savegame(textBox1.Text);
         }
     }
 }

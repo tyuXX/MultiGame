@@ -71,6 +71,9 @@ namespace MultiGame
             this.companytick = new System.Windows.Forms.Timer(this.components);
             this.rngtick = new System.Windows.Forms.Timer(this.components);
             this.boosttimer = new System.Windows.Forms.Timer(this.components);
+            this.autoupgrade = new System.Windows.Forms.Timer(this.components);
+            this.shop2Level100ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +98,8 @@ namespace MultiGame
             this.clickerToolStripMenuItem,
             this.shopLevel5ToolStripMenuItem,
             this.fNFToolStripMenuItem,
-            this.gamesIncLevel50ToolStripMenuItem});
+            this.gamesIncLevel50ToolStripMenuItem,
+            this.shop2Level100ToolStripMenuItem});
             this.openGameToolStripMenuItem.Name = "openGameToolStripMenuItem";
             this.openGameToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.openGameToolStripMenuItem.Text = "Open Game";
@@ -131,7 +135,8 @@ namespace MultiGame
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alwaysOnTopONToolStripMenuItem});
+            this.alwaysOnTopONToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -378,6 +383,26 @@ namespace MultiGame
             this.boosttimer.Interval = 1000;
             this.boosttimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // autoupgrade
+            // 
+            this.autoupgrade.Enabled = true;
+            this.autoupgrade.Interval = 3000;
+            this.autoupgrade.Tick += new System.EventHandler(this.autoupgrade_Tick);
+            // 
+            // shop2Level100ToolStripMenuItem
+            // 
+            this.shop2Level100ToolStripMenuItem.Name = "shop2Level100ToolStripMenuItem";
+            this.shop2Level100ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.shop2Level100ToolStripMenuItem.Text = "Shop 2 Level 100";
+            this.shop2Level100ToolStripMenuItem.Click += new System.EventHandler(this.shop2Level100ToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -441,6 +466,9 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem forceGenerationBoostToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alwaysOnTopONToolStripMenuItem;
+        private System.Windows.Forms.Timer autoupgrade;
+        private System.Windows.Forms.ToolStripMenuItem shop2Level100ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

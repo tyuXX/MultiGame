@@ -63,269 +63,112 @@ namespace MultiGame.Games
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(money >= add1n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add1 now:" + add1);
-                money -= add1n;
-                add1n *= 2;
-                add1++;
-                updateshop();
-            }
+            upadd1();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (money >= add2n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add2 now:" + add2);
-                money -= add2n;
-                add2n *= 2;
-                add2++;
-                updateshop();
-            }
+            upadd2();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (money >= add3n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add3 now:" + add3);
-                money -= add3n;
-                add3n *= 2;
-                add3++;
-                updateshop();
-            }
+            upadd3();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (money >= add4n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add4 now:" + add4);
-                money -= add4n;
-                add4n *= 2;
-                add4++;
-                updateshop();
-            }
+            upadd4();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (money >= add5n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add1 now:" + add5);
-                money -= add5n;
-                add5n *= 2;
-                add5++;
-                updateshop();
-            }
+            upadd5();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (money >= add6n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add6 now:" + add6);
-                money -= add6n;
-                add6n *= 2;
-                add6++;
-                updateshop();
-            }
+            upadd6();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (money >= add7n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add7 now:" + add7);
-                money -= add7n;
-                add7n *= 2;
-                add7++;
-                updateshop();
-            }
+            upadd7();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (money >= add8n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add8 now:" + add8);
-                money -= add8n;
-                add8n *= 2;
-                add8++;
-                updateshop();
-            }
+            upadd8();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (money >= add9n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add9 now:" + add9);
-                money -= add9n;
-                add9n *= 2;
-                add9++;
-                updateshop();
-            }
+            upadd9();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (money >= add10n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased add10 now:" + add10);
-                money -= add10n;
-                add10n *= 2;
-                add10++;
-                updateshop();
-            }
+            upadd10();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            if (money >= mult1n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult1 now:" + mult1);
-                money -= mult1n;
-                mult1n *= 3;
-                mult1++;
-                updateshop();
-            }
+            upmult1();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            if (money >= mult2n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult2 now:" + mult2);
-                money -= mult2n;
-                mult2n *= 3;
-                mult2++;
-                updateshop();
-            }
+            upmult2();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            if (money >= mult3n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult3 now:" + mult3);
-                money -= mult3n;
-                mult3n *= 3;
-                mult3++;
-                updateshop();
-            }
+            upmult3();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (money >= mult4n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult4 now:" + mult4);
-                money -= mult4n;
-                mult4n *= 3;
-                mult4++;
-                updateshop();
-            }
+            upmult4();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            if (money >= mult5n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult5 now:" + mult5);
-                money -= mult5n;
-                mult5n *= 3;
-                mult5++;
-                updateshop();
-            }
+            upmult5();
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            if (money >= mult6n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult6 now:" + mult6);
-                money -= mult6n;
-                mult6n *= 3;
-                mult6++;
-                updateshop();
-            }
+            upmult6();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            if (money >= mult7n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult7 now:" + mult7);
-                money -= mult7n;
-                mult7n *= 3;
-                mult7++;
-                updateshop();
-            }
+            upmult7();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            if (money >= mult8n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult8 now:" + mult8);
-                money -= mult8n;
-                mult8n *= 3;
-                mult8++;
-                updateshop();
-            }
+            upmult8();
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            if (money >= mult9n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult9 now:" + mult9);
-                money -= mult9n;
-                mult9n *= 3;
-                mult9++;
-                updateshop();
-            }
+            upmult9();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            if (money >= mult10n)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult10 now:" + mult10);
-                money -= mult10n;
-                mult10n *= 3;
-                mult10++;
-                updateshop();
-            }
+            upmult10();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            if (money >= autogenmultn)
-            {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased mult10 now:" + autogenmult);
-                money -= autogenmultn;
-                autogenmultn *= 5;
-                autogenmult++;
-                updateshop();
-            }
+            upautogenmult();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            if (autoclickerinterval > 2)
-            {
-                if (money >= autoclickerintervaln)
-                {
-                    log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased autoclicker speed now:" + autoclickerinterval);
-                    money -= autoclickerintervaln;
-                    autoclickerintervaln *= 7;
-                    autoclickerinterval--;
-                    updateshop();
-                }
-            }
+            upautoclickerspeed();
         }
     }
 }

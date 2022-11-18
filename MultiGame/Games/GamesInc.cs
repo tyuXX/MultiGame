@@ -14,6 +14,7 @@ namespace MultiGame.Games
         private void GamesInc_FormClosing(object sender, FormClosingEventArgs e)
         {
             log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Form]{(Log)}Closing Form");
+            gamesincshown = false;
         }
 
         private void GamesInc_Load(object sender, EventArgs e)
