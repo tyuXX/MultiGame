@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using System.Threading;
 using System.Windows.Forms;
 using static MultiGame.rntm;
@@ -10,14 +11,6 @@ namespace MultiGame
         public Main()
         {
             InitializeComponent();
-        }
-        public void timerth()
-        {
-            while (true)
-            {
-                Thread.Sleep(999);
-                timespent++;
-            }
         }
 
         private void clickerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,9 +69,8 @@ namespace MultiGame
         {
             log.Add("[" + DateTime.Now + "][From:Internal/Main/Form]{(Log)}Opening Form");
             Thread.CurrentThread.Name = "Multigame Main Thread";
-            Thread th = new Thread(timerth);
-            th.Name = "MultiGame Timer Thread";
-            th.Start();
+            timerthread.Name = "MultiGame Timer Thread";
+            timerthread.Start();
             recalculatevars();
         }
 
@@ -216,6 +208,26 @@ namespace MultiGame
             level = 0;
             xp = 0;
             xpn = 2;
+        }
+
+        private void companytick_Tick(object sender, EventArgs e)
+        {
+            if (exponent(2, workers) >= exponent(5, inventions))
+            {
+                money += getmoney() * inventions * invested * 500;
+                companynetworth += getmoney() * inventions * 500;
+                xp += getmoney() * inventions * invested * 500;
+                companywork = true;
+            }
+            else
+            {
+                companywork = false;
+            }
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timerthread.Abort();
         }
     }
 }

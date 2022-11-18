@@ -1,12 +1,4 @@
-﻿using MultiGame.Tools;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 using static MultiGame.rntm;
 
@@ -33,7 +25,16 @@ namespace MultiGame.Games
         private void tick_Tick(object sender, EventArgs e)
         {
             label1.Text = "Company Name:" + username + "'s Company";
+            label2.Text = "Net Worth:" + companynetworth;
             label6.Text = "Gain Per Second:" + (getmoney() * inventions * invested * 100);
+            if (companywork)
+            {
+                label7.Text = "Status:Onboard";
+            }
+            else
+            {
+                label7.Text = "Status:Idle";
+            }
         }
         private void updatestore()
         {
@@ -60,17 +61,6 @@ namespace MultiGame.Games
                 label4.Text = "Company Work Power:" + exponent(2, workers);
                 label3.Text = "Company Workers:" + workers;
                 button1.Text = "Hire Worker $" + workersn + " Outcome:" + workersn;
-            }
-        }
-
-        private void companytick_Tick(object sender, EventArgs e)
-        {
-            if (exponent(2,workers) >= exponent(5,inventions))
-            {
-                money += getmoney() * inventions * invested * 500;
-                companynetworth += getmoney() * inventions * 500;
-                xp += getmoney() * inventions * invested * 500;
-                label2.Text = "Net Worth:" + companynetworth;
             }
         }
 
@@ -109,6 +99,11 @@ namespace MultiGame.Games
                 minicompanies++;
                 button2.Text = "Buy A Mini Company $" + minicompaniesn;
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

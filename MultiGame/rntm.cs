@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 
 namespace MultiGame
 {
     public static class rntm
     {
+        public static Thread timerthread = new Thread(timerth);
         public static List<string> log = new List<string>();
         public static List<string> passcodes = new List<string> {"$sct"};
         public static string endecode = "1234";
@@ -25,6 +27,7 @@ namespace MultiGame
         public static bool gamesincshown = false;
         public static bool devmode = false;
         public static bool cheat = false;
+        public static bool companywork = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
         public static BigInteger autoclickerintervaln = 5000 * exponent(7, 1001 - autoclickerinterval);
@@ -162,6 +165,14 @@ namespace MultiGame
                     byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
                     return UnicodeEncoding.Unicode.GetString(results);
                 }
+            }
+        }
+        public static void timerth()
+        {
+            while (true)
+            {
+                Thread.Sleep(999);
+                timespent++;
             }
         }
     }

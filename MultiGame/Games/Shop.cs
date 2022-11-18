@@ -7,6 +7,7 @@ namespace MultiGame.Games
 {
     public partial class Shop : Form
     {
+        Thread shopth;
         public Shop()
         {
             InitializeComponent();
@@ -20,10 +21,11 @@ namespace MultiGame.Games
 
         private void Shop_FormClosing(object sender, FormClosingEventArgs e)
         {
+            shopth.Abort();
             log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Form]{(Log)}Opening Form");
             shopshown = false;
         }
-        public void updateshop()
+        private void upshopth()
         {
             button1.Text = "Adder " + add1 + "\r\n$" + add1n;
             button2.Text = "Adder " + add2 + "\r\n$" + add2n;
@@ -47,6 +49,11 @@ namespace MultiGame.Games
             button20.Text = "Multipilier " + mult10 + "\r\n$" + mult10n;
             button21.Text = "Autoclickers " + autogenmult + "\r\n$" + autogenmultn;
             button22.Text = "Autoclicker Speed \r\n" + autoclickerinterval + "ms\r\n$" + autoclickerintervaln;
+        }
+        public void updateshop()
+        {
+            shopth = new Thread(upshopth);
+            shopth.Start();
         }
 
         private void tick_Tick(object sender, EventArgs e)

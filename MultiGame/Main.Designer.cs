@@ -63,6 +63,7 @@ namespace MultiGame
             this.resetLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tick = new System.Windows.Forms.Timer(this.components);
             this.autoclicker = new System.Windows.Forms.Timer(this.components);
+            this.companytick = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,28 +95,28 @@ namespace MultiGame
             // clickerToolStripMenuItem
             // 
             this.clickerToolStripMenuItem.Name = "clickerToolStripMenuItem";
-            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.clickerToolStripMenuItem.Text = "Clicker Level 0";
             this.clickerToolStripMenuItem.Click += new System.EventHandler(this.clickerToolStripMenuItem_Click);
             // 
             // shopLevel5ToolStripMenuItem
             // 
             this.shopLevel5ToolStripMenuItem.Name = "shopLevel5ToolStripMenuItem";
-            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
             this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
             // 
             // fNFToolStripMenuItem
             // 
             this.fNFToolStripMenuItem.Name = "fNFToolStripMenuItem";
-            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.fNFToolStripMenuItem.Text = "FNF Level 25";
             this.fNFToolStripMenuItem.Click += new System.EventHandler(this.fNFToolStripMenuItem_Click);
             // 
             // gamesIncLevel50ToolStripMenuItem
             // 
             this.gamesIncLevel50ToolStripMenuItem.Name = "gamesIncLevel50ToolStripMenuItem";
-            this.gamesIncLevel50ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gamesIncLevel50ToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.gamesIncLevel50ToolStripMenuItem.Text = "Games Inc. Level 50";
             this.gamesIncLevel50ToolStripMenuItem.Click += new System.EventHandler(this.gamesIncLevel50ToolStripMenuItem_Click);
             // 
@@ -314,6 +315,12 @@ namespace MultiGame
             this.autoclicker.Interval = 1000;
             this.autoclicker.Tick += new System.EventHandler(this.autoclicker_Tick);
             // 
+            // companytick
+            // 
+            this.companytick.Enabled = true;
+            this.companytick.Interval = 5000;
+            this.companytick.Tick += new System.EventHandler(this.companytick_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -325,6 +332,7 @@ namespace MultiGame
             this.Name = "Main";
             this.ShowIcon = false;
             this.Text = "Game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -368,6 +376,7 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem timeSpent0SecondsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetMoneyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetLevelToolStripMenuItem;
+        private System.Windows.Forms.Timer companytick;
     }
 }
 
