@@ -1,22 +1,24 @@
-﻿using MultiGame.Tools;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace MultiGame
 {
     public static class rntm
     {
+        public static Form mainform;
         public static Random rng = new Random();
         public static Thread timerthread = new Thread(timerth);
         public static List<string> log = new List<string>();
         public static List<string> passcodes = new List<string> {"$sct"};
         public static string endecode = "1234";
         public static string username = "Player";
+        public static bool[] advance = { false, false };
         public static bool clshown = false;
         public static bool fnfshown = false;
         public static bool logshown = false;
@@ -30,6 +32,8 @@ namespace MultiGame
         public static bool gamesincshown = false;
         public static bool shop2shown = false;
         public static bool aboutshown = false;
+        public static bool magicshown = false;
+        public static bool magicpowergeneratorshown = false;
         public static bool devmode = false;
         public static bool cheat = false;
         public static bool companywork = false;
@@ -117,6 +121,7 @@ namespace MultiGame
         public static BigInteger boost9t = 0;
         public static BigInteger boost10 = 1;
         public static BigInteger boost10t = 0;
+        public static BigInteger magicpower = 0;
         public static void recalculatevars()
         {
             investedn = 250 * (exponent(2, invested) + 1);

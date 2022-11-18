@@ -74,6 +74,9 @@ namespace MultiGame
             this.autoupgrade = new System.Windows.Forms.Timer(this.components);
             this.shop2Level100ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magicLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mp0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magicPowerGeneratorLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +102,9 @@ namespace MultiGame
             this.shopLevel5ToolStripMenuItem,
             this.fNFToolStripMenuItem,
             this.gamesIncLevel50ToolStripMenuItem,
-            this.shop2Level100ToolStripMenuItem});
+            this.shop2Level100ToolStripMenuItem,
+            this.magicLevel150ToolStripMenuItem,
+            this.magicPowerGeneratorLevel150ToolStripMenuItem});
             this.openGameToolStripMenuItem.Name = "openGameToolStripMenuItem";
             this.openGameToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.openGameToolStripMenuItem.Text = "Open Game";
@@ -192,7 +197,7 @@ namespace MultiGame
             // 
             this.passCodeToolStripMenuItem.Name = "passCodeToolStripMenuItem";
             this.passCodeToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.passCodeToolStripMenuItem.Text = "PassCode";
+            this.passCodeToolStripMenuItem.Text = "PassCode:";
             this.passCodeToolStripMenuItem.Click += new System.EventHandler(this.passCodeToolStripMenuItem_Click);
             // 
             // timeSpent0SecondsToolStripMenuItem
@@ -227,7 +232,8 @@ namespace MultiGame
             this.automaticGeneration0ToolStripMenuItem,
             this.generationPerClick1ToolStripMenuItem,
             this.toolStripSeparator2,
-            this.money0ToolStripMenuItem});
+            this.money0ToolStripMenuItem,
+            this.mp0ToolStripMenuItem});
             this.moneyToolStripMenuItem.Name = "moneyToolStripMenuItem";
             this.moneyToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.moneyToolStripMenuItem.Text = "Money";
@@ -403,6 +409,26 @@ namespace MultiGame
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // magicLevel150ToolStripMenuItem
+            // 
+            this.magicLevel150ToolStripMenuItem.Name = "magicLevel150ToolStripMenuItem";
+            this.magicLevel150ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.magicLevel150ToolStripMenuItem.Text = "Magic Level 150";
+            this.magicLevel150ToolStripMenuItem.Click += new System.EventHandler(this.magicLevel150ToolStripMenuItem_Click);
+            // 
+            // mp0ToolStripMenuItem
+            // 
+            this.mp0ToolStripMenuItem.Name = "mp0ToolStripMenuItem";
+            this.mp0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.mp0ToolStripMenuItem.Text = "Mp:0";
+            // 
+            // magicPowerGeneratorLevel150ToolStripMenuItem
+            // 
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Name = "magicPowerGeneratorLevel150ToolStripMenuItem";
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Text = "Magic Power Generator Level 150";
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Click += new System.EventHandler(this.magicPowerGeneratorLevel150ToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -469,6 +495,9 @@ namespace MultiGame
         private System.Windows.Forms.Timer autoupgrade;
         private System.Windows.Forms.ToolStripMenuItem shop2Level100ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem magicLevel150ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mp0ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem magicPowerGeneratorLevel150ToolStripMenuItem;
     }
 }
 

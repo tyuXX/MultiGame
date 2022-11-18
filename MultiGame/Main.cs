@@ -51,6 +51,7 @@ namespace MultiGame
             generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
             autoclicker.Interval = autoclickerinterval;
             timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:" + timespent + " seconds";
+            mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
         }
 
         private void fNFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,6 +70,7 @@ namespace MultiGame
 
         private void Main_Load(object sender, EventArgs e)
         {
+            mainform = this;
             log.Add("[" + DateTime.Now + "][From:Internal/Main/Form]{(Log)}Opening Form");
             Thread.CurrentThread.Name = "Multigame Main Thread";
             timerthread.Name = "MultiGame Timer Thread";
@@ -406,6 +408,34 @@ namespace MultiGame
                 Form fm = new Tools.About();
                 fm.MdiParent = this;
                 fm.Show();
+            }
+        }
+
+        private void magicLevel150ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!magicshown)
+            {
+                if(level >= 150)
+                {
+                    magicshown = true;
+                    Form fm = new Games.Magic();
+                    fm.MdiParent = this;
+                    fm.Show();
+                }
+            }
+        }
+
+        private void magicPowerGeneratorLevel150ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!magicpowergeneratorshown)
+            {
+                if (level >= 150)
+                {
+                    magicpowergeneratorshown = true;
+                    Form fm = new Games.MagicPowerGenerator();
+                    fm.MdiParent = this;
+                    fm.Show();
+                }
             }
         }
     }

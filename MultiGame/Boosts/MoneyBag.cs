@@ -7,8 +7,8 @@ namespace MultiGame.Boosts
 {
     public partial class MoneyBag : Form
     {
-        BigInteger time = rng.Next(1,30);
-        BigInteger gift = rng.Next(1,30000) * getmoney();
+        BigInteger time = 0;
+        BigInteger gift = 0;
         public MoneyBag()
         {
             InitializeComponent();
@@ -39,6 +39,8 @@ namespace MultiGame.Boosts
 
         private void MoneyBag_Load(object sender, EventArgs e)
         {
+            time = rng.Next(1, 30);
+            gift = rng.Next(1, 30000) * getmoney();
             label1.Text = "Money:" + gift;
         }
     }

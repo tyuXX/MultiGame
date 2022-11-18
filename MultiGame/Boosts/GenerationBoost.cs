@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MultiGame.rntm;
 
@@ -14,9 +7,9 @@ namespace MultiGame.Boosts
 {
     public partial class GenerationBoost : Form
     {
-        BigInteger time = rng.Next(1, 30);
-        BigInteger boosttime = rng.Next(1, 60);
-        BigInteger boost = rng.Next(1, 777);
+        BigInteger time = 0;
+        BigInteger boosttime = 0;
+        BigInteger boost = 0;
         public GenerationBoost()
         {
             InitializeComponent();
@@ -48,6 +41,9 @@ namespace MultiGame.Boosts
 
         private void GenerationBoost_Load(object sender, EventArgs e)
         {
+            time = rng.Next(1, 30);
+            boosttime = rng.Next(1, 60);
+            boost = rng.Next(1, 777);
             label1.Text = "Boost:x" + boost;
             label2.Text = "Time:" + boosttime;
         }
