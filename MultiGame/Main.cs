@@ -24,13 +24,10 @@ namespace MultiGame
         {
             if (!clshown)
             {
-                if(level >= 1)
-                {
-                    clshown = true;
-                    Form fm = new Games.Clicker();
-                    fm.MdiParent = this;
-                    fm.Show();
-                }
+                clshown = true;
+                Form fm = new Games.Clicker();
+                fm.MdiParent = this;
+                fm.Show();
             }
         }
 

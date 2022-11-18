@@ -59,10 +59,10 @@ namespace MultiGame
             this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.moreMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tick = new System.Windows.Forms.Timer(this.components);
-            this.autoclicker = new System.Windows.Forms.Timer(this.components);
             this.resetMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tick = new System.Windows.Forms.Timer(this.components);
+            this.autoclicker = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,28 +94,28 @@ namespace MultiGame
             // clickerToolStripMenuItem
             // 
             this.clickerToolStripMenuItem.Name = "clickerToolStripMenuItem";
-            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.clickerToolStripMenuItem.Text = "Clicker Level 1";
+            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clickerToolStripMenuItem.Text = "Clicker Level 0";
             this.clickerToolStripMenuItem.Click += new System.EventHandler(this.clickerToolStripMenuItem_Click);
             // 
             // shopLevel5ToolStripMenuItem
             // 
             this.shopLevel5ToolStripMenuItem.Name = "shopLevel5ToolStripMenuItem";
-            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
             this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
             // 
             // fNFToolStripMenuItem
             // 
             this.fNFToolStripMenuItem.Name = "fNFToolStripMenuItem";
-            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.fNFToolStripMenuItem.Text = "FNF Level 25";
             this.fNFToolStripMenuItem.Click += new System.EventHandler(this.fNFToolStripMenuItem_Click);
             // 
             // gamesIncLevel50ToolStripMenuItem
             // 
             this.gamesIncLevel50ToolStripMenuItem.Name = "gamesIncLevel50ToolStripMenuItem";
-            this.gamesIncLevel50ToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.gamesIncLevel50ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gamesIncLevel50ToolStripMenuItem.Text = "Games Inc. Level 50";
             this.gamesIncLevel50ToolStripMenuItem.Click += new System.EventHandler(this.gamesIncLevel50ToolStripMenuItem_Click);
             // 
@@ -288,18 +288,6 @@ namespace MultiGame
             this.moreMoneyToolStripMenuItem.Text = "More Money OFF";
             this.moreMoneyToolStripMenuItem.Click += new System.EventHandler(this.moreMoneyToolStripMenuItem_Click);
             // 
-            // tick
-            // 
-            this.tick.Enabled = true;
-            this.tick.Interval = 1;
-            this.tick.Tick += new System.EventHandler(this.tick_Tick);
-            // 
-            // autoclicker
-            // 
-            this.autoclicker.Enabled = true;
-            this.autoclicker.Interval = 1000;
-            this.autoclicker.Tick += new System.EventHandler(this.autoclicker_Tick);
-            // 
             // resetMoneyToolStripMenuItem
             // 
             this.resetMoneyToolStripMenuItem.Name = "resetMoneyToolStripMenuItem";
@@ -313,6 +301,18 @@ namespace MultiGame
             this.resetLevelToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
             this.resetLevelToolStripMenuItem.Text = "Reset Level";
             this.resetLevelToolStripMenuItem.Click += new System.EventHandler(this.resetLevelToolStripMenuItem_Click);
+            // 
+            // tick
+            // 
+            this.tick.Enabled = true;
+            this.tick.Interval = 1;
+            this.tick.Tick += new System.EventHandler(this.tick_Tick);
+            // 
+            // autoclicker
+            // 
+            this.autoclicker.Enabled = true;
+            this.autoclicker.Interval = 1000;
+            this.autoclicker.Tick += new System.EventHandler(this.autoclicker_Tick);
             // 
             // Main
             // 
