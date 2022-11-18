@@ -475,7 +475,8 @@ namespace MultiGame
                     encode(companynetworth.ToString()),
                     encode(invested.ToString()),
                     encode(autocollectboosts.ToString()),
-                    encode(automaticupgrade.ToString())
+                    encode(automaticupgrade.ToString()),
+                    encode(magicpower.ToString())
                 };
                 File.WriteAllLines(filepath, masterfile);
             }
@@ -526,6 +527,7 @@ namespace MultiGame
                 try { invested = BigInteger.Parse(decode(masterfile[36])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { autocollectboosts = bool.Parse(decode(masterfile[37])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { automaticupgrade = bool.Parse(decode(masterfile[38])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { magicpower = BigInteger.Parse(decode(masterfile[39])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { recalculatevars(); } catch (Exception) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at recalculating varirables"); }
             }
             else
