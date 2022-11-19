@@ -106,5 +106,18 @@ namespace MultiGame.Games
         {
 
         }
+
+        private void button5_Click( object sender, EventArgs e )
+        {
+            
+            if(MessageBox.Show("Are You Sure?","Reset Factory",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                minicompanies = 1;
+                invested = 1;
+                inventions = 0;
+                workers = 0;
+                recalculatevars();
+            }
+        }
     }
 }

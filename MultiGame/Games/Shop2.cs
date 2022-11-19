@@ -22,8 +22,18 @@ namespace MultiGame.Games
         {
             button1.Text = "Auto Upgrade $" + exponent(10, 20);
             button1.Text = "Auto Collect $" + exponent(10, 30);
-            button1.Enabled = !automaticupgrade;
-            button2.Enabled = !autocollectboosts;
+            if (automaticupgrade)
+            {
+                button1.Enabled = false;
+                button1.BackColor = Color.Gray;
+                button1.ForeColor = Color.Gray;
+            }
+            if (autocollectboosts)
+            {
+                button2.Enabled = false;
+                button2.BackColor = Color.Gray;
+                button2.ForeColor = Color.Gray;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,6 +42,7 @@ namespace MultiGame.Games
             {
                 money -= exponent(10, 20);
                 automaticupgrade = true;
+                updatestore2();
             }
         }
 
@@ -46,6 +57,7 @@ namespace MultiGame.Games
             {
                 money -= exponent(10, 30);
                 autocollectboosts = true;
+                updatestore2();
             }
         }
 

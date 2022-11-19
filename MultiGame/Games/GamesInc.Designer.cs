@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tick
@@ -60,7 +61,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(382, 13);
+            this.button1.Location = new System.Drawing.Point(15, 124);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 76);
             this.button1.TabIndex = 1;
@@ -79,7 +80,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(382, 95);
+            this.button2.Location = new System.Drawing.Point(180, 124);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 76);
             this.button2.TabIndex = 3;
@@ -89,7 +90,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(382, 177);
+            this.button3.Location = new System.Drawing.Point(345, 124);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(159, 76);
             this.button3.TabIndex = 4;
@@ -99,7 +100,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(382, 259);
+            this.button4.Location = new System.Drawing.Point(510, 124);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(159, 76);
             this.button4.TabIndex = 5;
@@ -153,11 +154,22 @@
             this.label7.Text = "Status:Onboard";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(561, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(110, 35);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Reset Factory";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // GamesInc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 364);
+            this.ClientSize = new System.Drawing.Size(683, 207);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -193,5 +205,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button5;
     }
 }
