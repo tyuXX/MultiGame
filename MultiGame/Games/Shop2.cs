@@ -48,7 +48,7 @@ namespace MultiGame.Games
 
         private void Shop2_Load(object sender, EventArgs e)
         {
-
+            updatestore2();
         }
 
         private void button2_Click(object sender, EventArgs e)
