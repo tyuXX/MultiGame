@@ -34,6 +34,7 @@ namespace MultiGame
         public static bool aboutshown = false;
         public static bool magicshown = false;
         public static bool magicpowergeneratorshown = false;
+        public static bool debugvarsshown = false;
         public static bool devmode = false;
         public static bool cheat = false;
         public static bool companywork = false;
@@ -122,6 +123,7 @@ namespace MultiGame
         public static BigInteger boost10 = 1;
         public static BigInteger boost10t = 0;
         public static BigInteger magicpower = 0;
+        public static World currentworld;
         public static void recalculatevars()
         {
             investedn = 250 * (exponent(2, invested) + 1);
@@ -153,7 +155,7 @@ namespace MultiGame
         }
         public static BigInteger getmoney()
         {
-            BigInteger rt = (level * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10 * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
+            BigInteger rt = (currentworld.mult * level * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10) * (mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10 * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
             if(rt < 1) 
             {
                 return 1;
@@ -476,7 +478,13 @@ namespace MultiGame
                     encode(invested.ToString()),
                     encode(autocollectboosts.ToString()),
                     encode(automaticupgrade.ToString()),
-                    encode(magicpower.ToString())
+                    encode(magicpower.ToString()),
+                    encode(currentworld.mult.ToString()),
+                    encode(currentworld.name.ToString()),
+                    encode(currentworld.population.ToString()),
+                    encode(currentworld.populationgrowth.ToString()),
+                    encode(currentworld.populationgrowthpercent.ToString()),
+                    encode(currentworld.mult.ToString()),
                 };
                 File.WriteAllLines(filepath, masterfile);
             }
@@ -528,6 +536,12 @@ namespace MultiGame
                 try { autocollectboosts = bool.Parse(decode(masterfile[37])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { automaticupgrade = bool.Parse(decode(masterfile[38])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { magicpower = BigInteger.Parse(decode(masterfile[39])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { currentworld.mult = BigInteger.Parse(decode(masterfile[39])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { currentworld.name = decode( masterfile[39] ); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { currentworld.population = BigInteger.Parse(decode( masterfile[39] )); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { currentworld.populationgrowth = BigInteger.Parse(decode( masterfile[39] )); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { currentworld.populationgrowthpercent = BigInteger.Parse(decode( masterfile[39] )); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { currentworld.mult = BigInteger.Parse(decode( masterfile[39] )); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { recalculatevars(); } catch (Exception) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at recalculating varirables"); }
             }
             else
@@ -535,5 +549,40 @@ namespace MultiGame
                 endecode = endest;
             }
         }
+        public static void newworld()
+        {
+            currentworld.name = "World";
+            if(level * 100 > int.MaxValue)
+            {
+                currentworld.populationgrowthpercent = rng.Next( 0, int.MaxValue );
+                currentworld.populationgrowth = rng.Next( 0, int.MaxValue );
+                currentworld.population = rng.Next( 0, int.MaxValue ) * rng.Next( 0, int.MaxValue );
+                
+            }
+            else
+            {
+                int icst = int.Parse( level.ToString() );
+                currentworld.populationgrowthpercent = rng.Next( 0, 100*icst );
+                currentworld.populationgrowth = rng.Next( 0, int.MaxValue );
+                currentworld.population = rng.Next( 0, int.MaxValue ) * rng.Next( 0, int.MaxValue );
+            }
+            if(level > int.MaxValue)
+            {
+                currentworld.mult = rng.Next(0,int.MaxValue);
+            }
+            else
+            {
+                int icst = int.Parse( level.ToString() );
+                currentworld.mult = rng.Next( 0, icst );
+            }
+        }
+    }
+    public struct World
+    {
+        public string name;
+        public BigInteger population;
+        public BigInteger populationgrowth;
+        public BigInteger populationgrowthpercent;
+        public BigInteger mult;
     }
 }

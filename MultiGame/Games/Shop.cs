@@ -7,7 +7,6 @@ namespace MultiGame.Games
 {
     public partial class Shop : Form
     {
-        Thread shopth;
         public Shop()
         {
             InitializeComponent();
@@ -21,7 +20,6 @@ namespace MultiGame.Games
 
         private void Shop_FormClosing(object sender, FormClosingEventArgs e)
         {
-            shopth.Abort();
             log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Form]{(Log)}Opening Form");
             shopshown = false;
         }
@@ -52,8 +50,7 @@ namespace MultiGame.Games
         }
         public void updateshop()
         {
-            shopth = new Thread(upshopth);
-            shopth.Start();
+            upshopth();
         }
 
         private void tick_Tick(object sender, EventArgs e)
@@ -64,111 +61,133 @@ namespace MultiGame.Games
         private void button1_Click(object sender, EventArgs e)
         {
             upadd1();
+            upshopth();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             upadd2();
+            upshopth();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             upadd3();
+            upshopth();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             upadd4();
+            upshopth();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             upadd5();
+            upshopth();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             upadd6();
+            upshopth();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             upadd7();
+            upshopth();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             upadd8();
+            upshopth();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             upadd9();
+            upshopth();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             upadd10();
+            upshopth();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             upmult1();
+            upshopth();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             upmult2();
+            upshopth();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             upmult3();
+            upshopth();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             upmult4();
+            upshopth();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
             upmult5();
+            upshopth();
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             upmult6();
+            upshopth();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
             upmult7();
+            upshopth();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
             upmult8();
+            upshopth();
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
             upmult9();
+            upshopth();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
             upmult10();
+            upshopth();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
             upautogenmult();
+            upshopth();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
             upautoclickerspeed();
+            upshopth();
         }
     }
 }

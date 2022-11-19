@@ -36,8 +36,12 @@ namespace MultiGame
             this.shopLevel5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fNFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gamesIncLevel50ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shop2Level100ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magicLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magicPowerGeneratorLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xP00ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +58,7 @@ namespace MultiGame
             this.generationPerClick1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.money0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mp0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleDevModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -72,11 +77,15 @@ namespace MultiGame
             this.rngtick = new System.Windows.Forms.Timer(this.components);
             this.boosttimer = new System.Windows.Forms.Timer(this.components);
             this.autoupgrade = new System.Windows.Forms.Timer(this.components);
-            this.shop2Level100ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.magicLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mp0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.magicPowerGeneratorLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugVarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.worldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.populationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.populationGrowthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.populationGrowthPercentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multipilierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.worldpop = new System.Windows.Forms.Timer(this.components);
+            this.newWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +96,7 @@ namespace MultiGame
             this.openGameToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.levelToolStripMenuItem,
+            this.worldToolStripMenuItem,
             this.moneyToolStripMenuItem,
             this.devToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -112,30 +122,51 @@ namespace MultiGame
             // clickerToolStripMenuItem
             // 
             this.clickerToolStripMenuItem.Name = "clickerToolStripMenuItem";
-            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.clickerToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
             this.clickerToolStripMenuItem.Text = "Clicker Level 0";
             this.clickerToolStripMenuItem.Click += new System.EventHandler(this.clickerToolStripMenuItem_Click);
             // 
             // shopLevel5ToolStripMenuItem
             // 
             this.shopLevel5ToolStripMenuItem.Name = "shopLevel5ToolStripMenuItem";
-            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.shopLevel5ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
             this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
             this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
             // 
             // fNFToolStripMenuItem
             // 
             this.fNFToolStripMenuItem.Name = "fNFToolStripMenuItem";
-            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.fNFToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
             this.fNFToolStripMenuItem.Text = "FNF Level 25";
             this.fNFToolStripMenuItem.Click += new System.EventHandler(this.fNFToolStripMenuItem_Click);
             // 
             // gamesIncLevel50ToolStripMenuItem
             // 
             this.gamesIncLevel50ToolStripMenuItem.Name = "gamesIncLevel50ToolStripMenuItem";
-            this.gamesIncLevel50ToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.gamesIncLevel50ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
             this.gamesIncLevel50ToolStripMenuItem.Text = "Games Inc. Level 50";
             this.gamesIncLevel50ToolStripMenuItem.Click += new System.EventHandler(this.gamesIncLevel50ToolStripMenuItem_Click);
+            // 
+            // shop2Level100ToolStripMenuItem
+            // 
+            this.shop2Level100ToolStripMenuItem.Name = "shop2Level100ToolStripMenuItem";
+            this.shop2Level100ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
+            this.shop2Level100ToolStripMenuItem.Text = "Shop 2 Level 100";
+            this.shop2Level100ToolStripMenuItem.Click += new System.EventHandler(this.shop2Level100ToolStripMenuItem_Click);
+            // 
+            // magicLevel150ToolStripMenuItem
+            // 
+            this.magicLevel150ToolStripMenuItem.Name = "magicLevel150ToolStripMenuItem";
+            this.magicLevel150ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
+            this.magicLevel150ToolStripMenuItem.Text = "Magic Level 150";
+            this.magicLevel150ToolStripMenuItem.Click += new System.EventHandler(this.magicLevel150ToolStripMenuItem_Click);
+            // 
+            // magicPowerGeneratorLevel150ToolStripMenuItem
+            // 
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Name = "magicPowerGeneratorLevel150ToolStripMenuItem";
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Text = "Magic Power Generator Level 150";
+            this.magicPowerGeneratorLevel150ToolStripMenuItem.Click += new System.EventHandler(this.magicPowerGeneratorLevel150ToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -152,6 +183,13 @@ namespace MultiGame
             this.alwaysOnTopONToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.alwaysOnTopONToolStripMenuItem.Text = "Always On Top (OFF)";
             this.alwaysOnTopONToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopONToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // levelToolStripMenuItem
             // 
@@ -267,6 +305,12 @@ namespace MultiGame
             this.money0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.money0ToolStripMenuItem.Text = "Money:0";
             // 
+            // mp0ToolStripMenuItem
+            // 
+            this.mp0ToolStripMenuItem.Name = "mp0ToolStripMenuItem";
+            this.mp0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.mp0ToolStripMenuItem.Text = "Mp:0";
+            // 
             // devToolStripMenuItem
             // 
             this.devToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -274,13 +318,16 @@ namespace MultiGame
             this.toolStripSeparator3,
             this.logToolStripMenuItem,
             this.addLogToolStripMenuItem,
+            this.debugVarsToolStripMenuItem,
             this.toolStripSeparator5,
             this.moreMoneyToolStripMenuItem,
             this.resetMoneyToolStripMenuItem,
             this.resetLevelToolStripMenuItem,
             this.toolStripSeparator6,
             this.forceMoneyBagToolStripMenuItem,
-            this.forceGenerationBoostToolStripMenuItem});
+            this.forceGenerationBoostToolStripMenuItem,
+            this.toolStripSeparator7,
+            this.newWorldToolStripMenuItem});
             this.devToolStripMenuItem.Name = "devToolStripMenuItem";
             this.devToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.devToolStripMenuItem.Text = "Dev";
@@ -395,39 +442,65 @@ namespace MultiGame
             this.autoupgrade.Interval = 3000;
             this.autoupgrade.Tick += new System.EventHandler(this.autoupgrade_Tick);
             // 
-            // shop2Level100ToolStripMenuItem
+            // debugVarsToolStripMenuItem
             // 
-            this.shop2Level100ToolStripMenuItem.Name = "shop2Level100ToolStripMenuItem";
-            this.shop2Level100ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.shop2Level100ToolStripMenuItem.Text = "Shop 2 Level 100";
-            this.shop2Level100ToolStripMenuItem.Click += new System.EventHandler(this.shop2Level100ToolStripMenuItem_Click);
+            this.debugVarsToolStripMenuItem.Name = "debugVarsToolStripMenuItem";
+            this.debugVarsToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.debugVarsToolStripMenuItem.Text = "Debug Vars";
+            this.debugVarsToolStripMenuItem.Click += new System.EventHandler(this.debugVarsToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem
+            // worldToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.worldToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.populationToolStripMenuItem,
+            this.populationGrowthToolStripMenuItem,
+            this.populationGrowthPercentToolStripMenuItem,
+            this.multipilierToolStripMenuItem});
+            this.worldToolStripMenuItem.Name = "worldToolStripMenuItem";
+            this.worldToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.worldToolStripMenuItem.Text = "World";
             // 
-            // magicLevel150ToolStripMenuItem
+            // populationToolStripMenuItem
             // 
-            this.magicLevel150ToolStripMenuItem.Name = "magicLevel150ToolStripMenuItem";
-            this.magicLevel150ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.magicLevel150ToolStripMenuItem.Text = "Magic Level 150";
-            this.magicLevel150ToolStripMenuItem.Click += new System.EventHandler(this.magicLevel150ToolStripMenuItem_Click);
+            this.populationToolStripMenuItem.Name = "populationToolStripMenuItem";
+            this.populationToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.populationToolStripMenuItem.Text = "Population:";
             // 
-            // mp0ToolStripMenuItem
+            // populationGrowthToolStripMenuItem
             // 
-            this.mp0ToolStripMenuItem.Name = "mp0ToolStripMenuItem";
-            this.mp0ToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.mp0ToolStripMenuItem.Text = "Mp:0";
+            this.populationGrowthToolStripMenuItem.Name = "populationGrowthToolStripMenuItem";
+            this.populationGrowthToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.populationGrowthToolStripMenuItem.Text = "PopulationGrowth:";
             // 
-            // magicPowerGeneratorLevel150ToolStripMenuItem
+            // populationGrowthPercentToolStripMenuItem
             // 
-            this.magicPowerGeneratorLevel150ToolStripMenuItem.Name = "magicPowerGeneratorLevel150ToolStripMenuItem";
-            this.magicPowerGeneratorLevel150ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
-            this.magicPowerGeneratorLevel150ToolStripMenuItem.Text = "Magic Power Generator Level 150";
-            this.magicPowerGeneratorLevel150ToolStripMenuItem.Click += new System.EventHandler(this.magicPowerGeneratorLevel150ToolStripMenuItem_Click);
+            this.populationGrowthPercentToolStripMenuItem.Name = "populationGrowthPercentToolStripMenuItem";
+            this.populationGrowthPercentToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.populationGrowthPercentToolStripMenuItem.Text = "PopulationGrowthPercent:";
+            // 
+            // multipilierToolStripMenuItem
+            // 
+            this.multipilierToolStripMenuItem.Name = "multipilierToolStripMenuItem";
+            this.multipilierToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.multipilierToolStripMenuItem.Text = "Multipilier:";
+            // 
+            // worldpop
+            // 
+            this.worldpop.Enabled = true;
+            this.worldpop.Interval = 1000;
+            this.worldpop.Tick += new System.EventHandler(this.worldpop_Tick);
+            // 
+            // newWorldToolStripMenuItem
+            // 
+            this.newWorldToolStripMenuItem.Name = "newWorldToolStripMenuItem";
+            this.newWorldToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.newWorldToolStripMenuItem.Text = "New World";
+            this.newWorldToolStripMenuItem.Click += new System.EventHandler(this.newWorldToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(322, 6);
             // 
             // Main
             // 
@@ -498,6 +571,15 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem magicLevel150ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mp0ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem magicPowerGeneratorLevel150ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem debugVarsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem worldToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem populationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem populationGrowthToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem populationGrowthPercentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multipilierToolStripMenuItem;
+        private System.Windows.Forms.Timer worldpop;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem newWorldToolStripMenuItem;
     }
 }
 

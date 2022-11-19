@@ -29,5 +29,10 @@ namespace Testing
         {
             Visualizer1.TestShowVisualizer(money);
         }
+
+        private void button3_Click( object sender, EventArgs e )
+        {
+
+        }
     }
 }

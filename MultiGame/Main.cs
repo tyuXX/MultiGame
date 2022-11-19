@@ -52,6 +52,10 @@ namespace MultiGame
             autoclicker.Interval = autoclickerinterval;
             timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:" + timespent + " seconds";
             mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
+            populationToolStripMenuItem.Text = "Population:" + currentworld.population;
+            populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
+            populationGrowthPercentToolStripMenuItem.Text = "PopulationGrowthPercent:" + currentworld.populationgrowthpercent;
+            multipilierToolStripMenuItem.Text = "Multipilier:" + currentworld.mult;
         }
 
         private void fNFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +74,11 @@ namespace MultiGame
 
         private void Main_Load(object sender, EventArgs e)
         {
+            currentworld.name = "World";
+            currentworld.populationgrowthpercent = rng.Next(0,100);
+            currentworld.populationgrowth = rng.Next(0,int.MaxValue);
+            currentworld.population = rng.Next(0,int.MaxValue) * rng.Next( 0, int.MaxValue );
+            currentworld.mult = rng.Next(1,3);
             mainform = this;
             log.Add("[" + DateTime.Now + "][From:Internal/Main/Form]{(Log)}Opening Form");
             Thread.CurrentThread.Name = "Multigame Main Thread";
@@ -218,9 +227,9 @@ namespace MultiGame
         {
             if (exponent(2, workers) >= exponent(5, inventions))
             {
-                money += getmoney() * inventions * invested * 500;
-                companynetworth += getmoney() * inventions * 500;
-                xp += getmoney() * inventions * invested * 500;
+                money += getmoney() * inventions * invested * 500 * ((currentworld.population/100000000) + 1);
+                companynetworth += getmoney() * inventions * 500 * ((currentworld.population / 100000000) + 1);
+                xp += getmoney() * inventions * invested * 500 * ((currentworld.population / 100000000) + 1);
                 companywork = true;
             }
             else
@@ -437,6 +446,31 @@ namespace MultiGame
                     fm.Show();
                 }
             }
+        }
+
+        private void debugVarsToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            if (!debugvarsshown)
+            {
+                debugvarsshown = true;
+                Form fm = new Tools.DebugVars();
+                fm.MdiParent = this;
+                fm.Show();
+            }
+        }
+
+        private void worldpop_Tick( object sender, EventArgs e )
+        {
+            if(currentworld.population < 1)
+            {
+                currentworld.population = 1;
+            }
+            currentworld.population += currentworld.populationgrowth;
+        }
+
+        private void newWorldToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            newworld();
         }
     }
 }
