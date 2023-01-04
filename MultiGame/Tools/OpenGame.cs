@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Numerics;
 using System.Windows.Forms;
 using static MultiGame.rntm;
 
@@ -26,13 +24,13 @@ namespace MultiGame.Tools
 
         private void button2_Click(object sender, EventArgs e)
         {
-            opengame(textBox1.Text,textBox2.Text);
+            opengame(textBox1.Text, textBox2.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "Open Save File For MultiGame";
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = openFileDialog1.FileName;
             }

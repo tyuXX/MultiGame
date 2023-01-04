@@ -28,10 +28,6 @@ namespace MultiGame.Boosts
 
         private void tick_Tick(object sender, EventArgs e)
         {
-            if (autocollectboosts)
-            {
-                collect();
-            }
             time--;
             if (time < 1)
             {
@@ -46,6 +42,15 @@ namespace MultiGame.Boosts
             boost = rng.Next(1, 777);
             label1.Text = "Boost:x" + boost;
             label2.Text = "Time:" + boosttime;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (autocollectboosts)
+            {
+                timer1.Enabled = false;
+                collect();
+            }
         }
     }
 }

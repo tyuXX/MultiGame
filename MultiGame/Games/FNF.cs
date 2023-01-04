@@ -27,7 +27,7 @@ namespace MultiGame.Games
         }
         public void newnote()
         {
-            switch (rng.Next(1,5))
+            switch (rng.Next(1, 5))
             {
                 case 1:
                     {
@@ -244,7 +244,7 @@ namespace MultiGame.Games
 
         private void SpeedTick_Tick(object sender, EventArgs e)
         {
-            if(misses > 10)
+            if (misses > 10)
             {
                 money += 100 * rigths * hardness * getmoney();
                 xp += rigths * hardness * getmoney();

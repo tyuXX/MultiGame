@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MultiGame.rntm;
 
@@ -22,7 +15,7 @@ namespace MultiGame.Tools
         {
             foreach (string str in passcodes)
             {
-                if(str == textBox1.Text)
+                if (str == textBox1.Text)
                 {
                     if (devmode)
                     {

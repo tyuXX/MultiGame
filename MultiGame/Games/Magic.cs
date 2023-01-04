@@ -13,7 +13,7 @@ namespace MultiGame.Games
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(magicpower >= 50)
+            if (magicpower >= 50)
             {
                 magicpower -= 50;
                 Form fm = new Boosts.MoneyBag();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static MultiGame.rntm;
 
 namespace MultiGame
 {
@@ -10,7 +11,8 @@ namespace MultiGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            mainform = new Main();
+            Application.Run(mainform);
         }
     }
 }

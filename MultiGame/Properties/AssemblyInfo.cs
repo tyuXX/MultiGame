@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Bir bütünleştirilmiş koda ilişkin Genel Bilgiler aşağıdaki öznitelikler kümesiyle
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
 [assembly: AssemblyTitle("MultiGame")]
-[assembly: AssemblyDescription("Games")]
+[assembly: AssemblyDescription("A Game Where Multiple Games Are Connected To Produce Money")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Gs-Distance")]
 [assembly: AssemblyProduct("MultiGame")]

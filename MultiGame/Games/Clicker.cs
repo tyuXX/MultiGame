@@ -30,7 +30,14 @@ namespace MultiGame.Games
 
         private void tick_Tick(object sender, EventArgs e)
         {
-            label1.Text = "Money:" + money;
+            if (formatnums)
+            {
+                label1.Text = "Money:" + FormatBigNum(money);
+            }
+            else
+            {
+                label1.Text = "Money:" + money;
+            }
         }
     }
 }

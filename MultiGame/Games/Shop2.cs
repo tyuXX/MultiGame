@@ -1,12 +1,5 @@
-﻿using MultiGame.Boosts;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MultiGame.rntm;
 
@@ -20,8 +13,16 @@ namespace MultiGame.Games
         }
         private void updatestore2()
         {
-            button1.Text = "Auto Upgrade $" + exponent(10, 20);
-            button1.Text = "Auto Collect $" + exponent(10, 30);
+            if (formatnums)
+            {
+                button1.Text = "Auto Upgrade $" + FormatBigNum(exponent(10, 20));
+                button2.Text = "Auto Collect $" + FormatBigNum(exponent(10, 30));
+            }
+            else
+            {
+                button1.Text = "Auto Upgrade $" + exponent(10, 20);
+                button2.Text = "Auto Collect $" + exponent(10, 30);
+            }
             if (automaticupgrade)
             {
                 button1.Enabled = false;
@@ -38,7 +39,7 @@ namespace MultiGame.Games
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(money >= exponent(10,20)) 
+            if (money >= exponent(10, 20))
             {
                 money -= exponent(10, 20);
                 automaticupgrade = true;

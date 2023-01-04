@@ -17,7 +17,14 @@ namespace MultiGame.Games
         }
         private void updatestoresc()
         {
-            button1.Text = "Create Magic Power $" + (1000*getmoney());
+            if (formatnums)
+            {
+                button1.Text = "Create Magic Power $" + FormatBigNum(1000 * getmoney());
+            }
+            else
+            {
+                button1.Text = "Create Magic Power $" + (1000 * getmoney());
+            }
         }
 
         private void MagicPowerGenerator_FormClosing(object sender, FormClosingEventArgs e)
@@ -27,7 +34,7 @@ namespace MultiGame.Games
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(money >= (1000 * getmoney()))
+            if (money >= (1000 * getmoney()))
             {
                 magicpower++;
                 money -= 1000 * getmoney();

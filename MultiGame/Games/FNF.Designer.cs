@@ -62,7 +62,8 @@ namespace MultiGame.Games
             this.controlsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(460, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(345, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,14 +75,14 @@ namespace MultiGame.Games
             this.upToolStripMenuItem,
             this.downToolStripMenuItem});
             this.controlsToolStripMenuItem.Name = "controlsToolStripMenuItem";
-            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.controlsToolStripMenuItem.Text = "Controls";
             // 
             // leftToolStripMenuItem
             // 
             this.leftToolStripMenuItem.Name = "leftToolStripMenuItem";
             this.leftToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.leftToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.leftToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.leftToolStripMenuItem.Text = "Left";
             this.leftToolStripMenuItem.Click += new System.EventHandler(this.leftToolStripMenuItem_Click);
             // 
@@ -89,7 +90,7 @@ namespace MultiGame.Games
             // 
             this.rightToolStripMenuItem.Name = "rightToolStripMenuItem";
             this.rightToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.rightToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.rightToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.rightToolStripMenuItem.Text = "Right";
             this.rightToolStripMenuItem.Click += new System.EventHandler(this.rightToolStripMenuItem_Click);
             // 
@@ -97,7 +98,7 @@ namespace MultiGame.Games
             // 
             this.upToolStripMenuItem.Name = "upToolStripMenuItem";
             this.upToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.upToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.upToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.upToolStripMenuItem.Text = "Up";
             this.upToolStripMenuItem.Click += new System.EventHandler(this.upToolStripMenuItem_Click);
             // 
@@ -105,7 +106,7 @@ namespace MultiGame.Games
             // 
             this.downToolStripMenuItem.Name = "downToolStripMenuItem";
             this.downToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.downToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.downToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.downToolStripMenuItem.Text = "Down";
             this.downToolStripMenuItem.Click += new System.EventHandler(this.downToolStripMenuItem_Click);
             // 
@@ -115,9 +116,10 @@ namespace MultiGame.Games
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(12, 33);
+            this.button1.Location = new System.Drawing.Point(9, 27);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 62);
+            this.button1.Size = new System.Drawing.Size(63, 50);
             this.button1.TabIndex = 1;
             this.button1.Text = "←";
             this.button1.UseVisualStyleBackColor = false;
@@ -129,9 +131,10 @@ namespace MultiGame.Games
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(96, 33);
+            this.button2.Location = new System.Drawing.Point(72, 27);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 62);
+            this.button2.Size = new System.Drawing.Size(58, 50);
             this.button2.TabIndex = 2;
             this.button2.Text = "↑";
             this.button2.UseVisualStyleBackColor = false;
@@ -143,9 +146,10 @@ namespace MultiGame.Games
             this.button3.AutoSize = true;
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(180, 33);
+            this.button3.Location = new System.Drawing.Point(135, 27);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 62);
+            this.button3.Size = new System.Drawing.Size(58, 50);
             this.button3.TabIndex = 3;
             this.button3.Text = "↓";
             this.button3.UseVisualStyleBackColor = false;
@@ -157,9 +161,10 @@ namespace MultiGame.Games
             this.button4.AutoSize = true;
             this.button4.BackColor = System.Drawing.Color.Red;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.Location = new System.Drawing.Point(264, 33);
+            this.button4.Location = new System.Drawing.Point(198, 27);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 62);
+            this.button4.Size = new System.Drawing.Size(63, 50);
             this.button4.TabIndex = 4;
             this.button4.Text = "→";
             this.button4.UseVisualStyleBackColor = false;
@@ -171,9 +176,10 @@ namespace MultiGame.Games
             this.button5.AutoSize = true;
             this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.Location = new System.Drawing.Point(96, 101);
+            this.button5.Location = new System.Drawing.Point(72, 82);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 62);
+            this.button5.Size = new System.Drawing.Size(58, 50);
             this.button5.TabIndex = 5;
             this.button5.UseVisualStyleBackColor = false;
             // 
@@ -183,9 +189,10 @@ namespace MultiGame.Games
             this.button6.AutoSize = true;
             this.button6.BackColor = System.Drawing.SystemColors.Highlight;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button6.Location = new System.Drawing.Point(12, 101);
+            this.button6.Location = new System.Drawing.Point(9, 82);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(78, 62);
+            this.button6.Size = new System.Drawing.Size(58, 50);
             this.button6.TabIndex = 6;
             this.button6.UseVisualStyleBackColor = false;
             // 
@@ -198,9 +205,10 @@ namespace MultiGame.Games
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(389, 34);
+            this.label1.Location = new System.Drawing.Point(292, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 16);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Rights:";
             // 
@@ -208,9 +216,10 @@ namespace MultiGame.Games
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(389, 51);
+            this.label2.Location = new System.Drawing.Point(292, 41);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 16);
+            this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Misses:";
             // 
@@ -224,9 +233,10 @@ namespace MultiGame.Games
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button7.BackColor = System.Drawing.Color.Lime;
-            this.button7.Location = new System.Drawing.Point(15, 34);
+            this.button7.Location = new System.Drawing.Point(11, 28);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 61);
+            this.button7.Size = new System.Drawing.Size(56, 50);
             this.button7.TabIndex = 9;
             this.button7.Text = "Easy";
             this.button7.UseVisualStyleBackColor = false;
@@ -236,9 +246,10 @@ namespace MultiGame.Games
             // 
             this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button8.BackColor = System.Drawing.Color.Aqua;
-            this.button8.Location = new System.Drawing.Point(98, 34);
+            this.button8.Location = new System.Drawing.Point(74, 28);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 61);
+            this.button8.Size = new System.Drawing.Size(56, 50);
             this.button8.TabIndex = 10;
             this.button8.Text = "Normal";
             this.button8.UseVisualStyleBackColor = false;
@@ -248,9 +259,10 @@ namespace MultiGame.Games
             // 
             this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button9.BackColor = System.Drawing.Color.Blue;
-            this.button9.Location = new System.Drawing.Point(182, 33);
+            this.button9.Location = new System.Drawing.Point(136, 27);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 61);
+            this.button9.Size = new System.Drawing.Size(56, 50);
             this.button9.TabIndex = 11;
             this.button9.Text = "Medium";
             this.button9.UseVisualStyleBackColor = false;
@@ -260,9 +272,10 @@ namespace MultiGame.Games
             // 
             this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button10.Location = new System.Drawing.Point(266, 34);
+            this.button10.Location = new System.Drawing.Point(200, 28);
+            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 61);
+            this.button10.Size = new System.Drawing.Size(56, 50);
             this.button10.TabIndex = 12;
             this.button10.Text = "Hard";
             this.button10.UseVisualStyleBackColor = false;
@@ -272,9 +285,10 @@ namespace MultiGame.Games
             // 
             this.button11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button11.BackColor = System.Drawing.Color.Red;
-            this.button11.Location = new System.Drawing.Point(347, 34);
+            this.button11.Location = new System.Drawing.Point(260, 28);
+            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 61);
+            this.button11.Size = new System.Drawing.Size(56, 50);
             this.button11.TabIndex = 13;
             this.button11.Text = "Very Hard";
             this.button11.UseVisualStyleBackColor = false;
@@ -284,9 +298,10 @@ namespace MultiGame.Games
             // 
             this.button12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button12.Location = new System.Drawing.Point(98, 100);
+            this.button12.Location = new System.Drawing.Point(74, 81);
+            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(244, 61);
+            this.button12.Size = new System.Drawing.Size(183, 50);
             this.button12.TabIndex = 14;
             this.button12.Text = "INSANE";
             this.button12.UseVisualStyleBackColor = false;
@@ -294,9 +309,9 @@ namespace MultiGame.Games
             // 
             // FNF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 190);
+            this.ClientSize = new System.Drawing.Size(345, 154);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -313,6 +328,7 @@ namespace MultiGame.Games
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FNF";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

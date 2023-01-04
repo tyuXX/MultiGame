@@ -24,7 +24,7 @@ namespace MultiGame.Tools
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == endecode)
+            if (textBox1.Text == endecode)
             {
                 endecode = textBox2.Text;
                 this.Close();

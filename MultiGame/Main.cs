@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection.Emit;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using static MultiGame.rntm;
@@ -41,19 +41,34 @@ namespace MultiGame
                 xp -= xpn;
                 xpn *= 2;
             }
-            xP00ToolStripMenuItem.Text = "XP:" + xp + "/" + xpn;
-            levelToolStripMenuItem1.Text = "Level:" + level;
-            money0ToolStripMenuItem.Text = "Money:" + money;
-            generation1ToolStripMenuItem.Text = "Generation:" + generation;
-            automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmult * getmoney());
+            if (formatnums)
+            {
+                xP00ToolStripMenuItem.Text = "XP:" + FormatBigNum(xp) + "/" + FormatBigNum(xpn);
+                money0ToolStripMenuItem.Text = "Money:" + FormatBigNum(money);
+                levelToolStripMenuItem1.Text = "Level:" + FormatBigNum(level);
+                generation1ToolStripMenuItem.Text = "Generation:" + FormatBigNum(generation);
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + FormatBigNum(autogenmult * getmoney());
+                generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + FormatBigNum(getmoney());
+                populationToolStripMenuItem.Text = "Population:" + FormatBigNum(currentworld.population);
+                populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + FormatBigNum(currentworld.populationgrowth);
+            }
+            else
+            {
+                xP00ToolStripMenuItem.Text = "XP:" + xp + "/" + xpn;
+                money0ToolStripMenuItem.Text = "Money:" + money;
+                levelToolStripMenuItem1.Text = "Level:" + level;
+                generation1ToolStripMenuItem.Text = "Generation:" + generation;
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmult * getmoney());
+                generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
+                populationToolStripMenuItem.Text = "Population:" + currentworld.population;
+                populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
+            }
             nameToolStripMenuItem.Text = "Name:" + username;
             passCodeToolStripMenuItem.Text = "PassCode:" + endecode;
-            generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
             autoclicker.Interval = autoclickerinterval;
+            autoupgrade.Interval = autoupgradeinterval;
             timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:" + timespent + " seconds";
             mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
-            populationToolStripMenuItem.Text = "Population:" + currentworld.population;
-            populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
             populationGrowthPercentToolStripMenuItem.Text = "PopulationGrowthPercent:" + currentworld.populationgrowthpercent;
             multipilierToolStripMenuItem.Text = "Multipilier:" + currentworld.mult;
         }
@@ -75,11 +90,10 @@ namespace MultiGame
         private void Main_Load(object sender, EventArgs e)
         {
             currentworld.name = "World";
-            currentworld.populationgrowthpercent = rng.Next(0,100);
-            currentworld.populationgrowth = rng.Next(0,int.MaxValue);
-            currentworld.population = rng.Next(0,int.MaxValue) * rng.Next( 0, int.MaxValue );
-            currentworld.mult = rng.Next(1,3);
-            mainform = this;
+            currentworld.populationgrowthpercent = rng.Next(0, 100);
+            currentworld.populationgrowth = rng.Next(0, int.MaxValue);
+            currentworld.population = rng.Next(0, int.MaxValue) * rng.Next(0, int.MaxValue);
+            currentworld.mult = rng.Next(1, 3);
             log.Add("[" + DateTime.Now + "][From:Internal/Main/Form]{(Log)}Opening Form");
             Thread.CurrentThread.Name = "Multigame Main Thread";
             timerthread.Name = "MultiGame Timer Thread";
@@ -124,7 +138,7 @@ namespace MultiGame
         {
             if (!shopshown)
             {
-                if(level >= 5)
+                if (level >= 5)
                 {
                     shopshown = true;
                     Form fm = new Games.Shop();
@@ -136,8 +150,8 @@ namespace MultiGame
 
         private void autoclicker_Tick(object sender, EventArgs e)
         {
-            money += getmoney()*autogenmult;
-            xp += getmoney()*autogenmult;
+            money += getmoney() * autogenmult;
+            xp += getmoney() * autogenmult;
         }
 
         private void passCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,7 +202,7 @@ namespace MultiGame
         {
             if (!gamesincshown)
             {
-                if(level >= 50)
+                if (level >= 50)
                 {
                     gamesincshown = true;
                     Form fm = new Games.GamesInc();
@@ -204,7 +218,8 @@ namespace MultiGame
             {
                 cheat = false;
                 moreMoneyToolStripMenuItem.Text = "More Money OFF";
-            }else
+            }
+            else
             {
                 cheat = true;
                 moreMoneyToolStripMenuItem.Text = "More Money ON";
@@ -227,7 +242,7 @@ namespace MultiGame
         {
             if (exponent(2, workers) >= exponent(5, inventions))
             {
-                money += getmoney() * inventions * invested * 500 * ((currentworld.population/100000000) + 1);
+                money += getmoney() * inventions * invested * 500 * ((currentworld.population / 100000000) + 1);
                 companynetworth += getmoney() * inventions * 500 * ((currentworld.population / 100000000) + 1);
                 xp += getmoney() * inventions * invested * 500 * ((currentworld.population / 100000000) + 1);
                 companywork = true;
@@ -245,12 +260,13 @@ namespace MultiGame
 
         private void rngtick_Tick(object sender, EventArgs e)
         {
-            if(rng.Next(0,300) == 299)
+            if (rng.Next(0, 300) >= moneybagc)
             {
                 Form fm = new Boosts.MoneyBag();
                 fm.MdiParent = this;
                 fm.Show();
-            }if(rng.Next(0,600) == 599)
+            }
+            if (rng.Next(0, 600) >= genboostc)
             {
                 Form fm = new Boosts.GenerationBoost();
                 fm.MdiParent = this;
@@ -260,7 +276,7 @@ namespace MultiGame
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(boost1t > 0)
+            if (boost1t > 0)
             {
                 boost1t--;
             }
@@ -268,14 +284,15 @@ namespace MultiGame
             {
                 boost1 = 1;
             }
-            if(boost2t > 0)
+            if (boost2t > 0)
             {
                 boost2t--;
             }
             else
             {
                 boost2 = 1;
-            }if(boost3t > 0)
+            }
+            if (boost3t > 0)
             {
                 boost3t--;
             }
@@ -283,7 +300,7 @@ namespace MultiGame
             {
                 boost3 = 1;
             }
-            if(boost4t > 0)
+            if (boost4t > 0)
             {
                 boost4t--;
             }
@@ -291,7 +308,7 @@ namespace MultiGame
             {
                 boost4 = 1;
             }
-            if(boost5t > 0)
+            if (boost5t > 0)
             {
                 boost5t--;
             }
@@ -299,7 +316,7 @@ namespace MultiGame
             {
                 boost5 = 1;
             }
-            if(boost6t > 0)
+            if (boost6t > 0)
             {
                 boost6t--;
             }
@@ -307,7 +324,7 @@ namespace MultiGame
             {
                 boost6 = 1;
             }
-            if(boost7t > 0)
+            if (boost7t > 0)
             {
                 boost7t--;
             }
@@ -315,7 +332,7 @@ namespace MultiGame
             {
                 boost7 = 1;
             }
-            if(boost8t > 0)
+            if (boost8t > 0)
             {
                 boost8t--;
             }
@@ -323,7 +340,7 @@ namespace MultiGame
             {
                 boost8 = 1;
             }
-            if(boost9t > 0)
+            if (boost9t > 0)
             {
                 boost9t--;
             }
@@ -331,7 +348,7 @@ namespace MultiGame
             {
                 boost9 = 1;
             }
-            if(boost10t > 0)
+            if (boost10t > 0)
             {
                 boost10t--;
             }
@@ -393,13 +410,14 @@ namespace MultiGame
             upmult10();
             upautogenmult();
             upautoclickerspeed();
+            upautoupgradespeed();
         }
 
         private void shop2Level100ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!shop2shown)
             {
-                if(level >= 100)
+                if (level >= 100)
                 {
                     shop2shown = true;
                     Form fm = new Games.Shop2();
@@ -424,7 +442,7 @@ namespace MultiGame
         {
             if (!magicshown)
             {
-                if(level >= 150)
+                if (level >= 150)
                 {
                     magicshown = true;
                     Form fm = new Games.Magic();
@@ -447,8 +465,7 @@ namespace MultiGame
                 }
             }
         }
-
-        private void debugVarsToolStripMenuItem_Click( object sender, EventArgs e )
+        private void debugVarsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!debugvarsshown)
             {
@@ -459,18 +476,92 @@ namespace MultiGame
             }
         }
 
-        private void worldpop_Tick( object sender, EventArgs e )
+        private void worldpop_Tick(object sender, EventArgs e)
         {
-            if(currentworld.population < 1)
+            if (currentworld.population < 1)
             {
                 currentworld.population = 1;
             }
             currentworld.population += currentworld.populationgrowth;
         }
 
-        private void newWorldToolStripMenuItem_Click( object sender, EventArgs e )
+        private void newWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             newworld();
+        }
+
+        private void MultiGameIcon_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hideGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MultiGameIcon.Visible = true;
+        }
+
+        private void MultiGameIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            MultiGameIcon.Visible = false;
+        }
+
+        private void MultiGameIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void levelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formatNumbersOFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formatnums)
+            {
+                formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (OFF)";
+                formatnums = false;
+            }
+            else
+            {
+                formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (ON)";
+                formatnums = true;
+            }
+        }
+
+        private void processAllXpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            while (xp > xpn)
+            {
+                level++;
+                log.Add("[" + DateTime.Now + "][From:Internal/Main/LVL]{(Log)}Level Up Level Now:" + level);
+                xp -= xpn;
+                xpn *= 2;
+            }
+        }
+
+        private void autoSaveOFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (autosave)
+            {
+                autosave = false;
+                autoSaveOFFToolStripMenuItem.Text = "AutoSave (OFF)";
+            }
+            else
+            {
+                autosave = true;
+                autoSaveOFFToolStripMenuItem.Text = "AutoSave (ON)";
+            }
+        }
+
+        private void autosave_Tick(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(lastfile) && File.Exists(lastfile))
+            {
+                savegame(lastfile);
+            }
         }
     }
 }

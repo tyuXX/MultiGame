@@ -1,6 +1,7 @@
-﻿namespace MultiGame.Tools
+﻿
+namespace MultiGame.Games
 {
-    partial class SaveGame
+    partial class Shop3
     {
         /// <summary>
         /// Required designer variable.
@@ -28,66 +29,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.savefiledia = new System.Windows.Forms.SaveFileDialog();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 10);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(175, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 19);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "...";
+            this.button1.Size = new System.Drawing.Size(151, 69);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Auto Upgrade Interval\r\n3000ms\r\n$10";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(9, 32);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(12, 87);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 19);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Save Game";
+            this.button2.Size = new System.Drawing.Size(151, 43);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Money Bag Spawn Rate";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // SaveGame
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 136);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(151, 43);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // Shop3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(222, 63);
+            this.ClientSize = new System.Drawing.Size(176, 194);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "SaveGame";
+            this.Name = "Shop3";
             this.ShowIcon = false;
-            this.Text = "SaveGame";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SaveGame_FormClosing);
-            this.Load += new System.EventHandler(this.SaveGame_Load);
+            this.Text = "Shop3";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.SaveFileDialog savefiledia;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -51,6 +51,10 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>MultiGame.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -115,6 +119,12 @@
     <Compile Include="Games\Shop2.Designer.cs">
       <DependentUpon>Shop2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Games\Shop3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Games\Shop3.Designer.cs">
+      <DependentUpon>Shop3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +145,12 @@
     </Compile>
     <Compile Include="Tools\AddLog.Designer.cs">
       <DependentUpon>AddLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Advancements1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Advancements1.Designer.cs">
+      <DependentUpon>Advancements1.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\ChangePassCode.cs">
       <SubType>Form</SubType>
@@ -208,6 +224,9 @@
     <EmbeddedResource Include="Games\Shop2.resx">
       <DependentUpon>Shop2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Games\Shop3.resx">
+      <DependentUpon>Shop3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\AddLog.resx">
       <DependentUpon>AddLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Advancements1.resx">
+      <DependentUpon>Advancements1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\ChangePassCode.resx">
       <DependentUpon>ChangePassCode.cs</DependentUpon>
@@ -250,6 +272,7 @@
     <EmbeddedResource Include="Tools\ToggleDevMode.resx">
       <DependentUpon>ToggleDevMode.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="bin\Debug\MultiGame.exe.config" />
     <None Include="bin\Release\MultiGame.exe.config" />
     <None Include="Properties\Settings.settings">
@@ -344,6 +367,9 @@
       <ProductName>.NET Framework 3.5 SP1 </ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resorce\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

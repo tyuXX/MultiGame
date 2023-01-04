@@ -27,19 +27,19 @@ namespace MultiGame.Tools
             {
                 merge += "(Fatal Error)";
             }
-            if(!(checkBox1.Checked && checkBox2.Checked && checkBox3.Checked))
+            if (!(checkBox1.Checked && checkBox2.Checked && checkBox3.Checked))
             {
                 merge += "(Log)";
             }
             merge += "}";
-            merge2 = merge2.Replace("$datenow",DateTime.Now.ToString());
-            merge2 = merge2.Replace("$clshown",clshown.ToString());
-            merge2 = merge2.Replace("$fnfshown",fnfshown.ToString());
-            merge2 = merge2.Replace("$logshown",logshown.ToString());
-            merge2 = merge2.Replace("$addlogshown",addlogshown.ToString());
+            merge2 = merge2.Replace("$datenow", DateTime.Now.ToString());
+            merge2 = merge2.Replace("$clshown", clshown.ToString());
+            merge2 = merge2.Replace("$fnfshown", fnfshown.ToString());
+            merge2 = merge2.Replace("$logshown", logshown.ToString());
+            merge2 = merge2.Replace("$addlogshown", addlogshown.ToString());
             merge2 = merge2.Replace("$toggledevmodeshown", toggledevmodeshown.ToString());
             merge2 = merge2.Replace("$shopshown", shopshown.ToString());
-            merge2 = merge2.Replace("$devmode",devmode.ToString());
+            merge2 = merge2.Replace("$devmode", devmode.ToString());
             merge2 = merge2.Replace("$logupdateinterval", logupdateinterval.ToString());
             merge2 = merge2.Replace("$autoclickerinterval", autoclickerinterval.ToString());
             merge2 = merge2.Replace("$money", money.ToString());
