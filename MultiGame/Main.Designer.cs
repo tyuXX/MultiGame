@@ -545,11 +545,10 @@ namespace MultiGame
             // 
             // MultiGameIcon
             // 
+            this.MultiGameIcon.Icon = Properties.Resources.ico;
             this.MultiGameIcon.Text = "Multi Game";
             this.MultiGameIcon.Visible = true;
             this.MultiGameIcon.Click += new System.EventHandler(this.MultiGameIcon_Click);
-            this.MultiGameIcon.DoubleClick += new System.EventHandler(this.MultiGameIcon_DoubleClick);
-            this.MultiGameIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MultiGameIcon_MouseDoubleClick);
             // 
             // autoSaveOFFToolStripMenuItem
             // 

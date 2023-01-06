@@ -43,5 +43,11 @@ namespace Testing
             money++;
             label1.Text = "Money:" + money;
         }
+
+        private void button4_Click( object sender, EventArgs e )
+        {
+            TabPage tabPage = new TabPage();
+            tabControl1.TabPages.Add(tabPage);
+        }
     }
 }

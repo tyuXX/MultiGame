@@ -53,6 +53,10 @@
     <StartupObject>MultiGame.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
@@ -238,6 +242,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Tools\About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -293,6 +298,9 @@
     <Content Include="bin\Debug\MultiGame.pdb" />
     <Content Include="bin\Release\MultiGame.exe" />
     <Content Include="bin\Release\MultiGame.pdb" />
+    <Content Include="ico.ico" />
+    <None Include="Resource\ico.ico" />
+    <None Include="Resource\icopng.png" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="bin\Debug\MultiGame.exe">
@@ -368,9 +376,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resorce\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
