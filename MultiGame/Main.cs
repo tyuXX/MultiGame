@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using MultiGame.Games;
 using static MultiGame.rntm;
 
 namespace MultiGame
@@ -29,6 +30,7 @@ namespace MultiGame
             this.TopMost = alwaysontop;
             devToolStripMenuItem.Enabled = devmode;
             autoupgrade.Enabled = automaticupgrade;
+            clearlogt.Enabled = clearlog;
             if (cheat)
             {
                 money += exponent(int.MaxValue * getmoney(), 100);
@@ -562,6 +564,24 @@ namespace MultiGame
         private void closeGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void shop3Level225ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(level >= 225)
+            {
+                if (!shopthshown)
+                {
+                    Shop3 shop3 = new Shop3();
+                    shop3.MdiParent = this;
+                    shop3.Show();
+                }
+            }
+        }
+
+        private void clearlogt_Tick(object sender, EventArgs e)
+        {
+            log.Clear();
         }
     }
 }

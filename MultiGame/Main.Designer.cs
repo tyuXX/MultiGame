@@ -30,6 +30,7 @@ namespace MultiGame
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clickerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,9 +42,12 @@ namespace MultiGame
             this.magicPowerGeneratorLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hideGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatNumbersOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.hideGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xP00ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,9 +97,9 @@ namespace MultiGame
             this.worldpop = new System.Windows.Forms.Timer(this.components);
             this.MultiGameIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.autosavet = new System.Windows.Forms.Timer(this.components);
-            this.closeGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.shop3Level225ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearlogt = new System.Windows.Forms.Timer(this.components);
+            this.enableLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,7 +129,8 @@ namespace MultiGame
             this.gamesIncLevel50ToolStripMenuItem,
             this.shop2Level100ToolStripMenuItem,
             this.magicLevel150ToolStripMenuItem,
-            this.magicPowerGeneratorLevel150ToolStripMenuItem});
+            this.magicPowerGeneratorLevel150ToolStripMenuItem,
+            this.shop3Level225ToolStripMenuItem});
             this.openGameToolStripMenuItem.Name = "openGameToolStripMenuItem";
             this.openGameToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.openGameToolStripMenuItem.Text = "Open Game";
@@ -200,12 +205,17 @@ namespace MultiGame
             this.alwaysOnTopONToolStripMenuItem.Text = "Always On Top (OFF)";
             this.alwaysOnTopONToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopONToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem
+            // formatNumbersOFFToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.formatNumbersOFFToolStripMenuItem.Name = "formatNumbersOFFToolStripMenuItem";
+            this.formatNumbersOFFToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (OFF)";
+            this.formatNumbersOFFToolStripMenuItem.Click += new System.EventHandler(this.formatNumbersOFFToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(239, 6);
             // 
             // hideGameToolStripMenuItem
             // 
@@ -215,12 +225,25 @@ namespace MultiGame
             this.hideGameToolStripMenuItem.Text = "Hide Game";
             this.hideGameToolStripMenuItem.Click += new System.EventHandler(this.hideGameToolStripMenuItem_Click);
             // 
-            // formatNumbersOFFToolStripMenuItem
+            // closeGameToolStripMenuItem
             // 
-            this.formatNumbersOFFToolStripMenuItem.Name = "formatNumbersOFFToolStripMenuItem";
-            this.formatNumbersOFFToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
-            this.formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (OFF)";
-            this.formatNumbersOFFToolStripMenuItem.Click += new System.EventHandler(this.formatNumbersOFFToolStripMenuItem_Click);
+            this.closeGameToolStripMenuItem.Name = "closeGameToolStripMenuItem";
+            this.closeGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
+            this.closeGameToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.closeGameToolStripMenuItem.Text = "Close Game";
+            this.closeGameToolStripMenuItem.Click += new System.EventHandler(this.closeGameToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(239, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // levelToolStripMenuItem
             // 
@@ -409,6 +432,7 @@ namespace MultiGame
             this.logToolStripMenuItem,
             this.addLogToolStripMenuItem,
             this.debugVarsToolStripMenuItem,
+            this.enableLogToolStripMenuItem,
             this.toolStripSeparator5,
             this.moreMoneyToolStripMenuItem,
             this.resetMoneyToolStripMenuItem,
@@ -559,7 +583,7 @@ namespace MultiGame
             // 
             // MultiGameIcon
             // 
-            this.MultiGameIcon.Icon = global::MultiGame.Properties.Resources.ico;
+            this.MultiGameIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("MultiGameIcon.Icon")));
             this.MultiGameIcon.Text = "Multi Game";
             this.MultiGameIcon.Click += new System.EventHandler(this.MultiGameIcon_Click);
             // 
@@ -569,23 +593,23 @@ namespace MultiGame
             this.autosavet.Interval = 15000;
             this.autosavet.Tick += new System.EventHandler(this.autosave_Tick);
             // 
-            // closeGameToolStripMenuItem
+            // shop3Level225ToolStripMenuItem
             // 
-            this.closeGameToolStripMenuItem.Name = "closeGameToolStripMenuItem";
-            this.closeGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
-            this.closeGameToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
-            this.closeGameToolStripMenuItem.Text = "Close Game";
-            this.closeGameToolStripMenuItem.Click += new System.EventHandler(this.closeGameToolStripMenuItem_Click);
+            this.shop3Level225ToolStripMenuItem.Name = "shop3Level225ToolStripMenuItem";
+            this.shop3Level225ToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
+            this.shop3Level225ToolStripMenuItem.Text = "Shop 3 Level 225";
+            this.shop3Level225ToolStripMenuItem.Click += new System.EventHandler(this.shop3Level225ToolStripMenuItem_Click);
             // 
-            // toolStripSeparator8
+            // clearlogt
             // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(239, 6);
+            this.clearlogt.Enabled = true;
+            this.clearlogt.Tick += new System.EventHandler(this.clearlogt_Tick);
             // 
-            // toolStripSeparator9
+            // enableLogToolStripMenuItem
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(239, 6);
+            this.enableLogToolStripMenuItem.Name = "enableLogToolStripMenuItem";
+            this.enableLogToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.enableLogToolStripMenuItem.Text = "Enable Log (OFF)";
             // 
             // Main
             // 
@@ -676,6 +700,9 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem closeGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem shop3Level225ToolStripMenuItem;
+        private System.Windows.Forms.Timer clearlogt;
+        private System.Windows.Forms.ToolStripMenuItem enableLogToolStripMenuItem;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using static MultiGame.rntm;
@@ -36,6 +37,7 @@ namespace MultiGame
         public static bool magicshown = false;
         public static bool magicpowergeneratorshown = false;
         public static bool debugvarsshown = false;
+        public static bool shopthshown = false;
         public static bool devmode = false;
         public static bool cheat = false;
         public static bool companywork = false;
@@ -47,6 +49,7 @@ namespace MultiGame
         public static bool dialout = false;
         public static bool dialset = false;
         public static bool autosave = false;
+        public static bool clearlog = true;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
         public static int autoupgradeinterval = 3000;
@@ -54,6 +57,8 @@ namespace MultiGame
         public static int genboostc = 598;
         public static BigInteger autoclickerintervaln = 5000 * exponent(7, 1001 - autoclickerinterval);
         public static BigInteger autoupgradeintervaln = 6000 * exponent(13, 3001 - autoupgradeinterval);
+        public static BigInteger moneybagcn = 10000 * exponent(15, 600 - moneybagc);
+        public static BigInteger genboostcn = 10000 * exponent(25, 300 - genboostc);
         public static BigInteger timespent = 0;
         public static BigInteger money = 0;
         public static BigInteger generation = 1;
@@ -164,6 +169,8 @@ namespace MultiGame
             autogenmultn = 1000 * (exponent(5, autogenmult) + 1);
             autoclickerintervaln = 5000 * exponent(7, 1001 - autoclickerinterval);
             autoupgradeintervaln = 6000 * exponent(13, 3001 - autoupgradeinterval);
+            moneybagcn = 10000 * exponent(15,600-moneybagc);
+            genboostcn = 10000 * exponent(25,300-genboostc);
         }
         public static BigInteger getmoney()
         {
@@ -462,6 +469,30 @@ namespace MultiGame
                 }
             }
         }
+        public static void upmoneybagc()
+        {
+            if(moneybagc > 2)
+            {
+                if(money >= moneybagcn)
+                {
+                    money -= moneybagcn;
+                    moneybagcn *= 15;
+                    moneybagc--;
+                }
+            }
+        }
+        public static void upgenboostc()
+        {
+            if (genboostc > 2)
+            {
+                if (money >= genboostcn)
+                {
+                    money -= genboostcn;
+                    genboostcn *= 25;
+                    genboostc--;
+                }
+            }
+        }
         public static void savegame(string filepath)
         {
             if (!string.IsNullOrEmpty(filepath))
@@ -513,7 +544,9 @@ namespace MultiGame
                     encode(currentworld.name.ToString()),
                     encode(currentworld.population.ToString()),
                     encode(currentworld.populationgrowth.ToString()),
-                    encode(currentworld.populationgrowthpercent.ToString())
+                    encode(currentworld.populationgrowthpercent.ToString()),
+                    encode(moneybagc.ToString()),
+                    encode(genboostc.ToString())
                 };
                 File.WriteAllLines(filepath, masterfile);
                 lastfile = filepath;
@@ -572,6 +605,8 @@ namespace MultiGame
                 try { currentworld.population = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulation ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { currentworld.populationgrowth = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowth ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { currentworld.populationgrowthpercent = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowthpercent ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { moneybagc = Convert.ToInt32(decode(masterfile[ (int)saveorder.moneybagchance ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { genboostc = Convert.ToInt32(decode(masterfile[ (int)saveorder.genboostchance ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { recalculatevars(); } catch (Exception) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at recalculating varirables"); }
                 lastfile = filepath;
             }
@@ -773,6 +808,8 @@ namespace MultiGame
         currentworldname,
         currentworldpopulation,
         currentworldpopulationgrowth,
-        currentworldpopulationgrowthpercent
+        currentworldpopulationgrowthpercent,
+        moneybagchance,
+        genboostchance
     }
 }

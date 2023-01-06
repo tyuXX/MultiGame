@@ -14,7 +14,6 @@ namespace MultiGame.Tools
         private void loadlog()
         {
             timer1.Interval = logupdateinterval;
-            richTextBox1.Clear();
             foreach (string str in log)
             {
                 richTextBox1.Text += str + "\n";
@@ -23,6 +22,7 @@ namespace MultiGame.Tools
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
             Thread th = new Thread(loadlog);
             th.Start();
         }
