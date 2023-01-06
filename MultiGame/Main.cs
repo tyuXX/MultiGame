@@ -490,26 +490,16 @@ namespace MultiGame
             newworld();
         }
 
-        private void MultiGameIcon_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
         private void hideGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             MultiGameIcon.Visible = true;
         }
 
-        private void MultiGameIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void MultiGameIcon_Click(object sender, EventArgs e)
         {
             this.Show();
             MultiGameIcon.Visible = false;
-        }
-
-        private void MultiGameIcon_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void levelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -562,6 +552,11 @@ namespace MultiGame
             {
                 savegame(lastfile);
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
