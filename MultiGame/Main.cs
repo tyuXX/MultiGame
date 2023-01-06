@@ -548,7 +548,7 @@ namespace MultiGame
 
         private void autosave_Tick(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(lastfile) && File.Exists(lastfile))
+            if (string.IsNullOrEmpty(lastfile))
             {
                 savegame(lastfile);
             }
@@ -557,6 +557,11 @@ namespace MultiGame
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void closeGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
