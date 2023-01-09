@@ -204,6 +204,12 @@
     <Compile Include="Tools\ToggleDevMode.Designer.cs">
       <DependentUpon>ToggleDevMode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Variables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Variables.Designer.cs">
+      <DependentUpon>Variables.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Boosts\GenerationBoost.resx">
       <DependentUpon>GenerationBoost.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\ToggleDevMode.resx">
       <DependentUpon>ToggleDevMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Variables.resx">
+      <DependentUpon>Variables.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="bin\Debug\MultiGame.exe.config" />

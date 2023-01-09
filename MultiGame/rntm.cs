@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Security.Cryptography;
-using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using static MultiGame.rntm;
@@ -38,6 +37,7 @@ namespace MultiGame
         public static bool magicpowergeneratorshown = false;
         public static bool debugvarsshown = false;
         public static bool shopthshown = false;
+        public static bool varsshown = false;
         public static bool devmode = false;
         public static bool cheat = false;
         public static bool companywork = false;
@@ -57,8 +57,8 @@ namespace MultiGame
         public static int genboostc = 598;
         public static BigInteger autoclickerintervaln = 5000 * exponent(7, 1001 - autoclickerinterval);
         public static BigInteger autoupgradeintervaln = 6000 * exponent(13, 3001 - autoupgradeinterval);
-        public static BigInteger moneybagcn = 10000 * exponent(15, 600 - moneybagc);
-        public static BigInteger genboostcn = 10000 * exponent(25, 300 - genboostc);
+        public static BigInteger moneybagcn = 10000 * exponent(15, 300 - moneybagc);
+        public static BigInteger genboostcn = 10000 * exponent(25, 600 - genboostc);
         public static BigInteger timespent = 0;
         public static BigInteger money = 0;
         public static BigInteger generation = 1;
@@ -169,8 +169,8 @@ namespace MultiGame
             autogenmultn = 1000 * (exponent(5, autogenmult) + 1);
             autoclickerintervaln = 5000 * exponent(7, 1001 - autoclickerinterval);
             autoupgradeintervaln = 6000 * exponent(13, 3001 - autoupgradeinterval);
-            moneybagcn = 10000 * exponent(15,600-moneybagc);
-            genboostcn = 10000 * exponent(25,300-genboostc);
+            moneybagcn = 10000 * exponent(15, 300 - moneybagc);
+            genboostcn = 10000 * exponent(25, 600 - genboostc);
         }
         public static BigInteger getmoney()
         {
@@ -471,9 +471,9 @@ namespace MultiGame
         }
         public static void upmoneybagc()
         {
-            if(moneybagc > 2)
+            if (moneybagc > 2)
             {
-                if(money >= moneybagcn)
+                if (money >= moneybagcn)
                 {
                     money -= moneybagcn;
                     moneybagcn *= 15;

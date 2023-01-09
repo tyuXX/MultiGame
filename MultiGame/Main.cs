@@ -1,8 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using MultiGame.Games;
+using MultiGame.Tools;
 using static MultiGame.rntm;
 
 namespace MultiGame
@@ -568,7 +568,7 @@ namespace MultiGame
 
         private void shop3Level225ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(level >= 225)
+            if (level >= 225)
             {
                 if (!shopthshown)
                 {
@@ -582,6 +582,24 @@ namespace MultiGame
         private void clearlogt_Tick(object sender, EventArgs e)
         {
             log.Clear();
+        }
+
+        private void debugVarsNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!varsshown)
+            {
+                varsshown = true;
+                Variables variables = new Variables();
+                variables.MdiParent = this;
+                variables.Show();
+            }
+        }
+        public void closeallchild()
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                f.Close();
+            }
         }
     }
 }
