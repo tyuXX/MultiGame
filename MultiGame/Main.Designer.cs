@@ -80,6 +80,7 @@ namespace MultiGame
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugVarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugVarsNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enableLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.moreMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +101,7 @@ namespace MultiGame
             this.MultiGameIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.autosavet = new System.Windows.Forms.Timer(this.components);
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
-            this.debugVarsNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,7 +202,8 @@ namespace MultiGame
             this.hideGameToolStripMenuItem,
             this.closeGameToolStripMenuItem,
             this.toolStripSeparator9,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.checkForUpdatesToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -491,6 +493,13 @@ namespace MultiGame
             this.debugVarsToolStripMenuItem.Text = "Debug Vars";
             this.debugVarsToolStripMenuItem.Click += new System.EventHandler(this.debugVarsToolStripMenuItem_Click);
             // 
+            // debugVarsNewToolStripMenuItem
+            // 
+            this.debugVarsNewToolStripMenuItem.Name = "debugVarsNewToolStripMenuItem";
+            this.debugVarsNewToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.debugVarsNewToolStripMenuItem.Text = "Debug Vars [New]";
+            this.debugVarsNewToolStripMenuItem.Click += new System.EventHandler(this.debugVarsNewToolStripMenuItem_Click);
+            // 
             // enableLogToolStripMenuItem
             // 
             this.enableLogToolStripMenuItem.Name = "enableLogToolStripMenuItem";
@@ -613,12 +622,12 @@ namespace MultiGame
             this.clearlogt.Enabled = true;
             this.clearlogt.Tick += new System.EventHandler(this.clearlogt_Tick);
             // 
-            // debugVarsNewToolStripMenuItem
+            // checkForUpdatesToolStripMenuItem
             // 
-            this.debugVarsNewToolStripMenuItem.Name = "debugVarsNewToolStripMenuItem";
-            this.debugVarsNewToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
-            this.debugVarsNewToolStripMenuItem.Text = "Debug Vars [New]";
-            this.debugVarsNewToolStripMenuItem.Click += new System.EventHandler(this.debugVarsNewToolStripMenuItem_Click);
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check For Updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -628,7 +637,7 @@ namespace MultiGame
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.ShowIcon = false;
             this.Text = "Game";
@@ -713,6 +722,7 @@ namespace MultiGame
         private System.Windows.Forms.Timer clearlogt;
         private System.Windows.Forms.ToolStripMenuItem enableLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem debugVarsNewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
     }
 }
 

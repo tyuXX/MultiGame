@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Numerics;
@@ -17,6 +18,7 @@ namespace MultiGame
         public static Thread timerthread = new Thread(timerth);
         public static List<string> log = new List<string>();
         public static List<string> passcodes = new List<string> { "$sct", "cheat4life", "24/7 debugging" };
+        public static string path = "";
         public static string endecode = "1234";
         public static string username = "Player";
         public static string lastfile = "";
@@ -142,7 +144,8 @@ namespace MultiGame
         public static World currentworld;
         public static Inventory inventory = new Inventory { };
         public const short xpt = 10;
-        static void dowload(string link, string name)
+        public const string updatev = "Beta v0.4.4";
+        public static void download(string link, string name)
         {
             using (WebClient client = new WebClient())
             {
@@ -151,7 +154,10 @@ namespace MultiGame
         }
         public static void updateapp()
         {
-            dowload("","MultiGameUpdate");
+            download("https://github.com/tyuXX/MultiGame/raw/master/MultiGameUpdate/bin/Release/MultiGameUpdate.exe", "MultiGameUpdate.exe");
+            File.WriteAllText(@".\upf.m",path);
+            Process.Start(@".\MultiGameUpdate.exe");
+            Environment.Exit(0);
         }
         public static void recalculatevars()
         {

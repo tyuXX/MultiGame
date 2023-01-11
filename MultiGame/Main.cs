@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using MultiGame.Games;
@@ -91,6 +92,8 @@ namespace MultiGame
 
         private void Main_Load(object sender, EventArgs e)
         {
+            if (File.Exists("MultiGameUpdate.exe")) { File.Delete("MultiGameUpdate.exe"); }
+            path = Application.ExecutablePath;
             currentworld.name = "World";
             currentworld.populationgrowthpercent = rng.Next(0, 100);
             currentworld.populationgrowth = rng.Next(0, int.MaxValue);
@@ -600,6 +603,11 @@ namespace MultiGame
             {
                 f.Close();
             }
+        }
+
+        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            download("","update.exe");
         }
     }
 }
