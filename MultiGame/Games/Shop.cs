@@ -47,6 +47,7 @@ namespace MultiGame.Games
                 button19.Text = "Multipilier " + FormatBigNum(mult9) + "\r\n$" + FormatBigNum(mult9n);
                 button20.Text = "Multipilier " + FormatBigNum(mult10) + "\r\n$" + FormatBigNum(mult10n);
                 button21.Text = "Autoclickers " + FormatBigNum(autogenmult) + "\r\n$" + FormatBigNum(autogenmultn);
+                button22.Text = "Autoclicker Speed\r\n ms" + FormatBigNum(autoclickerinterval) + "\r\n$" + FormatBigNum(autoclickerintervaln);
             }
             else
             {
@@ -71,6 +72,7 @@ namespace MultiGame.Games
                 button19.Text = "Multipilier " + mult9 + "\r\n$" + mult9n;
                 button20.Text = "Multipilier " + mult10 + "\r\n$" + mult10n;
                 button21.Text = "Autoclickers " + autogenmult + "\r\n$" + autogenmultn;
+                button22.Text = "Autoclicker Speed\r\n ms" + autoclickerinterval + "\r\n$" + autoclickerintervaln;
             }
             button22.Text = "Autoclicker Speed \r\n" + autoclickerinterval + "ms\r\n$" + autoclickerintervaln;
         }

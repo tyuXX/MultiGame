@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
@@ -140,6 +141,18 @@ namespace MultiGame
         public static BigInteger magicpower = 0;
         public static World currentworld;
         public static Inventory inventory = new Inventory { };
+        public const short xpt = 10;
+        static void dowload(string link, string name)
+        {
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadFile(link, name);
+            }
+        }
+        public static void updateapp()
+        {
+            dowload("","MultiGameUpdate");
+        }
         public static void recalculatevars()
         {
             investedn = 250 * (exponent(2, invested) + 1);
@@ -186,7 +199,14 @@ namespace MultiGame
         }
         public static string FormatBigNum(BigInteger num)
         {
-            return $"{num.ToString()[ 0 ]}e+{num.ToString().Length - 1}";
+            if(num.ToString().Length > 5)
+            {
+                return $"{num.ToString()[ 0 ]}e+{num.ToString().Length - 1}";
+            }
+            else
+            {
+                return num.ToString();
+            }
         }
         public static BigInteger exponent(BigInteger n, BigInteger e)
         {

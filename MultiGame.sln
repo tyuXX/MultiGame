@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiGame", "MultiGame\Mult
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{EAF75F64-DB61-4FFB-85C3-EE92A22DFAA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiGameUpdate", "MultiGameUpdate\MultiGameUpdate.csproj", "{D8400577-4EAA-46E9-B2E3-41982A5177D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EAF75F64-DB61-4FFB-85C3-EE92A22DFAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF75F64-DB61-4FFB-85C3-EE92A22DFAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF75F64-DB61-4FFB-85C3-EE92A22DFAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8400577-4EAA-46E9-B2E3-41982A5177D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8400577-4EAA-46E9-B2E3-41982A5177D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8400577-4EAA-46E9-B2E3-41982A5177D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8400577-4EAA-46E9-B2E3-41982A5177D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

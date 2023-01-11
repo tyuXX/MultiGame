@@ -41,7 +41,7 @@ namespace MultiGame
                 level++;
                 log.Add("[" + DateTime.Now + "][From:Internal/Main/LVL]{(Log)}Level Up Level Now:" + level);
                 xp -= xpn;
-                xpn *= 2;
+                xpn *= xpt;
             }
             if (formatnums)
             {
@@ -530,7 +530,7 @@ namespace MultiGame
                 level++;
                 log.Add("[" + DateTime.Now + "][From:Internal/Main/LVL]{(Log)}Level Up Level Now:" + level);
                 xp -= xpn;
-                xpn *= 2;
+                xpn *= xpt;
             }
         }
 
