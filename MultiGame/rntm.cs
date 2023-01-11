@@ -144,7 +144,7 @@ namespace MultiGame
         public static World currentworld;
         public static Inventory inventory = new Inventory { };
         public const short xpt = 10;
-        public const string updatev = "Beta v0.4.4";
+        public const string updatev = "Beta v0.4.5";
         public static void download(string link, string name)
         {
             using (WebClient client = new WebClient())

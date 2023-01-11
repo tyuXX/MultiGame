@@ -607,7 +607,8 @@ namespace MultiGame
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            download("","update.exe");
+            download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
+            if(File.ReadAllText(@".\update.txt") == updatev) { updateapp(); }
         }
     }
 }
