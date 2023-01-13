@@ -49,6 +49,7 @@ namespace MultiGame
             this.closeGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xP00ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,7 +102,9 @@ namespace MultiGame
             this.MultiGameIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.autosavet = new System.Windows.Forms.Timer(this.components);
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,6 +258,14 @@ namespace MultiGame
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // checkForUpdatesToolStripMenuItem
+            // 
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.U)));
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check For Updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            // 
             // levelToolStripMenuItem
             // 
             this.levelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -348,15 +359,17 @@ namespace MultiGame
             // 
             this.autoSaveOFFToolStripMenuItem.Name = "autoSaveOFFToolStripMenuItem";
             this.autoSaveOFFToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.autoSaveOFFToolStripMenuItem.Text = "AutoSave (OFF)";
+            this.autoSaveOFFToolStripMenuItem.Text = "AutoSave (OFF) [WIP]";
             this.autoSaveOFFToolStripMenuItem.Click += new System.EventHandler(this.autoSaveOFFToolStripMenuItem_Click);
             // 
             // worldToolStripMenuItem
             // 
             this.worldToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.populationToolStripMenuItem,
+            this.toolStripSeparator12,
             this.populationGrowthToolStripMenuItem,
             this.populationGrowthPercentToolStripMenuItem,
+            this.toolStripSeparator11,
             this.multipilierToolStripMenuItem});
             this.worldToolStripMenuItem.Name = "worldToolStripMenuItem";
             this.worldToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
@@ -441,9 +454,10 @@ namespace MultiGame
             this.toolStripSeparator3,
             this.logToolStripMenuItem,
             this.addLogToolStripMenuItem,
+            this.enableLogToolStripMenuItem,
+            this.toolStripSeparator10,
             this.debugVarsToolStripMenuItem,
             this.debugVarsNewToolStripMenuItem,
-            this.enableLogToolStripMenuItem,
             this.toolStripSeparator5,
             this.moreMoneyToolStripMenuItem,
             this.resetMoneyToolStripMenuItem,
@@ -504,7 +518,7 @@ namespace MultiGame
             // 
             this.enableLogToolStripMenuItem.Name = "enableLogToolStripMenuItem";
             this.enableLogToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
-            this.enableLogToolStripMenuItem.Text = "Enable Log (OFF)";
+            this.enableLogToolStripMenuItem.Text = "Enable Log (OFF) [WIP]";
             // 
             // toolStripSeparator5
             // 
@@ -622,12 +636,20 @@ namespace MultiGame
             this.clearlogt.Enabled = true;
             this.clearlogt.Tick += new System.EventHandler(this.clearlogt_Tick);
             // 
-            // checkForUpdatesToolStripMenuItem
+            // toolStripSeparator10
             // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.checkForUpdatesToolStripMenuItem.Text = "Check For Updates";
-            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(254, 6);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(211, 6);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(211, 6);
             // 
             // Main
             // 
@@ -723,6 +745,9 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripMenuItem enableLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem debugVarsNewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     }
 }
 

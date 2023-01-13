@@ -9,10 +9,7 @@ namespace MultiGame.Tools
             InitializeComponent();
         }
 
-        private void SaveGame_Load(object sender, EventArgs e)
-        {
-            log.Add("[" + DateTime.Now + "][From:Internal/Tool/SaveGame/Form]{(Log)}Opening Form");
-        }
+        private void SaveGame_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Tool/SaveGame/Form]{(Log)}Opening Form");
 
         private void SaveGame_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -32,9 +29,6 @@ namespace MultiGame.Tools
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            savegame(textBox1.Text);
-        }
+        private void button2_Click(object sender, EventArgs e) => savegame(textBox1.Text);
     }
 }

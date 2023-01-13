@@ -137,7 +137,6 @@
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = "Description:\r\nA Game Where Multiple Games Are Connected To Produce Money";
-            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // okButton
             // 

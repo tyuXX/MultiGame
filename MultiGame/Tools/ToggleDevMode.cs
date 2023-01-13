@@ -39,9 +39,6 @@ namespace MultiGame.Tools
             log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/ToggleDevMode/Form]{(Log)}Closing Form");
         }
 
-        private void ToggleDevMode_Load(object sender, EventArgs e)
-        {
-            log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/ToggleDevMode/Form]{(Log)}Opening Form");
-        }
+        private void ToggleDevMode_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/ToggleDevMode/Form]{(Log)}Opening Form");
     }
 }

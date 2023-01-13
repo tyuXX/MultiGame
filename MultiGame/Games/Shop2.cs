@@ -45,10 +45,7 @@ namespace MultiGame.Games
             }
         }
 
-        private void Shop2_Load(object sender, EventArgs e)
-        {
-            updatestore2();
-        }
+        private void Shop2_Load(object sender, EventArgs e) => updatestore2();
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -60,9 +57,6 @@ namespace MultiGame.Games
             }
         }
 
-        private void Shop2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            shop2shown = false;
-        }
+        private void Shop2_FormClosing(object sender, FormClosingEventArgs e) => shop2shown = false;
     }
 }

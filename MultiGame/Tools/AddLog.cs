@@ -76,9 +76,6 @@ namespace MultiGame.Tools
             addlogshown = false;
         }
 
-        private void AddLog_Load(object sender, EventArgs e)
-        {
-            log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/AddLog/Form]{(Log)}Opening Form");
-        }
+        private void AddLog_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/AddLog/Form]{(Log)}Opening Form");
     }
 }

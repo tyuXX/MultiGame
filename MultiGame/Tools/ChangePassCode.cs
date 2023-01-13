@@ -15,10 +15,7 @@ namespace MultiGame.Tools
             changepasscodeshown = false;
         }
 
-        private void ChangePassCode_Load(object sender, EventArgs e)
-        {
-            log.Add("[" + DateTime.Now + "][From:Internal/Tool/ChangePassCode/Form]{(Log)}Opening Form");
-        }
+        private void ChangePassCode_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Tool/ChangePassCode/Form]{(Log)}Opening Form");
 
         private void button1_Click(object sender, EventArgs e)
         {

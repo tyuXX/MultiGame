@@ -42,9 +42,6 @@ namespace MultiGame.Games
             updatestore3();
         }
 
-        private void Shop3_Load(object sender, EventArgs e)
-        {
-            updatestore3();
-        }
+        private void Shop3_Load(object sender, EventArgs e) => updatestore3();
     }
 }

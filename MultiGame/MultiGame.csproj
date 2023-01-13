@@ -310,7 +310,7 @@
     <Content Include="bin\Release\MultiGame.exe" />
     <Content Include="bin\Release\MultiGame.pdb" />
     <Content Include="ico.ico" />
-    <Content Include="update.txt" />
+    <None Include="update.txt" />
     <None Include="Resource\ico.ico" />
     <None Include="Resource\icopng.png" />
   </ItemGroup>

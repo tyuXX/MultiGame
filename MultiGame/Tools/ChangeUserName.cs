@@ -15,10 +15,7 @@ namespace MultiGame.Tools
             changeusernameshown = false;
         }
 
-        private void ChangeUserName_Load(object sender, EventArgs e)
-        {
-            log.Add("[" + DateTime.Now + "][From:Internal/Tool/ChangeUserName/Form]{(Log)}Opening Form");
-        }
+        private void ChangeUserName_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Tool/ChangeUserName/Form]{(Log)}Opening Form");
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -9,10 +9,7 @@ namespace MultiGame.Tools
             InitializeComponent();
         }
 
-        private void OpenGame_Load(object sender, EventArgs e)
-        {
-            log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Form]{(Log)}Opening Form");
-        }
+        private void OpenGame_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Form]{(Log)}Opening Form");
 
         private void OpenGame_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -20,10 +17,7 @@ namespace MultiGame.Tools
             opengameshown = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            opengame(textBox1.Text, textBox2.Text);
-        }
+        private void button2_Click(object sender, EventArgs e) => opengame(textBox1.Text, textBox2.Text);
 
         private void button1_Click(object sender, EventArgs e)
         {
