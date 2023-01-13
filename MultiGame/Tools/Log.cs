@@ -1,7 +1,5 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Windows.Forms;
-using static MultiGame.rntm;
 
 namespace MultiGame.Tools
 {

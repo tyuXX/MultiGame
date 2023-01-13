@@ -18,12 +18,12 @@ namespace Testing
     /// </summary>
     public class Visualizer1 : DialogDebuggerVisualizer
     {
-        protected override void Show(IDialogVisualizerService windowService, IVisualizerObjectProvider objectProvider)
+        protected override void Show( IDialogVisualizerService windowService, IVisualizerObjectProvider objectProvider )
         {
             if (windowService == null)
-                throw new ArgumentNullException("windowService");
+                throw new ArgumentNullException( "windowService" );
             if (objectProvider == null)
-                throw new ArgumentNullException("objectProvider");
+                throw new ArgumentNullException( "objectProvider" );
 
             // TODO: Bir görselleştiriciyi görüntüleyecek nesneyi alın.
             //       objectProvider.GetObject() sonucunu 
@@ -35,7 +35,7 @@ namespace Testing
             using (Form displayForm = new Form())
             {
                 displayForm.Text = data.ToString();
-                windowService.ShowDialog(displayForm);
+                windowService.ShowDialog( displayForm );
             }
         }
 
@@ -47,9 +47,9 @@ namespace Testing
         /// Görselleştiriciyi hata ayıklayıcının dışında barındırarak sınar.
         /// </summary>
         /// <param name="objectToVisualize">Görselleştiricide görüntülenecek nesne.</param>
-        public static void TestShowVisualizer(object objectToVisualize)
+        public static void TestShowVisualizer( object objectToVisualize )
         {
-            VisualizerDevelopmentHost visualizerHost = new VisualizerDevelopmentHost(objectToVisualize, typeof(Visualizer1));
+            VisualizerDevelopmentHost visualizerHost = new VisualizerDevelopmentHost( objectToVisualize, typeof( Visualizer1 ) );
             visualizerHost.ShowVisualizer();
         }
     }

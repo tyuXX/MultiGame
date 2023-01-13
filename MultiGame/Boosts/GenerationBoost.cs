@@ -1,7 +1,5 @@
-﻿using System;
-using System.Numerics;
+﻿using System.Numerics;
 using System.Windows.Forms;
-using static MultiGame.rntm;
 
 namespace MultiGame.Boosts
 {

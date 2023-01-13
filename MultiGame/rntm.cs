@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -7,7 +6,6 @@ using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using static MultiGame.rntm;
 
 namespace MultiGame
 {
@@ -70,7 +68,7 @@ namespace MultiGame
         public static BigInteger autogenmultn = 1000 * (exponent(5, autogenmult) + 1);
         public static BigInteger level = 0;
         public static BigInteger xp = 0;
-        public static BigInteger xpn = 2;
+        public static BigInteger xpn = xpnt;
         public static BigInteger add1 = 0;
         public static BigInteger add1n = 250 * (exponent(2, add1) + 1);
         public static BigInteger add2 = 0;
@@ -144,6 +142,7 @@ namespace MultiGame
         public static World currentworld;
         public static Inventory inventory = new Inventory { };
         public const short xpt = 10;
+        public const short xpnt = 1;
         public const string updatev = "Beta v0.4.5";
         public static void download(string link, string name)
         {
@@ -155,7 +154,7 @@ namespace MultiGame
         public static void updateapp()
         {
             download("https://github.com/tyuXX/MultiGame/raw/master/MultiGameUpdate/bin/Release/MultiGameUpdate.exe", "MultiGameUpdate.exe");
-            File.WriteAllText(@".\upf.m",path);
+            File.WriteAllText(@".\upf.m", path);
             Process.Start(@".\MultiGameUpdate.exe");
             Environment.Exit(0);
         }
@@ -205,7 +204,7 @@ namespace MultiGame
         }
         public static string FormatBigNum(BigInteger num)
         {
-            if(num.ToString().Length > 5)
+            if (num.ToString().Length > 5)
             {
                 return $"{num.ToString()[ 0 ]}e+{num.ToString().Length - 1}";
             }

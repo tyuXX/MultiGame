@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-using static MultiGame.rntm;
+﻿using System.Windows.Forms;
 
 namespace MultiGame.Tools
 {

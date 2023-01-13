@@ -1,8 +1,6 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Numerics;
 using System.Windows.Forms;
-using static MultiGame.rntm;
 
 namespace MultiGame.Games
 {

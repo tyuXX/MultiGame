@@ -1,10 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using MultiGame.Games;
 using MultiGame.Tools;
-using static MultiGame.rntm;
 
 namespace MultiGame
 {
@@ -240,7 +238,7 @@ namespace MultiGame
         {
             level = 0;
             xp = 0;
-            xpn = 2;
+            xpn = xpnt;
         }
 
         private void companytick_Tick(object sender, EventArgs e)
@@ -607,8 +605,9 @@ namespace MultiGame
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
-            if(File.ReadAllText(@".\update.txt") == updatev) { updateapp(); }
+            //download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
+            //if (File.ReadAllText(@".\update.txt") == updatev) { updateapp(); }
+            updateapp();
         }
     }
 }
