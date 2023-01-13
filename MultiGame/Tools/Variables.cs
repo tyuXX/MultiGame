@@ -21,5 +21,10 @@ namespace MultiGame.Tools
         private void timer1_Tick(object sender, EventArgs e) => refresh();
 
         private void Variables_FormClosing(object sender, FormClosingEventArgs e) => varsshown = false;
+
+        private void Variables_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

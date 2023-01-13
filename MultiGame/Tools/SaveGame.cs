@@ -9,23 +9,24 @@ namespace MultiGame.Tools
             InitializeComponent();
         }
 
-        private void SaveGame_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Tool/SaveGame/Form]{(Log)}Opening Form");
+        private void SaveGame_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void SaveGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Tool/SaveGame/Form]{(Log)}Closing Form");
             savegameshown = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            savefiledia.Title = "Save Game File Of MultiGame";
+            savefiledia.Title = "Save Game File For MultiGame";
             savefiledia.AddExtension = true;
             savefiledia.DefaultExt = ".mgs";
             if (savefiledia.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = savefiledia.FileName;
-                log.Add("[" + DateTime.Now + "][From:Internal/Tool/SaveGame/FileSelector]{(Log)}Selected File Name:" + '"' + savefiledia.FileName + '"'); ;
             }
         }
 

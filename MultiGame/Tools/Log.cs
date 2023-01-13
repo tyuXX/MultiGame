@@ -27,10 +27,12 @@ namespace MultiGame.Tools
 
         private void Log_FormClosing(object sender, FormClosingEventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/Log/Form]{(Log)}Closing Form");
             logshown = false;
         }
 
-        private void Log_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Devoloper/Log/Form]{(Log)}Opening Form");
+        private void Log_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

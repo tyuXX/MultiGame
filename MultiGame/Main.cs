@@ -593,7 +593,11 @@ namespace MultiGame
             try
             {
                 download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
-                if (File.ReadAllText(@".\update.txt") == Updatev) { updateapp(); }
+                if (File.ReadAllText(@".\update.txt") == Updatev) 
+                {
+                    updateapp(); 
+                }
+                File.Delete(@".\update.txt");
             }
             catch(Exception ex)
             {

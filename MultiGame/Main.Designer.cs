@@ -65,8 +65,10 @@ namespace MultiGame
             this.autoSaveOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.worldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.populationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.populationGrowthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.populationGrowthPercentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.multipilierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generation1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,9 +82,10 @@ namespace MultiGame
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enableLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.debugVarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugVarsNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enableLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.moreMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetMoneyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,9 +105,6 @@ namespace MultiGame
             this.MultiGameIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.autosavet = new System.Windows.Forms.Timer(this.components);
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -214,27 +214,27 @@ namespace MultiGame
             // alwaysOnTopONToolStripMenuItem
             // 
             this.alwaysOnTopONToolStripMenuItem.Name = "alwaysOnTopONToolStripMenuItem";
-            this.alwaysOnTopONToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.alwaysOnTopONToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.alwaysOnTopONToolStripMenuItem.Text = "Always On Top (OFF)";
             this.alwaysOnTopONToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopONToolStripMenuItem_Click);
             // 
             // formatNumbersOFFToolStripMenuItem
             // 
             this.formatNumbersOFFToolStripMenuItem.Name = "formatNumbersOFFToolStripMenuItem";
-            this.formatNumbersOFFToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.formatNumbersOFFToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (OFF)";
             this.formatNumbersOFFToolStripMenuItem.Click += new System.EventHandler(this.formatNumbersOFFToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(208, 6);
             // 
             // hideGameToolStripMenuItem
             // 
             this.hideGameToolStripMenuItem.Name = "hideGameToolStripMenuItem";
             this.hideGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
-            this.hideGameToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.hideGameToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.hideGameToolStripMenuItem.Text = "Hide Game";
             this.hideGameToolStripMenuItem.Click += new System.EventHandler(this.hideGameToolStripMenuItem_Click);
             // 
@@ -242,19 +242,19 @@ namespace MultiGame
             // 
             this.closeGameToolStripMenuItem.Name = "closeGameToolStripMenuItem";
             this.closeGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
-            this.closeGameToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.closeGameToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.closeGameToolStripMenuItem.Text = "Close Game";
             this.closeGameToolStripMenuItem.Click += new System.EventHandler(this.closeGameToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(208, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -381,6 +381,11 @@ namespace MultiGame
             this.populationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.populationToolStripMenuItem.Text = "Population:";
             // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(211, 6);
+            // 
             // populationGrowthToolStripMenuItem
             // 
             this.populationGrowthToolStripMenuItem.Name = "populationGrowthToolStripMenuItem";
@@ -392,6 +397,11 @@ namespace MultiGame
             this.populationGrowthPercentToolStripMenuItem.Name = "populationGrowthPercentToolStripMenuItem";
             this.populationGrowthPercentToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.populationGrowthPercentToolStripMenuItem.Text = "PopulationGrowthPercent:";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(211, 6);
             // 
             // multipilierToolStripMenuItem
             // 
@@ -500,6 +510,17 @@ namespace MultiGame
             this.addLogToolStripMenuItem.Text = "AddLog";
             this.addLogToolStripMenuItem.Click += new System.EventHandler(this.addLogToolStripMenuItem_Click);
             // 
+            // enableLogToolStripMenuItem
+            // 
+            this.enableLogToolStripMenuItem.Name = "enableLogToolStripMenuItem";
+            this.enableLogToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.enableLogToolStripMenuItem.Text = "Enable Log (OFF) [WIP]";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(254, 6);
+            // 
             // debugVarsToolStripMenuItem
             // 
             this.debugVarsToolStripMenuItem.Name = "debugVarsToolStripMenuItem";
@@ -513,12 +534,6 @@ namespace MultiGame
             this.debugVarsNewToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.debugVarsNewToolStripMenuItem.Text = "Debug Vars [New]";
             this.debugVarsNewToolStripMenuItem.Click += new System.EventHandler(this.debugVarsNewToolStripMenuItem_Click);
-            // 
-            // enableLogToolStripMenuItem
-            // 
-            this.enableLogToolStripMenuItem.Name = "enableLogToolStripMenuItem";
-            this.enableLogToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
-            this.enableLogToolStripMenuItem.Text = "Enable Log (OFF) [WIP]";
             // 
             // toolStripSeparator5
             // 
@@ -598,7 +613,7 @@ namespace MultiGame
             // rngtick
             // 
             this.rngtick.Enabled = true;
-            this.rngtick.Interval = 3000;
+            this.rngtick.Interval = 80000;
             this.rngtick.Tick += new System.EventHandler(this.rngtick_Tick);
             // 
             // boosttimer
@@ -635,21 +650,6 @@ namespace MultiGame
             // 
             this.clearlogt.Enabled = true;
             this.clearlogt.Tick += new System.EventHandler(this.clearlogt_Tick);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(254, 6);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(211, 6);
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(211, 6);
             // 
             // Main
             // 

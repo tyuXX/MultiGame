@@ -9,11 +9,13 @@ namespace MultiGame.Games
             InitializeComponent();
         }
 
-        private void Clicker_Load(object sender, EventArgs e) => log.Add("[" + DateTime.Now + "][From:Internal/Games/Clicker/Form]{(Log)}Opening Form");
+        private void Clicker_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void Clicker_FormClosing(object sender, FormClosingEventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/Clicker/Form]{(Log)}Closing Form");
             clshown = false;
         }
 

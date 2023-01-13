@@ -11,13 +11,11 @@ namespace MultiGame.Games
 
         private void GamesInc_FormClosing(object sender, FormClosingEventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Form]{(Log)}Closing Form");
             gamesincshown = false;
         }
 
         private void GamesInc_Load(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Form]{(Log)}Opening Form");
             updatestore();
         }
 
@@ -74,7 +72,6 @@ namespace MultiGame.Games
         {
             if (money >= workersn)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Purchased worker now:" + workers);
                 outcome += workersn;
                 money -= workersn;
                 workersn *= 2;
@@ -98,7 +95,6 @@ namespace MultiGame.Games
         {
             if (money >= investedn)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Invested now:" + invested);
                 money -= investedn;
                 investedn *= 2;
                 invested++;
@@ -117,7 +113,6 @@ namespace MultiGame.Games
         {
             if (money >= inventionsn)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Invented a invention now:" + inventions);
                 money -= inventionsn;
                 inventionsn *= 2;
                 inventions++;
@@ -138,7 +133,6 @@ namespace MultiGame.Games
         {
             if (money >= minicompaniesn)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/GamesInc/Game]{(Log)}Purchased a Mini Company now:" + minicompanies);
                 money -= minicompaniesn;
                 minicompaniesn *= 9;
                 minicompanies++;

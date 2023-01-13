@@ -79,6 +79,7 @@
             this.ShowIcon = false;
             this.Text = "Variables";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Variables_FormClosing);
+            this.Load += new System.EventHandler(this.Variables_Load);
             this.ResumeLayout(false);
 
         }

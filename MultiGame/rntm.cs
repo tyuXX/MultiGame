@@ -143,7 +143,11 @@ namespace MultiGame
         public static Inventory inventory = new Inventory { };
         public const short xpt = 10;
         public const short xpnt = 1;
-        public const string Updatev = "Beta v0.4.6";
+        public const string Updatev = "Beta v0.4.7";
+        public static void LogStr(object sender, string[ ] param)
+        {
+
+        }
         public static void download(string link, string name)
         {
             using (WebClient client = new WebClient())

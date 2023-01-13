@@ -140,7 +140,6 @@ namespace MultiGame.Games
         {
             if (note == 4)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Game]{(Log)}Right Note");
                 buttonallred();
                 button6.Text = "";
                 note = 0;
@@ -158,7 +157,6 @@ namespace MultiGame.Games
         {
             if (note == 1)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Game]{(Log)}Right Note");
                 buttonallred();
                 button6.Text = "";
                 note = 0;
@@ -176,7 +174,6 @@ namespace MultiGame.Games
         {
             if (note == 3)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Game]{(Log)}Right Note");
                 buttonallred();
                 button6.Text = "";
                 note = 0;
@@ -194,7 +191,6 @@ namespace MultiGame.Games
         {
             if (note == 2)
             {
-                log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Game]{(Log)}Right Note");
                 buttonallred();
                 button6.Text = "";
                 note = 0;
@@ -241,14 +237,12 @@ namespace MultiGame.Games
 
         private void FNF_Load(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Form]{(Log)}Opening Form");
             hideall();
             showothers();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Hardness]{(Log)}Hardness set to 1");
             hardness = 1;
             tick.Enabled = true;
             tick.Interval = 900;
@@ -258,7 +252,6 @@ namespace MultiGame.Games
 
         private void button8_Click(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Hardness]{(Log)}Hardness set to 2");
             hardness = 2;
             tick.Enabled = true;
             tick.Interval = 800;
@@ -268,7 +261,6 @@ namespace MultiGame.Games
 
         private void button9_Click(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Hardness]{(Log)}Hardness set to 3");
             hardness = 3;
             tick.Enabled = true;
             tick.Interval = 700;
@@ -278,7 +270,6 @@ namespace MultiGame.Games
 
         private void button10_Click(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Hardness]{(Log)}Hardness set to 4");
             hardness = 4;
             tick.Enabled = true;
             tick.Interval = 600;
@@ -288,7 +279,6 @@ namespace MultiGame.Games
 
         private void button11_Click(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Hardness]{(Log)}Hardness set to 5");
             hardness = 5;
             tick.Enabled = true;
             tick.Interval = 500;
@@ -298,7 +288,6 @@ namespace MultiGame.Games
 
         private void button12_Click(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Hardness]{(Log)}Hardness set to 6");
             hardness = 6;
             tick.Enabled = true;
             tick.Interval = 300;
@@ -308,7 +297,6 @@ namespace MultiGame.Games
 
         private void FNF_FormClosing(object sender, FormClosingEventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/FNF/Form]{(Log)}Closing Form");
             fnfshown = false;
         }
     }

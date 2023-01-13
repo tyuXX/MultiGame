@@ -166,6 +166,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.About_FormClosing);
+            this.Load += new System.EventHandler(this.About_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();

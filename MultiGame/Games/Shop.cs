@@ -11,13 +11,11 @@ namespace MultiGame.Games
 
         private void Shop_Load(object sender, EventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Form]{(Log)}Opening Form");
             updateshop();
         }
 
         private void Shop_FormClosing(object sender, FormClosingEventArgs e)
         {
-            log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Form]{(Log)}Opening Form");
             shopshown = false;
         }
         private void upshopth()
