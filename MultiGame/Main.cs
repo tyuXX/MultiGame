@@ -229,7 +229,10 @@ namespace MultiGame
             }
         }
 
-        private void resetMoneyToolStripMenuItem_Click(object sender, EventArgs e) => money = 0;
+        private void resetMoneyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            money = 0;
+        }
 
         private void resetLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -253,7 +256,10 @@ namespace MultiGame
             }
         }
 
-        private void Main_FormClosing(object sender, FormClosingEventArgs e) => timerthread.Abort();
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timerthread.Abort();
+        }
 
         private void rngtick_Tick(object sender, EventArgs e)
         {
@@ -482,7 +488,10 @@ namespace MultiGame
             currentworld.population += currentworld.populationgrowth;
         }
 
-        private void newWorldToolStripMenuItem_Click(object sender, EventArgs e) => newworld();
+        private void newWorldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newworld();
+        }
 
         private void hideGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -553,7 +562,10 @@ namespace MultiGame
 
         }
 
-        private void closeGameToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
+        private void closeGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void shop3Level225ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -568,7 +580,10 @@ namespace MultiGame
             }
         }
 
-        private void clearlogt_Tick(object sender, EventArgs e) => log.Clear();
+        private void clearlogt_Tick(object sender, EventArgs e)
+        {
+            log.Clear();
+        }
 
         private void debugVarsNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -593,13 +608,13 @@ namespace MultiGame
             try
             {
                 download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
-                if (File.ReadAllText(@".\update.txt") == Updatev) 
+                if (File.ReadAllText(@".\update.txt") == Updatev)
                 {
-                    updateapp(); 
+                    updateapp();
                 }
                 File.Delete(@".\update.txt");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.Error.WriteLine(ex);
             }

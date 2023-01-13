@@ -19,7 +19,10 @@ namespace MultiGame.Tools
             opengameshown = false;
         }
 
-        private void button2_Click(object sender, EventArgs e) => opengame(textBox1.Text, textBox2.Text);
+        private void button2_Click(object sender, EventArgs e)
+        {
+            opengame(textBox1.Text, textBox2.Text);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

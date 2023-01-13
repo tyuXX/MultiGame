@@ -19,7 +19,10 @@ namespace MultiGame.Boosts
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e) => collect();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            collect();
+        }
 
         private void tick_Tick(object sender, EventArgs e)
         {

@@ -9,7 +9,11 @@ namespace MultiGame.Games
             InitializeComponent();
         }
 
-        private void MagicPowerGenerator_Load(object sender, EventArgs e) => updatestoresc();
+        private void MagicPowerGenerator_Load(object sender, EventArgs e)
+        {
+            updatestoresc();
+        }
+
         private void updatestoresc()
         {
             if (formatnums)
@@ -22,7 +26,10 @@ namespace MultiGame.Games
             }
         }
 
-        private void MagicPowerGenerator_FormClosing(object sender, FormClosingEventArgs e) => magicpowergeneratorshown = false;
+        private void MagicPowerGenerator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            magicpowergeneratorshown = false;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

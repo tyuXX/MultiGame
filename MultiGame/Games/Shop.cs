@@ -72,7 +72,10 @@ namespace MultiGame.Games
             }
             button22.Text = "Autoclicker Speed \r\n" + autoclickerinterval + "ms\r\n$" + autoclickerintervaln;
         }
-        public void updateshop() => upshopth();
+        public void updateshop()
+        {
+            upshopth();
+        }
 
         private void tick_Tick(object sender, EventArgs e)
         {

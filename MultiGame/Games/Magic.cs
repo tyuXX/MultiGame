@@ -31,7 +31,10 @@ namespace MultiGame.Games
             }
         }
 
-        private void Magic_FormClosing(object sender, FormClosingEventArgs e) => magicshown = false;
+        private void Magic_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            magicshown = false;
+        }
 
         private void Magic_Load(object sender, EventArgs e)
         {

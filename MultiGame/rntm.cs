@@ -12,10 +12,10 @@ namespace MultiGame
     public static class rntm
     {
         public static Main mainform;
-        public static Random rng = new Random();
-        public static Thread timerthread = new Thread(timerth);
-        public static List<string> log = new List<string>();
-        public static List<string> passcodes = new List<string> { "$sct", "cheat4life", "24/7 debugging" };
+        public static Random rng = new();
+        public static Thread timerthread = new(timerth);
+        public static List<string> log = new();
+        public static List<string> passcodes = new() { "$sct", "cheat4life", "24/7 debugging" };
         public static string path = "";
         public static string endecode = "1234";
         public static string username = "Player";
@@ -140,7 +140,7 @@ namespace MultiGame
         public static BigInteger boost10t = 0;
         public static BigInteger magicpower = 0;
         public static World currentworld;
-        public static Inventory inventory = new Inventory { };
+        public static Inventory inventory = new() { };
         public const short xpt = 10;
         public const short xpnt = 1;
         public const string Updatev = "Beta v0.4.7";
@@ -150,10 +150,8 @@ namespace MultiGame
         }
         public static void download(string link, string name)
         {
-            using (WebClient client = new WebClient())
-            {
-                client.DownloadFile(link, name);
-            }
+            using WebClient client = new WebClient();
+            client.DownloadFile(link, name);
         }
         public static void updateapp()
         {
@@ -229,30 +227,22 @@ namespace MultiGame
         public static string encode(string toen)
         {
             byte[ ] data = UnicodeEncoding.Unicode.GetBytes(toen);
-            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-            {
-                byte[ ] keys = md5.ComputeHash(UnicodeEncoding.Unicode.GetBytes(endecode));
-                using (TripleDESCryptoServiceProvider tripdes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
-                {
-                    ICryptoTransform transform = tripdes.CreateEncryptor();
-                    byte[ ] results = transform.TransformFinalBlock(data, 0, data.Length);
-                    return Convert.ToBase64String(results, 0, results.Length);
-                }
-            }
+            using MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[ ] keys = md5.ComputeHash(UnicodeEncoding.Unicode.GetBytes(endecode));
+            using TripleDESCryptoServiceProvider tripdes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 };
+            ICryptoTransform transform = tripdes.CreateEncryptor();
+            byte[ ] results = transform.TransformFinalBlock(data, 0, data.Length);
+            return Convert.ToBase64String(results, 0, results.Length);
         }
         public static string decode(string tode)
         {
             byte[ ] data = Convert.FromBase64String(tode);
-            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-            {
-                byte[ ] keys = md5.ComputeHash(UnicodeEncoding.Unicode.GetBytes(endecode));
-                using (TripleDESCryptoServiceProvider tripdes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
-                {
-                    ICryptoTransform transform = tripdes.CreateDecryptor();
-                    byte[ ] results = transform.TransformFinalBlock(data, 0, data.Length);
-                    return UnicodeEncoding.Unicode.GetString(results);
-                }
-            }
+            using MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[ ] keys = md5.ComputeHash(UnicodeEncoding.Unicode.GetBytes(endecode));
+            using TripleDESCryptoServiceProvider tripdes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 };
+            ICryptoTransform transform = tripdes.CreateDecryptor();
+            byte[ ] results = transform.TransformFinalBlock(data, 0, data.Length);
+            return UnicodeEncoding.Unicode.GetString(results);
         }
         public static void timerth()
         {

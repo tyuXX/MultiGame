@@ -30,6 +30,9 @@ namespace MultiGame.Tools
             }
         }
 
-        private void button2_Click(object sender, EventArgs e) => savegame(textBox1.Text);
+        private void button2_Click(object sender, EventArgs e)
+        {
+            savegame(textBox1.Text);
+        }
     }
 }
