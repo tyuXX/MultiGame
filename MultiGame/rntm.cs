@@ -143,7 +143,13 @@ namespace MultiGame
         public static Inventory inventory = new() { };
         public const short xpt = 10;
         public const short xpnt = 1;
-        public const string Updatev = "Beta v0.4.7";
+        public const int lbm = 100;
+        public const string Updatev = "Beta v0.4.8";
+        public static void VSplash()
+        {
+            Resource.Splash splash = new Resource.Splash();
+            splash.Show();
+        }
         public static void LogStr(object sender, string[ ] param)
         {
 

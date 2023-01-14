@@ -105,6 +105,10 @@ namespace MultiGame
             this.MultiGameIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.autosavet = new System.Windows.Forms.Timer(this.components);
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,11 +134,15 @@ namespace MultiGame
             this.openGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clickerToolStripMenuItem,
             this.shopLevel5ToolStripMenuItem,
+            this.toolStripSeparator16,
             this.fNFToolStripMenuItem,
+            this.toolStripSeparator15,
             this.gamesIncLevel50ToolStripMenuItem,
             this.shop2Level100ToolStripMenuItem,
+            this.toolStripSeparator13,
             this.magicLevel150ToolStripMenuItem,
             this.magicPowerGeneratorLevel150ToolStripMenuItem,
+            this.toolStripSeparator14,
             this.shop3Level225ToolStripMenuItem});
             this.openGameToolStripMenuItem.Name = "openGameToolStripMenuItem";
             this.openGameToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
@@ -651,6 +659,26 @@ namespace MultiGame
             this.clearlogt.Enabled = true;
             this.clearlogt.Tick += new System.EventHandler(this.clearlogt_Tick);
             // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(246, 6);
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(246, 6);
+            // 
+            // toolStripSeparator15
+            // 
+            this.toolStripSeparator15.Name = "toolStripSeparator15";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(246, 6);
+            // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(246, 6);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -748,6 +776,10 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     }
 }
 

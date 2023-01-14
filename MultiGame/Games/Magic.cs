@@ -14,8 +14,10 @@ namespace MultiGame.Games
             if (magicpower >= 50)
             {
                 magicpower -= 50;
-                Form fm = new Boosts.MoneyBag();
-                fm.MdiParent = mainform;
+                Form fm = new Boosts.MoneyBag
+                {
+                    MdiParent = mainform
+                };
                 fm.Show();
             }
         }
@@ -25,8 +27,10 @@ namespace MultiGame.Games
             if (magicpower >= 240)
             {
                 magicpower -= 240;
-                Form fm = new Boosts.GenerationBoost();
-                fm.MdiParent = mainform;
+                Form fm = new Boosts.GenerationBoost
+                {
+                    MdiParent = mainform
+                };
                 fm.Show();
             }
         }

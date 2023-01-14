@@ -18,8 +18,10 @@ namespace MultiGame
             if (!clshown)
             {
                 clshown = true;
-                Form fm = new Games.Clicker();
-                fm.MdiParent = this;
+                Form fm = new Clicker
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -81,8 +83,10 @@ namespace MultiGame
                 if (level >= 25)
                 {
                     fnfshown = true;
-                    Games.FNF fm = new Games.FNF();
-                    fm.MdiParent = this;
+                    FNF fm = new FNF
+                    {
+                        MdiParent = this
+                    };
                     fm.Show();
                 }
             }
@@ -102,6 +106,7 @@ namespace MultiGame
             timerthread.Name = "MultiGame Timer Thread";
             timerthread.Start();
             recalculatevars();
+            VSplash();
         }
 
         private void logToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,8 +114,10 @@ namespace MultiGame
             if (!logshown)
             {
                 logshown = true;
-                Form fm = new Tools.Log();
-                fm.MdiParent = this;
+                Form fm = new Log
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -120,8 +127,10 @@ namespace MultiGame
             if (!addlogshown)
             {
                 addlogshown = true;
-                Form fm = new Tools.AddLog();
-                fm.MdiParent = this;
+                Form fm = new AddLog
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -131,8 +140,10 @@ namespace MultiGame
             if (!toggledevmodeshown)
             {
                 toggledevmodeshown = true;
-                Form fm = new Tools.ToggleDevMode();
-                fm.MdiParent = this;
+                Form fm = new ToggleDevMode
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -144,8 +155,10 @@ namespace MultiGame
                 if (level >= 5)
                 {
                     shopshown = true;
-                    Form fm = new Games.Shop();
-                    fm.MdiParent = this;
+                    Form fm = new Shop
+                    {
+                        MdiParent = this
+                    };
                     fm.Show();
                 }
             }
@@ -162,8 +175,10 @@ namespace MultiGame
             if (!changepasscodeshown)
             {
                 changepasscodeshown = true;
-                Form fm = new Tools.ChangePassCode();
-                fm.MdiParent = this;
+                Form fm = new ChangePassCode
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -173,8 +188,10 @@ namespace MultiGame
             if (!changeusernameshown)
             {
                 changeusernameshown = true;
-                Form fm = new Tools.ChangeUserName();
-                fm.MdiParent = this;
+                Form fm = new ChangeUserName
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -184,8 +201,10 @@ namespace MultiGame
             if (!savegameshown)
             {
                 savegameshown = true;
-                Form fm = new Tools.SaveGame();
-                fm.MdiParent = this;
+                Form fm = new SaveGame
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -195,8 +214,10 @@ namespace MultiGame
             if (!opengameshown)
             {
                 opengameshown = true;
-                Form fm = new Tools.OpenGame();
-                fm.MdiParent = this;
+                Form fm = new OpenGame
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -208,8 +229,10 @@ namespace MultiGame
                 if (level >= 50)
                 {
                     gamesincshown = true;
-                    Form fm = new Games.GamesInc();
-                    fm.MdiParent = this;
+                    Form fm = new GamesInc
+                    {
+                        MdiParent = this
+                    };
                     fm.Show();
                 }
             }
@@ -265,14 +288,18 @@ namespace MultiGame
         {
             if (rng.Next(0, 300) >= moneybagc)
             {
-                Form fm = new Boosts.MoneyBag();
-                fm.MdiParent = this;
+                Form fm = new Boosts.MoneyBag
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
             if (rng.Next(0, 600) >= genboostc)
             {
-                Form fm = new Boosts.GenerationBoost();
-                fm.MdiParent = this;
+                Form fm = new Boosts.GenerationBoost
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -363,15 +390,19 @@ namespace MultiGame
 
         private void forceMoneyBagToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form fm = new Boosts.MoneyBag();
-            fm.MdiParent = this;
+            Form fm = new Boosts.MoneyBag
+            {
+                MdiParent = this
+            };
             fm.Show();
         }
 
         private void forceGenerationBoostToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form fm = new Boosts.GenerationBoost();
-            fm.MdiParent = this;
+            Form fm = new Boosts.GenerationBoost
+            {
+                MdiParent = this
+            };
             fm.Show();
         }
 
@@ -423,8 +454,10 @@ namespace MultiGame
                 if (level >= 100)
                 {
                     shop2shown = true;
-                    Form fm = new Games.Shop2();
-                    fm.MdiParent = this;
+                    Form fm = new Shop2
+                    {
+                        MdiParent = this
+                    };
                     fm.Show();
                 }
             }
@@ -435,8 +468,10 @@ namespace MultiGame
             if (!aboutshown)
             {
                 aboutshown = true;
-                Form fm = new Tools.About();
-                fm.MdiParent = this;
+                Form fm = new About
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -448,8 +483,10 @@ namespace MultiGame
                 if (level >= 150)
                 {
                     magicshown = true;
-                    Form fm = new Games.Magic();
-                    fm.MdiParent = this;
+                    Form fm = new Magic
+                    {
+                        MdiParent = this
+                    };
                     fm.Show();
                 }
             }
@@ -462,8 +499,10 @@ namespace MultiGame
                 if (level >= 150)
                 {
                     magicpowergeneratorshown = true;
-                    Form fm = new Games.MagicPowerGenerator();
-                    fm.MdiParent = this;
+                    Form fm = new MagicPowerGenerator
+                    {
+                        MdiParent = this
+                    };
                     fm.Show();
                 }
             }
@@ -473,8 +512,10 @@ namespace MultiGame
             if (!debugvarsshown)
             {
                 debugvarsshown = true;
-                Form fm = new Tools.DebugVars();
-                fm.MdiParent = this;
+                Form fm = new DebugVars
+                {
+                    MdiParent = this
+                };
                 fm.Show();
             }
         }
@@ -573,8 +614,10 @@ namespace MultiGame
             {
                 if (!shopthshown)
                 {
-                    Shop3 shop3 = new Shop3();
-                    shop3.MdiParent = this;
+                    Shop3 shop3 = new Shop3
+                    {
+                        MdiParent = this
+                    };
                     shop3.Show();
                 }
             }
@@ -590,8 +633,10 @@ namespace MultiGame
             if (!varsshown)
             {
                 varsshown = true;
-                Variables variables = new Variables();
-                variables.MdiParent = this;
+                Variables variables = new Variables
+                {
+                    MdiParent = this
+                };
                 variables.Show();
             }
         }
