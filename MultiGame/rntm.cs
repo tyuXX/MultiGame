@@ -144,7 +144,7 @@ namespace MultiGame
         public const short xpt = 10;
         public const short xpnt = 1;
         public const int lbm = 100;
-        public const string Updatev = "Beta v0.4.8";
+        public const string Updatev = "Betav0.4.8";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();

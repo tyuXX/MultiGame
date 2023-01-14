@@ -653,7 +653,7 @@ namespace MultiGame
             try
             {
                 download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
-                if (File.ReadAllText(@".\update.txt") == Updatev)
+                if (File.ReadAllText(@".\update.txt").Trim() == Updatev)
                 {
                     updateapp();
                 }
