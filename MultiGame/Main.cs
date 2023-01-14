@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MultiGame.Games;
 using MultiGame.Tools;
@@ -648,12 +649,13 @@ namespace MultiGame
             }
         }
 
-        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void checkForUpdatesToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
             try
             {
                 download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
-                if (File.ReadAllText(@".\update.txt").Trim() == Updatev)
+                Thread.Sleep(1000);
+                if (File.ReadAllText(@".\update.txt") != Updatev)
                 {
                     updateapp();
                 }
