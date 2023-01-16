@@ -55,6 +55,8 @@ namespace MultiGame
                 generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + FormatBigNum(getmoney());
                 populationToolStripMenuItem.Text = "Population:" + FormatBigNum(currentworld.population);
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + FormatBigNum(currentworld.populationgrowth);
+                mp0ToolStripMenuItem.Text = "Mp:" + FormatBigNum(magicpower);
+                rankToolStripMenuItem.Text = "Rank:" + FormatBigNum(rank);
             }
             else
             {
@@ -66,13 +68,14 @@ namespace MultiGame
                 generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
                 populationToolStripMenuItem.Text = "Population:" + currentworld.population;
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
+                mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
+                rankToolStripMenuItem.Text = "Rank:" + rank;
             }
             nameToolStripMenuItem.Text = "Name:" + username;
             passCodeToolStripMenuItem.Text = "PassCode:" + endecode;
             autoclicker.Interval = autoclickerinterval;
             autoupgrade.Interval = autoupgradeinterval;
             timeSpent0SecondsToolStripMenuItem.Text = "Time Spent:" + timespent + " seconds";
-            mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
             populationGrowthPercentToolStripMenuItem.Text = "PopulationGrowthPercent:" + currentworld.populationgrowthpercent;
             multipilierToolStripMenuItem.Text = "Multipilier:" + currentworld.mult;
         }
@@ -665,6 +668,11 @@ namespace MultiGame
             {
                 Console.Error.WriteLine(ex);
             }
+        }
+
+        private void rankToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RankUp();
         }
     }
 }

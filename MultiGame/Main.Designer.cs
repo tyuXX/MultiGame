@@ -35,11 +35,15 @@ namespace MultiGame
             this.openGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clickerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shopLevel5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.fNFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.gamesIncLevel50ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shop2Level100ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.magicLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magicPowerGeneratorLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.shop3Level225ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,10 +109,8 @@ namespace MultiGame
             this.MultiGameIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.autosavet = new System.Windows.Forms.Timer(this.components);
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.rankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,12 +164,22 @@ namespace MultiGame
             this.shopLevel5ToolStripMenuItem.Text = "Shop Level 5";
             this.shopLevel5ToolStripMenuItem.Click += new System.EventHandler(this.shopLevel5ToolStripMenuItem_Click);
             // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(246, 6);
+            // 
             // fNFToolStripMenuItem
             // 
             this.fNFToolStripMenuItem.Name = "fNFToolStripMenuItem";
             this.fNFToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.fNFToolStripMenuItem.Text = "FNF Level 25";
             this.fNFToolStripMenuItem.Click += new System.EventHandler(this.fNFToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator15
+            // 
+            this.toolStripSeparator15.Name = "toolStripSeparator15";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(246, 6);
             // 
             // gamesIncLevel50ToolStripMenuItem
             // 
@@ -183,6 +195,11 @@ namespace MultiGame
             this.shop2Level100ToolStripMenuItem.Text = "Shop 2 Level 100";
             this.shop2Level100ToolStripMenuItem.Click += new System.EventHandler(this.shop2Level100ToolStripMenuItem_Click);
             // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(246, 6);
+            // 
             // magicLevel150ToolStripMenuItem
             // 
             this.magicLevel150ToolStripMenuItem.Name = "magicLevel150ToolStripMenuItem";
@@ -196,6 +213,11 @@ namespace MultiGame
             this.magicPowerGeneratorLevel150ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.magicPowerGeneratorLevel150ToolStripMenuItem.Text = "Magic Power Generator Level 150";
             this.magicPowerGeneratorLevel150ToolStripMenuItem.Click += new System.EventHandler(this.magicPowerGeneratorLevel150ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(246, 6);
             // 
             // shop3Level225ToolStripMenuItem
             // 
@@ -281,6 +303,8 @@ namespace MultiGame
             this.xP00ToolStripMenuItem,
             this.processAllXpToolStripMenuItem,
             this.toolStripSeparator4,
+            this.rankToolStripMenuItem,
+            this.toolStripSeparator17,
             this.nameToolStripMenuItem,
             this.passCodeToolStripMenuItem,
             this.timeSpent0SecondsToolStripMenuItem,
@@ -659,25 +683,17 @@ namespace MultiGame
             this.clearlogt.Enabled = true;
             this.clearlogt.Tick += new System.EventHandler(this.clearlogt_Tick);
             // 
-            // toolStripSeparator13
+            // rankToolStripMenuItem
             // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(246, 6);
+            this.rankToolStripMenuItem.Name = "rankToolStripMenuItem";
+            this.rankToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.rankToolStripMenuItem.Text = "Rank:";
+            this.rankToolStripMenuItem.Click += new System.EventHandler(this.rankToolStripMenuItem_Click);
             // 
-            // toolStripSeparator14
+            // toolStripSeparator17
             // 
-            this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(246, 6);
-            // 
-            // toolStripSeparator15
-            // 
-            this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(246, 6);
-            // 
-            // toolStripSeparator16
-            // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator17.Name = "toolStripSeparator17";
+            this.toolStripSeparator17.Size = new System.Drawing.Size(185, 6);
             // 
             // Main
             // 
@@ -780,6 +796,8 @@ namespace MultiGame
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+        private System.Windows.Forms.ToolStripMenuItem rankToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
     }
 }
 

@@ -139,9 +139,10 @@ namespace MultiGame
         public static BigInteger boost10 = 1;
         public static BigInteger boost10t = 0;
         public static BigInteger magicpower = 0;
+        public static BigInteger rank = 1;
         public static World currentworld;
         public static Inventory inventory = new() { };
-        public const short xpt = 10;
+        public const short xpt = 5;
         public const short xpnt = 1;
         public const int lbm = 100;
         public const string Updatev = "Betav0.4.9";
@@ -200,7 +201,7 @@ namespace MultiGame
         }
         public static BigInteger getmoney()
         {
-            BigInteger rt = (currentworld.mult * level * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10 + 1) * (((mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
+            BigInteger rt = (currentworld.mult * level * exponent(rank,2) * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10 + 1) * (((mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
             if (rt < 1)
             {
                 return 1;
@@ -208,6 +209,16 @@ namespace MultiGame
             else
             {
                 return rt;
+            }
+        }
+        public static void RankUp()
+        {
+            if(level > exponent(rank,2) * 100)
+            {
+                rank++;
+                xp = 0;
+                level = 0;
+                xpn = xpnt;
             }
         }
         public static string FormatBigNum(BigInteger num)
