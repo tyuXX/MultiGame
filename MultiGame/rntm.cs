@@ -142,10 +142,11 @@ namespace MultiGame
         public static BigInteger rank = 1;
         public static World currentworld;
         public static Inventory inventory = new() { };
-        public const short xpt = 5;
+        public const short xpt = 3;
         public const short xpnt = 1;
         public const int lbm = 100;
-        public const string Updatev = "Betav0.4.9";
+        public const short rut = 10;
+        public const string Updatev = "Betav0.5.0";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -213,7 +214,7 @@ namespace MultiGame
         }
         public static void RankUp()
         {
-            if(level > exponent(rank,2) * 100)
+            if(level > exponent(rank,2) * rut)
             {
                 rank++;
                 xp = 0;
