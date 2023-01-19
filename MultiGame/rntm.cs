@@ -202,7 +202,7 @@ namespace MultiGame
         }
         public static BigInteger getmoney()
         {
-            BigInteger rt = (currentworld.mult * level * exponent(rank,2) * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10 + 1) * (((mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
+            BigInteger rt = (currentworld.mult * level * exponent(rank, 2) * generation * ((add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10 + 1) * (((mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
             if (rt < 1)
             {
                 return 1;
@@ -214,7 +214,7 @@ namespace MultiGame
         }
         public static void RankUp()
         {
-            if(level > exponent(rank,2) * rut)
+            if (level > exponent(rank, 2) * rut)
             {
                 rank++;
                 xp = 0;
@@ -699,13 +699,19 @@ namespace MultiGame
     public struct Upgrade
     {
         public string name;
+        public bool isbought;
         public BigInteger value;
         public BigInteger mult;
-        public Upgrade(string namep, BigInteger valuep, BigInteger multp) : this()
+        public bool isrankpersistent;
+        public bool isrebirtpersistent;
+        public Upgrade(string namep, bool isboughtp, BigInteger valuep, BigInteger multp, bool isrankpersistentp, bool isrebirtpersistentp) : this()
         {
             this.name = namep;
+            this.isbought = isboughtp;
             this.value = valuep;
             this.mult = multp;
+            this.isrankpersistent = isrankpersistentp;
+            this.isrebirtpersistent = isrebirtpersistentp;
         }
     }
     public struct Inventory
