@@ -19,7 +19,7 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-            opengame(textBox1.Text, textBox2.Text);
+            opengame(textBox1.Text, textBox2.Text, this);
         }
 
         private void button1_Click(object sender, EventArgs e)

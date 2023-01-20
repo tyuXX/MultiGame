@@ -42,6 +42,12 @@
 
         private void Shop3_Load(object sender, EventArgs e)
         {
+            update.Enabled = autoupdateshops;
+            updatestore3();
+        }
+
+        private void update_Tick(object sender, EventArgs e)
+        {
             updatestore3();
         }
     }

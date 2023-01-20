@@ -670,5 +670,10 @@ namespace MultiGame
         {
             RankUp();
         }
+
+        private void reCalcVarsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            recalculatevars();
+        }
     }
 }
