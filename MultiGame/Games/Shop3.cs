@@ -42,7 +42,7 @@
 
         private void Shop3_Load(object sender, EventArgs e)
         {
-            update.Enabled = autoupdateshops;
+            update.Enabled = Autoupdateshops;
             updatestore3();
         }
 

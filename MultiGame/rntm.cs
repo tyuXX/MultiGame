@@ -127,7 +127,7 @@ namespace MultiGame
         public static World currentworld;
         public static readonly int mid = rng.Next(int.MinValue, int.MaxValue);
         public static readonly int tid = rng.Next(int.MinValue, int.MaxValue);
-        public const bool autoupdateshops = true;
+        public const bool Autoupdateshops = true;
         public const short xpt = 3;
         public const short xpnt = 1;
         public const int lbm = 100;

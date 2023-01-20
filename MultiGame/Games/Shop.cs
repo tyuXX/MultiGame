@@ -9,7 +9,7 @@
 
         private void Shop_Load(object sender, EventArgs e)
         {
-            update.Enabled = autoupdateshops;
+            update.Enabled = Autoupdateshops;
             updateshop();
         }
 

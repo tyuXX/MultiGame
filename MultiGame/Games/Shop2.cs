@@ -46,7 +46,7 @@ namespace MultiGame.Games
 
         private void Shop2_Load(object sender, EventArgs e)
         {
-            update.Enabled = autoupdateshops;
+            update.Enabled = Autoupdateshops;
             updatestore2();
         }
 
