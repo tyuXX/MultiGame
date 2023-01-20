@@ -8,5 +8,10 @@ namespace Testing
         {
             InitializeComponent();
         }
+
+        private void Form2_Load( object sender, System.EventArgs e )
+        {
+
+        }
     }
 }

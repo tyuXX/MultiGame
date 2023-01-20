@@ -1,4 +1,5 @@
-﻿using MultiGame.Games;
+﻿using System.Numerics;
+using MultiGame.Games;
 using MultiGame.Tools;
 namespace MultiGame
 {
@@ -25,21 +26,24 @@ namespace MultiGame
 
         private void tick_Tick(object sender, EventArgs e)
         {
+            BigInteger levelm = levelupmultu.value;
             TopMost = alwaysontop;
             devToolStripMenuItem.Enabled = devmode;
             autoupgrade.Enabled = automaticupgrade;
             clearlogt.Enabled = clearlog;
+            autorankup.Enabled = automaticrank;
+            autorebirth.Enabled = automaticrebirth;
             if (cheat)
             {
                 money += exponent(int.MaxValue * getmoney(), 100);
                 xp += exponent(int.MaxValue * getmoney(), 100);
             }
-            if (xp >= xpn)
+            while ((levelm > 0) && (xp >= xpn))
             {
                 level++;
-                log.Add("[" + DateTime.Now + "][From:Internal/Main/LVL]{(Log)}Level Up Level Now:" + level);
                 xp -= xpn;
                 xpn *= xpt;
+                levelm--;
             }
             if (formatnums)
             {
@@ -47,12 +51,13 @@ namespace MultiGame
                 money0ToolStripMenuItem.Text = "Money:" + FormatBigNum(money);
                 levelToolStripMenuItem1.Text = "Level:" + FormatBigNum(level);
                 generation1ToolStripMenuItem.Text = "Generation:" + FormatBigNum(generation);
-                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + FormatBigNum(autogenmult * getmoney());
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + FormatBigNum(autogenmultu.value * getmoney());
                 generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + FormatBigNum(getmoney());
                 populationToolStripMenuItem.Text = "Population:" + FormatBigNum(currentworld.population);
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + FormatBigNum(currentworld.populationgrowth);
                 mp0ToolStripMenuItem.Text = "Mp:" + FormatBigNum(magicpower);
                 rankToolStripMenuItem.Text = "Rank:" + FormatBigNum(rank);
+                rebirthToolStripMenuItem.Text = "Rebirth:" + FormatBigNum(rebirth);
             }
             else
             {
@@ -60,12 +65,13 @@ namespace MultiGame
                 money0ToolStripMenuItem.Text = "Money:" + money;
                 levelToolStripMenuItem1.Text = "Level:" + level;
                 generation1ToolStripMenuItem.Text = "Generation:" + generation;
-                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmult * getmoney());
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmultu.value * getmoney());
                 generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
                 populationToolStripMenuItem.Text = "Population:" + currentworld.population;
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
                 mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
                 rankToolStripMenuItem.Text = "Rank:" + rank;
+                rebirthToolStripMenuItem.Text = "Rebirth:" + rebirth;
             }
             nameToolStripMenuItem.Text = "Name:" + username;
             passCodeToolStripMenuItem.Text = "PassCode:" + endecode;
@@ -78,17 +84,14 @@ namespace MultiGame
 
         private void fNFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!fnfshown)
+            if ((level >= 25) && (!fnfshown))
             {
-                if (level >= 25)
+                fnfshown = true;
+                FNF fm = new FNF
                 {
-                    fnfshown = true;
-                    FNF fm = new FNF
-                    {
-                        MdiParent = this
-                    };
-                    fm.Show();
-                }
+                    MdiParent = this
+                };
+                fm.Show();
             }
         }
 
@@ -101,9 +104,8 @@ namespace MultiGame
             currentworld.populationgrowth = rng.Next(0, int.MaxValue);
             currentworld.population = rng.Next(0, int.MaxValue) * rng.Next(0, int.MaxValue);
             currentworld.mult = rng.Next(1, 3);
-            log.Add("[" + DateTime.Now + "][From:Internal/Main/Form]{(Log)}Opening Form");
-            Thread.CurrentThread.Name = "Multigame Main Thread";
-            timerthread.Name = "MultiGame Timer Thread";
+            Thread.CurrentThread.Name = $"Multigame Main Thread ID:{mid}";
+            timerthread.Name = $"MultiGame Timer Thread ID:{tid}";
             timerthread.Start();
             recalculatevars();
             if (splash) { VSplash(); }
@@ -150,24 +152,21 @@ namespace MultiGame
 
         private void shopLevel5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!shopshown)
+            if ((level >= 5) && (!shopshown))
             {
-                if (level >= 5)
+                shopshown = true;
+                Form fm = new Shop
                 {
-                    shopshown = true;
-                    Form fm = new Shop
-                    {
-                        MdiParent = this
-                    };
-                    fm.Show();
-                }
+                    MdiParent = this
+                };
+                fm.Show();
             }
         }
 
         private void autoclicker_Tick(object sender, EventArgs e)
         {
-            money += getmoney() * autogenmult;
-            xp += getmoney() * autogenmult;
+            money += getmoney() * autogenmultu.value;
+            xp += getmoney() * autogenmultu.value;
         }
 
         private void passCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,17 +223,14 @@ namespace MultiGame
 
         private void gamesIncLevel50ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!gamesincshown)
+            if ((level >= 50) && (!gamesincshown))
             {
-                if (level >= 50)
+                gamesincshown = true;
+                Form fm = new GamesInc
                 {
-                    gamesincshown = true;
-                    Form fm = new GamesInc
-                    {
-                        MdiParent = this
-                    };
-                    fm.Show();
-                }
+                    MdiParent = this
+                };
+                fm.Show();
             }
         }
 
@@ -449,17 +445,14 @@ namespace MultiGame
 
         private void shop2Level100ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!shop2shown)
+            if ((level >= 100) && (!shop2shown))
             {
-                if (level >= 100)
+                shop2shown = true;
+                Form fm = new Shop2
                 {
-                    shop2shown = true;
-                    Form fm = new Shop2
-                    {
-                        MdiParent = this
-                    };
-                    fm.Show();
-                }
+                    MdiParent = this
+                };
+                fm.Show();
             }
         }
 
@@ -494,17 +487,14 @@ namespace MultiGame
 
         private void magicPowerGeneratorLevel150ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!magicpowergeneratorshown)
+            if ((level >= 150) && (!magicpowergeneratorshown))
             {
-                if (level >= 150)
+                magicpowergeneratorshown = true;
+                Form fm = new MagicPowerGenerator
                 {
-                    magicpowergeneratorshown = true;
-                    Form fm = new MagicPowerGenerator
-                    {
-                        MdiParent = this
-                    };
-                    fm.Show();
-                }
+                    MdiParent = this
+                };
+                fm.Show();
             }
         }
         private void debugVarsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -610,16 +600,13 @@ namespace MultiGame
 
         private void shop3Level225ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (level >= 225)
+            if ((level >= 225) && !shopthshown)
             {
-                if (!shopthshown)
+                Shop3 shop3 = new Shop3
                 {
-                    Shop3 shop3 = new Shop3
-                    {
-                        MdiParent = this
-                    };
-                    shop3.Show();
-                }
+                    MdiParent = this
+                };
+                shop3.Show();
             }
         }
 
@@ -674,6 +661,34 @@ namespace MultiGame
         private void reCalcVarsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             recalculatevars();
+        }
+
+        private void rebirthToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RebirtUp();
+        }
+
+        private void shop4Level300ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((level >= 300) && (!shop4shown))
+            {
+                Shop4 shop4 = new Shop4
+                {
+                    MdiParent = this
+                };
+                shop4.Show();
+                shop4shown = true;
+            }
+        }
+
+        private void autorankup_Tick(object sender, EventArgs e)
+        {
+            RankUp();
+        }
+
+        private void autorebirth_Tick(object sender, EventArgs e)
+        {
+            RebirtUp();
         }
     }
 }

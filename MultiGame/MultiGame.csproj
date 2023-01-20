@@ -131,6 +131,12 @@
     <Compile Include="Games\Shop3.Designer.cs">
       <DependentUpon>Shop3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Games\Shop4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Games\Shop4.Designer.cs">
+      <DependentUpon>Shop4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Games\Shop3.resx">
       <DependentUpon>Shop3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Games\Shop4.resx">
+      <DependentUpon>Shop4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

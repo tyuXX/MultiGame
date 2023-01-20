@@ -40,7 +40,7 @@
             merge2 = merge2.Replace("$autoclickerinterval", autoclickerinterval.ToString());
             merge2 = merge2.Replace("$money", money.ToString());
             merge2 = merge2.Replace("$generation", generation.ToString());
-            merge2 = merge2.Replace("$autogenmult", autogenmult.ToString());
+            merge2 = merge2.Replace("$autogenmult", autogenmultu.ToString());
             merge2 = merge2.Replace("$level", level.ToString());
             merge2 = merge2.Replace("$xp", xp.ToString());
             merge2 = merge2.Replace("$xpn", xpn.ToString());

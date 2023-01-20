@@ -27,7 +27,7 @@ namespace MultiGame.Tools
             dt.Rows.Add(5, "Money", money.ToString());
             dt.Rows.Add(6, "Generation", generation.ToString());
             dt.Rows.Add(7, "Outcome", outcome.ToString());
-            dt.Rows.Add(8, "Auto Gen Mult", autogenmult.ToString());
+            dt.Rows.Add(8, "Auto Gen Mult", autogenmultu.ToString());
             dt.Rows.Add(9, "Level", level.ToString());
             dt.Rows.Add(10, "Xp", xp.ToString());
             dt.Rows.Add(11, "Xpn", xpn.ToString());

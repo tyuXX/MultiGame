@@ -41,7 +41,7 @@
                 button18.Text = "Multipilier " + FormatBigNum(mult8u.value) + "\r\n$" + FormatBigNum(mult8u.cache);
                 button19.Text = "Multipilier " + FormatBigNum(mult9u.value) + "\r\n$" + FormatBigNum(mult9u.cache);
                 button20.Text = "Multipilier " + FormatBigNum(mult10u.value) + "\r\n$" + FormatBigNum(mult10u.cache);
-                button21.Text = "Autoclickers " + FormatBigNum(autogenmult) + "\r\n$" + FormatBigNum(autogenmultn);
+                button21.Text = "Autoclickers " + FormatBigNum(autogenmultu.value) + "\r\n$" + FormatBigNum(autogenmultu.cache);
                 button22.Text = "Autoclicker Speed\r\n ms" + FormatBigNum(autoclickerinterval) + "\r\n$" + FormatBigNum(autoclickerintervaln);
             }
             else
@@ -66,7 +66,7 @@
                 button18.Text = "Multipilier " + mult8u.value + "\r\n$" + mult8u.cache;
                 button19.Text = "Multipilier " + mult9u.value + "\r\n$" + mult9u.cache;
                 button20.Text = "Multipilier " + mult10u.value + "\r\n$" + mult10u.cache;
-                button21.Text = "Autoclickers " + autogenmult + "\r\n$" + autogenmultn;
+                button21.Text = "Autoclickers " + autogenmultu.value + "\r\n$" + autogenmultu.cache;
                 button22.Text = "Autoclicker Speed\r\n ms" + autoclickerinterval + "\r\n$" + autoclickerintervaln;
             }
             button22.Text = "Autoclicker Speed \r\n" + autoclickerinterval + "ms\r\n$" + autoclickerintervaln;
