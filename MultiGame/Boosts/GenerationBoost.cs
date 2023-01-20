@@ -1,5 +1,4 @@
 ﻿using System.Numerics;
-using System.Windows.Forms;
 
 namespace MultiGame.Boosts
 {
@@ -16,7 +15,7 @@ namespace MultiGame.Boosts
         {
             boost1t += boosttime;
             boost1 *= boost;
-            this.Close();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,7 +28,7 @@ namespace MultiGame.Boosts
             time--;
             if (time < 1)
             {
-                this.Close();
+                Close();
             }
         }
 

@@ -1,7 +1,4 @@
-﻿using System.Threading;
-using System.Windows.Forms;
-
-namespace MultiGame.Tools
+﻿namespace MultiGame.Tools
 {
     public partial class Log : Form
     {

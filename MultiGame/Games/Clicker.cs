@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace MultiGame.Games
+﻿namespace MultiGame.Games
 {
     public partial class Clicker : Form
     {

@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace MultiGame.Tools
+﻿namespace MultiGame.Tools
 {
     public partial class Variables : Form
     {

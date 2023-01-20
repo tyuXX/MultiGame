@@ -1,5 +1,4 @@
 ﻿using System.Numerics;
-using System.Windows.Forms;
 
 namespace MultiGame.Boosts
 {
@@ -17,14 +16,14 @@ namespace MultiGame.Boosts
             time--;
             if (time < 1)
             {
-                this.Close();
+                Close();
             }
         }
         private void collect()
         {
             money += gift;
             xp += gift;
-            this.Close();
+            Close();
         }
         private void button1_Click(object sender, EventArgs e)
         {

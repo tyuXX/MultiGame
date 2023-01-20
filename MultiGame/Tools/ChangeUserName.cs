@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace MultiGame.Tools
+﻿namespace MultiGame.Tools
 {
     public partial class ChangeUserName : Form
     {
@@ -24,7 +22,7 @@ namespace MultiGame.Tools
             if (textBox1.Text == endecode)
             {
                 username = textBox2.Text;
-                this.Close();
+                Close();
             }
         }
     }

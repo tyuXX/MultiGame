@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace MultiGame.Resource
+﻿namespace MultiGame.Resource
 {
     public partial class Splash : Form
     {
@@ -16,7 +14,7 @@ namespace MultiGame.Resource
             if (progressBar1.Value == progressBar1.Maximum)
             {
                 mainform.Show();
-                this.Close();
+                Close();
             }
         }
 

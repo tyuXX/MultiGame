@@ -40,6 +40,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>
     </DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,7 +52,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>MultiGame.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -297,8 +299,8 @@
       <DependentUpon>Variables.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
-    <None Include="bin\Debug\MultiGame.exe.config" />
-    <None Include="bin\Release\MultiGame.exe.config" />
+    <None Include="bin\Debug\Multi Game.exe.config" />
+    <None Include="bin\Release\Multi Game.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -313,10 +315,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\MultiGame.exe" />
-    <Content Include="bin\Debug\MultiGame.pdb" />
-    <Content Include="bin\Release\MultiGame.exe" />
-    <Content Include="bin\Release\MultiGame.pdb" />
+    <None Include="bin\Debug\Multi Game.exe" />
+    <None Include="bin\Debug\Multi Game.pdb" />
+    <None Include="bin\Release\Multi Game.exe" />
+    <None Include="bin\Release\Multi Game.pdb" />
     <Content Include="ico.ico" />
     <None Include="update.txt" />
     <None Include="Resource\ico.ico" />

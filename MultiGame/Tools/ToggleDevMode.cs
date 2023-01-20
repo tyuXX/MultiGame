@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace MultiGame.Tools
+﻿namespace MultiGame.Tools
 {
     public partial class ToggleDevMode : Form
     {
@@ -23,7 +21,7 @@ namespace MultiGame.Tools
                     {
                         devmode = true;
                     }
-                    this.Close();
+                    Close();
                 }
                 else
                 {

@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
 
 namespace MultiGame
 {
@@ -69,6 +67,26 @@ namespace MultiGame
         public static BigInteger level = 0;
         public static BigInteger xp = 0;
         public static BigInteger xpn = xpnt;
+        public static Upgrade add1u = new Upgrade("Add1", true, 0, 0, 2, 250);
+        public static Upgrade add2u = new Upgrade("Add2", true, 0, 0, 2, 250);
+        public static Upgrade add3u = new Upgrade("Add3", true, 0, 0, 2, 250);
+        public static Upgrade add4u = new Upgrade("Add4", true, 0, 0, 2, 250);
+        public static Upgrade add5u = new Upgrade("Add5", true, 0, 0, 2, 250);
+        public static Upgrade add6u = new Upgrade("Add6", true, 0, 0, 2, 250);
+        public static Upgrade add7u = new Upgrade("Add7", true, 0, 0, 2, 250);
+        public static Upgrade add8u = new Upgrade("Add8", true, 0, 0, 2, 250);
+        public static Upgrade add9u = new Upgrade("Add9", true, 0, 0, 2, 250);
+        public static Upgrade add10u = new Upgrade("Add10", true, 0, 0, 2, 250);
+        public static Upgrade mult1u = new Upgrade("Mult1", true, 1, 1, 3, 500, true);
+        public static Upgrade mult2u = new Upgrade("Mult2", true, 1, 1, 3, 500, true);
+        public static Upgrade mult3u = new Upgrade("Mult3", true, 1, 1, 3, 500, true);
+        public static Upgrade mult4u = new Upgrade("Mult4", true, 1, 1, 3, 500, true);
+        public static Upgrade mult5u = new Upgrade("Mult5", true, 1, 1, 3, 500, true);
+        public static Upgrade mult6u = new Upgrade("Mult6", true, 1, 1, 3, 500, true);
+        public static Upgrade mult7u = new Upgrade("Mult7", true, 1, 1, 3, 500, true);
+        public static Upgrade mult8u = new Upgrade("Mult8", true, 1, 1, 3, 500, true);
+        public static Upgrade mult9u = new Upgrade("Mult9", true, 1, 1, 3, 500, true);
+        public static Upgrade mult10u = new Upgrade("Mult10", true, 1, 1, 3, 500, true);
         public static BigInteger add1 = 0;
         public static BigInteger add1n = 250 * (exponent(2, add1) + 1);
         public static BigInteger add2 = 0;
@@ -141,7 +159,6 @@ namespace MultiGame
         public static BigInteger magicpower = 0;
         public static BigInteger rank = 1;
         public static World currentworld;
-        public static Inventory inventory = new() { };
         public const short xpt = 3;
         public const short xpnt = 1;
         public const int lbm = 100;
@@ -689,11 +706,11 @@ namespace MultiGame
         public BigInteger mult;
         public World(string namep, BigInteger pop, BigInteger popg, BigInteger popgp, BigInteger mul) : this()
         {
-            this.name = namep;
-            this.population = pop;
-            this.populationgrowth = popg;
-            this.populationgrowthpercent = popgp;
-            this.mult = mul;
+            name = namep;
+            population = pop;
+            populationgrowth = popg;
+            populationgrowthpercent = popgp;
+            mult = mul;
         }
     }
     public struct Upgrade
@@ -701,17 +718,58 @@ namespace MultiGame
         public string name;
         public bool isbought;
         public BigInteger value;
+        public BigInteger dvalue;
         public BigInteger mult;
+        public BigInteger cache;
+        public BigInteger scache;
+        public BigInteger dcache;
+        public bool dopo;
         public bool isrankpersistent;
         public bool isrebirtpersistent;
-        public Upgrade(string namep, bool isboughtp, BigInteger valuep, BigInteger multp, bool isrankpersistentp, bool isrebirtpersistentp) : this()
+        public override string ToString()
         {
-            this.name = namep;
-            this.isbought = isboughtp;
-            this.value = valuep;
-            this.mult = multp;
-            this.isrankpersistent = isrankpersistentp;
-            this.isrebirtpersistent = isrebirtpersistentp;
+            return $"{name.Replace("|", "")}|{isbought}|{value}|{dvalue}|{mult}|{scache}|{dopo}|{isrankpersistent}|{isrebirtpersistent}";
+        }
+        public BigInteger GetN()
+        {
+            if (dopo)
+            {
+                cache = scache * (exponent(mult, value) + 1);
+            }
+            else
+            {
+                cache = scache * exponent(mult, value);
+            }
+            return cache;
+        }
+        public void Restore(bool force = false)
+        {
+            value = dvalue;
+            if (force)
+            {
+                cache = dcache;
+            }
+        }
+        public Upgrade(string namep, bool isboughtp, BigInteger valuep, BigInteger dvaluep, BigInteger multp, BigInteger scachep, bool dopop = false, bool isrankpersistentp = false, bool isrebirtpersistentp = false) : this()
+        {
+            name = namep;
+            isbought = isboughtp;
+            value = valuep;
+            dvalue = dvaluep;
+            mult = multp;
+            scache = scachep;
+            isrankpersistent = isrankpersistentp;
+            isrebirtpersistent = isrebirtpersistentp;
+            dopo = dopop;
+            if (dopo)
+            {
+                cache = scache * (exponent(mult, value) + 1);
+            }
+            else
+            {
+                cache = scache * exponent(mult, value);
+            }
+            dcache = cache;
         }
     }
     public struct Inventory
@@ -721,12 +779,12 @@ namespace MultiGame
         public BigInteger mult;
         public Inventory(List<Item> pitems, int pmaxsize = 10) : this()
         {
-            this.items = pitems;
-            this.maxsize = pmaxsize;
-            this.mult = 1;
-            if (this.items.Count > 0)
+            items = pitems;
+            maxsize = pmaxsize;
+            mult = 1;
+            if (items.Count > 0)
             {
-                foreach (Item it in this.items)
+                foreach (Item it in items)
                 {
                     mult *= it.mult;
                 }
@@ -744,52 +802,56 @@ namespace MultiGame
             {
                 case Rarity.common:
                     {
-                        this.name = "Common " + pname;
+                        name = "Common " + pname;
                         break;
                     }
                 case Rarity.uncommon:
                     {
-                        this.name = "Uncommon " + pname;
+                        name = "Uncommon " + pname;
                         break;
                     }
                 case Rarity.rare:
                     {
-                        this.name = "Rare " + pname;
+                        name = "Rare " + pname;
                         break;
                     }
                 case Rarity.epic:
                     {
-                        this.name = "Epic " + pname;
+                        name = "Epic " + pname;
                         break;
                     }
                 case Rarity.legendary:
                     {
-                        this.name = "Legendary " + pname;
+                        name = "Legendary " + pname;
                         break;
                     }
                 case Rarity.ancient:
                     {
-                        this.name = "Ancient " + pname;
+                        name = "Ancient " + pname;
                         break;
                     }
                 case Rarity.infinite:
                     {
-                        this.name = "Infinite " + pname;
+                        name = "Infinite " + pname;
                         break;
                     }
                 case Rarity.devoloper:
                     {
-                        this.name = "Devoloper's " + pname;
+                        name = "Devoloper's " + pname;
+                        break;
+                    }
+                default:
+                    {
                         break;
                     }
             }
             if (rarity == Rarity.devoloper)
             {
-                this.mult = int.MaxValue;
+                mult = int.MaxValue;
             }
             else
             {
-                this.mult = rng.Next(1, ((int)this.rarity * 100));
+                mult = rng.Next(1, ((int)rarity * 100));
             }
         }
     }

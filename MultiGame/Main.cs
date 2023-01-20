@@ -1,13 +1,10 @@
-﻿using System.IO;
-using System.Threading;
-using System.Windows.Forms;
-using MultiGame.Games;
+﻿using MultiGame.Games;
 using MultiGame.Tools;
-
 namespace MultiGame
 {
     public partial class Main : Form
     {
+        public bool splash = true;
         public Main()
         {
             InitializeComponent();
@@ -28,7 +25,7 @@ namespace MultiGame
 
         private void tick_Tick(object sender, EventArgs e)
         {
-            this.TopMost = alwaysontop;
+            TopMost = alwaysontop;
             devToolStripMenuItem.Enabled = devmode;
             autoupgrade.Enabled = automaticupgrade;
             clearlogt.Enabled = clearlog;
@@ -109,7 +106,7 @@ namespace MultiGame
             timerthread.Name = "MultiGame Timer Thread";
             timerthread.Start();
             recalculatevars();
-            VSplash();
+            if (splash) { VSplash(); }
         }
 
         private void logToolStripMenuItem_Click(object sender, EventArgs e)
@@ -539,13 +536,13 @@ namespace MultiGame
 
         private void hideGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             MultiGameIcon.Visible = true;
         }
 
         private void MultiGameIcon_Click(object sender, EventArgs e)
         {
-            this.Show();
+            Show();
             MultiGameIcon.Visible = false;
         }
 
@@ -645,7 +642,7 @@ namespace MultiGame
         }
         public void closeallchild()
         {
-            foreach (Form f in this.MdiChildren)
+            foreach (Form f in MdiChildren)
             {
                 f.Close();
             }
