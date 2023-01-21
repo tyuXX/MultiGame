@@ -690,5 +690,18 @@ namespace MultiGame
         {
             RebirtUp();
         }
+
+        private void gameStarterRebirth2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((!rankstartershown) && (rebirth >= 2))
+            {
+                rankstartershown = true;
+                RankStarter rankStarter = new RankStarter
+                {
+                    MdiParent = this
+                };
+                rankStarter.Show();
+            }
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace MultiGame
             this.magicPowerGeneratorLevel150ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.shop3Level225ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shop4Level300ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatNumbersOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,7 +116,7 @@ namespace MultiGame
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
             this.autorankup = new System.Windows.Forms.Timer(this.components);
             this.autorebirth = new System.Windows.Forms.Timer(this.components);
-            this.shop4Level300ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameStarterRebirth2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +152,8 @@ namespace MultiGame
             this.magicPowerGeneratorLevel150ToolStripMenuItem,
             this.toolStripSeparator14,
             this.shop3Level225ToolStripMenuItem,
-            this.shop4Level300ToolStripMenuItem});
+            this.shop4Level300ToolStripMenuItem,
+            this.gameStarterRebirth2ToolStripMenuItem});
             this.openGameToolStripMenuItem.Name = "openGameToolStripMenuItem";
             this.openGameToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.openGameToolStripMenuItem.Text = "Open Game";
@@ -231,6 +233,13 @@ namespace MultiGame
             this.shop3Level225ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.shop3Level225ToolStripMenuItem.Text = "Shop 3 Level 225";
             this.shop3Level225ToolStripMenuItem.Click += new System.EventHandler(this.shop3Level225ToolStripMenuItem_Click);
+            // 
+            // shop4Level300ToolStripMenuItem
+            // 
+            this.shop4Level300ToolStripMenuItem.Name = "shop4Level300ToolStripMenuItem";
+            this.shop4Level300ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.shop4Level300ToolStripMenuItem.Text = "Shop 4 Level 300";
+            this.shop4Level300ToolStripMenuItem.Click += new System.EventHandler(this.shop4Level300ToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -727,12 +736,12 @@ namespace MultiGame
             this.autorebirth.Interval = 1000;
             this.autorebirth.Tick += new System.EventHandler(this.autorebirth_Tick);
             // 
-            // shop4Level300ToolStripMenuItem
+            // gameStarterRebirth2ToolStripMenuItem
             // 
-            this.shop4Level300ToolStripMenuItem.Name = "shop4Level300ToolStripMenuItem";
-            this.shop4Level300ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.shop4Level300ToolStripMenuItem.Text = "Shop 4 Level 300";
-            this.shop4Level300ToolStripMenuItem.Click += new System.EventHandler(this.shop4Level300ToolStripMenuItem_Click);
+            this.gameStarterRebirth2ToolStripMenuItem.Name = "gameStarterRebirth2ToolStripMenuItem";
+            this.gameStarterRebirth2ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.gameStarterRebirth2ToolStripMenuItem.Text = "Game Starter Rebirth 2";
+            this.gameStarterRebirth2ToolStripMenuItem.Click += new System.EventHandler(this.gameStarterRebirth2ToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -842,6 +851,7 @@ namespace MultiGame
         private System.Windows.Forms.Timer autorankup;
         private System.Windows.Forms.Timer autorebirth;
         private ToolStripMenuItem shop4Level300ToolStripMenuItem;
+        private ToolStripMenuItem gameStarterRebirth2ToolStripMenuItem;
     }
 }
 

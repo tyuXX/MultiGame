@@ -38,6 +38,8 @@ namespace MultiGame
         public static bool shopthshown = false;
         public static bool varsshown = false;
         public static bool shop4shown = false;
+        public static bool rankstartershown = false;
+        public static bool shop5shown = false;
         public static bool devmode = false;
         public static bool cheat = false;
         public static bool companywork = false;
@@ -132,7 +134,7 @@ namespace MultiGame
         public const short xpnt = 1;
         public const int lbm = 100;
         public const short rut = 10;
-        public const string Updatev = "Betav0.5.2";
+        public const string Updatev = "Betav0.5.3";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -522,7 +524,10 @@ namespace MultiGame
                     encode(currentworld.populationgrowth.ToString()),
                     encode(currentworld.populationgrowthpercent.ToString()),
                     encode(moneybagc.ToString()),
-                    encode(genboostc.ToString())
+                    encode(genboostc.ToString()),
+                    encode(rank.ToString()),
+                    encode(rebirth.ToString()),
+                    encode(levelupmultu.value.ToString())
                 };
                 File.WriteAllLines(filepath, masterfile);
                 lastfile = filepath;
@@ -584,6 +589,9 @@ namespace MultiGame
                 try { currentworld.populationgrowthpercent = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowthpercent ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { moneybagc = Convert.ToInt32(decode(masterfile[ (int)saveorder.moneybagchance ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { genboostc = Convert.ToInt32(decode(masterfile[ (int)saveorder.genboostchance ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.rank ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { rebirth = BigInteger.Parse(decode(masterfile[ (int)saveorder.rebirth ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
+                try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
                 try { recalculatevars(); } catch (Exception) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at recalculating varirables"); }
                 lastfile = filepath;
                 form?.Close();
@@ -635,6 +643,18 @@ namespace MultiGame
             populationgrowth = popg;
             populationgrowthpercent = popgp;
             mult = mul;
+        }
+    }
+    public struct TaskBar
+    {
+        public Func<object> func;
+        public BigInteger value;
+        public BigInteger maxvalue;
+        public TaskBar(Func<object> funcp, BigInteger valuep, BigInteger maxvaluep) : this()
+        {
+            func = funcp;
+            value = valuep;
+            maxvalue = maxvaluep;
         }
     }
     public struct Boost
@@ -800,6 +820,9 @@ namespace MultiGame
         currentworldpopulationgrowth,
         currentworldpopulationgrowthpercent,
         moneybagchance,
-        genboostchance
+        genboostchance,
+        rank,
+        rebirth,
+        levelupmult
     }
 }
