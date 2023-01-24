@@ -12,10 +12,7 @@
 
         }
 
-        private void Clicker_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            clshown = false;
-        }
+        private void Clicker_FormClosing(object sender, FormClosingEventArgs e) => clshown = false;
 
         private void button1_Click(object sender, EventArgs e)
         {

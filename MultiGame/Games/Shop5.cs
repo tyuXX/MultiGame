@@ -30,14 +30,8 @@
             uplevelupmult();
         }
 
-        private void update_Tick(object sender, EventArgs e)
-        {
-            updateshop5();
-        }
+        private void update_Tick(object sender, EventArgs e) => updateshop5();
 
-        private void Shop5_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            shop5shown = false;
-        }
+        private void Shop5_FormClosing(object sender, FormClosingEventArgs e) => shop5shown = false;
     }
 }

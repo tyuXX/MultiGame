@@ -60,14 +60,8 @@ namespace MultiGame.Games
             }
         }
 
-        private void Shop2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            shop2shown = false;
-        }
+        private void Shop2_FormClosing(object sender, FormClosingEventArgs e) => shop2shown = false;
 
-        private void update_Tick(object sender, EventArgs e)
-        {
-            updatestore2();
-        }
+        private void update_Tick(object sender, EventArgs e) => updatestore2();
     }
 }

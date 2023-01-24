@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Diagnostics;
+using System.Numerics;
 using MultiGame.Games;
 using MultiGame.Tools;
 namespace MultiGame
@@ -248,10 +249,7 @@ namespace MultiGame
             }
         }
 
-        private void resetMoneyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            money = 0;
-        }
+        private void resetMoneyToolStripMenuItem_Click(object sender, EventArgs e) => money = 0;
 
         private void resetLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -275,10 +273,7 @@ namespace MultiGame
             }
         }
 
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            timerthread.Abort();
-        }
+        private void Main_FormClosing(object sender, FormClosingEventArgs e) => timerthread.Abort();
 
         private void rngtick_Tick(object sender, EventArgs e)
         {
@@ -519,10 +514,7 @@ namespace MultiGame
             currentworld.population += currentworld.populationgrowth;
         }
 
-        private void newWorldToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            newworld();
-        }
+        private void newWorldToolStripMenuItem_Click(object sender, EventArgs e) => newworld();
 
         private void hideGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -593,10 +585,7 @@ namespace MultiGame
 
         }
 
-        private void closeGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        private void closeGameToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
 
         private void shop3Level225ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -610,10 +599,7 @@ namespace MultiGame
             }
         }
 
-        private void clearlogt_Tick(object sender, EventArgs e)
-        {
-            log.Clear();
-        }
+        private void clearlogt_Tick(object sender, EventArgs e) => log.Clear();
 
         private void debugVarsNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -653,20 +639,11 @@ namespace MultiGame
             }
         }
 
-        private void rankToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RankUp();
-        }
+        private void rankToolStripMenuItem_Click(object sender, EventArgs e) => RankUp();
 
-        private void reCalcVarsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            recalculatevars();
-        }
+        private void reCalcVarsToolStripMenuItem_Click(object sender, EventArgs e) => recalculatevars();
 
-        private void rebirthToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RebirtUp();
-        }
+        private void rebirthToolStripMenuItem_Click(object sender, EventArgs e) => RebirtUp();
 
         private void shop4Level300ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -681,15 +658,9 @@ namespace MultiGame
             }
         }
 
-        private void autorankup_Tick(object sender, EventArgs e)
-        {
-            RankUp();
-        }
+        private void autorankup_Tick(object sender, EventArgs e) => RankUp();
 
-        private void autorebirth_Tick(object sender, EventArgs e)
-        {
-            RebirtUp();
-        }
+        private void autorebirth_Tick(object sender, EventArgs e) => RebirtUp();
 
         private void gameStarterRebirth2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -703,5 +674,21 @@ namespace MultiGame
                 rankStarter.Show();
             }
         }
+
+        private void maxBuyOFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (maxbuy)
+            {
+                maxBuyOFFToolStripMenuItem.Text = "Max Buy (OFF)";
+                maxbuy = false;
+            }
+            else
+            {
+                maxBuyOFFToolStripMenuItem.Text = "Max Buy (ON)";
+                maxbuy = true;
+            }
+        }
+
+        private void webPageToolStripMenuItem_Click(object sender, EventArgs e) => Process.Start("https://github.com/tyuXX/MultiGame");
     }
 }

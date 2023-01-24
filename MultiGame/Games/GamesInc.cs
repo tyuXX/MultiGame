@@ -7,15 +7,9 @@
             InitializeComponent();
         }
 
-        private void GamesInc_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            gamesincshown = false;
-        }
+        private void GamesInc_FormClosing(object sender, FormClosingEventArgs e) => gamesincshown = false;
 
-        private void GamesInc_Load(object sender, EventArgs e)
-        {
-            updatestore();
-        }
+        private void GamesInc_Load(object sender, EventArgs e) => updatestore();
 
         private void tick_Tick(object sender, EventArgs e)
         {
@@ -91,18 +85,38 @@
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (money >= investedn)
+            if (maxbuy)
             {
-                money -= investedn;
-                investedn *= 2;
-                invested++;
-                if (formatnums)
+                while (money >= investedn)
                 {
-                    button3.Text = $"Invest ${FormatBigNum(investedn)}";
+                    money -= investedn;
+                    investedn *= 2;
+                    invested++;
+                    if (formatnums)
+                    {
+                        button3.Text = $"Invest ${FormatBigNum(investedn)}";
+                    }
+                    else
+                    {
+                        button3.Text = $"Invest ${investedn}";
+                    }
                 }
-                else
+            }
+            else
+            {
+                if (money >= investedn)
                 {
-                    button3.Text = $"Invest ${investedn}";
+                    money -= investedn;
+                    investedn *= 2;
+                    invested++;
+                    if (formatnums)
+                    {
+                        button3.Text = $"Invest ${FormatBigNum(investedn)}";
+                    }
+                    else
+                    {
+                        button3.Text = $"Invest ${investedn}";
+                    }
                 }
             }
         }
@@ -129,18 +143,38 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (money >= minicompaniesn)
+            if (maxbuy)
             {
-                money -= minicompaniesn;
-                minicompaniesn *= 9;
-                minicompanies++;
-                if (formatnums)
+                while (money >= minicompaniesn)
                 {
-                    button2.Text = "Buy A Mini Company $" + FormatBigNum(minicompaniesn);
+                    money -= minicompaniesn;
+                    minicompaniesn *= 9;
+                    minicompanies++;
+                    if (formatnums)
+                    {
+                        button2.Text = "Buy A Mini Company $" + FormatBigNum(minicompaniesn);
+                    }
+                    else
+                    {
+                        button2.Text = "Buy A Mini Company $" + minicompaniesn;
+                    }
                 }
-                else
+            }
+            else
+            {
+                if (money >= minicompaniesn)
                 {
-                    button2.Text = "Buy A Mini Company $" + minicompaniesn;
+                    money -= minicompaniesn;
+                    minicompaniesn *= 9;
+                    minicompanies++;
+                    if (formatnums)
+                    {
+                        button2.Text = "Buy A Mini Company $" + FormatBigNum(minicompaniesn);
+                    }
+                    else
+                    {
+                        button2.Text = "Buy A Mini Company $" + minicompaniesn;
+                    }
                 }
             }
         }

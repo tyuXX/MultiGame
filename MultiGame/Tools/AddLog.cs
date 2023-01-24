@@ -68,10 +68,7 @@
             textBox1.Clear();
         }
 
-        private void AddLog_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            addlogshown = false;
-        }
+        private void AddLog_FormClosing(object sender, FormClosingEventArgs e) => addlogshown = false;
 
         private void AddLog_Load(object sender, EventArgs e)
         {

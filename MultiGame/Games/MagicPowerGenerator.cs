@@ -7,10 +7,7 @@
             InitializeComponent();
         }
 
-        private void MagicPowerGenerator_Load(object sender, EventArgs e)
-        {
-            updatestoresc();
-        }
+        private void MagicPowerGenerator_Load(object sender, EventArgs e) => updatestoresc();
 
         private void updatestoresc()
         {
@@ -24,18 +21,27 @@
             }
         }
 
-        private void MagicPowerGenerator_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            magicpowergeneratorshown = false;
-        }
+        private void MagicPowerGenerator_FormClosing(object sender, FormClosingEventArgs e) => magicpowergeneratorshown = false;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (money >= (1000 * getmoney()))
+            if (maxbuy)
             {
-                magicpower++;
-                money -= 1000 * getmoney();
-                updatestoresc();
+                while (money >= (magicpower * 1000 * getmoney()))
+                {
+                    magicpower++;
+                    money -= magicpower * 1000 * getmoney();
+                    updatestoresc();
+                }
+            }
+            else
+            {
+                if (money >= (magicpower * 1000 * getmoney()))
+                {
+                    magicpower++;
+                    money -= magicpower * 1000 * getmoney();
+                    updatestoresc();
+                }
             }
         }
     }

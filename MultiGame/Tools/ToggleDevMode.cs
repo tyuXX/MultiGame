@@ -30,10 +30,7 @@
             }
         }
 
-        private void ToggleDevMode_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            toggledevmodeshown = false;
-        }
+        private void ToggleDevMode_FormClosing(object sender, FormClosingEventArgs e) => toggledevmodeshown = false;
 
         private void ToggleDevMode_Load(object sender, EventArgs e)
         {

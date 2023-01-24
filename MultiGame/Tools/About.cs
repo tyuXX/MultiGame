@@ -92,15 +92,9 @@ namespace MultiGame.Tools
             }
         }
 
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void okButton_Click(object sender, EventArgs e) => Close();
 
-        private void About_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            aboutshown = false;
-        }
+        private void About_FormClosing(object sender, FormClosingEventArgs e) => aboutshown = false;
 
         private void About_Load(object sender, EventArgs e)
         {

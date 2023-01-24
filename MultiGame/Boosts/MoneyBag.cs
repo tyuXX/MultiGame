@@ -25,10 +25,7 @@ namespace MultiGame.Boosts
             xp += gift;
             Close();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            collect();
-        }
+        private void button1_Click(object sender, EventArgs e) => collect();
 
         private void MoneyBag_Load(object sender, EventArgs e)
         {

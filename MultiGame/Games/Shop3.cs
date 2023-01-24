@@ -46,9 +46,6 @@
             updatestore3();
         }
 
-        private void update_Tick(object sender, EventArgs e)
-        {
-            updatestore3();
-        }
+        private void update_Tick(object sender, EventArgs e) => updatestore3();
     }
 }

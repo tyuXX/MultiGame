@@ -63,14 +63,8 @@ namespace MultiGame.Tools
             dataGridView1.DataSource = dt;
         }
 
-        private void DebugVars_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            debugvarsshown = false;
-        }
+        private void DebugVars_FormClosing(object sender, FormClosingEventArgs e) => debugvarsshown = false;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            rewerite();
-        }
+        private void button1_Click(object sender, EventArgs e) => rewerite();
     }
 }

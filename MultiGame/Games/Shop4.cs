@@ -34,10 +34,7 @@ namespace MultiGame.Games
             }
         }
 
-        private void Shop4_Load(object sender, EventArgs e)
-        {
-            updatestore4();
-        }
+        private void Shop4_Load(object sender, EventArgs e) => updatestore4();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -59,9 +56,6 @@ namespace MultiGame.Games
             }
         }
 
-        private void Shop4_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            shop4shown = false;
-        }
+        private void Shop4_FormClosing(object sender, FormClosingEventArgs e) => shop4shown = false;
     }
 }

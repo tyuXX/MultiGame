@@ -12,10 +12,7 @@
 
         }
 
-        private void SaveGame_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            savegameshown = false;
-        }
+        private void SaveGame_FormClosing(object sender, FormClosingEventArgs e) => savegameshown = false;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -28,9 +25,6 @@
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            savegame(textBox1.Text, this);
-        }
+        private void button2_Click(object sender, EventArgs e) => savegame(textBox1.Text, this);
     }
 }

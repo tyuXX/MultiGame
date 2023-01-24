@@ -81,25 +81,13 @@ namespace MultiGame.Games
 
             }
         }
-        private void button1push()
-        {
-            button1.BackColor = Color.Green;
-        }
+        private void button1push() => button1.BackColor = Color.Green;
 
-        private void button2push()
-        {
-            button2.BackColor = Color.Green;
-        }
+        private void button2push() => button2.BackColor = Color.Green;
 
-        private void button3push()
-        {
-            button3.BackColor = Color.Green;
-        }
+        private void button3push() => button3.BackColor = Color.Green;
 
-        private void button4push()
-        {
-            button4.BackColor = Color.Green;
-        }
+        private void button4push() => button4.BackColor = Color.Green;
 
         private void buttonallred()
         {
@@ -310,9 +298,6 @@ namespace MultiGame.Games
             showall();
         }
 
-        private void FNF_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            fnfshown = false;
-        }
+        private void FNF_FormClosing(object sender, FormClosingEventArgs e) => fnfshown = false;
     }
 }

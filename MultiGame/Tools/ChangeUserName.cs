@@ -7,10 +7,7 @@
             InitializeComponent();
         }
 
-        private void ChangeUserName_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            changeusernameshown = false;
-        }
+        private void ChangeUserName_FormClosing(object sender, FormClosingEventArgs e) => changeusernameshown = false;
 
         private void ChangeUserName_Load(object sender, EventArgs e)
         {

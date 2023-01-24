@@ -22,10 +22,7 @@
             th.Start();
         }
 
-        private void Log_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            logshown = false;
-        }
+        private void Log_FormClosing(object sender, FormClosingEventArgs e) => logshown = false;
 
         private void Log_Load(object sender, EventArgs e)
         {

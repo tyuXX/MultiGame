@@ -54,6 +54,7 @@ namespace MultiGame
         public static bool dialset = false;
         public static bool autosave = false;
         public static bool clearlog = true;
+        public static bool maxbuy = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
         public static int autoupgradeinterval = 3000;
@@ -134,7 +135,7 @@ namespace MultiGame
         public const short xpnt = 1;
         public const int lbm = 100;
         public const short rut = 10;
-        public const string Updatev = "Betav0.5.3";
+        public const string Updatev = "Betav0.5.4";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -333,97 +334,42 @@ namespace MultiGame
                 }
             }
         }
-        public static void upadd1()
-        {
-            add1u.Up(ref money);
-        }
-        public static void upadd2()
-        {
-            add2u.Up(ref money);
-        }
-        public static void upadd3()
-        {
-            add3u.Up(ref money);
-        }
-        public static void upadd4()
-        {
-            add4u.Up(ref money);
-        }
-        public static void upadd5()
-        {
-            add5u.Up(ref money);
-        }
-        public static void upadd6()
-        {
-            add6u.Up(ref money);
-        }
-        public static void upadd7()
-        {
-            add7u.Up(ref money);
-        }
-        public static void upadd8()
-        {
-            add8u.Up(ref money);
-        }
-        public static void upadd9()
-        {
-            add9u.Up(ref money);
-        }
-        public static void upadd10()
-        {
-            add10u.Up(ref money);
-        }
-        public static void upmult1()
-        {
-            mult1u.Up(ref money);
-        }
-        public static void upmult2()
-        {
-            mult2u.Up(ref money);
-        }
-        public static void upmult3()
-        {
-            mult3u.Up(ref money);
-        }
-        public static void upmult4()
-        {
-            mult4u.Up(ref money);
-        }
-        public static void upmult5()
-        {
-            mult5u.Up(ref money);
-        }
-        public static void upmult6()
-        {
-            mult6u.Up(ref money);
-        }
-        public static void upmult7()
-        {
-            mult7u.Up(ref money);
-        }
-        public static void upmult8()
-        {
-            mult8u.Up(ref money);
-        }
-        public static void upmult9()
-        {
-            mult9u.Up(ref money);
-        }
-        public static void upmult10()
-        {
-            mult10u.Up(ref money);
-        }
-        public static void upautogenmult()
-        {
-            autogenmultu.Up(ref money);
-        }
+        public static void upadd1() => add1u.Up(ref money, maxbuy);
+        public static void upadd2() => add2u.Up(ref money, maxbuy);
+        public static void upadd3() => add3u.Up(ref money, maxbuy);
+        public static void upadd4() => add4u.Up(ref money, maxbuy);
+        public static void upadd5() => add5u.Up(ref money, maxbuy);
+        public static void upadd6() => add6u.Up(ref money, maxbuy);
+        public static void upadd7() => add7u.Up(ref money, maxbuy);
+        public static void upadd8() => add8u.Up(ref money, maxbuy);
+        public static void upadd9() => add9u.Up(ref money, maxbuy);
+        public static void upadd10() => add10u.Up(ref money, maxbuy);
+        public static void upmult1() => mult1u.Up(ref money, maxbuy);
+        public static void upmult2() => mult2u.Up(ref money, maxbuy);
+        public static void upmult3() => mult3u.Up(ref money, maxbuy);
+        public static void upmult4() => mult4u.Up(ref money, maxbuy);
+        public static void upmult5() => mult5u.Up(ref money, maxbuy);
+        public static void upmult6() => mult6u.Up(ref money, maxbuy);
+        public static void upmult7() => mult7u.Up(ref money, maxbuy);
+        public static void upmult8() => mult8u.Up(ref money, maxbuy);
+        public static void upmult9() => mult9u.Up(ref money, maxbuy);
+        public static void upmult10() => mult10u.Up(ref money, maxbuy);
+        public static void upautogenmult() => autogenmultu.Up(ref money, maxbuy);
         public static void upautoclickerspeed()
         {
-            if (autoclickerinterval > 2)
+            if (maxbuy)
             {
-                if (money >= autoclickerintervaln)
+                while ((money >= autoclickerintervaln) && (autoclickerinterval > 2))
                 {
-                    log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop/Game]{(Log)}Purchased autoclicker speed now:" + autoclickerinterval);
+                    money -= autoclickerintervaln;
+                    autoclickerintervaln *= 7;
+                    autoclickerinterval--;
+                }
+            }
+            else
+            {
+                if ((money >= autoclickerintervaln) && (autoclickerinterval > 2))
+                {
                     money -= autoclickerintervaln;
                     autoclickerintervaln *= 7;
                     autoclickerinterval--;
@@ -432,11 +378,19 @@ namespace MultiGame
         }
         public static void upautoupgradespeed()
         {
-            if (autoupgradeinterval > 2)
+            if (maxbuy)
             {
-                if (money >= autoupgradeintervaln)
+                while ((money >= autoupgradeintervaln) && (autoupgradeinterval > 2))
                 {
-                    log.Add("[" + DateTime.Now + "][From:Internal/Games/Shop3/Game]{(Log)}Purchased autoupgrader speed now:" + autoupgradeinterval);
+                    money -= autoupgradeintervaln;
+                    autoupgradeintervaln *= 13;
+                    autoupgradeinterval--;
+                }
+            }
+            else
+            {
+                if ((money >= autoupgradeintervaln) && (autoupgradeinterval > 2))
+                {
                     money -= autoupgradeintervaln;
                     autoupgradeintervaln *= 13;
                     autoupgradeinterval--;
@@ -445,9 +399,18 @@ namespace MultiGame
         }
         public static void upmoneybagc()
         {
-            if (moneybagc > 2)
+            if (maxbuy)
             {
-                if (money >= moneybagcn)
+                while ((money >= moneybagcn) && (moneybagc > 2))
+                {
+                    money -= moneybagcn;
+                    moneybagcn *= 15;
+                    moneybagc--;
+                }
+            }
+            else
+            {
+                if ((money >= moneybagcn) && (moneybagc > 2))
                 {
                     money -= moneybagcn;
                     moneybagcn *= 15;
@@ -457,9 +420,18 @@ namespace MultiGame
         }
         public static void upgenboostc()
         {
-            if (genboostc > 2)
+            if (maxbuy)
             {
-                if (money >= genboostcn)
+                while ((money >= genboostcn) && (genboostc > 2))
+                {
+                    money -= genboostcn;
+                    genboostcn *= 25;
+                    genboostc--;
+                }
+            }
+            else
+            {
+                if ((money >= genboostcn) && (genboostc > 2))
                 {
                     money -= genboostcn;
                     genboostcn *= 25;
@@ -467,10 +439,7 @@ namespace MultiGame
                 }
             }
         }
-        public static void uplevelupmult()
-        {
-            levelupmultu.Up(ref money);
-        }
+        public static void uplevelupmult() => levelupmultu.Up(ref money, maxbuy);
         public static void savegame(string filepath, Form form = null)
         {
             if (!string.IsNullOrEmpty(filepath))
@@ -682,23 +651,33 @@ namespace MultiGame
         public bool dopo;
         public bool isrankpersistent;
         public bool isrebirtpersistent;
+        public BigInteger cap;
         public Upgrade Parse(string str)
         {
             string[ ] array = str.Split('|');
             return new(array[ 0 ], bool.Parse(array[ 1 ]), BigInteger.Parse(array[ 2 ]), BigInteger.Parse(array[ 3 ]), BigInteger.Parse(array[ 4 ]), BigInteger.Parse(array[ 5 ]), bool.Parse(array[ 6 ]), bool.Parse(array[ 7 ]), bool.Parse(array[ 8 ]));
         }
-        public override string ToString()
-        {
-            return $"{name.Replace("|", "")}|{isbought}|{value}|{dvalue}|{mult}|{scache}|{dopo}|{isrankpersistent}|{isrebirtpersistent}";
-        }
-        public void Up(ref BigInteger moneyp, bool recache = false)
+        public override string ToString() => $"{name.Replace("|", "")}|{isbought}|{value}|{dvalue}|{mult}|{scache}|{dopo}|{isrankpersistent}|{isrebirtpersistent}";
+        public void Up(ref BigInteger moneyp, bool maxbuy = false, bool recache = false)
         {
             if (recache) { ReCalc(); }
-            if (moneyp >= cache)
+            if (maxbuy)
             {
-                moneyp -= cache;
-                value++;
-                cache *= mult;
+                while (moneyp >= cache)
+                {
+                    moneyp -= cache;
+                    value++;
+                    cache *= mult;
+                }
+            }
+            else
+            {
+                if (moneyp >= cache)
+                {
+                    moneyp -= cache;
+                    value++;
+                    cache *= mult;
+                }
             }
         }
         public BigInteger GetN()
@@ -748,6 +727,7 @@ namespace MultiGame
                     value = dvalue;
                 }
             }
+            ReCalc();
         }
         public Upgrade(string namep, bool isboughtp, BigInteger valuep, BigInteger dvaluep, BigInteger multp, BigInteger scachep, bool dopop = false, bool isrankpersistentp = false, bool isrebirtpersistentp = false) : this()
         {

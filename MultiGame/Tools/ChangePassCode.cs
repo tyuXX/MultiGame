@@ -7,10 +7,7 @@
             InitializeComponent();
         }
 
-        private void ChangePassCode_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            changepasscodeshown = false;
-        }
+        private void ChangePassCode_FormClosing(object sender, FormClosingEventArgs e) => changepasscodeshown = false;
 
         private void ChangePassCode_Load(object sender, EventArgs e)
         {

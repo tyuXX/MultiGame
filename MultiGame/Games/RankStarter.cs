@@ -20,9 +20,6 @@
             }
         }
 
-        private void RankStarter_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            rankstartershown = false;
-        }
+        private void RankStarter_FormClosing(object sender, FormClosingEventArgs e) => rankstartershown = false;
     }
 }

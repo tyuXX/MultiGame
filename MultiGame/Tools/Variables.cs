@@ -7,10 +7,7 @@
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            refresh();
-        }
+        private void button1_Click(object sender, EventArgs e) => refresh();
 
         private void refresh()
         {
@@ -23,15 +20,9 @@
             button2.Text = $"Auto Refresh\r\n{timer1.Enabled}";
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            refresh();
-        }
+        private void timer1_Tick(object sender, EventArgs e) => refresh();
 
-        private void Variables_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            varsshown = false;
-        }
+        private void Variables_FormClosing(object sender, FormClosingEventArgs e) => varsshown = false;
 
         private void Variables_Load(object sender, EventArgs e)
         {
