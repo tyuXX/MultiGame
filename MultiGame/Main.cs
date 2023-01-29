@@ -41,9 +41,7 @@ namespace MultiGame
             }
             while ((levelm > 0) && (xp >= xpn))
             {
-                level++;
-                xp -= xpn;
-                xpn *= xpt;
+                XpUp();
                 levelm--;
             }
             if (formatnums)
@@ -551,10 +549,7 @@ namespace MultiGame
         {
             while (xp > xpn)
             {
-                level++;
-                log.Add("[" + DateTime.Now + "][From:Internal/Main/LVL]{(Log)}Level Up Level Now:" + level);
-                xp -= xpn;
-                xpn *= xpt;
+                XpUp();
             }
         }
 
@@ -599,7 +594,10 @@ namespace MultiGame
             }
         }
 
-        private void clearlogt_Tick(object sender, EventArgs e) => log.Clear();
+        private void clearlogt_Tick(object sender, EventArgs e)
+        {
+
+        }
 
         private void debugVarsNewToolStripMenuItem_Click(object sender, EventArgs e)
         {

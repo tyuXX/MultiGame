@@ -64,7 +64,6 @@
             merge2 = merge2.Replace("$mult8", mult8u.ToString());
             merge2 = merge2.Replace("$mult9", mult9u.ToString());
             merge2 = merge2.Replace("$mult10", mult10u.ToString());
-            log.Add(merge + merge2);
             textBox1.Clear();
         }
 

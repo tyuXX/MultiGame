@@ -1,4 +1,6 @@
-﻿namespace MultiGame.Tools
+﻿using System.Collections.Generic;
+
+namespace MultiGame.Tools
 {
     public partial class Log : Form
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
         }
-        private void loadlog()
+        private void loadlog(List<string> log)
         {
             timer1.Interval = logupdateinterval;
             foreach (string str in log)
@@ -18,8 +20,6 @@
         private void timer1_Tick(object sender, EventArgs e)
         {
             richTextBox1.Clear();
-            Thread th = new Thread(loadlog);
-            th.Start();
         }
 
         private void Log_FormClosing(object sender, FormClosingEventArgs e) => logshown = false;

@@ -12,7 +12,6 @@ namespace MultiGame
         public static Main mainform;
         public static Random rng = new();
         public static Thread timerthread = new(timerth);
-        public static List<string> log = new();
         public static List<string> passcodes = new() { "$sct", "cheat4life", "24/7 debugging" };
         public static string path = "";
         public static string endecode = "1234";
@@ -154,6 +153,12 @@ namespace MultiGame
         {
             using WebClient client = new WebClient();
             client.DownloadFile(link, name);
+        }
+        public static void XpUp()
+        {
+            level++;
+            xp -= xpn;
+            xpn *= xpt;
         }
         public static void updateapp()
         {
@@ -511,57 +516,57 @@ namespace MultiGame
             if (decode(masterfile[ 0 ]) == passcodes)
             {
                 endecode = passcodes;
-                try { username = decode(masterfile[ (int)saveorder.username ]); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { logupdateinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.logupdateinterval ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { autoclickerinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoclickerinterval ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { autoupgradeinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoupgradeinterval ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { money = BigInteger.Parse(decode(masterfile[ (int)saveorder.money ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { generation = BigInteger.Parse(decode(masterfile[ (int)saveorder.generation ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { outcome = BigInteger.Parse(decode(masterfile[ (int)saveorder.outcome ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { autogenmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.autogenmult ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { level = BigInteger.Parse(decode(masterfile[ (int)saveorder.level ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { xp = BigInteger.Parse(decode(masterfile[ (int)saveorder.xp ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { xpn = BigInteger.Parse(decode(masterfile[ (int)saveorder.xpn ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add1 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add2 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add3 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add4 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add5 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add6 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add7 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add8 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add9 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { add10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add10 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult1 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult2 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult3 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult4 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult5 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult6 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult7 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult8 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult9 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { mult10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult10 ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { timespent = BigInteger.Parse(decode(masterfile[ (int)saveorder.timespent ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { workers = BigInteger.Parse(decode(masterfile[ (int)saveorder.workers ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { inventions = BigInteger.Parse(decode(masterfile[ (int)saveorder.inventions ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { minicompanies = BigInteger.Parse(decode(masterfile[ (int)saveorder.minicompanies ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { companynetworth = BigInteger.Parse(decode(masterfile[ (int)saveorder.companynetworth ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { invested = BigInteger.Parse(decode(masterfile[ (int)saveorder.invested ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { autocollectboosts = bool.Parse(decode(masterfile[ (int)saveorder.autocollectboosts ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { automaticupgrade = bool.Parse(decode(masterfile[ (int)saveorder.automaticupgrade ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { magicpower = BigInteger.Parse(decode(masterfile[ (int)saveorder.magicpower ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { currentworld.mult = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldmult ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { currentworld.name = decode(masterfile[ (int)saveorder.currentworldname ]); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { currentworld.population = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulation ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { currentworld.populationgrowth = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowth ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { currentworld.populationgrowthpercent = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowthpercent ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { moneybagc = Convert.ToInt32(decode(masterfile[ (int)saveorder.moneybagchance ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { genboostc = Convert.ToInt32(decode(masterfile[ (int)saveorder.genboostchance ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.rank ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { rebirth = BigInteger.Parse(decode(masterfile[ (int)saveorder.rebirth ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at reading file error is:" + ex); }
-                try { recalculatevars(); } catch (Exception) { log.Add("[" + DateTime.Now + "][From:Internal/Tool/OpenGame/Opening]{(Error)}Error at recalculating varirables"); }
+                try { username = decode(masterfile[ (int)saveorder.username ]); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { logupdateinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.logupdateinterval ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { autoclickerinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoclickerinterval ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { autoupgradeinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoupgradeinterval ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { money = BigInteger.Parse(decode(masterfile[ (int)saveorder.money ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { generation = BigInteger.Parse(decode(masterfile[ (int)saveorder.generation ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { outcome = BigInteger.Parse(decode(masterfile[ (int)saveorder.outcome ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { autogenmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.autogenmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { level = BigInteger.Parse(decode(masterfile[ (int)saveorder.level ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { xp = BigInteger.Parse(decode(masterfile[ (int)saveorder.xp ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { xpn = BigInteger.Parse(decode(masterfile[ (int)saveorder.xpn ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add1 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add2 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add3 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add4 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add5 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add6 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add7 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add8 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add9 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add10 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult1 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult2 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult3 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult4 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult5 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult6 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult7 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult8 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult9 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult10 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { timespent = BigInteger.Parse(decode(masterfile[ (int)saveorder.timespent ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { workers = BigInteger.Parse(decode(masterfile[ (int)saveorder.workers ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { inventions = BigInteger.Parse(decode(masterfile[ (int)saveorder.inventions ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { minicompanies = BigInteger.Parse(decode(masterfile[ (int)saveorder.minicompanies ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { companynetworth = BigInteger.Parse(decode(masterfile[ (int)saveorder.companynetworth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { invested = BigInteger.Parse(decode(masterfile[ (int)saveorder.invested ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { autocollectboosts = bool.Parse(decode(masterfile[ (int)saveorder.autocollectboosts ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { automaticupgrade = bool.Parse(decode(masterfile[ (int)saveorder.automaticupgrade ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { magicpower = BigInteger.Parse(decode(masterfile[ (int)saveorder.magicpower ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { currentworld.mult = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { currentworld.name = decode(masterfile[ (int)saveorder.currentworldname ]); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { currentworld.population = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulation ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { currentworld.populationgrowth = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { currentworld.populationgrowthpercent = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowthpercent ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { moneybagc = Convert.ToInt32(decode(masterfile[ (int)saveorder.moneybagchance ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { genboostc = Convert.ToInt32(decode(masterfile[ (int)saveorder.genboostchance ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.rank ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { rebirth = BigInteger.Parse(decode(masterfile[ (int)saveorder.rebirth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { recalculatevars(); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 lastfile = filepath;
                 form?.Close();
             }
@@ -605,6 +610,7 @@ namespace MultiGame
         public BigInteger populationgrowth;
         public BigInteger populationgrowthpercent;
         public BigInteger mult;
+        public Guid ID = Guid.NewGuid();
         public World(string namep, BigInteger pop, BigInteger popg, BigInteger popgp, BigInteger mul) : this()
         {
             name = namep;
@@ -619,6 +625,7 @@ namespace MultiGame
         public Func<object> func;
         public BigInteger value;
         public BigInteger maxvalue;
+        public Guid ID = Guid.NewGuid();
         public TaskBar(Func<object> funcp, BigInteger valuep, BigInteger maxvaluep) : this()
         {
             func = funcp;
@@ -631,6 +638,7 @@ namespace MultiGame
         public string name;
         public BigInteger value;
         public BigInteger time;
+        public Guid ID = Guid.NewGuid();
         public Boost(string namep, BigInteger valuep, BigInteger timep) : this()
         {
             name = namep;
@@ -652,6 +660,7 @@ namespace MultiGame
         public bool isrankpersistent;
         public bool isrebirtpersistent;
         public BigInteger cap;
+        public Guid ID = Guid.NewGuid();
         public Upgrade Parse(string str)
         {
             string[ ] array = str.Split('|');

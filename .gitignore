@@ -6,10 +6,8 @@ bld/
 [Oo]ut/
 [Ll]og/
 [Ll]ogs/
-Generated\ Files/
 [Dd]ebugPS/
 [Rr]eleasePS/
-dlldata.c
 project.lock.json
 project.fragment.lock.json
 artifacts/
