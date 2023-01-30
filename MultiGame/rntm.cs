@@ -54,6 +54,7 @@ namespace MultiGame
         public static bool autosave = false;
         public static bool clearlog = true;
         public static bool maxbuy = false;
+        public static bool formatranks = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
         public static int autoupgradeinterval = 3000;
@@ -134,7 +135,7 @@ namespace MultiGame
         public const short xpnt = 1;
         public const int lbm = 100;
         public const short rut = 10;
-        public const string Updatev = "Betav0.5.4";
+        public const string Updatev = "Betav0.5.5";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -153,6 +154,121 @@ namespace MultiGame
         {
             using WebClient client = new WebClient();
             client.DownloadFile(link, name);
+        }
+        public static string RankCalc(BigInteger rank)
+        {
+            const byte sl = 3;
+            const byte mindef = 3;
+            const byte plusl = 3;
+            const byte rnkl = 10;
+            const byte ul = 10;
+            StringBuilder sb = new StringBuilder();
+            BigInteger rk = rank;
+            byte minus = mindef;
+            byte plus = 0;
+            byte rnk = 0;
+            BigInteger us = 0;
+            BigInteger ps = 0;
+            while (rk > 0)
+            {
+                if (minus > 0)
+                {
+                    minus--;
+                }
+                else
+                {
+                    if (plus >= plusl)
+                    {
+                        minus = mindef;
+                        plus = 0;
+                        rnk++;
+                    }
+                    else
+                    {
+                        plus++;
+                    }
+                }
+                if (rnk > rnkl)
+                {
+                    us++;
+                    rnk = 0;
+                }
+                if (us > ul)
+                {
+                    ps++;
+                    us = 0;
+                }
+                rk--;
+            }
+            for (int i = 0; i < ps; i++)
+            {
+                sb.Append("P");
+            }
+            for (int i = 0; i < us; i++)
+            {
+                sb.Append("U");
+            }
+            if (rnk > 6)
+            {
+                for (int i = 0; (i < (rnk - 6)) && (i < sl); i++)
+                {
+                    sb.Append("S");
+                }
+            }
+            else
+            {
+                switch (rnk)
+                {
+                    case 0:
+                        {
+                            sb.Append("G");
+                            break;
+                        }
+                    case 1:
+                        {
+                            sb.Append("F");
+                            break;
+                        }
+                    case 2:
+                        {
+                            sb.Append("E");
+                            break;
+                        }
+                    case 3:
+                        {
+                            sb.Append("D");
+                            break;
+                        }
+                    case 4:
+                        {
+                            sb.Append("C");
+                            break;
+                        }
+                    case 5:
+                        {
+                            sb.Append("B");
+                            break;
+                        }
+                    case 6:
+                        {
+                            sb.Append("A");
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+                }
+            }
+            for (int i = 0; i < minus; i++)
+            {
+                sb.Append("-");
+            }
+            for (int i = 0; i < plus; i++)
+            {
+                sb.Append("+");
+            }
+            return sb.ToString();
         }
         public static void XpUp()
         {
@@ -211,9 +327,9 @@ namespace MultiGame
                 return rt;
             }
         }
-        public static void RebirtUp()
+        public static void RebirtUp(bool bypass = false)
         {
-            if (rank >= (rebirth + 1))
+            if ((rank >= (rebirth + 1)) || bypass)
             {
                 rebirth++;
                 rebirthmult = exponent(rebirth, rebirth);
@@ -245,9 +361,9 @@ namespace MultiGame
                 autogenmultu.RRestore(true);
             }
         }
-        public static void RankUp()
+        public static void RankUp(bool bypass = false)
         {
-            if (level >= exponent(rank, 2) * rut)
+            if ((level >= exponent(rank, 2) * rut) || bypass)
             {
                 rank++;
                 rankmult = rank * rank;

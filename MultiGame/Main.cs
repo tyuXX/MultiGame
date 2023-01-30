@@ -55,8 +55,6 @@ namespace MultiGame
                 populationToolStripMenuItem.Text = "Population:" + FormatBigNum(currentworld.population);
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + FormatBigNum(currentworld.populationgrowth);
                 mp0ToolStripMenuItem.Text = "Mp:" + FormatBigNum(magicpower);
-                rankToolStripMenuItem.Text = "Rank:" + FormatBigNum(rank);
-                rebirthToolStripMenuItem.Text = "Rebirth:" + FormatBigNum(rebirth);
             }
             else
             {
@@ -69,6 +67,14 @@ namespace MultiGame
                 populationToolStripMenuItem.Text = "Population:" + currentworld.population;
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
                 mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
+            }
+            if (formatranks)
+            {
+                rankToolStripMenuItem.Text = "Rank:" + RankCalc(rank);
+                rebirthToolStripMenuItem.Text = "Rebirth:" + RankCalc(rebirth);
+            }
+            else
+            {
                 rankToolStripMenuItem.Text = "Rank:" + rank;
                 rebirthToolStripMenuItem.Text = "Rebirth:" + rebirth;
             }
@@ -688,5 +694,29 @@ namespace MultiGame
         }
 
         private void webPageToolStripMenuItem_Click(object sender, EventArgs e) => Process.Start("https://github.com/tyuXX/MultiGame");
+
+        private void formatRanksOFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formatranks)
+            {
+                formatranks = false;
+                formatRanksOFFToolStripMenuItem.Text = "Format Ranks (OFF)";
+            }
+            else
+            {
+                formatranks = true;
+                formatRanksOFFToolStripMenuItem.Text = "Format Ranks (ON)";
+            }
+        }
+
+        private void rankUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RankUp(true);
+        }
+
+        private void rebirthUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RebirtUp(true);
+        }
     }
 }
