@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Multi Game.exe" size="128000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Multi Game.exe" size="129024">
       <assemblyIdentity name="Multi Game" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0NSiGJ66vkkPPqT7K+BlxVAIMCzmLJ7ZH5eIaEwaGqQ=</dsig:DigestValue>
+        <dsig:DigestValue>OD9Aa7WakcLf6e+ApQ7neuGlY/aAxGUHh5yiXt4RGE0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

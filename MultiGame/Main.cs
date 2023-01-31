@@ -103,6 +103,7 @@ namespace MultiGame
         private void Main_Load(object sender, EventArgs e)
         {
             if (File.Exists("MultiGameUpdate.exe")) { File.Delete("MultiGameUpdate.exe"); }
+            if (!File.Exists("recent.txt")) { File.Create("recent.txt"); }
             path = Application.ExecutablePath;
             currentworld.name = "World";
             currentworld.populationgrowthpercent = rng.Next(0, 100);

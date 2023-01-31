@@ -50,6 +50,7 @@ namespace MultiGame
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatNumbersOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formatRanksOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maxBuyOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.hideGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,6 +107,9 @@ namespace MultiGame
             this.forceGenerationBoostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.newWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+            this.rankUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rebirthUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tick = new System.Windows.Forms.Timer(this.components);
             this.autoclicker = new System.Windows.Forms.Timer(this.components);
             this.companytick = new System.Windows.Forms.Timer(this.components);
@@ -118,10 +122,6 @@ namespace MultiGame
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
             this.autorankup = new System.Windows.Forms.Timer(this.components);
             this.autorebirth = new System.Windows.Forms.Timer(this.components);
-            this.formatRanksOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rankUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rebirthUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,6 +284,13 @@ namespace MultiGame
             this.formatNumbersOFFToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
             this.formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (OFF)";
             this.formatNumbersOFFToolStripMenuItem.Click += new System.EventHandler(this.formatNumbersOFFToolStripMenuItem_Click);
+            // 
+            // formatRanksOFFToolStripMenuItem
+            // 
+            this.formatRanksOFFToolStripMenuItem.Name = "formatRanksOFFToolStripMenuItem";
+            this.formatRanksOFFToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.formatRanksOFFToolStripMenuItem.Text = "Format Ranks (OFF)";
+            this.formatRanksOFFToolStripMenuItem.Click += new System.EventHandler(this.formatRanksOFFToolStripMenuItem_Click);
             // 
             // maxBuyOFFToolStripMenuItem
             // 
@@ -691,6 +698,25 @@ namespace MultiGame
             this.newWorldToolStripMenuItem.Text = "New World";
             this.newWorldToolStripMenuItem.Click += new System.EventHandler(this.newWorldToolStripMenuItem_Click);
             // 
+            // toolStripSeparator18
+            // 
+            this.toolStripSeparator18.Name = "toolStripSeparator18";
+            this.toolStripSeparator18.Size = new System.Drawing.Size(322, 6);
+            // 
+            // rankUpToolStripMenuItem
+            // 
+            this.rankUpToolStripMenuItem.Name = "rankUpToolStripMenuItem";
+            this.rankUpToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.rankUpToolStripMenuItem.Text = "RankUp";
+            this.rankUpToolStripMenuItem.Click += new System.EventHandler(this.rankUpToolStripMenuItem_Click);
+            // 
+            // rebirthUpToolStripMenuItem
+            // 
+            this.rebirthUpToolStripMenuItem.Name = "rebirthUpToolStripMenuItem";
+            this.rebirthUpToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.rebirthUpToolStripMenuItem.Text = "RebirthUp";
+            this.rebirthUpToolStripMenuItem.Click += new System.EventHandler(this.rebirthUpToolStripMenuItem_Click);
+            // 
             // tick
             // 
             this.tick.Enabled = true;
@@ -759,32 +785,6 @@ namespace MultiGame
             // 
             this.autorebirth.Interval = 1000;
             this.autorebirth.Tick += new System.EventHandler(this.autorebirth_Tick);
-            // 
-            // formatRanksOFFToolStripMenuItem
-            // 
-            this.formatRanksOFFToolStripMenuItem.Name = "formatRanksOFFToolStripMenuItem";
-            this.formatRanksOFFToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
-            this.formatRanksOFFToolStripMenuItem.Text = "Format Ranks (OFF)";
-            this.formatRanksOFFToolStripMenuItem.Click += new System.EventHandler(this.formatRanksOFFToolStripMenuItem_Click);
-            // 
-            // rankUpToolStripMenuItem
-            // 
-            this.rankUpToolStripMenuItem.Name = "rankUpToolStripMenuItem";
-            this.rankUpToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.rankUpToolStripMenuItem.Text = "RankUp";
-            this.rankUpToolStripMenuItem.Click += new System.EventHandler(this.rankUpToolStripMenuItem_Click);
-            // 
-            // rebirthUpToolStripMenuItem
-            // 
-            this.rebirthUpToolStripMenuItem.Name = "rebirthUpToolStripMenuItem";
-            this.rebirthUpToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.rebirthUpToolStripMenuItem.Text = "RebirthUp";
-            this.rebirthUpToolStripMenuItem.Click += new System.EventHandler(this.rebirthUpToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator18
-            // 
-            this.toolStripSeparator18.Name = "toolStripSeparator18";
-            this.toolStripSeparator18.Size = new System.Drawing.Size(322, 6);
             // 
             // Main
             // 

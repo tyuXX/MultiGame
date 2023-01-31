@@ -128,14 +128,14 @@ namespace MultiGame
         public static BigInteger rebirth = 1;
         public static BigInteger rebirthmult = 1;
         public static World currentworld;
-        public static readonly int mid = rng.Next(int.MinValue, int.MaxValue);
-        public static readonly int tid = rng.Next(int.MinValue, int.MaxValue);
+        public static readonly string mid = GenRandomStr(10);
+        public static readonly string tid = GenRandomStr(10);
         public const bool Autoupdateshops = true;
         public const short xpt = 3;
         public const short xpnt = 1;
         public const int lbm = 100;
         public const short rut = 10;
-        public const string Updatev = "Betav0.5.5";
+        public const string Updatev = "Betav0.5.6";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -154,6 +154,29 @@ namespace MultiGame
         {
             using WebClient client = new WebClient();
             client.DownloadFile(link, name);
+        }
+        public static string GenRandomStr(BigInteger length, bool withsybols = true)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (BigInteger i = 0; i < length; i++)
+            {
+                sb.Append(GenRandomChar(withsybols));
+            }
+            return sb.ToString();
+        }
+        public static char GenRandomChar(bool withsybols = true)
+        {
+            const string letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+            const string symbols = @"1234567890*-!'^+%&/()=?_#${[]}\@€.:~,;`<>|¨";
+            const string charmap = letters + symbols;
+            if (withsybols)
+            {
+                return charmap[ rng.Next(0, charmap.Length) ];
+            }
+            else
+            {
+                return letters[ rng.Next(0, letters.Length) ];
+            }
         }
         public static string RankCalc(BigInteger rank)
         {
@@ -620,6 +643,20 @@ namespace MultiGame
                     encode(levelupmultu.value.ToString())
                 };
                 File.WriteAllLines(filepath, masterfile);
+                try
+                {
+                    bool e = true;
+                    foreach (string str in File.ReadAllLines("recent.txt"))
+                    {
+                        if (str == filepath)
+                        {
+                            e = false;
+                            break;
+                        }
+                    }
+                    File.AppendAllText("recent.txt", filepath + "\n");
+                }
+                catch (Exception ex) { Console.Error.WriteLine(ex); }
                 lastfile = filepath;
                 form?.Close();
             }
@@ -683,6 +720,20 @@ namespace MultiGame
                 try { rebirth = BigInteger.Parse(decode(masterfile[ (int)saveorder.rebirth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { recalculatevars(); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try
+                {
+                    bool e = true;
+                    foreach (string str in File.ReadAllLines("recent.txt"))
+                    {
+                        if (str == filepath)
+                        {
+                            e = false;
+                            break;
+                        }
+                    }
+                    File.AppendAllText("recent.txt", filepath + "\n");
+                }
+                catch (Exception ex) { Console.Error.WriteLine(ex); }
                 lastfile = filepath;
                 form?.Close();
             }
