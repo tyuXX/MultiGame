@@ -13,11 +13,11 @@
         {
             if (formatnums)
             {
-                button1.Text = "Create Magic Power $" + FormatBigNum(1000 * getmoney());
+                button1.Text = "Create Magic Power $" + FormatBigNum(1000 * getmoney);
             }
             else
             {
-                button1.Text = "Create Magic Power $" + (1000 * getmoney());
+                button1.Text = "Create Magic Power $" + (1000 * getmoney);
             }
         }
 
@@ -27,19 +27,19 @@
         {
             if (maxbuy)
             {
-                while (money >= (magicpower * 1000 * getmoney()))
+                while (money >= (magicpower * 1000 * getmoney))
                 {
                     magicpower++;
-                    money -= magicpower * 1000 * getmoney();
+                    money -= magicpower * 1000 * getmoney;
                     updatestoresc();
                 }
             }
             else
             {
-                if (money >= (magicpower * 1000 * getmoney()))
+                if (money >= (magicpower * 1000 * getmoney))
                 {
                     magicpower++;
-                    money -= magicpower * 1000 * getmoney();
+                    money -= magicpower * 1000 * getmoney;
                     updatestoresc();
                 }
             }

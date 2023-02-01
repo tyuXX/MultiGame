@@ -231,8 +231,8 @@ namespace MultiGame.Games
         {
             if (misses > 10)
             {
-                money += 100 * rigths * hardness * getmoney();
-                xp += rigths * hardness * getmoney();
+                money += 100 * rigths * hardness * getmoney;
+                xp += rigths * hardness * getmoney;
             }
             label1.Text = "Rights:" + rigths;
             label2.Text = "Misses:" + misses;

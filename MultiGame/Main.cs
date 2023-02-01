@@ -36,8 +36,8 @@ namespace MultiGame
             autorebirth.Enabled = automaticrebirth;
             if (cheat)
             {
-                money += exponent(int.MaxValue * getmoney(), 100);
-                xp += exponent(int.MaxValue * getmoney(), 100);
+                money += exponent(int.MaxValue * getmoney, 100);
+                xp += exponent(int.MaxValue * getmoney, 100);
             }
             while ((levelm > 0) && (xp >= xpn))
             {
@@ -50,8 +50,8 @@ namespace MultiGame
                 money0ToolStripMenuItem.Text = "Money:" + FormatBigNum(money);
                 levelToolStripMenuItem1.Text = "Level:" + FormatBigNum(level);
                 generation1ToolStripMenuItem.Text = "Generation:" + FormatBigNum(generation);
-                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + FormatBigNum(autogenmultu.value * getmoney());
-                generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + FormatBigNum(getmoney());
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + FormatBigNum(autogenmultu.value * getmoney);
+                generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + FormatBigNum(getmoney);
                 populationToolStripMenuItem.Text = "Population:" + FormatBigNum(currentworld.population);
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + FormatBigNum(currentworld.populationgrowth);
                 mp0ToolStripMenuItem.Text = "Mp:" + FormatBigNum(magicpower);
@@ -62,8 +62,8 @@ namespace MultiGame
                 money0ToolStripMenuItem.Text = "Money:" + money;
                 levelToolStripMenuItem1.Text = "Level:" + level;
                 generation1ToolStripMenuItem.Text = "Generation:" + generation;
-                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmultu.value * getmoney());
-                generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney();
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmultu.value * getmoney);
+                generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney;
                 populationToolStripMenuItem.Text = "Population:" + currentworld.population;
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
                 mp0ToolStripMenuItem.Text = "Mp:" + magicpower;
@@ -103,7 +103,6 @@ namespace MultiGame
         private void Main_Load(object sender, EventArgs e)
         {
             if (File.Exists("MultiGameUpdate.exe")) { File.Delete("MultiGameUpdate.exe"); }
-            if (!File.Exists("recent.txt")) { File.Create("recent.txt"); }
             path = Application.ExecutablePath;
             currentworld.name = "World";
             currentworld.populationgrowthpercent = rng.Next(0, 100);
@@ -171,8 +170,9 @@ namespace MultiGame
 
         private void autoclicker_Tick(object sender, EventArgs e)
         {
-            money += getmoney() * autogenmultu.value;
-            xp += getmoney() * autogenmultu.value;
+            money += getmoney * autogenmultu.value;
+            xp += getmoney * autogenmultu.value;
+            totalclicks += autogenmultu.value;
         }
 
         private void passCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -267,9 +267,9 @@ namespace MultiGame
         {
             if (exponent(2, workers) >= exponent(5, inventions))
             {
-                money += getmoney() * inventions * invested * 500 * ((currentworld.population / 100000000) + 1);
-                companynetworth += getmoney() * inventions * 500 * ((currentworld.population / 100000000) + 1);
-                xp += getmoney() * inventions * invested * 500 * ((currentworld.population / 100000000) + 1);
+                money += getmoney * inventions * invested * 500 * ((currentworld.population / 100000000) + 1);
+                companynetworth += getmoney * inventions * 500 * ((currentworld.population / 100000000) + 1);
+                xp += getmoney * inventions * invested * 500 * ((currentworld.population / 100000000) + 1);
                 companywork = true;
             }
             else
@@ -710,14 +710,19 @@ namespace MultiGame
             }
         }
 
-        private void rankUpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RankUp(true);
-        }
+        private void rankUpToolStripMenuItem_Click(object sender, EventArgs e) => RankUp(true);
 
-        private void rebirthUpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rebirthUpToolStripMenuItem_Click(object sender, EventArgs e) => RebirtUp(true);
+
+        private void statusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RebirtUp(true);
+            if (!statusopen)
+            {
+                statusopen = true;
+                Status status = new Status();
+                status.MdiParent = this;
+                status.Show();
+            }
         }
     }
 }

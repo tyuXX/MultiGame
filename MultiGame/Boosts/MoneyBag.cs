@@ -30,7 +30,7 @@ namespace MultiGame.Boosts
         private void MoneyBag_Load(object sender, EventArgs e)
         {
             time = rng.Next(1, 30);
-            gift = rng.Next(1, 30000) * getmoney();
+            gift = rng.Next(1, 30000) * getmoney;
             label1.Text = "Money:" + gift;
         }
 

@@ -17,10 +17,7 @@ namespace MultiGame.Tools
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            richTextBox1.Clear();
-        }
+        private void timer1_Tick(object sender, EventArgs e) => richTextBox1.Clear();
 
         private void Log_FormClosing(object sender, FormClosingEventArgs e) => logshown = false;
 

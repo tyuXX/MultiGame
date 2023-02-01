@@ -122,6 +122,7 @@ namespace MultiGame
             this.clearlogt = new System.Windows.Forms.Timer(this.components);
             this.autorankup = new System.Windows.Forms.Timer(this.components);
             this.autorebirth = new System.Windows.Forms.Timer(this.components);
+            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,6 +146,7 @@ namespace MultiGame
             // openGameToolStripMenuItem
             // 
             this.openGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusToolStripMenuItem,
             this.clickerToolStripMenuItem,
             this.shopLevel5ToolStripMenuItem,
             this.toolStripSeparator16,
@@ -786,6 +788,13 @@ namespace MultiGame
             this.autorebirth.Interval = 1000;
             this.autorebirth.Tick += new System.EventHandler(this.autorebirth_Tick);
             // 
+            // statusToolStripMenuItem
+            // 
+            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
+            this.statusToolStripMenuItem.Text = "Status";
+            this.statusToolStripMenuItem.Click += new System.EventHandler(this.statusToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -900,6 +909,7 @@ namespace MultiGame
         private ToolStripSeparator toolStripSeparator18;
         private ToolStripMenuItem rankUpToolStripMenuItem;
         private ToolStripMenuItem rebirthUpToolStripMenuItem;
+        private ToolStripMenuItem statusToolStripMenuItem;
     }
 }
 

@@ -22,7 +22,7 @@
             {
                 label2.Text = "Net Worth:" + companynetworth;
             }
-            label6.Text = "Gain Per Second:" + (getmoney() * inventions * invested * 100);
+            label6.Text = "Gain Per Second:" + (getmoney * inventions * invested * 100);
             if (companywork)
             {
                 label7.Text = "Status:Onboard";
@@ -41,7 +41,7 @@
                 label3.Text = "Company Workers:" + FormatBigNum(workers);
                 label4.Text = "Company Work Power:" + FormatBigNum(exponent(2, workers));
                 label5.Text = "Company Work Power Neded:" + FormatBigNum(exponent(5, inventions));
-                label6.Text = "Gain Per Second:" + FormatBigNum(getmoney() * inventions * invested * 100);
+                label6.Text = "Gain Per Second:" + FormatBigNum(getmoney * inventions * invested * 100);
                 button1.Text = "Hire Worker $" + FormatBigNum((workersn)) + " Outcome:" + FormatBigNum(workersn);
                 button2.Text = "Buy A Mini Company $" + FormatBigNum(minicompaniesn);
                 button3.Text = "Invest $" + FormatBigNum(investedn);
@@ -53,7 +53,7 @@
                 label3.Text = "Company Workers:" + workers;
                 label4.Text = "Company Work Power:" + exponent(2, workers);
                 label5.Text = "Company Work Power Neded:" + exponent(5, inventions);
-                label6.Text = "Gain Per Second:" + (getmoney() * inventions * invested * 100);
+                label6.Text = "Gain Per Second:" + (getmoney * inventions * invested * 100);
                 button1.Text = "Hire Worker $" + workersn + " Outcome:" + workersn;
                 button2.Text = "Buy A Mini Company $" + minicompaniesn;
                 button3.Text = "Invest $" + investedn;

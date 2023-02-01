@@ -16,8 +16,10 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            money += getmoney();
-            xp += getmoney();
+            money += getmoney;
+            xp += getmoney;
+            totalclicks++;
+            totalclicksdirect++;
         }
 
         private void tick_Tick(object sender, EventArgs e)

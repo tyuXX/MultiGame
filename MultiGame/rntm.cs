@@ -55,11 +55,14 @@ namespace MultiGame
         public static bool clearlog = true;
         public static bool maxbuy = false;
         public static bool formatranks = false;
+        public static bool statusopen = false;
         public static int logupdateinterval = 10000;
         public static int autoclickerinterval = 1000;
         public static int autoupgradeinterval = 3000;
         public static int moneybagc = 298;
         public static int genboostc = 598;
+        public static BigInteger totalclicks = 0;
+        public static BigInteger totalclicksdirect = 0;
         public static BigInteger autoclickerintervaln = 5000 * exponent(7, 1001 - autoclickerinterval);
         public static BigInteger autoupgradeintervaln = 6000 * exponent(13, 3001 - autoupgradeinterval);
         public static BigInteger moneybagcn = 10000 * exponent(15, 300 - moneybagc);
@@ -134,8 +137,10 @@ namespace MultiGame
         public const short xpt = 3;
         public const short xpnt = 1;
         public const int lbm = 100;
+        public const int tcb = 1000000;
+        public const int tcdb = 10000;
         public const short rut = 10;
-        public const string Updatev = "Betav0.5.6";
+        public const string Updatev = "Betav0.5.7";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -338,18 +343,22 @@ namespace MultiGame
             moneybagcn = 10000 * exponent(15, 300 - moneybagc);
             genboostcn = 10000 * exponent(25, 600 - genboostc);
         }
-        public static BigInteger getmoney()
+        public static BigInteger getmoney
         {
-            BigInteger rt = (currentworld.mult * level * rebirthmult * (rankmult) * generation * ((add1u.value + add2u.value + add3u.value + add4u.value + add5u.value + add6u.value + add7u.value + add8u.value + add9u.value + add10u.value + 1) * (((mult1u.value * mult2u.value * mult3u.value * mult4u.value * mult5u.value * mult6u.value * mult7u.value * mult8u.value * mult9u.value * mult10u.value) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
-            if (rt < 1)
+            get
             {
-                return 1;
-            }
-            else
-            {
-                return rt;
+                BigInteger rt = (currentworld.mult * level * rebirthmult * rankmult * ((totalclicks / tcb) + 1) * ((totalclicksdirect / tcdb) + 1) * generation * ((add1u.value + add2u.value + add3u.value + add4u.value + add5u.value + add6u.value + add7u.value + add8u.value + add9u.value + add10u.value + 1) * (((mult1u.value * mult2u.value * mult3u.value * mult4u.value * mult5u.value * mult6u.value * mult7u.value * mult8u.value * mult9u.value * mult10u.value) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
+                if (rt < 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return rt;
+                }
             }
         }
+
         public static void RebirtUp(bool bypass = false)
         {
             if ((rank >= (rebirth + 1)) || bypass)
@@ -640,23 +649,11 @@ namespace MultiGame
                     encode(genboostc.ToString()),
                     encode(rank.ToString()),
                     encode(rebirth.ToString()),
-                    encode(levelupmultu.value.ToString())
+                    encode(levelupmultu.value.ToString()),
+                    encode(totalclicks.ToString()),
+                    encode(totalclicksdirect.ToString())
                 };
                 File.WriteAllLines(filepath, masterfile);
-                try
-                {
-                    bool e = true;
-                    foreach (string str in File.ReadAllLines("recent.txt"))
-                    {
-                        if (str == filepath)
-                        {
-                            e = false;
-                            break;
-                        }
-                    }
-                    File.AppendAllText("recent.txt", filepath + "\n");
-                }
-                catch (Exception ex) { Console.Error.WriteLine(ex); }
                 lastfile = filepath;
                 form?.Close();
             }
@@ -719,21 +716,9 @@ namespace MultiGame
                 try { rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.rank ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { rebirth = BigInteger.Parse(decode(masterfile[ (int)saveorder.rebirth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { totalclicks = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicks ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { totalclicksdirect = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicksdirect ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { recalculatevars(); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-                try
-                {
-                    bool e = true;
-                    foreach (string str in File.ReadAllLines("recent.txt"))
-                    {
-                        if (str == filepath)
-                        {
-                            e = false;
-                            break;
-                        }
-                    }
-                    File.AppendAllText("recent.txt", filepath + "\n");
-                }
-                catch (Exception ex) { Console.Error.WriteLine(ex); }
                 lastfile = filepath;
                 form?.Close();
             }
@@ -979,6 +964,8 @@ namespace MultiGame
         genboostchance,
         rank,
         rebirth,
-        levelupmult
+        levelupmult,
+        totalclicks,
+        totalclicksdirect
     }
 }
