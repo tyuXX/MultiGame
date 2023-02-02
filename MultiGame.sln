@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiGame", "MultiGame\MultiGame.csproj", "{A9DFB071-C05B-49BE-8AFA-51E91F21F07D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{EAF75F64-DB61-4FFB-85C3-EE92A22DFAA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiGameUpdate", "MultiGameUpdate\MultiGameUpdate.csproj", "{D8400577-4EAA-46E9-B2E3-41982A5177D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{DBBA01AB-06BC-4E72-A746-166E1717F414}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D8400577-4EAA-46E9-B2E3-41982A5177D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8400577-4EAA-46E9-B2E3-41982A5177D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8400577-4EAA-46E9-B2E3-41982A5177D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBBA01AB-06BC-4E72-A746-166E1717F414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBBA01AB-06BC-4E72-A746-166E1717F414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBBA01AB-06BC-4E72-A746-166E1717F414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBBA01AB-06BC-4E72-A746-166E1717F414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

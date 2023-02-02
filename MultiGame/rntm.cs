@@ -140,7 +140,7 @@ namespace MultiGame
         public const int tcb = 1000000;
         public const int tcdb = 10000;
         public const short rut = 10;
-        public const string Updatev = "Betav0.5.7";
+        public const string Updatev = "Betav0.5.8";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -440,8 +440,8 @@ namespace MultiGame
         }
         public static BigInteger exponent(BigInteger n, BigInteger e)
         {
-            BigInteger nn = n;
-            for (BigInteger i = 0; i < (e - 1); i++)
+            BigInteger nn = BigInteger.One;
+            for (BigInteger i = 0; i < e; i++)
             {
                 nn *= n;
             }
@@ -651,7 +651,28 @@ namespace MultiGame
                     encode(rebirth.ToString()),
                     encode(levelupmultu.value.ToString()),
                     encode(totalclicks.ToString()),
-                    encode(totalclicksdirect.ToString())
+                    encode(totalclicksdirect.ToString()),
+                    encode(add1u.rank.ToString()),
+                    encode(add2u.rank.ToString()),
+                    encode(add3u.rank.ToString()),
+                    encode(add4u.rank.ToString()),
+                    encode(add5u.rank.ToString()),
+                    encode(add6u.rank.ToString()),
+                    encode(add7u.rank.ToString()),
+                    encode(add8u.rank.ToString()),
+                    encode(add9u.rank.ToString()),
+                    encode(add10u.rank.ToString()),
+                    encode(mult1u.rank.ToString()),
+                    encode(mult2u.rank.ToString()),
+                    encode(mult3u.rank.ToString()),
+                    encode(mult4u.rank.ToString()),
+                    encode(mult5u.rank.ToString()),
+                    encode(mult6u.rank.ToString()),
+                    encode(mult7u.rank.ToString()),
+                    encode(mult8u.rank.ToString()),
+                    encode(mult9u.rank.ToString()),
+                    encode(mult10u.rank.ToString()),
+                    encode(autogenmultu.rank.ToString()),
                 };
                 File.WriteAllLines(filepath, masterfile);
                 lastfile = filepath;
@@ -718,6 +739,27 @@ namespace MultiGame
                 try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { totalclicks = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicks ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { totalclicksdirect = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicksdirect ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add1u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add1r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add2u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add2r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add3u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add3r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add4u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add4r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add5u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add5r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add6u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add6r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add7u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add7r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add8u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add8r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add9u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add9r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { add10u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add10r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult1u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult1r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult2u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult2r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult3u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult3r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult4u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult4r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult5u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult5r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult6u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult6r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult7u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult7r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult8u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult8r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult9u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult9r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { mult10u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult10r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+                try { autogenmultu.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.autogenmultr ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 try { recalculatevars(); } catch (Exception ex) { Console.Error.WriteLine(ex); }
                 lastfile = filepath;
                 form?.Close();
@@ -802,12 +844,16 @@ namespace MultiGame
     {
         public string name;
         public bool isbought;
-        public BigInteger value;
+        public BigInteger value { get { return value * rank; } set => this.value = value; }
         public BigInteger dvalue;
         public BigInteger mult;
         public BigInteger cache;
         public BigInteger scache;
         public BigInteger dcache;
+        public BigInteger rcache;
+        public BigInteger rscache;
+        public BigInteger rdcache;
+        public BigInteger rank = 1;
         public bool dopo;
         public bool isrankpersistent;
         public bool isrebirtpersistent;
@@ -818,7 +864,7 @@ namespace MultiGame
             string[ ] array = str.Split('|');
             return new(array[ 0 ], bool.Parse(array[ 1 ]), BigInteger.Parse(array[ 2 ]), BigInteger.Parse(array[ 3 ]), BigInteger.Parse(array[ 4 ]), BigInteger.Parse(array[ 5 ]), bool.Parse(array[ 6 ]), bool.Parse(array[ 7 ]), bool.Parse(array[ 8 ]));
         }
-        public override string ToString() => $"{name.Replace("|", "")}|{isbought}|{value}|{dvalue}|{mult}|{scache}|{dopo}|{isrankpersistent}|{isrebirtpersistent}";
+        public override string ToString() => $"{name.Replace("|", "")}|{isbought}|{value}|{dvalue}|{mult}|{scache}|{dopo}|{isrankpersistent}|{isrebirtpersistent}|{rank}";
         public void Up(ref BigInteger moneyp, bool maxbuy = false, bool recache = false)
         {
             if (recache) { ReCalc(); }
@@ -838,6 +884,28 @@ namespace MultiGame
                     moneyp -= cache;
                     value++;
                     cache *= mult;
+                }
+            }
+        }
+        public void RUp(ref BigInteger moneyp, bool maxbuy = false, bool recache = false)
+        {
+            if (recache) { ReCalc(); }
+            if (maxbuy)
+            {
+                while (moneyp >= rcache)
+                {
+                    moneyp -= rcache;
+                    rank++;
+                    rcache *= mult * 5;
+                }
+            }
+            else
+            {
+                if (moneyp >= rcache)
+                {
+                    moneyp -= rcache;
+                    rank++;
+                    rcache *= mult;
                 }
             }
         }
@@ -966,6 +1034,27 @@ namespace MultiGame
         rebirth,
         levelupmult,
         totalclicks,
-        totalclicksdirect
+        totalclicksdirect,
+        add1r,
+        add2r,
+        add3r,
+        add4r,
+        add5r,
+        add6r,
+        add7r,
+        add8r,
+        add9r,
+        add10r,
+        mult1r,
+        mult2r,
+        mult3r,
+        mult4r,
+        mult5r,
+        mult6r,
+        mult7r,
+        mult8r,
+        mult9r,
+        mult10r,
+        autogenmultr
     }
 }

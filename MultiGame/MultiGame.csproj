@@ -117,6 +117,12 @@
     <Compile Include="Games\Magic.Designer.cs">
       <DependentUpon>Magic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Games\RankShop1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Games\RankShop1.Designer.cs">
+      <DependentUpon>RankShop1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Games\RankStarter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Games\Magic.resx">
       <DependentUpon>Magic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Games\RankShop1.resx">
+      <DependentUpon>RankShop1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Games\RankStarter.resx">
       <DependentUpon>RankStarter.cs</DependentUpon>
