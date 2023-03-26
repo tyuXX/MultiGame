@@ -35,25 +35,28 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(16, 15);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(278, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(369, 117);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(12, 114);
+            this.richTextBox2.Location = new System.Drawing.Point(16, 140);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(337, 119);
+            this.richTextBox2.Size = new System.Drawing.Size(448, 146);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(296, 10);
+            this.button1.Location = new System.Drawing.Point(395, 12);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 98);
+            this.button1.Size = new System.Drawing.Size(71, 121);
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -61,14 +64,16 @@
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 245);
+            this.ClientSize = new System.Drawing.Size(481, 302);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
 
         }

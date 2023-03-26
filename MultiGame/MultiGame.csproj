@@ -53,8 +53,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>MultiGame.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />

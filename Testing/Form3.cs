@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Testing
@@ -12,11 +13,15 @@ namespace Testing
 
         private void button1_Click( object sender, EventArgs e )
         {
-            foreach (string s in richTextBox1.Lines)
+            for (int i = richTextBox1.Lines.Length + 7+10; i > richTextBox1.Lines.Length; i--)
             {
-                string sc = "{" + s + "}";
-                richTextBox2.Text += $"{s}:{sc}\r\n";
+                File.WriteAllText( $@"thebreakerv{i-richTextBox1.Lines.Length-6}.mcfunction",richTextBox1.Lines[i-richTextBox1.Lines.Length+7] );
             }
+        }
+
+        private void Form3_Load( object sender, EventArgs e )
+        {
+
         }
     }
 }
