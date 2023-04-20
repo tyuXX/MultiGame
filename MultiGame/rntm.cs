@@ -140,7 +140,7 @@ namespace MultiGame
         public const int tcb = 1000000;
         public const int tcdb = 10000;
         public const short rut = 10;
-        public const string Updatev = "Betav0.5.8";
+        public const string Updatev = "Betav0.5.9";
         public static void VSplash()
         {
             Resource.Splash splash = new Resource.Splash();
@@ -347,7 +347,7 @@ namespace MultiGame
         {
             get
             {
-                BigInteger rt = (currentworld.mult * level * rebirthmult * rankmult * ((totalclicks / tcb) + 1) * ((totalclicksdirect / tcdb) + 1) * generation * ((add1u.value + add2u.value + add3u.value + add4u.value + add5u.value + add6u.value + add7u.value + add8u.value + add9u.value + add10u.value + 1) * (((mult1u.value * mult2u.value * mult3u.value * mult4u.value * mult5u.value * mult6u.value * mult7u.value * mult8u.value * mult9u.value * mult10u.value) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
+                BigInteger rt = (currentworld.mult * level * rebirthmult * rankmult * ((totalclicks / tcb) + 1) * ((totalclicksdirect / tcdb) + 1) * generation * ((add1u.rankvalue + add2u.rankvalue + add3u.rankvalue + add4u.rankvalue + add5u.rankvalue + add6u.rankvalue + add7u.rankvalue + add8u.rankvalue + add9u.rankvalue + add10u.rankvalue + 1) * (((mult1u.rankvalue * mult2u.rankvalue * mult3u.rankvalue * mult4u.rankvalue * mult5u.rankvalue * mult6u.rankvalue * mult7u.rankvalue * mult8u.rankvalue * mult9u.rankvalue * mult10u.rankvalue) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
                 if (rt < 1)
                 {
                     return 1;
@@ -844,7 +844,8 @@ namespace MultiGame
     {
         public string name;
         public bool isbought;
-        public BigInteger value { get { return value * rank; } set => this.value = value; }
+        public BigInteger value;
+        public BigInteger rankvalue { get { return rank * value; } set => this.value = value; }
         public BigInteger dvalue;
         public BigInteger mult;
         public BigInteger cache;
@@ -905,7 +906,7 @@ namespace MultiGame
                 {
                     moneyp -= rcache;
                     rank++;
-                    rcache *= mult;
+                    rcache *= mult * 5;
                 }
             }
         }
@@ -925,11 +926,22 @@ namespace MultiGame
         {
             if (dopo)
             {
-                cache = scache * (exponent(mult, value) + 1);
+                cache = scache * (exponent(mult * 5, value) + 1);
             }
             else
             {
-                cache = scache * exponent(mult, value);
+                cache = scache * exponent(mult * 5, value);
+            }
+        }
+        public void RReCalc()
+        {
+            if (dopo)
+            {
+                rcache = rscache * (exponent(mult, rankvalue) + 1);
+            }
+            else
+            {
+                rcache = rscache * exponent(mult, rankvalue);
             }
         }
         public void Restore(bool force = false)

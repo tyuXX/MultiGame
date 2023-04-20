@@ -10,11 +10,11 @@
         {
             if (formatnums)
             {
-                button1.Text = "LevelUp Speed " + FormatBigNum(levelupmultu.value) + "\r\n$" + FormatBigNum(levelupmultu.cache);
+                button1.Text = "LevelUp Speed " + FormatBigNum(levelupmultu.rankvalue ) + "\r\n$" + FormatBigNum(levelupmultu.cache);
             }
             else
             {
-                button1.Text = "LevelUp Speed " + levelupmultu.value + "\r\n$" + levelupmultu.cache;
+                button1.Text = "LevelUp Speed " + levelupmultu.rankvalue + "\r\n$" + levelupmultu.cache;
             }
         }
 

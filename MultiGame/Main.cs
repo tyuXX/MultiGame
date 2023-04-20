@@ -27,7 +27,7 @@ namespace MultiGame
 
         private void tick_Tick(object sender, EventArgs e)
         {
-            BigInteger levelm = levelupmultu.value;
+            BigInteger levelm = levelupmultu.rankvalue;
             TopMost = alwaysontop;
             devToolStripMenuItem.Enabled = devmode;
             autoupgrade.Enabled = automaticupgrade;
@@ -50,7 +50,7 @@ namespace MultiGame
                 money0ToolStripMenuItem.Text = "Money:" + FormatBigNum(money);
                 levelToolStripMenuItem1.Text = "Level:" + FormatBigNum(level);
                 generation1ToolStripMenuItem.Text = "Generation:" + FormatBigNum(generation);
-                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + FormatBigNum(autogenmultu.value * getmoney);
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + FormatBigNum(autogenmultu.rankvalue * getmoney);
                 generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + FormatBigNum(getmoney);
                 populationToolStripMenuItem.Text = "Population:" + FormatBigNum(currentworld.population);
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + FormatBigNum(currentworld.populationgrowth);
@@ -62,7 +62,7 @@ namespace MultiGame
                 money0ToolStripMenuItem.Text = "Money:" + money;
                 levelToolStripMenuItem1.Text = "Level:" + level;
                 generation1ToolStripMenuItem.Text = "Generation:" + generation;
-                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmultu.value * getmoney);
+                automaticGeneration0ToolStripMenuItem.Text = "Automatic Generation:" + (autogenmultu.rankvalue * getmoney);
                 generationPerClick1ToolStripMenuItem.Text = "Generation Per Click:" + getmoney;
                 populationToolStripMenuItem.Text = "Population:" + currentworld.population;
                 populationGrowthToolStripMenuItem.Text = "PopulationGrowth:" + currentworld.populationgrowth;
@@ -170,9 +170,9 @@ namespace MultiGame
 
         private void autoclicker_Tick(object sender, EventArgs e)
         {
-            money += getmoney * autogenmultu.value;
-            xp += getmoney * autogenmultu.value;
-            totalclicks += autogenmultu.value;
+            money += getmoney * autogenmultu.rankvalue;
+            xp += getmoney * autogenmultu.rankvalue;
+            totalclicks += autogenmultu.rankvalue;
         }
 
         private void passCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -719,8 +719,10 @@ namespace MultiGame
             if (!statusopen)
             {
                 statusopen = true;
-                Status status = new Status();
-                status.MdiParent = this;
+                Status status = new Status
+                {
+                    MdiParent = this
+                };
                 status.Show();
             }
         }
