@@ -1,39 +1,38 @@
-﻿namespace MultiGame
+﻿namespace MultiGame;
+
+static class Program
 {
-    static class Program
+    [STAThread]
+    internal static void Main(string[ ] args)
     {
-        [STAThread]
-        public static void Main(string[ ] args)
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        mainform = new Main();
+        argscontrol(args);
+        Application.Run(mainform);
+    }
+    private static void argscontrol(string[ ] args)
+    {
+        foreach (string str in args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            mainform = new Main();
-            argscontrol(args);
-            Application.Run(mainform);
-        }
-        private static void argscontrol(string[ ] args)
-        {
-            foreach (string str in args)
+            if (str.Substring(0, 2) == "--")
             {
-                if (str.Substring(0, 2) == "--")
+                switch (str)
                 {
-                    switch (str)
-                    {
-                        case "--nosplash":
-                            {
-                                mainform.splash = false;
-                                break;
-                            }
-                        case "--$sct":
-                            {
-                                devmode = true;
-                                break;
-                            }
-                        default:
-                            {
-                                break;
-                            }
-                    }
+                    case "--nosplash":
+                        {
+                            mainform.splash = false;
+                            break;
+                        }
+                    case "--$sct":
+                        {
+                            devmode = true;
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
                 }
             }
         }

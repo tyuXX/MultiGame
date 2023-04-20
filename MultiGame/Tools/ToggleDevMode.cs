@@ -1,40 +1,39 @@
-﻿namespace MultiGame.Tools
-{
-    public partial class ToggleDevMode : Form
-    {
-        public ToggleDevMode()
-        {
-            InitializeComponent();
-        }
+﻿namespace MultiGame.Tools;
 
-        private void button1_Click(object sender, EventArgs e)
+internal partial class ToggleDevMode : Form
+{
+    internal ToggleDevMode()
+    {
+        InitializeComponent();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        foreach (string str in passcodes)
         {
-            foreach (string str in passcodes)
+            if (str == textBox1.Text)
             {
-                if (str == textBox1.Text)
+                if (devmode)
                 {
-                    if (devmode)
-                    {
-                        devmode = false;
-                    }
-                    else
-                    {
-                        devmode = true;
-                    }
-                    Close();
+                    devmode = false;
                 }
                 else
                 {
-                    textBox1.Text = "Unknown PassCode";
+                    devmode = true;
                 }
+                Close();
+            }
+            else
+            {
+                textBox1.Text = "Unknown PassCode";
             }
         }
+    }
 
-        private void ToggleDevMode_FormClosing(object sender, FormClosingEventArgs e) => toggledevmodeshown = false;
+    private void ToggleDevMode_FormClosing(object sender, FormClosingEventArgs e) => toggledevmodeshown = false;
 
-        private void ToggleDevMode_Load(object sender, EventArgs e)
-        {
+    private void ToggleDevMode_Load(object sender, EventArgs e)
+    {
 
-        }
     }
 }

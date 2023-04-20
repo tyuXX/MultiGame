@@ -1,10 +1,9 @@
-﻿namespace MultiGame.Games
+﻿namespace MultiGame.Games;
+
+internal partial class RankShop1 : Form
 {
-    public partial class RankShop1 : Form
+    internal RankShop1()
     {
-        public RankShop1()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

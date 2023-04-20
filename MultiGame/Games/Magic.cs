@@ -1,43 +1,42 @@
-﻿namespace MultiGame.Games
+﻿namespace MultiGame.Games;
+
+internal partial class Magic : Form
 {
-    public partial class Magic : Form
+    internal Magic()
     {
-        public Magic()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void button1_Click(object sender, EventArgs e)
+    private void button1_Click(object sender, EventArgs e)
+    {
+        if (magicpower >= 50)
         {
-            if (magicpower >= 50)
+            magicpower -= 50;
+            Form fm = new Boosts.MoneyBag
             {
-                magicpower -= 50;
-                Form fm = new Boosts.MoneyBag
-                {
-                    MdiParent = mainform
-                };
-                fm.Show();
-            }
+                MdiParent = mainform
+            };
+            fm.Show();
         }
+    }
 
-        private void button2_Click(object sender, EventArgs e)
+    private void button2_Click(object sender, EventArgs e)
+    {
+        if (magicpower >= 240)
         {
-            if (magicpower >= 240)
+            magicpower -= 240;
+            Form fm = new Boosts.GenerationBoost
             {
-                magicpower -= 240;
-                Form fm = new Boosts.GenerationBoost
-                {
-                    MdiParent = mainform
-                };
-                fm.Show();
-            }
+                MdiParent = mainform
+            };
+            fm.Show();
         }
+    }
 
-        private void Magic_FormClosing(object sender, FormClosingEventArgs e) => magicshown = false;
+    private void Magic_FormClosing(object sender, FormClosingEventArgs e) => magicshown = false;
 
-        private void Magic_Load(object sender, EventArgs e)
-        {
+    private void Magic_Load(object sender, EventArgs e)
+    {
 
-        }
     }
 }
