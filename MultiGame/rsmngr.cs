@@ -3,7 +3,6 @@
 internal static class rsmngr
 {
     internal static List<ListedImage> ImageMap = new();
-    internal static ImageList e;
     internal static void RefreshImageMap()
     {
         if (Directory.Exists(resourcefolder))

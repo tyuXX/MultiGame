@@ -18,11 +18,13 @@ internal partial class OpenGame : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
+        ToggleTickers();
         openFileDialog1.Title = "Open Save File For MultiGame";
         openFileDialog1.DefaultExt = ".mgs";
         if (openFileDialog1.ShowDialog() == DialogResult.OK)
         {
             textBox1.Text = openFileDialog1.FileName;
         }
+        ToggleTickers();
     }
 }

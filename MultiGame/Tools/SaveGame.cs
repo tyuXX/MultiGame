@@ -16,6 +16,7 @@ internal partial class SaveGame : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
+        ToggleTickers();
         savefiledia.Title = "Save Game File For MultiGame";
         savefiledia.AddExtension = true;
         savefiledia.DefaultExt = ".mgs";
@@ -23,6 +24,7 @@ internal partial class SaveGame : Form
         {
             textBox1.Text = savefiledia.FileName;
         }
+        ToggleTickers();
     }
 
     private void button2_Click(object sender, EventArgs e) => savegame(textBox1.Text, this);

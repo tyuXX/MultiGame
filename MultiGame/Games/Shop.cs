@@ -18,27 +18,27 @@ internal partial class Shop : Form
     {
         if (formatnums)
         {
-            button1.Text = "Adder " + FormatBigNum(add1u.rankvalue ) + "\r\n$" + FormatBigNum(add1u.cache);
-            button2.Text = "Adder " + FormatBigNum(add2u.rankvalue ) + "\r\n$" + FormatBigNum(add2u.cache);
-            button3.Text = "Adder " + FormatBigNum(add3u.rankvalue ) + "\r\n$" + FormatBigNum(add3u.cache);
-            button4.Text = "Adder " + FormatBigNum(add4u.rankvalue ) + "\r\n$" + FormatBigNum(add4u.cache);
-            button5.Text = "Adder " + FormatBigNum(add5u.rankvalue ) + "\r\n$" + FormatBigNum(add5u.cache);
-            button6.Text = "Adder " + FormatBigNum(add6u.rankvalue ) + "\r\n$" + FormatBigNum(add6u.cache);
-            button7.Text = "Adder " + FormatBigNum(add7u.rankvalue ) + "\r\n$" + FormatBigNum(add7u.cache);
-            button8.Text = "Adder " + FormatBigNum(add8u.rankvalue ) + "\r\n$" + FormatBigNum(add8u.cache);
-            button9.Text = "Adder " + FormatBigNum(add9u.rankvalue ) + "\r\n$" + FormatBigNum(add9u.cache);
-            button10.Text = "Adder " + FormatBigNum(add10u.rankvalue ) + "\r\n$" + FormatBigNum(add10u.cache);
-            button11.Text = "Multipilier " + FormatBigNum(mult1u.rankvalue ) + "\r\n$" + FormatBigNum(mult1u.cache);
-            button12.Text = "Multipilier " + FormatBigNum(mult2u.rankvalue ) + "\r\n$" + FormatBigNum(mult2u.cache);
-            button13.Text = "Multipilier " + FormatBigNum(mult3u.rankvalue ) + "\r\n$" + FormatBigNum(mult3u.cache);
-            button14.Text = "Multipilier " + FormatBigNum(mult4u.rankvalue ) + "\r\n$" + FormatBigNum(mult4u.cache);
-            button15.Text = "Multipilier " + FormatBigNum(mult5u.rankvalue ) + "\r\n$" + FormatBigNum(mult5u.cache);
-            button16.Text = "Multipilier " + FormatBigNum(mult6u.rankvalue ) + "\r\n$" + FormatBigNum(mult6u.cache);
-            button17.Text = "Multipilier " + FormatBigNum(mult7u.rankvalue ) + "\r\n$" + FormatBigNum(mult7u.cache);
-            button18.Text = "Multipilier " + FormatBigNum(mult8u.rankvalue ) + "\r\n$" + FormatBigNum(mult8u.cache);
-            button19.Text = "Multipilier " + FormatBigNum(mult9u.rankvalue ) + "\r\n$" + FormatBigNum(mult9u.cache);
-            button20.Text = "Multipilier " + FormatBigNum(mult10u.rankvalue ) + "\r\n$" + FormatBigNum(mult10u.cache);
-            button21.Text = "Autoclickers " + FormatBigNum(autogenmultu.rankvalue ) + "\r\n$" + FormatBigNum(autogenmultu.cache);
+            button1.Text = "Adder " + FormatBigNum(add1u.rankvalue) + "\r\n$" + FormatBigNum(add1u.cache);
+            button2.Text = "Adder " + FormatBigNum(add2u.rankvalue) + "\r\n$" + FormatBigNum(add2u.cache);
+            button3.Text = "Adder " + FormatBigNum(add3u.rankvalue) + "\r\n$" + FormatBigNum(add3u.cache);
+            button4.Text = "Adder " + FormatBigNum(add4u.rankvalue) + "\r\n$" + FormatBigNum(add4u.cache);
+            button5.Text = "Adder " + FormatBigNum(add5u.rankvalue) + "\r\n$" + FormatBigNum(add5u.cache);
+            button6.Text = "Adder " + FormatBigNum(add6u.rankvalue) + "\r\n$" + FormatBigNum(add6u.cache);
+            button7.Text = "Adder " + FormatBigNum(add7u.rankvalue) + "\r\n$" + FormatBigNum(add7u.cache);
+            button8.Text = "Adder " + FormatBigNum(add8u.rankvalue) + "\r\n$" + FormatBigNum(add8u.cache);
+            button9.Text = "Adder " + FormatBigNum(add9u.rankvalue) + "\r\n$" + FormatBigNum(add9u.cache);
+            button10.Text = "Adder " + FormatBigNum(add10u.rankvalue) + "\r\n$" + FormatBigNum(add10u.cache);
+            button11.Text = "Multipilier " + FormatBigNum(mult1u.rankvalue) + "\r\n$" + FormatBigNum(mult1u.cache);
+            button12.Text = "Multipilier " + FormatBigNum(mult2u.rankvalue) + "\r\n$" + FormatBigNum(mult2u.cache);
+            button13.Text = "Multipilier " + FormatBigNum(mult3u.rankvalue) + "\r\n$" + FormatBigNum(mult3u.cache);
+            button14.Text = "Multipilier " + FormatBigNum(mult4u.rankvalue) + "\r\n$" + FormatBigNum(mult4u.cache);
+            button15.Text = "Multipilier " + FormatBigNum(mult5u.rankvalue) + "\r\n$" + FormatBigNum(mult5u.cache);
+            button16.Text = "Multipilier " + FormatBigNum(mult6u.rankvalue) + "\r\n$" + FormatBigNum(mult6u.cache);
+            button17.Text = "Multipilier " + FormatBigNum(mult7u.rankvalue) + "\r\n$" + FormatBigNum(mult7u.cache);
+            button18.Text = "Multipilier " + FormatBigNum(mult8u.rankvalue) + "\r\n$" + FormatBigNum(mult8u.cache);
+            button19.Text = "Multipilier " + FormatBigNum(mult9u.rankvalue) + "\r\n$" + FormatBigNum(mult9u.cache);
+            button20.Text = "Multipilier " + FormatBigNum(mult10u.rankvalue) + "\r\n$" + FormatBigNum(mult10u.cache);
+            button21.Text = "Autoclickers " + FormatBigNum(autogenmultu.rankvalue) + "\r\n$" + FormatBigNum(autogenmultu.cache);
             button22.Text = "Autoclicker Speed\r\n ms" + FormatBigNum(autoclickerinterval) + "\r\n$" + FormatBigNum(autoclickerintervaln);
         }
         else

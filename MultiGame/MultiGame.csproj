@@ -223,6 +223,12 @@
     <Compile Include="Games\MagicPowerGenerator.Designer.cs">
       <DependentUpon>MagicPowerGenerator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Message.Designer.cs">
+      <DependentUpon>Message.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\OpenGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Games\MagicPowerGenerator.resx">
       <DependentUpon>MagicPowerGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Message.resx">
+      <DependentUpon>Message.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\OpenGame.resx">
       <DependentUpon>OpenGame.cs</DependentUpon>

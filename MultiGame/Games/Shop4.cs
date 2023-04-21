@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace MultiGame.Games;
+﻿namespace MultiGame.Games;
 
 internal partial class Shop4 : Form
 {

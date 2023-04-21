@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Net;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -53,10 +52,12 @@ internal static class rntm
     internal static bool dialout = false;
     internal static bool dialset = false;
     internal static bool autosave = false;
-    internal static bool clearlog = true;
     internal static bool maxbuy = false;
     internal static bool formatranks = false;
     internal static bool statusopen = false;
+    internal static bool pausetickers = false;
+    internal static bool advanceshown = false;
+    internal static bool messagesend = true;
     internal static int logupdateinterval = 10000;
     internal static int autoclickerinterval = 1000;
     internal static int autoupgradeinterval = 3000;
@@ -75,7 +76,7 @@ internal static class rntm
     internal static Upgrade autogenmultu = new("AutoGenerationMultiplier", true, 0, 0, 5, 1000, true);
     internal static BigInteger level = 0;
     internal static BigInteger xp = 0;
-    internal static BigInteger xpn = xpnt;
+    internal static BigInteger xpn = Xpnt;
     internal static Upgrade add1u = new("Add1", true, 0, 0, 2, 250);
     internal static Upgrade add2u = new("Add2", true, 0, 0, 2, 250);
     internal static Upgrade add3u = new("Add3", true, 0, 0, 2, 250);
@@ -135,18 +136,19 @@ internal static class rntm
     internal static readonly string mid = GenRandomStr(10);
     internal static readonly string tid = GenRandomStr(10);
     internal const bool Autoupdateshops = true;
-    internal const short xpt = 3;
-    internal const short xpnt = 1;
-    internal const int lbm = 100;
-    internal const int tcb = 1000000;
-    internal const int tcdb = 10000;
-    internal const short rut = 10;
-    internal const string Updatev = "Betav0.6.0";
+    internal const short Xpt = 7;
+    internal const short Xpnt = 1;
+    internal const int Lbm = 100;
+    internal const int Tcb = 1000000;
+    internal const int Tcdb = 10000;
+    internal const short Rut = 10;
+    internal const string Updatev = "Betav0.6.1";
     internal static void VSplash()
     {
         Resource.Splash splash = new Resource.Splash();
         splash.Show();
     }
+    internal static void ToggleTickers() => mainform.Toggletickers();
     internal static string FormatLogStr(object sender, string[ ] param, string mstr)
     {
         StringBuilder merger = new();
@@ -155,6 +157,26 @@ internal static class rntm
             merger.Append($"{str},");
         }
         return $"[{DateTime.Now}][{sender}]({merger}){mstr}";
+    }
+    internal static string BoolArrayToString(bool[ ] array)
+    {
+        StringBuilder sb = new();
+        foreach (bool bol in array)
+        {
+            sb.Append(bol.ToString());
+            sb.Append(',');
+        }
+        return sb.ToString();
+    }
+    internal static bool[ ] StringToBoolArray(string str, char split)
+    {
+        string[ ] array = str.Split(split);
+        bool[ ] barray = new bool[ array.Length ];
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            barray[ i ] = bool.Parse(array[ i ]);
+        }
+        return barray;
     }
     internal static void download(string link, string name)
     {
@@ -303,7 +325,8 @@ internal static class rntm
     {
         level++;
         xp -= xpn;
-        xpn *= xpt;
+        xpn *= Xpt;
+        NewMessageWindow("Level Up!", "You are now LvL:" + level, 1);
     }
     internal static void updateapp()
     {
@@ -348,7 +371,7 @@ internal static class rntm
     {
         get
         {
-            BigInteger rt = (currentworld.mult * level * rebirthmult * rankmult * ((totalclicks / tcb) + 1) * ((totalclicksdirect / tcdb) + 1) * generation * ((add1u.rankvalue + add2u.rankvalue + add3u.rankvalue + add4u.rankvalue + add5u.rankvalue + add6u.rankvalue + add7u.rankvalue + add8u.rankvalue + add9u.rankvalue + add10u.rankvalue + 1) * (((mult1u.rankvalue * mult2u.rankvalue * mult3u.rankvalue * mult4u.rankvalue * mult5u.rankvalue * mult6u.rankvalue * mult7u.rankvalue * mult8u.rankvalue * mult9u.rankvalue * mult10u.rankvalue) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
+            BigInteger rt = (currentworld.mult * level * rebirthmult * rankmult * ((totalclicks / Tcb) + 1) * ((totalclicksdirect / Tcdb) + 1) * generation * ((add1u.rankvalue + add2u.rankvalue + add3u.rankvalue + add4u.rankvalue + add5u.rankvalue + add6u.rankvalue + add7u.rankvalue + add8u.rankvalue + add9u.rankvalue + add10u.rankvalue + 1) * (((mult1u.rankvalue * mult2u.rankvalue * mult3u.rankvalue * mult4u.rankvalue * mult5u.rankvalue * mult6u.rankvalue * mult7u.rankvalue * mult8u.rankvalue * mult9u.rankvalue * mult10u.rankvalue) + 1) * boost1 * boost2 * boost3 * boost4 * boost5 * boost6 * boost7 * boost8 * boost9 * boost10))) - (outcome / minicompanies);
             if (rt < 1)
             {
                 return 1;
@@ -357,6 +380,20 @@ internal static class rntm
             {
                 return rt;
             }
+        }
+    }
+    internal static void NewMessageWindow(string l1, string l2, short lf)
+    {
+        if (messagesend)
+        {
+            Tools.Message msg = new()
+            {
+                MdiParent = mainform,
+                life = lf
+            };
+            msg.label1.Text = l1;
+            msg.label2.Text = l2;
+            msg.Show();
         }
     }
 
@@ -370,7 +407,7 @@ internal static class rntm
             xp = 0;
             level = 0;
             money = 0;
-            xpn = xpnt;
+            xpn = Xpnt;
             add1u.RRestore(true);
             add2u.RRestore(true);
             add3u.RRestore(true);
@@ -396,14 +433,14 @@ internal static class rntm
     }
     internal static void RankUp(bool bypass = false)
     {
-        if ((level >= exponent(rank, 2) * rut) || bypass)
+        if ((level >= exponent(rank, 2) * Rut) || bypass)
         {
             rank++;
             rankmult = rank * rank;
             xp = 0;
             level = 0;
             money = 0;
-            xpn = xpnt;
+            xpn = Xpnt;
             add1u.RRestore(false);
             add2u.RRestore(false);
             add3u.RRestore(false);
@@ -484,7 +521,7 @@ internal static class rntm
             {
                 level++;
                 xp -= xpn;
-                xpn *= xpt;
+                xpn *= Xpt;
             }
         }
     }
@@ -674,6 +711,7 @@ internal static class rntm
                 encode(mult9u.rank.ToString()),
                 encode(mult10u.rank.ToString()),
                 encode(autogenmultu.rank.ToString()),
+                encode(BoolArrayToString(advance))
             };
             File.WriteAllLines(filepath, masterfile);
             lastfile = filepath;
@@ -688,80 +726,82 @@ internal static class rntm
         if (decode(masterfile[ 0 ]) == passcodes)
         {
             endecode = passcodes;
-            try { username = decode(masterfile[ (int)saveorder.username ]); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { logupdateinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.logupdateinterval ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { autoclickerinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoclickerinterval ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { autoupgradeinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoupgradeinterval ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { money = BigInteger.Parse(decode(masterfile[ (int)saveorder.money ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { generation = BigInteger.Parse(decode(masterfile[ (int)saveorder.generation ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { outcome = BigInteger.Parse(decode(masterfile[ (int)saveorder.outcome ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { autogenmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.autogenmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { level = BigInteger.Parse(decode(masterfile[ (int)saveorder.level ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { xp = BigInteger.Parse(decode(masterfile[ (int)saveorder.xp ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { xpn = BigInteger.Parse(decode(masterfile[ (int)saveorder.xpn ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add1 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add2 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add3 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add4 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add5 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add6 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add7 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add8 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add9 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add10 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult1 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult2 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult3 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult4 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult5 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult6 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult7 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult8 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult9 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult10 ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { timespent = BigInteger.Parse(decode(masterfile[ (int)saveorder.timespent ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { workers = BigInteger.Parse(decode(masterfile[ (int)saveorder.workers ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { inventions = BigInteger.Parse(decode(masterfile[ (int)saveorder.inventions ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { minicompanies = BigInteger.Parse(decode(masterfile[ (int)saveorder.minicompanies ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { companynetworth = BigInteger.Parse(decode(masterfile[ (int)saveorder.companynetworth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { invested = BigInteger.Parse(decode(masterfile[ (int)saveorder.invested ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { autocollectboosts = bool.Parse(decode(masterfile[ (int)saveorder.autocollectboosts ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { automaticupgrade = bool.Parse(decode(masterfile[ (int)saveorder.automaticupgrade ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { magicpower = BigInteger.Parse(decode(masterfile[ (int)saveorder.magicpower ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { currentworld.mult = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { currentworld.name = decode(masterfile[ (int)saveorder.currentworldname ]); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { currentworld.population = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulation ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { currentworld.populationgrowth = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { currentworld.populationgrowthpercent = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowthpercent ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { moneybagc = Convert.ToInt32(decode(masterfile[ (int)saveorder.moneybagchance ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { genboostc = Convert.ToInt32(decode(masterfile[ (int)saveorder.genboostchance ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.rank ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { rebirth = BigInteger.Parse(decode(masterfile[ (int)saveorder.rebirth ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { totalclicks = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicks ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { totalclicksdirect = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicksdirect ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add1u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add1r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add2u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add2r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add3u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add3r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add4u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add4r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add5u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add5r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add6u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add6r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add7u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add7r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add8u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add8r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add9u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add9r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { add10u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add10r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult1u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult1r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult2u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult2r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult3u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult3r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult4u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult4r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult5u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult5r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult6u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult6r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult7u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult7r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult8u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult8r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult9u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult9r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { mult10u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult10r ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { autogenmultu.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.autogenmultr ])); } catch (Exception ex) { Console.Error.WriteLine(ex); }
-            try { recalculatevars(); } catch (Exception ex) { Console.Error.WriteLine(ex); }
+            try { username = decode(masterfile[ (int)saveorder.username ]); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { logupdateinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.logupdateinterval ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { autoclickerinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoclickerinterval ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { autoupgradeinterval = Convert.ToInt32(decode(masterfile[ (int)saveorder.autoupgradeinterval ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { money = BigInteger.Parse(decode(masterfile[ (int)saveorder.money ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { generation = BigInteger.Parse(decode(masterfile[ (int)saveorder.generation ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { outcome = BigInteger.Parse(decode(masterfile[ (int)saveorder.outcome ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { autogenmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.autogenmult ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { level = BigInteger.Parse(decode(masterfile[ (int)saveorder.level ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { xp = BigInteger.Parse(decode(masterfile[ (int)saveorder.xp ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { xpn = BigInteger.Parse(decode(masterfile[ (int)saveorder.xpn ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add1 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add2 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add3 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add4 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add5 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add6 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add7 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add8 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add9 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.add10 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult1u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult1 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult2u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult2 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult3u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult3 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult4u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult4 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult5u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult5 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult6u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult6 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult7u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult7 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult8u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult8 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult9u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult9 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult10u.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult10 ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { timespent = BigInteger.Parse(decode(masterfile[ (int)saveorder.timespent ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { workers = BigInteger.Parse(decode(masterfile[ (int)saveorder.workers ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { inventions = BigInteger.Parse(decode(masterfile[ (int)saveorder.inventions ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { minicompanies = BigInteger.Parse(decode(masterfile[ (int)saveorder.minicompanies ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { companynetworth = BigInteger.Parse(decode(masterfile[ (int)saveorder.companynetworth ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { invested = BigInteger.Parse(decode(masterfile[ (int)saveorder.invested ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { autocollectboosts = bool.Parse(decode(masterfile[ (int)saveorder.autocollectboosts ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { automaticupgrade = bool.Parse(decode(masterfile[ (int)saveorder.automaticupgrade ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { magicpower = BigInteger.Parse(decode(masterfile[ (int)saveorder.magicpower ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { currentworld.mult = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldmult ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { currentworld.name = decode(masterfile[ (int)saveorder.currentworldname ]); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { currentworld.population = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulation ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { currentworld.populationgrowth = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowth ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { currentworld.populationgrowthpercent = BigInteger.Parse(decode(masterfile[ (int)saveorder.currentworldpopulationgrowthpercent ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { moneybagc = Convert.ToInt32(decode(masterfile[ (int)saveorder.moneybagchance ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { genboostc = Convert.ToInt32(decode(masterfile[ (int)saveorder.genboostchance ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.rank ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { rebirth = BigInteger.Parse(decode(masterfile[ (int)saveorder.rebirth ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { levelupmultu.value = BigInteger.Parse(decode(masterfile[ (int)saveorder.levelupmult ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { totalclicks = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicks ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { totalclicksdirect = BigInteger.Parse(decode(masterfile[ (int)saveorder.totalclicksdirect ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add1u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add1r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add2u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add2r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add3u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add3r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add4u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add4r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add5u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add5r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add6u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add6r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add7u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add7r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add8u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add8r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add9u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add9r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { add10u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.add10r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult1u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult1r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult2u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult2r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult3u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult3r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult4u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult4r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult5u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult5r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult6u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult6r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult7u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult7r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult8u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult8r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult9u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult9r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { mult10u.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.mult10r ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            try { autogenmultu.rank = BigInteger.Parse(decode(masterfile[ (int)saveorder.autogenmultr ])); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
+            //try { advance = StringToBoolArray(decode(masterfile[ (int)saveorder.advance ]),','); } catch (Exception ex) { NewMessageWindow("Error",ex.Message,25); }
+            advance = StringToBoolArray(decode(masterfile[ (int)saveorder.advance ]), ',');
+            try { recalculatevars(); } catch (Exception ex) { NewMessageWindow("Error", ex.Message, 25); }
             lastfile = filepath;
             form?.Close();
         }
@@ -1068,5 +1108,6 @@ internal enum saveorder
     mult8r,
     mult9r,
     mult10r,
-    autogenmultr
+    autogenmultr,
+    advance
 }

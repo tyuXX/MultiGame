@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Testing
@@ -13,10 +14,27 @@ namespace Testing
 
         private void button1_Click( object sender, EventArgs e )
         {
-            for (int i = richTextBox1.Lines.Length + 7+10; i > richTextBox1.Lines.Length; i--)
+            richTextBox2.Text = BoolArrayToString(StringToBoolArray( richTextBox1.Text, ',' ));
+        }
+        internal static string BoolArrayToString( bool[] array )
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (bool bol in array)
             {
-                File.WriteAllText( $@"thebreakerv{i-richTextBox1.Lines.Length-6}.mcfunction",richTextBox1.Lines[i-richTextBox1.Lines.Length+7] );
+                sb.Append( bol.ToString() );
+                sb.Append( ',' );
             }
+            return sb.ToString();
+        }
+        internal static bool[] StringToBoolArray( string str, char split )
+        {
+            string[] array = str.Split( split );
+            bool[] barray = new bool[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                barray[i] = bool.Parse( array[i] );
+            }
+            return barray;
         }
 
         private void Form3_Load( object sender, EventArgs e )

@@ -27,5 +27,5 @@ internal partial class Splash : Form
         }
     }
 
-    private void Splash_Load(object sender, EventArgs e) => progressBar1.Maximum = lbm;
+    private void Splash_Load(object sender, EventArgs e) => progressBar1.Maximum = Lbm;
 }

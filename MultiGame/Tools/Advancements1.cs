@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace MultiGame.Tools;
+﻿namespace MultiGame.Tools;
 
 internal partial class Advancements1 : Form
 {
@@ -18,75 +16,206 @@ internal partial class Advancements1 : Form
     {
         if (!advance[ 1 ])
         {
-            button2.BackColor = Color.Gray;
+            if (level >= 25)
+            {
+                advance[ 1 ] = true;
+            }
+            else
+            {
+                button2.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 2 ])
         {
-            button3.BackColor = Color.Gray;
+            if (level >= 50)
+            {
+                advance[ 2 ] = true;
+            }
+            else
+            {
+                button3.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 3 ])
         {
-            button4.BackColor = Color.Gray;
+            if (level >= 75)
+            {
+                advance[ 3 ] = true;
+            }
+            else
+            {
+                button4.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 4 ])
         {
-            button5.BackColor = Color.Gray;
+            if (level >= 100)
+            {
+                advance[ 4 ] = true;
+            }
+            else
+            {
+                button5.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 5 ])
         {
-            button6.BackColor = Color.Gray;
+            if (level >= 125)
+            {
+                advance[ 5 ] = true;
+            }
+            else
+            {
+                button6.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 6 ])
         {
-            button7.BackColor = Color.Gray;
+            if (level >= 150)
+            {
+                advance[ 6 ] = true;
+            }
+            else
+            {
+                button7.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 7 ])
         {
-            button8.BackColor = Color.Gray;
+            if (level >= 175)
+            {
+                advance[ 7 ] = true;
+            }
+            else
+            {
+                button8.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 8 ])
         {
-            button9.BackColor = Color.Gray;
+            if (level >= 200)
+            {
+                advance[ 8 ] = true;
+            }
+            else
+            {
+                button9.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 9 ])
         {
-            button10.BackColor = Color.Gray;
+            if (level >= 225)
+            {
+                advance[ 9 ] = true;
+            }
+            else
+            {
+                button10.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 10 ])
         {
-            button11.BackColor = Color.Gray;
+            if (level >= 250)
+            {
+                advance[ 10 ] = true;
+            }
+            else
+            {
+                button11.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 11 ])
         {
-            button12.BackColor = Color.Gray;
+            if (level >= 300)
+            {
+                advance[ 11 ] = true;
+            }
+            else
+            {
+                button12.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 12 ])
         {
-            button13.BackColor = Color.Gray;
+            if (level >= 400)
+            {
+                advance[ 12 ] = true;
+            }
+            else
+            {
+                button13.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 13 ])
         {
-            button14.BackColor = Color.Gray;
+            if (level >= 500)
+            {
+                advance[ 13 ] = true;
+            }
+            else
+            {
+                button14.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 14 ])
         {
-            button15.BackColor = Color.Gray;
+            if (level >= 600)
+            {
+                advance[ 14 ] = true;
+            }
+            else
+            {
+                button15.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 15 ])
         {
-            button16.BackColor = Color.Gray;
+            if (level >= 700)
+            {
+                advance[ 15 ] = true;
+            }
+            else
+            {
+                button16.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 16 ])
         {
-            button17.BackColor = Color.Gray;
+            if (level >= 800)
+            {
+                advance[ 16 ] = true;
+            }
+            else
+            {
+                button17.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 17 ])
         {
-            button18.BackColor = Color.Gray;
+            if (level >= 900)
+            {
+                advance[ 17 ] = true;
+            }
+            else
+            {
+                button18.BackColor = Color.Gray;
+            }
         }
         if (!advance[ 18 ])
         {
-            button19.BackColor = Color.Gray;
+            if (level >= 1000)
+            {
+                advance[ 18 ] = true;
+            }
+            else
+            {
+                button19.BackColor = Color.Gray;
+            }
         }
+    }
+
+    private void Advancements1_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        advanceshown = false;
     }
 }

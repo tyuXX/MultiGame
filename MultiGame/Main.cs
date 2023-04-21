@@ -31,7 +31,6 @@ internal partial class Main : Form
         TopMost = alwaysontop;
         devToolStripMenuItem.Enabled = devmode;
         autoupgrade.Enabled = automaticupgrade;
-        clearlogt.Enabled = clearlog;
         autorankup.Enabled = automaticrank;
         autorebirth.Enabled = automaticrebirth;
         if (cheat)
@@ -114,6 +113,7 @@ internal partial class Main : Form
         timerthread.Start();
         recalculatevars();
         if (splash) { VSplash(); }
+        clickerToolStripMenuItem_Click(clickerToolStripMenuItem, null);
     }
 
     private void logToolStripMenuItem_Click(object sender, EventArgs e)
@@ -260,7 +260,7 @@ internal partial class Main : Form
     {
         level = 0;
         xp = 0;
-        xpn = xpnt;
+        xpn = Xpnt;
     }
 
     private void companytick_Tick(object sender, EventArgs e)
@@ -525,12 +525,14 @@ internal partial class Main : Form
     {
         Hide();
         MultiGameIcon.Visible = true;
+        Toggletickers();
     }
 
     private void MultiGameIcon_Click(object sender, EventArgs e)
     {
         Show();
         MultiGameIcon.Visible = false;
+        Toggletickers();
     }
 
     private void levelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -601,11 +603,6 @@ internal partial class Main : Form
         }
     }
 
-    private void clearlogt_Tick(object sender, EventArgs e)
-    {
-
-    }
-
     private void debugVarsNewToolStripMenuItem_Click(object sender, EventArgs e)
     {
         if (!varsshown)
@@ -640,7 +637,7 @@ internal partial class Main : Form
         }
         catch (Exception ex)
         {
-            Console.Error.WriteLine(ex);
+            NewMessageWindow("Error", ex.Message, 25);
         }
     }
 
@@ -724,6 +721,60 @@ internal partial class Main : Form
                 MdiParent = this
             };
             status.Show();
+        }
+    }
+
+    private void pauseGameToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (pausetickers)
+        {
+            Toggletickers();
+            pauseGameToolStripMenuItem.Text = "Pause Game";
+        }
+        else
+        {
+            Toggletickers();
+            pauseGameToolStripMenuItem.Text = "Unpause Game";
+        }
+    }
+    internal void Toggletickers()
+    {
+        pausetickers = !pausetickers;
+        tick.Enabled = !pausetickers;
+        autoclicker.Enabled = !pausetickers;
+        rngtick.Enabled = !pausetickers;
+        companytick.Enabled = !pausetickers;
+        autosavet.Enabled = !pausetickers;
+        autorankup.Enabled = !pausetickers;
+        autorebirth.Enabled = !pausetickers;
+        autoupgrade.Enabled = !pausetickers;
+        boosttimer.Enabled = !pausetickers;
+        worldpop.Enabled = !pausetickers;
+    }
+
+    private void messagesONToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (messagesend)
+        {
+            messagesend = false;
+            messagesONToolStripMenuItem.Text = "Messages (OFF)";
+        }
+        else
+        {
+            messagesend = true;
+            messagesONToolStripMenuItem.Text = "Messages (ON)";
+        }
+    }
+
+    private void advancementsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (!advanceshown)
+        {
+            Advancements1 advancements1 = new()
+            {
+                MdiParent = this
+            };
+            advancements1.Show();
         }
     }
 }

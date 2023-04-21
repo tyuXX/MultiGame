@@ -10,7 +10,7 @@ internal partial class Shop5 : Form
     {
         if (formatnums)
         {
-            button1.Text = "LevelUp Speed " + FormatBigNum(levelupmultu.rankvalue ) + "\r\n$" + FormatBigNum(levelupmultu.cache);
+            button1.Text = "LevelUp Speed " + FormatBigNum(levelupmultu.rankvalue) + "\r\n$" + FormatBigNum(levelupmultu.cache);
         }
         else
         {

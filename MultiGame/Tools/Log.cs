@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MultiGame.Tools;
+﻿namespace MultiGame.Tools;
 
 internal partial class Log : Form
 {
