@@ -124,6 +124,7 @@ partial class Main
             this.autosavet = new System.Windows.Forms.Timer(this.components);
             this.autorankup = new System.Windows.Forms.Timer(this.components);
             this.autorebirth = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -926,5 +927,6 @@ partial class Main
     private ToolStripMenuItem statusToolStripMenuItem;
     private ToolStripMenuItem pauseGameToolStripMenuItem;
     private ToolStripMenuItem messagesONToolStripMenuItem;
+    private System.ComponentModel.BackgroundWorker backgroundWorker1;
 }
 

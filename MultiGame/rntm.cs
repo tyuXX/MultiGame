@@ -487,9 +487,9 @@ internal static class rntm
     }
     internal static string encode(string toen)
     {
-        byte[ ] data = UnicodeEncoding.Unicode.GetBytes(toen);
+        byte[ ] data = Encoding.Unicode.GetBytes(toen);
         using MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-        byte[ ] keys = md5.ComputeHash(UnicodeEncoding.Unicode.GetBytes(endecode));
+        byte[ ] keys = md5.ComputeHash(Encoding.Unicode.GetBytes(endecode));
         using TripleDESCryptoServiceProvider tripdes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 };
         ICryptoTransform transform = tripdes.CreateEncryptor();
         byte[ ] results = transform.TransformFinalBlock(data, 0, data.Length);
@@ -499,11 +499,11 @@ internal static class rntm
     {
         byte[ ] data = Convert.FromBase64String(tode);
         using MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-        byte[ ] keys = md5.ComputeHash(UnicodeEncoding.Unicode.GetBytes(endecode));
+        byte[ ] keys = md5.ComputeHash(Encoding.Unicode.GetBytes(endecode));
         using TripleDESCryptoServiceProvider tripdes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 };
         ICryptoTransform transform = tripdes.CreateDecryptor();
         byte[ ] results = transform.TransformFinalBlock(data, 0, data.Length);
-        return UnicodeEncoding.Unicode.GetString(results);
+        return Encoding.Unicode.GetString(results);
     }
     internal static void timerth()
     {

@@ -92,6 +92,12 @@
     <Compile Include="Boosts\MoneyBag.Designer.cs">
       <DependentUpon>MoneyBag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\SwitchButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Games\Clicker.cs">
       <SubType>Form</SubType>
     </Compile>
