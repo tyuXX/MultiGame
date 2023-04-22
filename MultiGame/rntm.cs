@@ -385,7 +385,7 @@ internal static class rntm
     }
     internal static void NewMessageWindow(string l1, string l2, short lf)
     {
-        if(popups.Count >= 10)
+        if (popups.Count >= 10)
         {
             foreach (Tools.Message msg in popups)
             {

@@ -86,7 +86,10 @@ partial class OpenGame
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Title = "Open Save File For MultiGame";
+            this.openFileDialog1.FileName = "Save.mgs";
+            this.openFileDialog1.DefaultExt = ".mgs";
+            this.openFileDialog1.ValidateNames = true;
             // 
             // OpenGame
             // 

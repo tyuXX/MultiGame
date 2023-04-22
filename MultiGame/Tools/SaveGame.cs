@@ -17,9 +17,6 @@ internal partial class SaveGame : Form
     private void button1_Click(object sender, EventArgs e)
     {
         ToggleTickers();
-        savefiledia.Title = "Save Game File For MultiGame";
-        savefiledia.AddExtension = true;
-        savefiledia.DefaultExt = ".mgs";
         if (savefiledia.ShowDialog() == DialogResult.OK)
         {
             textBox1.Text = savefiledia.FileName;

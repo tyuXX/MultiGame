@@ -30,12 +30,11 @@ partial class Splash
     {
             this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mgLogo1 = new MultiGame.Components.MGLogo();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -45,16 +44,6 @@ partial class Splash
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(316, 13);
             this.progressBar1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MultiGame.Properties.Resources.icopng;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(316, 163);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // timer1
             // 
@@ -87,15 +76,23 @@ partial class Splash
             this.label2.TabIndex = 3;
             this.label2.Text = "Made By [tyuXX]";
             // 
+            // mgLogo1
+            // 
+            this.mgLogo1.Location = new System.Drawing.Point(97, 42);
+            this.mgLogo1.Name = "mgLogo1";
+            this.mgLogo1.Size = new System.Drawing.Size(144, 146);
+            this.mgLogo1.TabIndex = 4;
+            this.mgLogo1.Text = "mgLogo1";
+            // 
             // Splash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(340, 219);
+            this.Controls.Add(this.mgLogo1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Splash";
@@ -104,7 +101,6 @@ partial class Splash
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Splash";
             this.Load += new System.EventHandler(this.Splash_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,9 +109,9 @@ partial class Splash
     #endregion
 
     private System.Windows.Forms.ProgressBar progressBar1;
-    private System.Windows.Forms.PictureBox pictureBox1;
     private System.Windows.Forms.Timer timer1;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Timer timer2;
     private Label label2;
+    private Components.MGLogo mgLogo1;
 }

@@ -1,25 +1,24 @@
-﻿namespace MultiGame.Tools
+﻿namespace MultiGame.Tools;
+
+public partial class Message : Form
 {
-    public partial class Message : Form
+    internal short life = 10;
+    public Message()
     {
-        internal short life = 10;
-        public Message()
+        InitializeComponent();
+    }
+
+    private void button1_Click(object sender, EventArgs e) => Close();
+
+    private void tick_Tick(object sender, EventArgs e)
+    {
+        if (life > 0)
         {
-            InitializeComponent();
+            life--;
         }
-
-        private void button1_Click(object sender, EventArgs e) => Close();
-
-        private void tick_Tick(object sender, EventArgs e)
+        else
         {
-            if (life > 0)
-            {
-                life--;
-            }
-            else
-            {
-                Close();
-            }
+            Close();
         }
     }
 }

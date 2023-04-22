@@ -63,6 +63,14 @@ partial class SaveGame
             this.button2.Text = "Save Game";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            //
+            //savefiledia
+            //
+            savefiledia.FileName = "Save.mgs";
+            savefiledia.Title = "Save Game File For MultiGame";
+            savefiledia.AddExtension = true;
+            savefiledia.DefaultExt = ".mgs";
+            savefiledia.ValidateNames = true;
             // 
             // SaveGame
             // 
