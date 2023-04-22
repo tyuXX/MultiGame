@@ -12,6 +12,7 @@ internal static class rntm
     internal static Random rng = new();
     internal static Thread timerthread = new(timerth);
     internal static List<string> passcodes = new() { "$sct", "cheat4life", "24/7 debugging" };
+    internal static List<Tools.Message> popups = new() { };
     internal static string path = "";
     internal static string endecode = "1234";
     internal static string username = "Player";
@@ -384,6 +385,13 @@ internal static class rntm
     }
     internal static void NewMessageWindow(string l1, string l2, short lf)
     {
+        if(popups.Count >= 10)
+        {
+            foreach (Tools.Message msg in popups)
+            {
+                msg.Close();
+            }
+        }
         if (messagesend)
         {
             Tools.Message msg = new()
@@ -393,6 +401,7 @@ internal static class rntm
             };
             msg.label1.Text = l1;
             msg.label2.Text = l2;
+            popups.Add(msg);
             msg.Show();
         }
     }

@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MultiGame.Components
+﻿namespace MultiGame.Components
 {
     public partial class RoundedButton : Button
     {
         public RoundedButton()
         {
-            BackColor = Color.Gray;
+            BackColor = Color.LightGray;
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderColor = Color.Black;
             FlatAppearance.BorderSize = 1;
@@ -43,7 +35,7 @@ namespace MultiGame.Components
             using (System.Drawing.Drawing2D.GraphicsPath GraphPath = GetRoundPath(Rect, rdus))
             {
                 Region = new Region(GraphPath);
-                using (Pen pen = new Pen(Color.CadetBlue, 1.75f))
+                using (Pen pen = new Pen(BackColor, 1.75f))
                 {
                     pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                     e.Graphics.DrawPath(pen, GraphPath);
