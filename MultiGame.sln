@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiGameUpdate", "MultiGameUpdate\MultiGameUpdate.csproj", "{D8400577-4EAA-46E9-B2E3-41982A5177D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{DBBA01AB-06BC-4E72-A746-166E1717F414}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{DBBA01AB-06BC-4E72-A746-166E1717F414}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -92,6 +92,12 @@
     <Compile Include="Boosts\MoneyBag.Designer.cs">
       <DependentUpon>MoneyBag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\AnimatedBitmap16x.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\IconBitmap16x.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\MGAniLogo.cs">
       <SubType>Component</SubType>
     </Compile>

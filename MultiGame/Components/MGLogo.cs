@@ -1,44 +1,90 @@
 ﻿namespace MultiGame.Components;
 
-internal partial class MGLogo : Control
+internal partial class MGLogo : IconBitmap16x
 {
-    public Point StartingPoint;
-    public Color color;
     public MGLogo()
     {
-        StartingPoint = new(0, 0);
-        color = Color.Black;
-    }
-    int GetDrawingSize()
-    {
-        return Size.Height / 16;
-    }
-    protected override void OnPaint(PaintEventArgs e)
-    {
-        int DrawingSize = GetDrawingSize();
-        SolidBrush brush = new(color);
-        Pen pen = new Pen(brush, DrawingSize);
-        //e.Graphics.DrawRectangle(pen,new(new(StartingPoint.X + DrawingSize,StartingPoint.Y + DrawingSize),new(DrawingSize*14,DrawingSize*13)));
-        //e.Graphics.DrawRectangle(pen,new(new(StartingPoint.X + DrawingSize * 2,StartingPoint.Y + (DrawingSize / 2) * 6),new(DrawingSize*12,DrawingSize / 2)));
-        //e.Graphics.DrawRectangle(pen,new(new(StartingPoint.X + DrawingSize * 2,StartingPoint.Y + (DrawingSize / 2) * 10),new(DrawingSize*12,DrawingSize / 2)));
-        //e.Graphics.DrawRectangle(pen,new(new(StartingPoint.X + DrawingSize * 2,StartingPoint.Y + (DrawingSize / 2) * 14),new(DrawingSize*12,DrawingSize / 2)));
-        //e.Graphics.DrawRectangle(pen,new(new(StartingPoint.X + DrawingSize * 2,StartingPoint.Y + (DrawingSize / 2) * 18),new(DrawingSize*12,DrawingSize / 2)));
-        //e.Graphics.DrawRectangle(pen,new(new(StartingPoint.X + DrawingSize * 2,StartingPoint.Y + (DrawingSize / 2) * 22),new(DrawingSize*12,DrawingSize / 2)));
-        //e.Graphics.DrawRectangle(pen,new(new(StartingPoint.X + DrawingSize * 2,StartingPoint.Y + (DrawingSize / 2) * 26),new(DrawingSize*12,DrawingSize / 2)));
-        for (int ii = 0; ii < 16; ii++) // Height
+        Start = new()
         {
-            if (false)
-            {
-
-            }
-            else
-            {
-                for (int i = 0; i < 16; i++) // Width
-                {
-                    e.Graphics.FillRectangle(brush, new(new(StartingPoint.X + DrawingSize * i, StartingPoint.Y + DrawingSize * ii), new(DrawingSize, DrawingSize)));
-
-                }
-            }
-        }
+            new(0,0),
+            new(6, 0),
+            new(13, 0),
+            new(4, 1),
+            new(6, 1),
+            new(11, 1),
+            new(13, 1),
+            new(15, 2),
+            new(2, 3),
+            new(10, 3),
+            new(12, 3),
+            new(15, 3),
+            new(15, 4),
+            new(2, 5),
+            new(9, 5),
+            new(11, 5),
+            new(15, 5),
+            new(15, 6),
+            new(2, 7),
+            new(8, 7),
+            new(10, 7),
+            new(15, 7),
+            new(15, 8),
+            new(2, 9),
+            new(7, 9),
+            new(9, 9),
+            new(15, 9),
+            new(15, 10),
+            new(2, 11),
+            new(4, 11),
+            new(6, 11),
+            new(8, 11),
+            new(15, 11),
+            new(15, 12),
+            new(2, 13),
+            new(5, 13),
+            new(7, 13),
+            new(15, 13),
+            new(15, 14),
+        };
+        End = new()
+        {
+            new(3,0),
+            new(10, 0),
+            new(3, 1),
+            new(5, 1),
+            new(10, 1),
+            new(12, 1),
+            new(1, 2),
+            new(1, 3),
+            new(9, 3),
+            new(11, 3),
+            new(14, 3),
+            new(1, 4),
+            new(1, 5),
+            new(8, 5),
+            new(10, 5),
+            new(14, 5),
+            new(1, 6),
+            new(1, 7),
+            new(7, 7),
+            new(9, 7),
+            new(14, 7),
+            new(1, 8),
+            new(1, 9),
+            new(6, 9),
+            new(8, 9),
+            new(14, 9),
+            new(1, 10),
+            new(1, 11),
+            new(5, 11),
+            new(7, 11),
+            new(14, 11),
+            new(1, 12),
+            new(1, 13),
+            new(4, 13),
+            new(6, 13),
+            new(14, 13),
+            new(1, 14),
+        };
     }
 }
