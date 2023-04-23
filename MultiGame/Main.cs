@@ -600,8 +600,8 @@ internal partial class Main : Form
         if (!updatewindowshown)
         {
             updatewindowshown = true;
-            UpdateWindow updateWindow = new() 
-            { 
+            UpdateWindow updateWindow = new()
+            {
                 MdiParent = this
             };
             updateWindow.Show();

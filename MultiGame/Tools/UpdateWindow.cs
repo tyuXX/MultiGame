@@ -9,10 +9,7 @@ public partial class UpdateWindow : Form
         InitializeComponent();
     }
 
-    private void UpdateWindow_Load(object sender, EventArgs e)
-    {
-        refresh();
-    }
+    private void UpdateWindow_Load(object sender, EventArgs e) => refresh();
     void refresh()
     {
         try
@@ -34,10 +31,7 @@ public partial class UpdateWindow : Form
         label2.Text = "New Version:" + newver;
     }
 
-    private void button2_Click(object sender, EventArgs e)
-    {
-        refresh();
-    }
+    private void button2_Click(object sender, EventArgs e) => refresh();
 
     private void button1_Click(object sender, EventArgs e)
     {
@@ -47,8 +41,5 @@ public partial class UpdateWindow : Form
         }
     }
 
-    private void UpdateWindow_FormClosing(object sender, FormClosingEventArgs e)
-    {
-        updatewindowshown = false;
-    }
+    private void UpdateWindow_FormClosing(object sender, FormClosingEventArgs e) => updatewindowshown = false;
 }
