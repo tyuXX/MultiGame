@@ -402,20 +402,6 @@ internal partial class Main : Form
         fm.Show();
     }
 
-    private void alwaysOnTopONToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        if (alwaysontop)
-        {
-            alwaysontop = false;
-            alwaysOnTopONToolStripMenuItem.Text = "Always On Top (OFF)";
-        }
-        else
-        {
-            alwaysontop = true;
-            alwaysOnTopONToolStripMenuItem.Text = "Always On Top (ON)";
-        }
-    }
-
     private void autoupgrade_Tick(object sender, EventArgs e)
     {
         upadd1();
@@ -540,20 +526,6 @@ internal partial class Main : Form
 
     }
 
-    private void formatNumbersOFFToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        if (formatnums)
-        {
-            formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (OFF)";
-            formatnums = false;
-        }
-        else
-        {
-            formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (ON)";
-            formatnums = true;
-        }
-    }
-
     private void processAllXpToolStripMenuItem_Click(object sender, EventArgs e)
     {
         while (xp > xpn)
@@ -625,19 +597,14 @@ internal partial class Main : Form
 
     private void checkForUpdatesToolStripMenuItem_ClickAsync(object sender, EventArgs e)
     {
-        try
+        if (!updatewindowshown)
         {
-            download("https://github.com/tyuXX/MultiGame/raw/master/MultiGame/update.txt", "update.txt");
-            Thread.Sleep(1000);
-            if (File.ReadAllText(@".\update.txt") != Updatev)
-            {
-                updateapp();
-            }
-            File.Delete(@".\update.txt");
-        }
-        catch (Exception ex)
-        {
-            NewMessageWindow("Error", ex.Message, 25);
+            updatewindowshown = true;
+            UpdateWindow updateWindow = new() 
+            { 
+                MdiParent = this
+            };
+            updateWindow.Show();
         }
     }
 
@@ -677,35 +644,7 @@ internal partial class Main : Form
         }
     }
 
-    private void maxBuyOFFToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        if (maxbuy)
-        {
-            maxBuyOFFToolStripMenuItem.Text = "Max Buy (OFF)";
-            maxbuy = false;
-        }
-        else
-        {
-            maxBuyOFFToolStripMenuItem.Text = "Max Buy (ON)";
-            maxbuy = true;
-        }
-    }
-
     private void webPageToolStripMenuItem_Click(object sender, EventArgs e) => Process.Start("https://github.com/tyuXX/MultiGame");
-
-    private void formatRanksOFFToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        if (formatranks)
-        {
-            formatranks = false;
-            formatRanksOFFToolStripMenuItem.Text = "Format Ranks (OFF)";
-        }
-        else
-        {
-            formatranks = true;
-            formatRanksOFFToolStripMenuItem.Text = "Format Ranks (ON)";
-        }
-    }
 
     private void rankUpToolStripMenuItem_Click(object sender, EventArgs e) => RankUp(true);
 
@@ -752,29 +691,29 @@ internal partial class Main : Form
         worldpop.Enabled = !pausetickers;
     }
 
-    private void messagesONToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        if (messagesend)
-        {
-            messagesend = false;
-            messagesONToolStripMenuItem.Text = "Messages (OFF)";
-        }
-        else
-        {
-            messagesend = true;
-            messagesONToolStripMenuItem.Text = "Messages (ON)";
-        }
-    }
-
     private void advancementsToolStripMenuItem_Click(object sender, EventArgs e)
     {
         if (!advanceshown)
         {
+            advanceshown = true;
             Advancements1 advancements1 = new()
             {
                 MdiParent = this
             };
             advancements1.Show();
+        }
+    }
+
+    private void openSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (!settingswindowshown)
+        {
+            settingswindowshown = true;
+            SettingsWindow settingsWindow = new()
+            {
+                MdiParent = this
+            };
+            settingsWindow.Show();
         }
     }
 }

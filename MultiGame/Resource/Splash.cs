@@ -5,6 +5,7 @@ internal partial class Splash : Form
     internal Splash()
     {
         InitializeComponent();
+        mgLogo1.until = 0;
     }
 
     private void timer1_Tick(object sender, EventArgs e)
@@ -28,4 +29,10 @@ internal partial class Splash : Form
     }
 
     private void Splash_Load(object sender, EventArgs e) => progressBar1.Maximum = Lbm;
+
+    private void timer3_Tick(object sender, EventArgs e)
+    {
+        mgLogo1.until += 5;
+        mgLogo1.Refresh();
+    }
 }

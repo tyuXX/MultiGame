@@ -1,6 +1,6 @@
 ﻿namespace MultiGame.Components;
 
-internal partial class MGLogo : IconBitmap16x
+internal partial class MGLogo : AnimatedBitmap16x
 {
     public MGLogo()
     {

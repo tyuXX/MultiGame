@@ -95,6 +95,7 @@
     <Compile Include="Components\AnimatedBitmap16x.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\Arrow8x.cs" />
     <Compile Include="Components\IconBitmap16x.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -110,6 +111,7 @@
     <Compile Include="Components\SwitchButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="consts.cs" />
     <Compile Include="Games\Clicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +261,12 @@
     <Compile Include="Tools\SaveGame.Designer.cs">
       <DependentUpon>SaveGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Status.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +278,12 @@
     </Compile>
     <Compile Include="Tools\ToggleDevMode.Designer.cs">
       <DependentUpon>ToggleDevMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\UpdateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\UpdateWindow.Designer.cs">
+      <DependentUpon>UpdateWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\Variables.cs">
       <SubType>Form</SubType>
@@ -365,11 +379,17 @@
     <EmbeddedResource Include="Tools\SaveGame.resx">
       <DependentUpon>SaveGame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\ToggleDevMode.resx">
       <DependentUpon>ToggleDevMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\UpdateWindow.resx">
+      <DependentUpon>UpdateWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Variables.resx">
       <DependentUpon>Variables.cs</DependentUpon>

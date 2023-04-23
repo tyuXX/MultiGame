@@ -214,8 +214,5 @@ internal partial class Advancements1 : Form
         }
     }
 
-    private void Advancements1_FormClosing(object sender, FormClosingEventArgs e)
-    {
-        advanceshown = false;
-    }
+    private void Advancements1_FormClosing(object sender, FormClosingEventArgs e) => advanceshown = false;
 }

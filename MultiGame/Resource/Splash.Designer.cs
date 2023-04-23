@@ -34,13 +34,14 @@ partial class Splash
             this.label1 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.mgLogo1 = new MultiGame.Components.MGLogo();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(12, 194);
-            this.progressBar1.Maximum = 400;
+            this.progressBar1.Maximum = 256;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(316, 13);
             this.progressBar1.TabIndex = 0;
@@ -75,6 +76,12 @@ partial class Splash
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Made By [tyuXX]";
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 5;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // mgLogo1
             // 
@@ -114,4 +121,5 @@ partial class Splash
     private System.Windows.Forms.Timer timer2;
     private Label label2;
     private Components.MGLogo mgLogo1;
+    private System.Windows.Forms.Timer timer3;
 }

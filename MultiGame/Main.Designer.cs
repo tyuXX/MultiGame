@@ -49,12 +49,6 @@ partial class Main
             this.shop4Level300ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameStarterRebirth2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alwaysOnTopONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.messagesONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formatNumbersOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formatRanksOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maxBuyOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.hideGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,6 +119,8 @@ partial class Main
             this.autorankup = new System.Windows.Forms.Timer(this.components);
             this.autorebirth = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.openSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -267,62 +263,18 @@ partial class Main
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alwaysOnTopONToolStripMenuItem,
-            this.messagesONToolStripMenuItem,
-            this.formatNumbersOFFToolStripMenuItem,
-            this.formatRanksOFFToolStripMenuItem,
-            this.maxBuyOFFToolStripMenuItem,
-            this.toolStripSeparator8,
             this.hideGameToolStripMenuItem,
-            this.closeGameToolStripMenuItem,
             this.pauseGameToolStripMenuItem,
+            this.closeGameToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.openSettingsToolStripMenuItem,
             this.toolStripSeparator9,
-            this.aboutToolStripMenuItem,
             this.checkForUpdatesToolStripMenuItem,
-            this.webPageToolStripMenuItem});
+            this.webPageToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // alwaysOnTopONToolStripMenuItem
-            // 
-            this.alwaysOnTopONToolStripMenuItem.Name = "alwaysOnTopONToolStripMenuItem";
-            this.alwaysOnTopONToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.alwaysOnTopONToolStripMenuItem.Text = "Always On Top (OFF)";
-            this.alwaysOnTopONToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopONToolStripMenuItem_Click);
-            // 
-            // messagesONToolStripMenuItem
-            // 
-            this.messagesONToolStripMenuItem.Name = "messagesONToolStripMenuItem";
-            this.messagesONToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.messagesONToolStripMenuItem.Text = "Messages (ON)";
-            this.messagesONToolStripMenuItem.Click += new System.EventHandler(this.messagesONToolStripMenuItem_Click);
-            // 
-            // formatNumbersOFFToolStripMenuItem
-            // 
-            this.formatNumbersOFFToolStripMenuItem.Name = "formatNumbersOFFToolStripMenuItem";
-            this.formatNumbersOFFToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.formatNumbersOFFToolStripMenuItem.Text = "Format Numbers (OFF)";
-            this.formatNumbersOFFToolStripMenuItem.Click += new System.EventHandler(this.formatNumbersOFFToolStripMenuItem_Click);
-            // 
-            // formatRanksOFFToolStripMenuItem
-            // 
-            this.formatRanksOFFToolStripMenuItem.Name = "formatRanksOFFToolStripMenuItem";
-            this.formatRanksOFFToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.formatRanksOFFToolStripMenuItem.Text = "Format Ranks (OFF)";
-            this.formatRanksOFFToolStripMenuItem.Click += new System.EventHandler(this.formatRanksOFFToolStripMenuItem_Click);
-            // 
-            // maxBuyOFFToolStripMenuItem
-            // 
-            this.maxBuyOFFToolStripMenuItem.Name = "maxBuyOFFToolStripMenuItem";
-            this.maxBuyOFFToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.maxBuyOFFToolStripMenuItem.Text = "Max Buy (OFF)";
-            this.maxBuyOFFToolStripMenuItem.Click += new System.EventHandler(this.maxBuyOFFToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(208, 6);
             // 
             // hideGameToolStripMenuItem
             // 
@@ -810,6 +762,18 @@ partial class Main
             this.autorebirth.Interval = 1000;
             this.autorebirth.Tick += new System.EventHandler(this.autorebirth_Tick);
             // 
+            // openSettingsToolStripMenuItem
+            // 
+            this.openSettingsToolStripMenuItem.Name = "openSettingsToolStripMenuItem";
+            this.openSettingsToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.openSettingsToolStripMenuItem.Text = "Open Settings";
+            this.openSettingsToolStripMenuItem.Click += new System.EventHandler(this.openSettingsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(208, 6);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -874,7 +838,6 @@ partial class Main
     private System.Windows.Forms.ToolStripMenuItem forceMoneyBagToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem forceGenerationBoostToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem alwaysOnTopONToolStripMenuItem;
     private System.Windows.Forms.Timer autoupgrade;
     private System.Windows.Forms.ToolStripMenuItem shop2Level100ToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
@@ -892,12 +855,10 @@ partial class Main
     private System.Windows.Forms.NotifyIcon MultiGameIcon;
     private System.Windows.Forms.ToolStripMenuItem hideGameToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem advancementsToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem formatNumbersOFFToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem processAllXpToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem autoSaveOFFToolStripMenuItem;
     private System.Windows.Forms.Timer autosavet;
     private System.Windows.Forms.ToolStripMenuItem closeGameToolStripMenuItem;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.ToolStripMenuItem shop3Level225ToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem enableLogToolStripMenuItem;
@@ -918,15 +879,14 @@ partial class Main
     private System.Windows.Forms.Timer autorebirth;
     private ToolStripMenuItem shop4Level300ToolStripMenuItem;
     private ToolStripMenuItem gameStarterRebirth2ToolStripMenuItem;
-    private ToolStripMenuItem maxBuyOFFToolStripMenuItem;
     private ToolStripMenuItem webPageToolStripMenuItem;
-    private ToolStripMenuItem formatRanksOFFToolStripMenuItem;
     private ToolStripSeparator toolStripSeparator18;
     private ToolStripMenuItem rankUpToolStripMenuItem;
     private ToolStripMenuItem rebirthUpToolStripMenuItem;
     private ToolStripMenuItem statusToolStripMenuItem;
     private ToolStripMenuItem pauseGameToolStripMenuItem;
-    private ToolStripMenuItem messagesONToolStripMenuItem;
     private System.ComponentModel.BackgroundWorker backgroundWorker1;
+    private ToolStripSeparator toolStripSeparator8;
+    private ToolStripMenuItem openSettingsToolStripMenuItem;
 }
 

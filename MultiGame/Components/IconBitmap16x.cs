@@ -11,10 +11,7 @@ internal partial class IconBitmap16x : Control
         StartingPoint = new(0, 0);
         color = Color.Black;
     }
-    int GetDrawingSize()
-    {
-        return Size.Height / 16;
-    }
+    int GetDrawingSize() => Size.Height / 16;
     protected override void OnPaint(PaintEventArgs e)
     {
         int DrawingSize = GetDrawingSize();
