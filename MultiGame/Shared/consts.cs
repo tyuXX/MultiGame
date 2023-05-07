@@ -1,4 +1,4 @@
-﻿namespace MultiGame;
+﻿namespace MultiGame.Shared;
 
 internal static class consts
 {

@@ -13,21 +13,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -111,7 +96,7 @@
     <Compile Include="Components\SwitchButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="consts.cs" />
+    <Compile Include="Shared\consts.cs" />
     <Compile Include="Games\Clicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,7 +163,7 @@
     <Compile Include="Games\Shop5.Designer.cs">
       <DependentUpon>Shop5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Global.cs" />
+    <Compile Include="Shared\global.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,8 +178,10 @@
     <Compile Include="Resource\Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
-    <Compile Include="rntm.cs" />
-    <Compile Include="rsmngr.cs" />
+    <Compile Include="Shared\procs.cs" />
+    <Compile Include="Shared\rntm.cs" />
+    <Compile Include="Shared\rsmngr.cs" />
+    <Compile Include="Shared\structs.cs" />
     <Compile Include="Tools\About.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,77 +408,10 @@
     <None Include="Resource\icopng.png" />
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="bin\Debug\MultiGame.exe">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="bin\Debug\MultiGame.pdb">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="bin\Release\MultiGame.pdb">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="MultiGame.exe">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
-      <FileType>ManifestEntryPoint</FileType>
-    </PublishFile>
-    <PublishFile Include="MultiGame.exe.config">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="MultiGame.exe.manifest">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
-      <FileType>ManifestEntryPoint</FileType>
-    </PublishFile>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 ve x64%29</ProductName>
       <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 </ProductName>
-      <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
