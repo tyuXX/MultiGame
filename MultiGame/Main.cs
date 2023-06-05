@@ -562,11 +562,6 @@ internal partial class Main : Form
         }
     }
 
-    private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-    {
-
-    }
-
     private void closeGameToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
 
     private void shop3Level225ToolStripMenuItem_Click(object sender, EventArgs e)

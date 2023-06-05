@@ -30,13 +30,7 @@ internal partial class SettingsWindow : Form
 
     private void SettingsWindow_FormClosing(object sender, FormClosingEventArgs e) => settingswindowshown = false;
 
-    private void sButton6_CheckedChanged(object sender, EventArgs e)
-    {
-        autoclicktoggle = sButton6.Checked;
-    }
+    private void sButton6_CheckedChanged(object sender, EventArgs e) => autoclicktoggle = sButton6.Checked;
 
-    private void sButton7_CheckedChanged(object sender, EventArgs e)
-    {
-        autoupgradetoggle = sButton6.Checked;
-    }
+    private void sButton7_CheckedChanged(object sender, EventArgs e) => autoupgradetoggle = sButton6.Checked;
 }
