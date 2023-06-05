@@ -2,13 +2,13 @@
 
 internal partial class AnimatedBitmap16x : Control
 {
-    public List<Point> Start = new() { };
-    public List<Point> End = new() { };
-    public Point StartingPoint;
-    public Color color;
-    public const int max = 256;
-    public int until;
-    public AnimatedBitmap16x()
+    internal List<Point> Start = new() { };
+    internal List<Point> End = new() { };
+    internal Point StartingPoint;
+    internal Color color;
+    internal const int max = 256;
+    internal int until;
+    internal AnimatedBitmap16x()
     {
         StartingPoint = new(0, 0);
         color = Color.Black;

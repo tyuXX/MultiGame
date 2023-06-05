@@ -8,6 +8,9 @@ internal partial class Status : Form
     }
     private void refreshs()
     {
+        progressBar1.Value = IIn100(level, exponent(rank, 2) * Rut);
+        progressBar2.Value = IIn100(rank, rebirth+1);
+        progressBar3.Value = IIn100(xp,xpn);
         label1.Text = $"Name:{username}";
         label2.Text = $"PassCode:{endecode}";
         label4.Text = $"Total Clicks:{totalclicks}";

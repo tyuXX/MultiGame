@@ -1,9 +1,9 @@
 ﻿namespace MultiGame.Tools;
 
-public partial class Message : Form
+internal partial class Message : Form
 {
     internal short life = 10;
-    public Message()
+    internal Message()
     {
         InitializeComponent();
     }

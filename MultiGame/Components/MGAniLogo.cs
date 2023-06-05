@@ -2,7 +2,7 @@
 
 internal partial class MGAniLogo : MGLogo
 {
-    public MGAniLogo()
+    internal MGAniLogo()
     {
 
     }

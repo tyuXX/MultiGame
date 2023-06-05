@@ -3,14 +3,14 @@ using System.Drawing.Drawing2D;
 
 namespace MultiGame.Components;
 
-public partial class SButton : CheckBox
+internal partial class SButton : CheckBox
 {
     private Color onBackColor = Color.MediumSlateBlue;
     private Color onToggleColor = Color.WhiteSmoke;
     private Color offBackColor = Color.Gray;
     private Color offToggleColor = Color.Gainsboro;
     private bool solidStyle = true;
-    public Color OnBackColor
+    internal Color OnBackColor
     {
         get { return onBackColor; }
         set
@@ -20,7 +20,7 @@ public partial class SButton : CheckBox
         }
     }
 
-    public Color OnToggleColor
+    internal Color OnToggleColor
     {
         get { return onToggleColor; }
         set
@@ -29,7 +29,7 @@ public partial class SButton : CheckBox
             Invalidate();
         }
     }
-    public Color OffBackColor
+    internal Color OffBackColor
     {
         get { return offBackColor; }
         set
@@ -38,7 +38,7 @@ public partial class SButton : CheckBox
             Invalidate();
         }
     }
-    public Color OffToggleColor
+    internal Color OffToggleColor
     {
         get { return offToggleColor; }
         set
@@ -55,7 +55,7 @@ public partial class SButton : CheckBox
         set { }
     }
     [DefaultValue(true)]
-    public bool SolidStyle
+    internal bool SolidStyle
     {
         get { return solidStyle; }
         set
@@ -64,7 +64,7 @@ public partial class SButton : CheckBox
             Invalidate();
         }
     }
-    public SButton()
+    internal SButton()
     {
         MinimumSize = new Size(45, 22);
     }

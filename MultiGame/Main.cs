@@ -170,9 +170,12 @@ internal partial class Main : Form
 
     private void autoclicker_Tick(object sender, EventArgs e)
     {
-        money += getmoney * autogenmultu.rankvalue;
-        xp += getmoney * autogenmultu.rankvalue;
-        totalclicks += autogenmultu.rankvalue;
+        if(autoclicktoggle)
+        {
+            money += getmoney * autogenmultu.rankvalue;
+            xp += getmoney * autogenmultu.rankvalue;
+            totalclicks += autogenmultu.rankvalue;
+        }
     }
 
     private void passCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -404,29 +407,32 @@ internal partial class Main : Form
 
     private void autoupgrade_Tick(object sender, EventArgs e)
     {
-        upadd1();
-        upadd2();
-        upadd3();
-        upadd4();
-        upadd5();
-        upadd6();
-        upadd7();
-        upadd8();
-        upadd9();
-        upadd10();
-        upmult1();
-        upmult2();
-        upmult3();
-        upmult4();
-        upmult5();
-        upmult6();
-        upmult7();
-        upmult8();
-        upmult9();
-        upmult10();
-        upautogenmult();
-        upautoclickerspeed();
-        upautoupgradespeed();
+        if (autoupgradetoggle)
+        {
+            upadd1();
+            upadd2();
+            upadd3();
+            upadd4();
+            upadd5();
+            upadd6();
+            upadd7();
+            upadd8();
+            upadd9();
+            upadd10();
+            upmult1();
+            upmult2();
+            upmult3();
+            upmult4();
+            upmult5();
+            upmult6();
+            upmult7();
+            upmult8();
+            upmult9();
+            upmult10();
+            upautogenmult();
+            upautoclickerspeed();
+            upautoupgradespeed();
+        }
     }
 
     private void shop2Level100ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,10 +1,10 @@
 ﻿namespace MultiGame.Tools;
 
-public partial class UpdateWindow : Form
+internal partial class UpdateWindow : Form
 {
     string newver = "N/A";
     bool ready = false;
-    public UpdateWindow()
+    internal UpdateWindow()
     {
         InitializeComponent();
     }

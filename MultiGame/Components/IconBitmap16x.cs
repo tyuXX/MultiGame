@@ -2,11 +2,11 @@
 
 internal partial class IconBitmap16x : Control
 {
-    public List<Point> Start = new() { };
-    public List<Point> End = new() { };
-    public Point StartingPoint;
-    public Color color;
-    public IconBitmap16x()
+    internal List<Point> Start = new() { };
+    internal List<Point> End = new() { };
+    internal Point StartingPoint;
+    internal Color color;
+    internal IconBitmap16x()
     {
         StartingPoint = new(0, 0);
         color = Color.Black;

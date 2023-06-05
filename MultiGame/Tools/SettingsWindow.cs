@@ -1,8 +1,8 @@
 ﻿namespace MultiGame.Tools;
 
-public partial class SettingsWindow : Form
+internal partial class SettingsWindow : Form
 {
-    public SettingsWindow()
+    internal SettingsWindow()
     {
         InitializeComponent();
     }
@@ -24,7 +24,19 @@ public partial class SettingsWindow : Form
         sButton3.Checked = formatnums;
         sButton4.Checked = formatranks;
         sButton5.Checked = maxbuy;
+        sButton6.Checked = autoclicktoggle;
+        sButton7.Checked = autoupgradetoggle;
     }
 
     private void SettingsWindow_FormClosing(object sender, FormClosingEventArgs e) => settingswindowshown = false;
+
+    private void sButton6_CheckedChanged(object sender, EventArgs e)
+    {
+        autoclicktoggle = sButton6.Checked;
+    }
+
+    private void sButton7_CheckedChanged(object sender, EventArgs e)
+    {
+        autoupgradetoggle = sButton6.Checked;
+    }
 }

@@ -181,6 +181,7 @@
     <Compile Include="Shared\procs.cs" />
     <Compile Include="Shared\rntm.cs" />
     <Compile Include="Shared\rsmngr.cs" />
+    <Compile Include="Shared\settings.cs" />
     <Compile Include="Shared\structs.cs" />
     <Compile Include="Tools\About.cs">
       <SubType>Form</SubType>

@@ -2,7 +2,7 @@
 
 internal partial class MGLogo : AnimatedBitmap16x
 {
-    public MGLogo()
+    internal MGLogo()
     {
         Start = new()
         {

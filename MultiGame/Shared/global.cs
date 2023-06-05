@@ -5,5 +5,6 @@ global using System.IO;
 global using System.Threading;
 global using System.Windows.Forms;
 global using static MultiGame.Shared.consts;
-global using static MultiGame.Shared.rntm;
 global using static MultiGame.Shared.procs;
+global using static MultiGame.Shared.rntm;
+global using static MultiGame.Shared.settings;

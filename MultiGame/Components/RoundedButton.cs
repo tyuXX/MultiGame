@@ -1,9 +1,9 @@
 ﻿namespace MultiGame.Components;
 
-public partial class RoundedButton : Button
+internal partial class RoundedButton : Button
 {
-    public Color EdgeColor;
-    public RoundedButton()
+    internal Color EdgeColor;
+    internal RoundedButton()
     {
         BackColor = Color.LightGray;
         EdgeColor = Color.Gray;
@@ -13,7 +13,7 @@ public partial class RoundedButton : Button
         Width = 140;
         Height = 45;
     }
-    public int rdus = 30;
+    internal int rdus = 30;
     System.Drawing.Drawing2D.GraphicsPath GetRoundPath(RectangleF Rect, int radius)
     {
         float r2 = radius / 2f;
