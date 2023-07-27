@@ -125,6 +125,7 @@ internal static class rntm
     internal static BigInteger rebirth = 1;
     internal static BigInteger rebirthmult = 1;
     internal static World currentworld;
+    internal static Currency currentcurrency = new();
     internal static readonly string mid = GenRandomStr(10);
     internal static readonly string tid = GenRandomStr(10);
 }

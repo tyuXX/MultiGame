@@ -2,6 +2,34 @@
 
 namespace MultiGame.Shared.Structs;
 
+internal struct Currency
+{
+    internal BigDouble unit;
+    internal string name;
+    internal char unitchar;
+}
+internal struct BigDouble
+{
+    internal BigInteger nt;
+    internal BigInteger nd;
+    internal BigDouble(BigInteger at ,BigInteger ad)
+    {
+        nt = at;
+        nd = ad;
+    }
+    internal BigInteger Times(BigInteger n)
+    {
+        return (n * nt) / nd;
+    }
+    public static BigInteger operator *(BigDouble left, BigInteger right)
+    {
+        return left.Times(right);
+    }
+    public static BigInteger operator *(BigInteger left, BigDouble right)
+    {
+        return right.Times(left);
+    }
+}
 internal struct World
 {
     internal string name;
