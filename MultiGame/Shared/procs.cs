@@ -8,15 +8,19 @@ namespace MultiGame.Shared;
 
 internal class procs
 {
-    internal static BigInteger BIn100(BigInteger n,BigInteger all)
+    internal static void ExitThread()
     {
-        if (n >= all) { return 100; }
-        return (n * 100) / all;
+
     }
-    internal static int IIn100(BigInteger n,BigInteger all)
+    internal static BigInteger BIn100(BigInteger n, BigInteger all)
     {
         if (n >= all) { return 100; }
-        return int.Parse(((n * 100) / all).ToString());
+        return n * 100 / all;
+    }
+    internal static int IIn100(BigInteger n, BigInteger all)
+    {
+        if (n >= all) { return 100; }
+        return int.Parse((n * 100 / all).ToString());
     }
     internal static void VSplash()
     {

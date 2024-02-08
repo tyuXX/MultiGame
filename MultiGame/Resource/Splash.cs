@@ -22,7 +22,7 @@ internal partial class Splash : Form
     private void timer2_Tick(object sender, EventArgs e)
     {
         label1.Text += '.';
-        if (label1.Text == ("Loading....."))
+        if (label1.Text == "Loading.....")
         {
             label1.Text = "Loading";
         }

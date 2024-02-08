@@ -42,7 +42,7 @@ internal partial class GamesInc : Form
             label4.Text = "Company Work Power:" + FormatBigNum(exponent(2, workers));
             label5.Text = "Company Work Power Neded:" + FormatBigNum(exponent(5, inventions));
             label6.Text = "Gain Per Second:" + FormatBigNum(getmoney * inventions * invested * 100);
-            button1.Text = "Hire Worker $" + FormatBigNum((workersn)) + " Outcome:" + FormatBigNum(workersn);
+            button1.Text = "Hire Worker $" + FormatBigNum(workersn) + " Outcome:" + FormatBigNum(workersn);
             button2.Text = "Buy A Mini Company $" + FormatBigNum(minicompaniesn);
             button3.Text = "Invest $" + FormatBigNum(investedn);
         }

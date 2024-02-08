@@ -47,7 +47,7 @@ internal partial class AnimatedBitmap16x : Control
                 }
                 if (!disable)
                 {
-                    e.Graphics.FillRectangle(brush, new(new(StartingPoint.X + DrawingSize * X, StartingPoint.Y + DrawingSize * Y), new(DrawingSize, DrawingSize)));
+                    e.Graphics.FillRectangle(brush, new(new(StartingPoint.X + (DrawingSize * X), StartingPoint.Y + (DrawingSize * Y)), new(DrawingSize, DrawingSize)));
                 }
                 done++;
             }

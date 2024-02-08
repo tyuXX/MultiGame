@@ -170,7 +170,7 @@ internal partial class Main : Form
 
     private void autoclicker_Tick(object sender, EventArgs e)
     {
-        if(autoclicktoggle)
+        if (autoclicktoggle)
         {
             money += getmoney * autogenmultu.rankvalue;
             xp += getmoney * autogenmultu.rankvalue;
@@ -281,7 +281,10 @@ internal partial class Main : Form
         }
     }
 
-    private void Main_FormClosing(object sender, FormClosingEventArgs e) => timerthread.Abort();
+    private void Main_FormClosing(object sender, FormClosingEventArgs e)
+    {
+
+    }
 
     private void rngtick_Tick(object sender, EventArgs e)
     {

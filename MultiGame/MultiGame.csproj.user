@@ -3,4 +3,102 @@
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Boosts\GenerationBoost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Boosts\MoneyBag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\Clicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\FNF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\GamesInc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\Magic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\MagicPowerGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\RankShop1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\RankStarter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\Shop2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\Shop3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\Shop4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\Shop5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Games\UpgradeCentre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Resource\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\AddLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\Advancements1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\ChangePassCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\ChangeUserName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\DebugVars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\OpenGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\SaveGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\ToggleDevMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\UpdateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tools\Variables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

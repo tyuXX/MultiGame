@@ -12,14 +12,14 @@ internal struct BigDouble
 {
     internal BigInteger nt;
     internal BigInteger nd;
-    internal BigDouble(BigInteger at ,BigInteger ad)
+    internal BigDouble(BigInteger at, BigInteger ad)
     {
         nt = at;
         nd = ad;
     }
     internal BigInteger Times(BigInteger n)
     {
-        return (n * nt) / nd;
+        return n * nt / nd;
     }
     public static BigInteger operator *(BigDouble left, BigInteger right)
     {
